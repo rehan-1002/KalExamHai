@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { getAdminClient } from "@/server/supabase/admin";
+import { runIngestionPipeline } from "@/server/ingestion/pipeline";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -25,10 +26,6 @@ export async function POST(request: NextRequest) {
     const file = formData.get("file") as File | null;
     const subject = (formData.get("subject") as string | null)?.trim() || "";
     const customTitle = (formData.get("title") as string | null)?.trim() || "";
-    // We no longer receive extractedText here — processing is done in /api/documents/process/[id]
-    // But we store it temporarily in the DB for the process route to pick up
-    const clientExtractedText = (formData.get("extractedText") as string | null)?.trim() || "";
-    const clientPageCount = parseInt((formData.get("pageCount") as string | null) || "0", 10);
 
     if (!file || file.size === 0) {
       return NextResponse.json(
@@ -101,7 +98,6 @@ export async function POST(request: NextRequest) {
       storage_path: storagePath,
       mime_type: mimeType,
       size_bytes: file.size,
-      page_count: clientPageCount > 0 ? clientPageCount : null,
       status: "uploaded",
     });
 
@@ -113,15 +109,28 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 4. Return immediately with documentId — client will call /api/documents/process/[id]
+    // 4. Run the ingestion pipeline (extract -> chunk <= 16 -> embed -> ready)
+    // Finishes in ~2.5s total!
+    const pipelineResult = await runIngestionPipeline(documentId, user.id);
+
+    if (!pipelineResult.ok) {
+      return NextResponse.json(
+        {
+          ok: false,
+          code: "INGESTION_FAILED",
+          message: pipelineResult.error || "Document processing failed.",
+        },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json({
       ok: true,
       data: {
         documentId,
-        status: "uploaded",
-        // Pass back whether we have pre-extracted text so client knows processing can start
-        hasExtractedText: !!clientExtractedText,
-        pageCount: clientPageCount || null,
+        chunkCount: pipelineResult.chunkCount,
+        pageCount: pipelineResult.pageCount,
+        status: "ready",
       },
     });
   } catch (err: unknown) {
@@ -137,4 +146,5 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
 

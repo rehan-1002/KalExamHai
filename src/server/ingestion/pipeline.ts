@@ -30,23 +30,6 @@ export async function runIngestionPipeline(
 ): Promise<IngestionResult> {
   const supabase = getAdminClient();
 
-  // 8-second hard timeout — on Vercel Hobby the function dies at 10s.
-  // Abort cleanly so we can write a "failed" status to the DB before the kill.
-  const PIPELINE_TIMEOUT_MS = 8000;
-  let timedOut = false;
-  const timeoutHandle = setTimeout(async () => {
-    timedOut = true;
-    console.warn(`[IngestionPipeline] Document ${documentId} hit internal timeout — marking failed.`);
-    try {
-      await supabase
-        .from("documents")
-        .update({ status: "failed", error_message: "Processing timed out. Please re-upload with a smaller document." })
-        .eq("id", documentId);
-    } catch {
-      // best-effort
-    }
-  }, PIPELINE_TIMEOUT_MS);
-
   // 1. Fetch document record
   const { data: doc, error: fetchErr } = await supabase
     .from("documents")
@@ -56,7 +39,6 @@ export async function runIngestionPipeline(
     .single();
 
   if (fetchErr || !doc) {
-    clearTimeout(timeoutHandle);
     return {
       ok: false,
       documentId,
@@ -185,13 +167,6 @@ export async function runIngestionPipeline(
       })
       .eq("id", documentId);
 
-    clearTimeout(timeoutHandle);
-
-    if (timedOut) {
-      // The timeout already wrote "failed" to the DB — don't overwrite with stale success.
-      return { ok: false, documentId, error: "Processing timed out." };
-    }
-
     return {
       ok: true,
       documentId,
@@ -199,7 +174,6 @@ export async function runIngestionPipeline(
       pageCount: extracted.pageCount,
     };
   } catch (err: unknown) {
-    clearTimeout(timeoutHandle);
     const errorMsg = err instanceof Error ? err.message : String(err);
     console.error(`[IngestionPipeline] Document ${documentId} failed:`, errorMsg);
 

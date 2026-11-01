@@ -3,7 +3,6 @@
 import React, { useState, useTransition } from "react";
 import { UploadCloud, FileText, Loader2, CheckCircle2, AlertCircle, BookOpen } from "lucide-react";
 import { IllosUploadDropzone } from "@/components/vendor/upload-dropzone";
-import { extractTextFromPdfClient } from "@/lib/pdf/client-extract";
 
 interface DocumentUploadProps {
   onIngestionComplete?: () => void;
@@ -32,113 +31,46 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
 
     setErrorMessage(null);
     setSuccessInfo(null);
+    setStatusMessage("Uploading and generating vector embeddings with Gemini text-embedding-004...");
 
     startTransition(async () => {
       try {
-        let extractedText = "";
-        let pageCount = 1;
-
-        // Step 1: Extract text in-browser (fast, no server needed)
-        if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
-          setStatusMessage("Extracting text on your device...");
-          const extracted = await extractTextFromPdfClient(file);
-          extractedText = extracted.text;
-          pageCount = extracted.pageCount;
-        }
-
-        // Step 2: Upload file to storage (responds immediately, no embedding yet)
-        setStatusMessage("Uploading to secure storage...");
         const formData = new FormData();
         formData.append("file", file);
         formData.append("subject", subject);
         formData.append("title", title || file.name.replace(/\.[^/.]+$/, ""));
-        if (extractedText) {
-          formData.append("extractedText", extractedText);
-          formData.append("pageCount", String(pageCount));
-        }
 
-        const uploadResponse = await fetch("/api/documents/upload", {
+        const response = await fetch("/api/documents/upload", {
           method: "POST",
           body: formData,
         });
 
-        if (!uploadResponse.ok && uploadResponse.status !== 200) {
-          // Non-2xx with a body we can parse
-          let errMsg = "Upload failed. Please try again.";
-          try {
-            const errData = await uploadResponse.json();
-            errMsg = errData.message || errMsg;
-          } catch {
-            // ignore parse error
-          }
-          setStatusMessage(null);
-          setErrorMessage(errMsg);
-          return;
-        }
+        let result: {
+          ok: boolean;
+          data?: { documentId: string; chunkCount?: number; pageCount?: number };
+          message?: string;
+        };
 
-        const uploadResult = await uploadResponse.json();
-
-        if (!uploadResult.ok) {
-          setStatusMessage(null);
-          setErrorMessage(uploadResult.message || "Upload failed.");
-          return;
-        }
-
-        const { documentId } = uploadResult.data;
-
-        // Step 3: Trigger AI processing (chunking + embedding) in a separate request
-        setStatusMessage("Generating AI vector embeddings with Gemini...");
-
-        const processResponse = await fetch(`/api/documents/process/${documentId}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ extractedText, pageCount }),
-        });
-
-        if (!processResponse.ok && processResponse.status !== 200) {
-          // Processing failed — but file IS stored. Poll for status.
-          setStatusMessage("Processing taking longer than expected, checking status...");
-        }
-
-        let processResult: { ok: boolean; data?: { chunkCount?: number; pageCount?: number }; message?: string } | null = null;
         try {
-          processResult = await processResponse.json();
+          result = await response.json();
         } catch {
-          // Response body was empty (timeout) — fall through to polling
-        }
-
-        if (processResult?.ok) {
           setStatusMessage(null);
-          setSuccessInfo({
-            title: title || file.name,
-            chunks: processResult.data?.chunkCount,
-            pages: processResult.data?.pageCount,
-          });
-          setTitle("");
-          onIngestionComplete?.();
-          return;
-        } else if (processResult && !processResult.ok) {
-          // Explicit error returned — report immediately without waiting on polling
-          setStatusMessage(null);
-          setErrorMessage(processResult.message || "Document processing failed.");
+          setErrorMessage("Server response error. Please try uploading again.");
           return;
         }
 
-        // Step 4: Poll document status (handles Vercel timeout gracefully)
-        setStatusMessage("Waiting for processing to complete...");
-        const pollResult = await pollDocumentStatus(documentId);
-
-        setStatusMessage(null);
-        if (pollResult.ok) {
+        if (result.ok && result.data) {
+          setStatusMessage(null);
           setSuccessInfo({
             title: title || file.name,
-            chunks: pollResult.chunkCount,
-            pages: pollResult.pageCount,
+            chunks: result.data.chunkCount,
+            pages: result.data.pageCount,
           });
           setTitle("");
           onIngestionComplete?.();
         } else {
-          setErrorMessage(pollResult.error || "Document processing failed. Please try again.");
+          setStatusMessage(null);
+          setErrorMessage(result.message || "Upload failed.");
         }
       } catch (err: unknown) {
         setStatusMessage(null);
@@ -146,29 +78,6 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
       }
     });
   };
-
-  /** Polls /api/documents/process/[id] GET every 2s until ready or failed */
-  async function pollDocumentStatus(
-    documentId: string,
-    maxAttempts = 30
-  ): Promise<{ ok: boolean; chunkCount?: number; pageCount?: number; error?: string }> {
-    for (let attempt = 0; attempt < maxAttempts; attempt++) {
-      await new Promise((r) => setTimeout(r, 2000));
-      try {
-        const res = await fetch(`/api/documents/process/${documentId}`, { method: "GET" });
-        if (!res.ok) continue;
-        const data = await res.json();
-        if (!data.ok) continue;
-        const { status, chunkCount, pageCount, errorMessage } = data.data;
-        if (status === "ready") return { ok: true, chunkCount, pageCount };
-        if (status === "failed") return { ok: false, error: errorMessage || "Processing failed. Please try again." };
-        // "uploaded" / "extracting" / "embedding" → keep polling
-      } catch {
-        // network hiccup — keep polling
-      }
-    }
-    return { ok: false, error: "Processing timed out. Please reload the page — your document may already be ready." };
-  }
 
   // Handle paste submission
   const handlePasteSubmit = (e: React.FormEvent) => {
