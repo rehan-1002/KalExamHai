@@ -45,7 +45,12 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
     startTransition(async () => {
       try {
         setStatusMessage("Extracting text and generating vector embeddings with Gemini text-embedding-004...");
-        const result = await uploadAndIngestDocumentAction(formData);
+        const response = await fetch("/api/documents/upload", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
 
         if (result.ok) {
           setStatusMessage(null);
@@ -58,7 +63,7 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
           onIngestionComplete?.();
         } else {
           setStatusMessage(null);
-          setErrorMessage(result.message);
+          setErrorMessage(result.message || "Upload failed.");
         }
       } catch (err: unknown) {
         setStatusMessage(null);
