@@ -30,13 +30,21 @@ export function DocumentsManager({ initialDocuments }: DocumentsManagerProps) {
     router.refresh();
   };
 
+  const handleDeleted = (id: string) => {
+    setDocuments((prev) => prev.filter((d) => d.id !== id));
+  };
+
   return (
     <div className="flex flex-col gap-8">
       {/* 1. Upload & Ingestion Component */}
       <DocumentUploadDropzone onIngestionComplete={handleRefresh} />
 
       {/* 2. Documents Knowledge Library Table */}
-      <DocumentTable documents={documents} onRefresh={handleRefresh} />
+      <DocumentTable
+        documents={documents}
+        onRefresh={handleRefresh}
+        onDeleted={handleDeleted}
+      />
     </div>
   );
 }

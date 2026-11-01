@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useTransition } from "react";
+import React, { useState, useTransition } from "react";
 import Link from "next/link";
-import { Trash2, RotateCw, FileText, Calendar, Layers, Sparkles } from "lucide-react";
+import { Trash2, RotateCw, FileText, Calendar, Layers, Sparkles, Loader2 } from "lucide-react";
 import { StatusBadge, type DocStatus } from "./status-badge";
-import { deleteDocumentAction, retryIngestionAction } from "@/app/tutor/documents/actions";
+import { retryIngestionAction } from "@/app/tutor/documents/actions";
 
 export interface DocumentItem {
   id: string;
@@ -21,6 +21,7 @@ export interface DocumentItem {
 interface DocumentTableProps {
   documents: DocumentItem[];
   onRefresh?: () => void;
+  onDeleted?: (id: string) => void;
 }
 
 function formatBytes(bytes: number | null): string {
@@ -43,18 +44,32 @@ function formatDate(iso: string): string {
   }
 }
 
-export function DocumentTable({ documents, onRefresh }: DocumentTableProps) {
+export function DocumentTable({ documents, onRefresh, onDeleted }: DocumentTableProps) {
   const [isPending, startTransition] = useTransition();
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
-  const handleDelete = (id: string, title: string) => {
+  const handleDelete = async (e: React.MouseEvent, id: string, title: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     if (!confirm(`Are you sure you want to delete "${title}"? Its vector embeddings will also be removed.`)) {
       return;
     }
 
-    startTransition(async () => {
-      await deleteDocumentAction(id);
-      onRefresh?.();
-    });
+    setDeletingId(id);
+    try {
+      const res = await fetch(`/api/documents/${id}`, { method: "DELETE" });
+      const data = await res.json().catch(() => ({ ok: false }));
+      if (data.ok) {
+        onDeleted?.(id);
+      } else {
+        alert(data.message || "Failed to delete document.");
+      }
+    } catch {
+      alert("Network error while deleting document.");
+    } finally {
+      setDeletingId(null);
+    }
   };
 
   const handleRetry = (id: string) => {
@@ -181,12 +196,16 @@ export function DocumentTable({ documents, onRefresh }: DocumentTableProps) {
                     )}
                     <button
                       type="button"
-                      onClick={() => handleDelete(doc.id, doc.title)}
-                      disabled={isPending}
-                      className="p-1.5 rounded-md hover:bg-red-50 text-[#6B7280] hover:text-[#B42318] transition-colors cursor-pointer"
+                      onClick={(e) => handleDelete(e, doc.id, doc.title)}
+                      disabled={isPending || deletingId === doc.id}
+                      className="p-1.5 rounded-md hover:bg-red-50 text-[#6B7280] hover:text-[#B42318] transition-colors cursor-pointer disabled:opacity-50"
                       title="Delete document"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      {deletingId === doc.id ? (
+                        <Loader2 className="w-4 h-4 animate-spin text-red-500" />
+                      ) : (
+                        <Trash2 className="w-4 h-4" />
+                      )}
                     </button>
                   </div>
                 </td>
