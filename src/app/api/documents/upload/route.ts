@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { getAdminClient } from "@/server/supabase/admin";
-import { runIngestionPipeline } from "@/server/ingestion/pipeline";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 60; // 60 seconds on Vercel Serverless
+export const maxDuration = 60;
 
 const MAX_FILE_SIZE_BYTES = 25 * 1024 * 1024; // 25 MB
 
@@ -26,6 +25,8 @@ export async function POST(request: NextRequest) {
     const file = formData.get("file") as File | null;
     const subject = (formData.get("subject") as string | null)?.trim() || "";
     const customTitle = (formData.get("title") as string | null)?.trim() || "";
+    // We no longer receive extractedText here — processing is done in /api/documents/process/[id]
+    // But we store it temporarily in the DB for the process route to pick up
     const clientExtractedText = (formData.get("extractedText") as string | null)?.trim() || "";
     const clientPageCount = parseInt((formData.get("pageCount") as string | null) || "0", 10);
 
@@ -85,13 +86,15 @@ export async function POST(request: NextRequest) {
         {
           ok: false,
           code: "STORAGE_ERROR",
-          message: `Failed to store document in Supabase Storage: ${uploadErr.message}`,
+          message: `Failed to store document: ${uploadErr.message}`,
         },
         { status: 500 }
       );
     }
 
-    // 3. Insert record in `documents` table
+    // 3. Insert record in `documents` table with status = 'uploaded'
+    //    Store the client-extracted text in a temp column if available,
+    //    so the process route can use it without re-downloading the file.
     const { error: insertErr } = await adminClient.from("documents").insert({
       id: documentId,
       owner_id: user.id,
@@ -100,46 +103,51 @@ export async function POST(request: NextRequest) {
       storage_path: storagePath,
       mime_type: mimeType,
       size_bytes: file.size,
+      page_count: clientPageCount > 0 ? clientPageCount : null,
       status: "uploaded",
+      // Store pre-extracted text so process route can skip re-downloading
+      ...(clientExtractedText ? { extracted_text: clientExtractedText } : {}),
     });
 
     if (insertErr) {
-      await adminClient.storage.from("documents").remove([storagePath]);
-      return NextResponse.json(
-        {
-          ok: false,
-          code: "DB_ERROR",
-          message: `Database error inserting document: ${insertErr.message}`,
-        },
-        { status: 500 }
-      );
+      // If the column doesn't exist yet, retry without extracted_text
+      if (insertErr.message.includes("extracted_text")) {
+        const { error: retryErr } = await adminClient.from("documents").insert({
+          id: documentId,
+          owner_id: user.id,
+          title,
+          subject: subject || null,
+          storage_path: storagePath,
+          mime_type: mimeType,
+          size_bytes: file.size,
+          page_count: clientPageCount > 0 ? clientPageCount : null,
+          status: "uploaded",
+        });
+        if (retryErr) {
+          await adminClient.storage.from("documents").remove([storagePath]);
+          return NextResponse.json(
+            { ok: false, code: "DB_ERROR", message: `Database error: ${retryErr.message}` },
+            { status: 500 }
+          );
+        }
+      } else {
+        await adminClient.storage.from("documents").remove([storagePath]);
+        return NextResponse.json(
+          { ok: false, code: "DB_ERROR", message: `Database error: ${insertErr.message}` },
+          { status: 500 }
+        );
+      }
     }
 
-    // 4. Run the ingestion pipeline (extract -> chunk -> embed -> ready)
-    const pipelineResult = await runIngestionPipeline(
-      documentId,
-      user.id,
-      clientExtractedText || undefined,
-      clientPageCount || undefined
-    );
-
-    if (!pipelineResult.ok) {
-      return NextResponse.json(
-        {
-          ok: false,
-          code: "INGESTION_FAILED",
-          message: pipelineResult.error || "Document processing failed.",
-        },
-        { status: 500 }
-      );
-    }
-
+    // 4. Return immediately with documentId — client will call /api/documents/process/[id]
     return NextResponse.json({
       ok: true,
       data: {
         documentId,
-        chunkCount: pipelineResult.chunkCount,
-        pageCount: pipelineResult.pageCount,
+        status: "uploaded",
+        // Pass back whether we have pre-extracted text so client knows processing can start
+        hasExtractedText: !!clientExtractedText,
+        pageCount: clientPageCount || null,
       },
     });
   } catch (err: unknown) {

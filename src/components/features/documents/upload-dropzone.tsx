@@ -38,15 +38,16 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
         let extractedText = "";
         let pageCount = 1;
 
+        // Step 1: Extract text in-browser (fast, no server needed)
         if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
-          setStatusMessage("Extracting text and formulas instantly on your device...");
+          setStatusMessage("Extracting text on your device...");
           const extracted = await extractTextFromPdfClient(file);
           extractedText = extracted.text;
           pageCount = extracted.pageCount;
         }
 
-        setStatusMessage("Generating AI vector embeddings with Gemini & indexing in pgvector...");
-
+        // Step 2: Upload file to storage (responds immediately, no embedding yet)
+        setStatusMessage("Uploading to secure storage...");
         const formData = new FormData();
         formData.append("file", file);
         formData.append("subject", subject);
@@ -56,25 +57,83 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
           formData.append("pageCount", String(pageCount));
         }
 
-        const response = await fetch("/api/documents/upload", {
+        const uploadResponse = await fetch("/api/documents/upload", {
           method: "POST",
           body: formData,
         });
 
-        const result = await response.json();
+        if (!uploadResponse.ok && uploadResponse.status !== 200) {
+          // Non-2xx with a body we can parse
+          let errMsg = "Upload failed. Please try again.";
+          try {
+            const errData = await uploadResponse.json();
+            errMsg = errData.message || errMsg;
+          } catch {
+            // ignore parse error
+          }
+          setStatusMessage(null);
+          setErrorMessage(errMsg);
+          return;
+        }
 
-        if (result.ok) {
+        const uploadResult = await uploadResponse.json();
+
+        if (!uploadResult.ok) {
+          setStatusMessage(null);
+          setErrorMessage(uploadResult.message || "Upload failed.");
+          return;
+        }
+
+        const { documentId } = uploadResult.data;
+
+        // Step 3: Trigger AI processing (chunking + embedding) in a separate request
+        setStatusMessage("Generating AI vector embeddings with Gemini...");
+
+        const processResponse = await fetch(`/api/documents/process/${documentId}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ extractedText, pageCount }),
+        });
+
+        if (!processResponse.ok && processResponse.status !== 200) {
+          // Processing failed — but file IS stored. Poll for status.
+          setStatusMessage("Processing taking longer than expected, checking status...");
+        }
+
+        let processResult: { ok: boolean; data?: { chunkCount?: number; pageCount?: number }; message?: string } | null = null;
+        try {
+          processResult = await processResponse.json();
+        } catch {
+          // Response body was empty (timeout) — fall through to polling
+        }
+
+        if (processResult?.ok) {
           setStatusMessage(null);
           setSuccessInfo({
             title: title || file.name,
-            chunks: result.data.chunkCount,
-            pages: result.data.pageCount,
+            chunks: processResult.data?.chunkCount,
+            pages: processResult.data?.pageCount,
+          });
+          setTitle("");
+          onIngestionComplete?.();
+          return;
+        }
+
+        // Step 4: Poll document status (handles Vercel timeout gracefully)
+        setStatusMessage("Waiting for processing to complete...");
+        const pollResult = await pollDocumentStatus(documentId);
+
+        setStatusMessage(null);
+        if (pollResult.ok) {
+          setSuccessInfo({
+            title: title || file.name,
+            chunks: pollResult.chunkCount,
+            pages: pollResult.pageCount,
           });
           setTitle("");
           onIngestionComplete?.();
         } else {
-          setStatusMessage(null);
-          setErrorMessage(result.message || "Upload failed.");
+          setErrorMessage(pollResult.error || "Document processing failed. Please try again.");
         }
       } catch (err: unknown) {
         setStatusMessage(null);
@@ -82,6 +141,28 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
       }
     });
   };
+
+  /** Polls /api/documents/process/[id] GET every 3 seconds until ready or failed */
+  async function pollDocumentStatus(
+    documentId: string,
+    maxAttempts = 20
+  ): Promise<{ ok: boolean; chunkCount?: number; pageCount?: number; error?: string }> {
+    for (let attempt = 0; attempt < maxAttempts; attempt++) {
+      await new Promise((r) => setTimeout(r, 3000));
+      try {
+        const res = await fetch(`/api/documents/process/${documentId}`, { method: "GET" });
+        if (!res.ok) continue;
+        const data = await res.json();
+        if (!data.ok) continue;
+        const { status, chunkCount, pageCount, errorMessage } = data.data;
+        if (status === "ready") return { ok: true, chunkCount, pageCount };
+        if (status === "failed") return { ok: false, error: errorMessage || "Processing failed." };
+      } catch {
+        // network hiccup — keep polling
+      }
+    }
+    return { ok: false, error: "Processing is taking too long. Your document was saved — please refresh and try generating." };
+  }
 
   // Handle paste submission
   const handlePasteSubmit = (e: React.FormEvent) => {
@@ -102,21 +183,31 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ title, content: pastedText, subject }),
         });
-        const result = await response.json();
 
-        if (result.ok) {
+        // Paste route also runs pipeline inline — handle timeout gracefully
+        let result: { ok: boolean; data?: { documentId?: string; chunkCount?: number; pageCount?: number }; message?: string } | null = null;
+        try {
+          result = await response.json();
+        } catch {
+          // Response body empty — Vercel timeout
+          setStatusMessage(null);
+          setErrorMessage("Processing is taking longer than expected. Please try pasting a shorter text, or wait a moment and refresh.");
+          return;
+        }
+
+        if (result?.ok) {
           setStatusMessage(null);
           setSuccessInfo({
             title,
-            chunks: result.data.chunkCount,
-            pages: result.data.pageCount,
+            chunks: result.data?.chunkCount,
+            pages: result.data?.pageCount,
           });
           setTitle("");
           setPastedText("");
           onIngestionComplete?.();
         } else {
           setStatusMessage(null);
-          setErrorMessage(result.message || "Failed to process pasted notes.");
+          setErrorMessage(result?.message || "Failed to process pasted notes.");
         }
       } catch (err: unknown) {
         setStatusMessage(null);
