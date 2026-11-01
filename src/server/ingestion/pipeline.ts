@@ -1,6 +1,6 @@
 import "server-only";
 import { getAdminClient } from "../supabase/admin";
-import { extractDocumentText } from "./extract-text";
+import { extractDocumentText, type ExtractedDocument } from "./extract-text";
 import { chunkDocument } from "./chunker";
 import { generateEmbeddings } from "../gemini/embed";
 
@@ -24,7 +24,9 @@ export interface IngestionResult {
  */
 export async function runIngestionPipeline(
   documentId: string,
-  ownerId: string
+  ownerId: string,
+  preExtractedText?: string,
+  preExtractedPageCount?: number
 ): Promise<IngestionResult> {
   const supabase = getAdminClient();
 
@@ -51,29 +53,52 @@ export async function runIngestionPipeline(
       .update({ status: "extracting", error_message: null })
       .eq("id", documentId);
 
-    let fileBuffer: Buffer;
+    let extracted: ExtractedDocument;
 
-    if (doc.storage_path) {
-      // Download file from private Supabase Storage bucket 'documents'
-      const { data: fileData, error: downloadErr } = await supabase.storage
-        .from("documents")
-        .download(doc.storage_path);
+    // Fast-path: Client-side already extracted text, eliminating serverless parsing bottlenecks
+    if (preExtractedText && preExtractedText.trim().length > 20) {
+      const pageCount =
+        preExtractedPageCount && preExtractedPageCount > 0
+          ? preExtractedPageCount
+          : Math.max(1, Math.ceil(preExtractedText.length / 2500));
 
-      if (downloadErr || !fileData) {
-        throw new Error(`Failed to download document from storage: ${downloadErr?.message}`);
+      const rawPages = preExtractedText.split(/\[Page \d+\]\n/).filter(Boolean);
+      const pages =
+        rawPages.length > 0
+          ? rawPages.map((pText, i) => ({ pageNumber: i + 1, text: pText.trim() }))
+          : [{ pageNumber: 1, text: preExtractedText.trim() }];
+
+      extracted = {
+        text: preExtractedText.trim(),
+        pages,
+        pageCount,
+        extractionQuality: 1.0,
+      };
+    } else {
+      let fileBuffer: Buffer;
+
+      if (doc.storage_path) {
+        // Download file from private Supabase Storage bucket 'documents'
+        const { data: fileData, error: downloadErr } = await supabase.storage
+          .from("documents")
+          .download(doc.storage_path);
+
+        if (downloadErr || !fileData) {
+          throw new Error(`Failed to download document from storage: ${downloadErr?.message}`);
+        }
+
+        fileBuffer = Buffer.from(await fileData.arrayBuffer());
+      } else {
+        throw new Error("No storage path provided for document extraction.");
       }
 
-      fileBuffer = Buffer.from(await fileData.arrayBuffer());
-    } else {
-      throw new Error("No storage path provided for document extraction.");
+      // 3. Extract text
+      extracted = await extractDocumentText(
+        fileBuffer,
+        doc.mime_type || "application/pdf",
+        doc.title
+      );
     }
-
-    // 3. Extract text
-    const extracted = await extractDocumentText(
-      fileBuffer,
-      doc.mime_type || "application/pdf",
-      doc.title
-    );
 
     if (!extracted.text.trim()) {
       throw new Error("No readable text could be extracted from this document.");

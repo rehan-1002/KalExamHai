@@ -26,6 +26,8 @@ export async function POST(request: NextRequest) {
     const file = formData.get("file") as File | null;
     const subject = (formData.get("subject") as string | null)?.trim() || "";
     const customTitle = (formData.get("title") as string | null)?.trim() || "";
+    const clientExtractedText = (formData.get("extractedText") as string | null)?.trim() || "";
+    const clientPageCount = parseInt((formData.get("pageCount") as string | null) || "0", 10);
 
     if (!file || file.size === 0) {
       return NextResponse.json(
@@ -114,7 +116,12 @@ export async function POST(request: NextRequest) {
     }
 
     // 4. Run the ingestion pipeline (extract -> chunk -> embed -> ready)
-    const pipelineResult = await runIngestionPipeline(documentId, user.id);
+    const pipelineResult = await runIngestionPipeline(
+      documentId,
+      user.id,
+      clientExtractedText || undefined,
+      clientPageCount || undefined
+    );
 
     if (!pipelineResult.ok) {
       return NextResponse.json(
@@ -148,3 +155,4 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+

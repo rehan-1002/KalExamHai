@@ -3,6 +3,7 @@
 import React, { useState, useTransition } from "react";
 import { UploadCloud, FileText, Loader2, CheckCircle2, AlertCircle, BookOpen } from "lucide-react";
 import { IllosUploadDropzone } from "@/components/vendor/upload-dropzone";
+import { extractTextFromPdfClient } from "@/lib/pdf/client-extract";
 import {
   uploadAndIngestDocumentAction,
   pasteAndIngestDocumentAction,
@@ -35,16 +36,30 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
 
     setErrorMessage(null);
     setSuccessInfo(null);
-    setStatusMessage("Uploading and extracting document...");
-
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("subject", subject);
-    formData.append("title", title || file.name.replace(/\.[^/.]+$/, ""));
 
     startTransition(async () => {
       try {
-        setStatusMessage("Extracting text and generating vector embeddings with Gemini text-embedding-004...");
+        let extractedText = "";
+        let pageCount = 1;
+
+        if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
+          setStatusMessage("Extracting text and formulas instantly on your device...");
+          const extracted = await extractTextFromPdfClient(file);
+          extractedText = extracted.text;
+          pageCount = extracted.pageCount;
+        }
+
+        setStatusMessage("Generating AI vector embeddings with Gemini & indexing in pgvector...");
+
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("subject", subject);
+        formData.append("title", title || file.name.replace(/\.[^/.]+$/, ""));
+        if (extractedText) {
+          formData.append("extractedText", extractedText);
+          formData.append("pageCount", String(pageCount));
+        }
+
         const response = await fetch("/api/documents/upload", {
           method: "POST",
           body: formData,
