@@ -1,7 +1,9 @@
 import "server-only";
 import { getGeminiClient } from "./client";
 
-const DEFAULT_EMBEDDING_MODEL = process.env.GEMINI_MODEL_EMBEDDING || "gemini-embedding-001";
+const rawModel = process.env.GEMINI_MODEL_EMBEDDING || "text-embedding-004";
+const DEFAULT_EMBEDDING_MODEL =
+  rawModel === "gemini-embedding-001" ? "text-embedding-004" : rawModel;
 const EMBEDDING_DIM = parseInt(process.env.GEMINI_EMBEDDING_DIM || "768", 10);
 const MAX_BATCH_SIZE = 50; // Safe batch limit for embedding requests
 
@@ -17,6 +19,7 @@ export async function generateEmbeddings(
     return [];
   }
 
+  const resolvedModel = model === "gemini-embedding-001" ? "text-embedding-004" : model;
   const ai = getGeminiClient();
   const allEmbeddings: number[][] = [];
 
@@ -25,7 +28,7 @@ export async function generateEmbeddings(
     const batch = texts.slice(i, i + MAX_BATCH_SIZE);
 
     const response = await ai.models.embedContent({
-      model,
+      model: resolvedModel,
       contents: batch,
       config: {
         outputDimensionality: EMBEDDING_DIM,

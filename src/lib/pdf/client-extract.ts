@@ -58,3 +58,4 @@ export async function extractTextFromPdfClient(file: File): Promise<ClientExtrac
     };
   }
 }
+

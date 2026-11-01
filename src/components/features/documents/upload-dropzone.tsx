@@ -4,10 +4,6 @@ import React, { useState, useTransition } from "react";
 import { UploadCloud, FileText, Loader2, CheckCircle2, AlertCircle, BookOpen } from "lucide-react";
 import { IllosUploadDropzone } from "@/components/vendor/upload-dropzone";
 import { extractTextFromPdfClient } from "@/lib/pdf/client-extract";
-import {
-  uploadAndIngestDocumentAction,
-  pasteAndIngestDocumentAction,
-} from "@/app/tutor/documents/actions";
 
 interface DocumentUploadProps {
   onIngestionComplete?: () => void;
@@ -101,7 +97,13 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
 
     startTransition(async () => {
       try {
-        const result = await pasteAndIngestDocumentAction(title, pastedText, subject);
+        const response = await fetch("/api/documents/paste", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title, content: pastedText, subject }),
+        });
+        const result = await response.json();
+
         if (result.ok) {
           setStatusMessage(null);
           setSuccessInfo({
@@ -114,7 +116,7 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
           onIngestionComplete?.();
         } else {
           setStatusMessage(null);
-          setErrorMessage(result.message);
+          setErrorMessage(result.message || "Failed to process pasted notes.");
         }
       } catch (err: unknown) {
         setStatusMessage(null);

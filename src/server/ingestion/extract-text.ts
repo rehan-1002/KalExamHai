@@ -17,20 +17,7 @@ export interface ExtractedDocument {
   extractionQuality: number; // 0.00 to 1.00
 }
 
-// Auto-configure PDF.js worker location for Next.js SSR / Turbopack
-try {
-  const sourceWorker = path.join(
-    process.cwd(),
-    "node_modules",
-    "pdfjs-dist",
-    "legacy",
-    "build",
-    "pdf.worker.mjs"
-  );
-  PDFParse.setWorker(pathToFileURL(sourceWorker).href);
-} catch (workerErr) {
-  console.warn("[PDFWorker] Failed to setup worker path:", workerErr);
-}
+// PDFParse runs natively in-process without worker configuration
 
 /**
  * Normalizes raw text: removes control characters (except newlines), collapses
