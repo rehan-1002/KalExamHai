@@ -4,6 +4,8 @@ import { createClient } from "@/lib/supabase/server";
 import { getAdminClient } from "@/server/supabase/admin";
 import { PaperView } from "@/components/features/papers/paper-view";
 
+export const dynamic = "force-dynamic";
+
 interface PaperDetailsPageProps {
   params: Promise<{ id: string }>;
 }

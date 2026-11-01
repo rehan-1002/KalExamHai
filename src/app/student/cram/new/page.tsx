@@ -6,6 +6,8 @@ import { getDailyQuotaStatus } from "@/server/credits/daily-quota";
 import { CramWizard } from "@/components/features/cram/cram-wizard";
 import type { CramArtifactType } from "@/lib/schemas/cram";
 
+export const dynamic = "force-dynamic";
+
 interface NewCramPageProps {
   searchParams: Promise<{ type?: string; docId?: string }>;
 }

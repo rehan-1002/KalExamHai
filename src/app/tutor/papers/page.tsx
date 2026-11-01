@@ -6,6 +6,8 @@ import { PaperHistoryTable } from "@/components/features/papers/paper-history-ta
 import { BackButton } from "@/components/navigation/back-button";
 import type { PaperJson } from "@/lib/schemas/paper";
 
+export const dynamic = "force-dynamic";
+
 async function PapersContent() {
   const supabase = await createClient();
   const {

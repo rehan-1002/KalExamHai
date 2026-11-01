@@ -8,6 +8,8 @@ import { isAdminEmail } from "@/lib/auth/admin";
 import { AdminBar } from "@/components/navigation/admin-bar";
 import { grantCreditsAction } from "@/app/auth/actions";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Master Admin Control — KalExamHai",
 };

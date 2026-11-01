@@ -11,6 +11,8 @@ import { DocumentsManager } from "@/components/features/documents/documents-mana
 import { isAdminEmail } from "@/lib/auth/admin";
 import type { DocumentItem } from "@/components/features/documents/document-table";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Student Knowledge Library — KalExamHai",
 };

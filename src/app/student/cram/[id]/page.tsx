@@ -14,6 +14,8 @@ import type {
   SurvivalKitPayload,
 } from "@/lib/schemas/cram";
 
+export const dynamic = "force-dynamic";
+
 interface CramDetailsPageProps {
   params: Promise<{ id: string }>;
 }

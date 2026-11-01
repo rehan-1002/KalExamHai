@@ -7,6 +7,8 @@ import { getDailyQuotaStatus } from "@/server/credits/daily-quota";
 import { AdminBar } from "@/components/navigation/admin-bar";
 import { WorkspaceNav } from "@/components/navigation/workspace-nav";
 
+export const dynamic = "force-dynamic";
+
 export default async function TutorLayout({
   children,
 }: {

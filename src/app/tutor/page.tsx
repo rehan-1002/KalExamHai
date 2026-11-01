@@ -9,6 +9,8 @@ import { AdminBar } from "@/components/navigation/admin-bar";
 import { signOutAction } from "@/app/auth/actions";
 import { isAdminEmail } from "@/lib/auth/admin";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Faculty & Tutor Portal — KalExamHai",
 };

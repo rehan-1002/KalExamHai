@@ -8,6 +8,8 @@ import { BackButton } from "@/components/navigation/back-button";
 import { GenerateWizard } from "@/components/features/papers/generate-wizard";
 import type { PaperFormat } from "@/lib/schemas/paper";
 
+export const dynamic = "force-dynamic";
+
 interface GenerateContentProps {
   searchParams: Promise<{ format?: string }>;
 }
