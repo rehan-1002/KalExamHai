@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+@theme {
+  --color-canvas: #F9F9F6;
+  --color-surface: #FFFFFF;
+  --color-ink: #1F2937;
+  --color-ink-muted: #6B7280;
+  --color-hairline: #E7E5E0;
+  --color-azure: #3B82F6;
+  --color-azure-strong: #2563EB;
+  --color-azure-soft: #EFF6FF;
+  --color-danger: #B42318;
+  --color-danger-soft: #FEF3F2;
+
+  --shadow-card: 0 1px 2px rgba(31, 41, 55, 0.06), 0 1px 3px rgba(31, 41, 55, 0.08);
+  --shadow-raised: 0 4px 12px rgba(31, 41, 55, 0.08);
+  --shadow-modal: 0 12px 32px rgba(31, 41, 55, 0.14);
+}
+
+:root {
+  --background: #F9F9F6;
+  --foreground: #1F2937;
+}
+
+/* Light theme only as per KalExamHai design specification */
+body {
+  background-color: #F9F9F6;
+  color: #1F2937;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphic backdrop utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+
+/* Custom shimmer animation */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
+/* Smooth horizontal scrollbar hiding for mobile tab strips */
+.scrollbar-none::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none,
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
