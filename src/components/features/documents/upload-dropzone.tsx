@@ -117,6 +117,11 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
           setTitle("");
           onIngestionComplete?.();
           return;
+        } else if (processResult && !processResult.ok) {
+          // Explicit error returned — report immediately without waiting on polling
+          setStatusMessage(null);
+          setErrorMessage(processResult.message || "Document processing failed.");
+          return;
         }
 
         // Step 4: Poll document status (handles Vercel timeout gracefully)
@@ -142,13 +147,13 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
     });
   };
 
-  /** Polls /api/documents/process/[id] GET every 3 seconds until ready or failed */
+  /** Polls /api/documents/process/[id] GET every 2s until ready or failed */
   async function pollDocumentStatus(
     documentId: string,
-    maxAttempts = 20
+    maxAttempts = 30
   ): Promise<{ ok: boolean; chunkCount?: number; pageCount?: number; error?: string }> {
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
-      await new Promise((r) => setTimeout(r, 3000));
+      await new Promise((r) => setTimeout(r, 2000));
       try {
         const res = await fetch(`/api/documents/process/${documentId}`, { method: "GET" });
         if (!res.ok) continue;
@@ -156,12 +161,13 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
         if (!data.ok) continue;
         const { status, chunkCount, pageCount, errorMessage } = data.data;
         if (status === "ready") return { ok: true, chunkCount, pageCount };
-        if (status === "failed") return { ok: false, error: errorMessage || "Processing failed." };
+        if (status === "failed") return { ok: false, error: errorMessage || "Processing failed. Please try again." };
+        // "uploaded" / "extracting" / "embedding" → keep polling
       } catch {
         // network hiccup — keep polling
       }
     }
-    return { ok: false, error: "Processing is taking too long. Your document was saved — please refresh and try generating." };
+    return { ok: false, error: "Processing timed out. Please reload the page — your document may already be ready." };
   }
 
   // Handle paste submission

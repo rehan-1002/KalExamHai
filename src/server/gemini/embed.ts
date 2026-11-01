@@ -28,23 +28,38 @@ export async function generateEmbeddings(
   for (let i = 0; i < texts.length; i += MAX_BATCH_SIZE) {
     const batch = texts.slice(i, i + MAX_BATCH_SIZE);
 
-    const response = await ai.models.embedContent({
-      model: resolvedModel,
-      contents: batch,
-      config: {
-        outputDimensionality: EMBEDDING_DIM,
-      },
-    });
+    try {
+      const response = await ai.models.embedContent({
+        model: resolvedModel,
+        contents: batch,
+        config: {
+          outputDimensionality: EMBEDDING_DIM,
+        },
+      });
 
-    if (response.embeddings && response.embeddings.length > 0) {
-      for (const emb of response.embeddings) {
-        if (!emb.values || emb.values.length === 0) {
-          throw new Error("Gemini returned empty embedding values in batch.");
+      const resAny = response as unknown as {
+        embeddings?: Array<{ values?: number[] }>;
+        embedding?: { values?: number[] };
+      };
+
+      if (resAny.embeddings && resAny.embeddings.length > 0) {
+        for (const emb of resAny.embeddings) {
+          if (!emb.values || emb.values.length === 0) {
+            throw new Error("Gemini returned empty embedding values in batch.");
+          }
+          allEmbeddings.push(emb.values);
         }
-        allEmbeddings.push(emb.values);
+      } else if (resAny.embedding?.values && resAny.embedding.values.length > 0) {
+        allEmbeddings.push(resAny.embedding.values);
+      } else {
+        throw new Error(
+          `Unexpected response structure from Gemini embedContent: ${JSON.stringify(response).slice(0, 200)}`
+        );
       }
-    } else {
-      throw new Error("Failed to receive embeddings from Gemini API.");
+    } catch (batchErr: unknown) {
+      const msg = batchErr instanceof Error ? batchErr.message : String(batchErr);
+      console.error(`[Gemini Embed] Error embedding batch with model "${resolvedModel}":`, msg);
+      throw new Error(`Embedding generation failed (${resolvedModel}): ${msg}`);
     }
   }
 

@@ -93,8 +93,6 @@ export async function POST(request: NextRequest) {
     }
 
     // 3. Insert record in `documents` table with status = 'uploaded'
-    //    Store the client-extracted text in a temp column if available,
-    //    so the process route can use it without re-downloading the file.
     const { error: insertErr } = await adminClient.from("documents").insert({
       id: documentId,
       owner_id: user.id,
@@ -105,38 +103,14 @@ export async function POST(request: NextRequest) {
       size_bytes: file.size,
       page_count: clientPageCount > 0 ? clientPageCount : null,
       status: "uploaded",
-      // Store pre-extracted text so process route can skip re-downloading
-      ...(clientExtractedText ? { extracted_text: clientExtractedText } : {}),
     });
 
     if (insertErr) {
-      // If the column doesn't exist yet, retry without extracted_text
-      if (insertErr.message.includes("extracted_text")) {
-        const { error: retryErr } = await adminClient.from("documents").insert({
-          id: documentId,
-          owner_id: user.id,
-          title,
-          subject: subject || null,
-          storage_path: storagePath,
-          mime_type: mimeType,
-          size_bytes: file.size,
-          page_count: clientPageCount > 0 ? clientPageCount : null,
-          status: "uploaded",
-        });
-        if (retryErr) {
-          await adminClient.storage.from("documents").remove([storagePath]);
-          return NextResponse.json(
-            { ok: false, code: "DB_ERROR", message: `Database error: ${retryErr.message}` },
-            { status: 500 }
-          );
-        }
-      } else {
-        await adminClient.storage.from("documents").remove([storagePath]);
-        return NextResponse.json(
-          { ok: false, code: "DB_ERROR", message: `Database error: ${insertErr.message}` },
-          { status: 500 }
-        );
-      }
+      await adminClient.storage.from("documents").remove([storagePath]);
+      return NextResponse.json(
+        { ok: false, code: "DB_ERROR", message: `Database error: ${insertErr.message}` },
+        { status: 500 }
+      );
     }
 
     // 4. Return immediately with documentId — client will call /api/documents/process/[id]

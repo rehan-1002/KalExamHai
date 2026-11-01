@@ -10,9 +10,12 @@ export interface DocumentChunkDraft {
   tokenCount: number;
 }
 
-const TARGET_MIN_TOKENS = 400;
-const TARGET_MAX_TOKENS = 800;
-const OVERLAP_TOKENS = 80;
+// On Vercel Hobby the function timeout is strictly 10 seconds.
+// Having 10-16 rich chunks (matching 6 syllabus modules) embeds in ~1.5s total.
+const TARGET_MIN_TOKENS = 500;
+const TARGET_MAX_TOKENS = 1200;
+const OVERLAP_TOKENS = 50;
+const MAX_CHUNKS = 16;
 
 // Approximate token estimator (average 4 chars per token)
 export function estimateTokens(text: string): number {
@@ -120,6 +123,23 @@ export function chunkDocument(doc: ExtractedDocument): DocumentChunkDraft[] {
       content: doc.text.trim(),
       tokenCount: estimateTokens(doc.text),
     });
+  }
+
+  // Hard cap: if we still have too many chunks, merge the tail ones so we stay
+  // within the MAX_CHUNKS limit and the embedding API call finishes in time.
+  if (chunks.length > MAX_CHUNKS) {
+    const kept = chunks.slice(0, MAX_CHUNKS - 1);
+    const overflow = chunks.slice(MAX_CHUNKS - 1);
+    const mergedContent = overflow.map((c) => c.content).join("\n\n");
+    kept.push({
+      chunkIndex: MAX_CHUNKS - 1,
+      unitLabel: overflow[0]?.unitLabel || "General",
+      pageStart: overflow[0]?.pageStart || kept[kept.length - 1]?.pageEnd || 1,
+      pageEnd: overflow[overflow.length - 1]?.pageEnd || doc.pageCount || 1,
+      content: mergedContent.trim(),
+      tokenCount: estimateTokens(mergedContent),
+    });
+    return kept;
   }
 
   return chunks;
