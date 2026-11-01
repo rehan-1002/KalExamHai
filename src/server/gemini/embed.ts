@@ -2,14 +2,14 @@
 import "server-only";
 import { getGeminiClient } from "./client";
 
-const rawModel = process.env.GEMINI_MODEL_EMBEDDING || "text-embedding-004";
+const rawModel = process.env.GEMINI_MODEL_EMBEDDING || "gemini-embedding-001";
 const DEFAULT_EMBEDDING_MODEL =
-  rawModel === "gemini-embedding-001" ? "text-embedding-004" : rawModel;
+  rawModel === "text-embedding-004" ? "gemini-embedding-001" : rawModel;
 const EMBEDDING_DIM = parseInt(process.env.GEMINI_EMBEDDING_DIM || "768", 10);
 const MAX_BATCH_SIZE = 50; // Safe batch limit for embedding requests
 
 /**
- * Generates vector embeddings for an array of text snippets using Gemini text-embedding-004.
+ * Generates vector embeddings for an array of text snippets using Gemini gemini-embedding-001.
  * Returns an array of 768-dimensional number arrays.
  */
 export async function generateEmbeddings(
@@ -20,7 +20,8 @@ export async function generateEmbeddings(
     return [];
   }
 
-  const resolvedModel = model === "gemini-embedding-001" ? "text-embedding-004" : model;
+  const resolvedModel =
+    model === "text-embedding-004" ? "gemini-embedding-001" : model;
   const ai = getGeminiClient();
   const allEmbeddings: number[][] = [];
 
