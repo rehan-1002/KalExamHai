@@ -176,7 +176,7 @@ async function StudentContent() {
 
             {/* 5. Practice Exam Paper Generator */}
             <Link
-              href="/tutor/generate"
+              href="/student/papers/generate"
               className="p-5 rounded-lg border border-[#E7E5E0] bg-[#F9F9F6] hover:bg-white hover:border-[#2563EB] transition-all flex flex-col justify-between group cursor-pointer shadow-xs"
             >
               <div>
@@ -191,7 +191,7 @@ async function StudentContent() {
                 </p>
               </div>
               <div className="mt-4 pt-3 border-t border-[#E7E5E0] text-xs font-semibold text-[#2563EB] flex items-center justify-between">
-                <span>Generate Paper (Phase 4)</span>
+                <span>Generate Practice Paper</span>
                 <span className="text-[#2563EB]">&rarr;</span>
               </div>
             </Link>

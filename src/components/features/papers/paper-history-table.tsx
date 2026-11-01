@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   FileText,
   Printer,
@@ -31,6 +32,11 @@ interface PaperHistoryTableProps {
 }
 
 export function PaperHistoryTable({ initialPapers }: PaperHistoryTableProps) {
+  const pathname = usePathname();
+  const isStudent = pathname?.startsWith("/student") ?? false;
+  const generateUrl = isStudent ? "/student/papers/generate" : "/tutor/generate";
+  const papersBaseUrl = isStudent ? "/student/papers" : "/tutor/papers";
+
   const [papers, setPapers] = useState<PaperListItem[]>(initialPapers);
   const [search, setSearch] = useState("");
   const [deletingId, setDeletingId] = useState<string | null>(null);
@@ -81,7 +87,7 @@ export function PaperHistoryTable({ initialPapers }: PaperHistoryTableProps) {
         </div>
 
         <Link
-          href="/tutor/generate"
+          href={generateUrl}
           className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-blue-600 rounded-[6px] hover:bg-blue-700 shadow-sm transition-colors text-center justify-center"
         >
           <Sparkles className="w-3.5 h-3.5" />
@@ -101,7 +107,7 @@ export function PaperHistoryTable({ initialPapers }: PaperHistoryTableProps) {
           </p>
           {!search && (
             <Link
-              href="/tutor/generate"
+              href={generateUrl}
               className="inline-flex items-center gap-1.5 mt-4 px-3.5 py-2 text-xs font-semibold text-white bg-blue-600 rounded-[6px] hover:bg-blue-700 transition-colors"
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -169,14 +175,14 @@ export function PaperHistoryTable({ initialPapers }: PaperHistoryTableProps) {
                     <td className="py-3.5 px-4 text-right">
                       <div className="flex items-center justify-end gap-1.5">
                         <Link
-                          href={`/tutor/papers/${paper.id}`}
+                          href={`${papersBaseUrl}/${paper.id}`}
                           title="Interactive Review & Re-roll"
                           className="p-1.5 text-slate-600 hover:text-blue-600 hover:bg-blue-50 border border-slate-200 rounded-[6px] transition-colors"
                         >
                           <BookOpen className="w-3.5 h-3.5" />
                         </Link>
                         <Link
-                          href={`/tutor/papers/${paper.id}/print`}
+                          href={`${papersBaseUrl}/${paper.id}/print`}
                           target="_blank"
                           title="Print / Export A4 PDF"
                           className="p-1.5 text-slate-600 hover:text-blue-600 hover:bg-blue-50 border border-slate-200 rounded-[6px] transition-colors"

@@ -84,13 +84,25 @@ export async function updateSession(request: NextRequest) {
 
       if (pathname.startsWith("/tutor") && userRole !== "tutor") {
         const redirectUrl = request.nextUrl.clone();
-        redirectUrl.pathname = "/student";
+        if (pathname.startsWith("/tutor/papers")) {
+          redirectUrl.pathname = pathname.replace("/tutor/papers", "/student/papers");
+        } else if (pathname.startsWith("/tutor/generate")) {
+          redirectUrl.pathname = "/student/papers/generate";
+        } else {
+          redirectUrl.pathname = "/student";
+        }
         return NextResponse.redirect(redirectUrl);
       }
 
       if (pathname.startsWith("/student") && userRole !== "student") {
         const redirectUrl = request.nextUrl.clone();
-        redirectUrl.pathname = "/tutor";
+        if (pathname.startsWith("/student/papers/generate")) {
+          redirectUrl.pathname = "/tutor/generate";
+        } else if (pathname.startsWith("/student/papers")) {
+          redirectUrl.pathname = pathname.replace("/student/papers", "/tutor/papers");
+        } else {
+          redirectUrl.pathname = "/tutor";
+        }
         return NextResponse.redirect(redirectUrl);
       }
     }

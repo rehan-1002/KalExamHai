@@ -58,7 +58,7 @@ export function WorkspaceNav({
     { label: "Cram Hub", href: "/student", icon: Zap, exact: true },
     { label: "My Notes", href: "/student/library", icon: BookOpen, exact: false },
     { label: "New Cram Session", href: "/student/cram/new", icon: PlusCircle, exact: false },
-    { label: "Practice Papers", href: "/tutor/papers", icon: FileText, exact: false },
+    { label: "Practice Papers", href: "/student/papers", icon: FileText, exact: false },
   ];
 
   const tabs = mode === "tutor" ? tutorTabs : studentTabs;

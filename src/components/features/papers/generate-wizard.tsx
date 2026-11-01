@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import {
   Sparkles,
   FileText,
@@ -44,6 +44,8 @@ interface GenerateWizardProps {
 
 export function GenerateWizard({ documents, creditBalance, initialFormat, quota }: GenerateWizardProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  const isStudent = pathname?.startsWith("/student") ?? false;
   const [selectedFormat, setSelectedFormat] = useState<PaperFormat>(initialFormat || "IAT");
   const [selectedDocIds, setSelectedDocIds] = useState<string[]>(() => {
     const readyDocs = documents.filter((d) => d.status === "ready");
@@ -101,7 +103,10 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
         if (result.ok) {
           setStatusStep("Verifying NEP-2020 mark distribution in code...");
           setTimeout(() => {
-            router.push(`/tutor/papers/${result.data.paperId}`);
+            const redirectTarget = isStudent
+              ? `/student/papers/${result.data.paperId}`
+              : `/tutor/papers/${result.data.paperId}`;
+            router.push(redirectTarget);
           }, 800);
         } else {
           setStatusStep(null);

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   FileText,
   Printer,
@@ -39,6 +40,13 @@ interface PaperViewProps {
 }
 
 export function PaperView({ paperRecord }: PaperViewProps) {
+  const pathname = usePathname();
+  const isStudent = pathname?.startsWith("/student") ?? false;
+  const papersUrl = isStudent ? "/student/papers" : "/tutor/papers";
+  const printUrl = isStudent
+    ? `/student/papers/${paperRecord.id}/print`
+    : `/tutor/papers/${paperRecord.id}/print`;
+
   const [paper, setPaper] = useState<PaperJson>(paperRecord.paper);
   const [editingSubQId, setEditingSubQId] = useState<string | null>(null);
   const [editText, setEditText] = useState<string>("");
@@ -131,7 +139,7 @@ export function PaperView({ paperRecord }: PaperViewProps) {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
           <div className="mb-2">
-            <BackButton fallbackUrl="/tutor/papers" label="Back to Papers" />
+            <BackButton fallbackUrl={papersUrl} label="Back to Papers" />
           </div>
           <div className="flex items-center gap-2 flex-wrap">
             <h1 className="text-2xl font-bold text-slate-900 tracking-tight">{paper.subject}</h1>
@@ -158,7 +166,7 @@ export function PaperView({ paperRecord }: PaperViewProps) {
             {copied ? "Copied!" : "Copy Text"}
           </button>
           <Link
-            href={`/tutor/papers/${paperRecord.id}/print`}
+            href={printUrl}
             target="_blank"
             className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-[6px] hover:bg-blue-700 shadow-sm transition-colors"
           >

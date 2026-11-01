@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Printer, ArrowLeft } from "lucide-react";
 import { MathText } from "@/components/ui/math-text";
 import type { PaperJson } from "@/lib/schemas/paper";
@@ -20,6 +21,12 @@ interface PaperPrintProps {
 }
 
 export function PaperPrint({ paperRecord }: PaperPrintProps) {
+  const pathname = usePathname();
+  const isStudent = pathname?.startsWith("/student") ?? false;
+  const backUrl = isStudent
+    ? `/student/papers/${paperRecord.id}`
+    : `/tutor/papers/${paperRecord.id}`;
+
   const paper = paperRecord.paper;
 
   // Resolve exact document name specified before paper creation
@@ -52,7 +59,7 @@ export function PaperPrint({ paperRecord }: PaperPrintProps) {
       <div className="print:hidden sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 px-6 py-3 shadow-sm">
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           <Link
-            href={`/tutor/papers/${paperRecord.id}`}
+            href={backUrl}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
