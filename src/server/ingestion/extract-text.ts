@@ -108,8 +108,8 @@ export async function extractDocumentText(
     const parsed = await extractPdfWithPdfJs(buffer);
     const avgCharsPerPage = parsed.pageCount > 0 ? parsed.text.length / parsed.pageCount : 0;
 
-    // If we extracted sufficient text, return immediately (<500ms)
-    if (parsed.text.trim().length > 50) {
+    // If we extracted sufficient digital text (> 100 characters), return immediately (<500ms)
+    if (parsed.text.trim().length > 100) {
       return {
         text: parsed.text,
         pages: parsed.pages,
@@ -118,62 +118,70 @@ export async function extractDocumentText(
       };
     }
 
-    // If document yielded almost no text (scanned PDF), only attempt Gemini OCR if buffer < 1 MB
-    if (buffer.length < 1024 * 1024) {
-      const ocrText = await extractPdfViaGeminiOcr(buffer, filename);
-      if (ocrText && ocrText.trim().length > 50) {
-        const cleanedOcr = normalizeText(ocrText);
-        return {
-          text: cleanedOcr,
-          pages: [{ pageNumber: 1, text: cleanedOcr }],
-          pageCount: Math.max(1, parsed.pageCount),
-          extractionQuality: 0.9,
-        };
+    console.log(
+      `[PDF Extraction] Little or no digital text found in "${filename}" (${parsed.text.trim().length} chars). Activating Gemini Vision & Handwriting OCR...`
+    );
+
+    // Automatic fallback: Gemini Vision & Handwriting OCR for handwritten/scanned PDFs
+    const ocrText = await extractPdfViaGeminiOcr(buffer, filename);
+    if (ocrText && ocrText.trim().length > 20) {
+      const cleanedOcr = normalizeText(ocrText);
+      const estimatedPages = Math.max(1, Math.ceil(cleanedOcr.length / 2500));
+      const pages: PageContent[] = [];
+      const pageSize = 2500;
+      for (let i = 0; i < estimatedPages; i++) {
+        pages.push({
+          pageNumber: i + 1,
+          text: cleanedOcr.slice(i * pageSize, (i + 1) * pageSize),
+        });
       }
+      return {
+        text: cleanedOcr,
+        pages,
+        pageCount: Math.max(parsed.pageCount || 1, estimatedPages),
+        extractionQuality: 0.95,
+      };
     }
 
     throw new Error(
-      "No readable text could be found in this PDF. If this is a scanned document or image, please copy-paste the text using the 'Paste Notes' tab."
+      "Could not decipher text from this document. Please ensure the document is legible or try taking a clearer photo."
     );
   } catch (pdfErr) {
     console.warn(
-      `[PDF Extraction] Pure JS parser error for "${filename}":`,
+      `[PDF Extraction] Local parser failed for "${filename}", falling back to Gemini Vision OCR:`,
       pdfErr instanceof Error ? pdfErr.message : pdfErr
     );
 
-    // If small buffer (< 1 MB), attempt Gemini OCR fallback
-    if (buffer.length < 1024 * 1024) {
-      const ocrText = await extractPdfViaGeminiOcr(buffer, filename);
-      if (ocrText && ocrText.trim().length > 50) {
-        const cleanedOcr = normalizeText(ocrText);
-        const estimatedPages = Math.max(1, Math.ceil(cleanedOcr.length / 2500));
-        const pages: PageContent[] = [];
-        const pageSize = 2500;
-        for (let i = 0; i < estimatedPages; i++) {
-          pages.push({
-            pageNumber: i + 1,
-            text: cleanedOcr.slice(i * pageSize, (i + 1) * pageSize),
-          });
-        }
-        return {
-          text: cleanedOcr,
-          pages,
-          pageCount: estimatedPages,
-          extractionQuality: 0.9,
-        };
+    // Guaranteed fallback: Gemini Multimodal Vision & Handwriting OCR
+    const ocrText = await extractPdfViaGeminiOcr(buffer, filename);
+    if (ocrText && ocrText.trim().length > 20) {
+      const cleanedOcr = normalizeText(ocrText);
+      const estimatedPages = Math.max(1, Math.ceil(cleanedOcr.length / 2500));
+      const pages: PageContent[] = [];
+      const pageSize = 2500;
+      for (let i = 0; i < estimatedPages; i++) {
+        pages.push({
+          pageNumber: i + 1,
+          text: cleanedOcr.slice(i * pageSize, (i + 1) * pageSize),
+        });
       }
+      return {
+        text: cleanedOcr,
+        pages,
+        pageCount: estimatedPages,
+        extractionQuality: 0.95,
+      };
     }
 
     throw new Error(
-      pdfErr instanceof Error && pdfErr.message.includes("No readable text")
-        ? pdfErr.message
-        : `Could not extract text from "${filename}". Please ensure the PDF contains selectable text, or use the 'Paste Notes' tab.`
+      `Could not extract text from "${filename}". Please ensure the upload is a valid document.`
     );
   }
 }
 
 /**
- * Multimodal fallback for scanned/complex PDFs using Gemini API.
+ * Multimodal fallback for scanned, handwritten, or image-based PDFs using Gemini 2.5 Flash.
+ * Deciphers messy handwriting, cursive scripts, blackboard photos, and Xerox scans.
  */
 async function extractPdfViaGeminiOcr(buffer: Buffer, filename: string): Promise<string> {
   const ai = getGeminiClient();
@@ -192,7 +200,12 @@ async function extractPdfViaGeminiOcr(buffer: Buffer, filename: string): Promise
             },
           },
           {
-            text: `Extract all readable text, formulas, equations, headings, and numbers from this document (${filename}). Output clean, verbatim plain text with LaTeX math delimiters ($...$ for inline, $$...$$ for display equations). Do not add conversational commentary.`,
+            text: `You are an expert OCR and handwriting transcription engine specialized in engineering notes, formulas, diagrams, and university syllabi.
+Transcribe all readable text, handwriting, derivations, mathematical formulas, and diagrams from this document (${filename}).
+Even if the handwriting is messy, cursive, faint, or low contrast, decipher every word with highest precision.
+Preserve formulas using LaTeX math delimiters ($...$ for inline formulas, $$...$$ for standalone display equations).
+Preserve all Module, Unit, Chapter headings, step numbers, and bullet points.
+Output only the clean, transcribed text. Do not add conversational commentary.`,
           },
         ],
       },
