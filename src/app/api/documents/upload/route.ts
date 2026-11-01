@@ -53,21 +53,7 @@ export async function POST(request: NextRequest) {
 
     const adminClient = getAdminClient();
 
-    // 1. Ensure private 'documents' storage bucket exists
-    try {
-      const { data: buckets } = await adminClient.storage.listBuckets();
-      if (!buckets?.some((b) => b.name === "documents")) {
-        await adminClient.storage.createBucket("documents", {
-          public: false,
-          fileSizeLimit: MAX_FILE_SIZE_BYTES,
-          allowedMimeTypes: ["application/pdf", "text/plain", "text/markdown"],
-        });
-      }
-    } catch (bucketErr) {
-      console.warn("Storage bucket check warning:", bucketErr);
-    }
-
-    // 2. Upload file buffer to Supabase Storage
+    // 1. Upload file buffer to Supabase Storage
     const fileArrayBuffer = await file.arrayBuffer();
     const fileBuffer = Buffer.from(fileArrayBuffer);
 
@@ -89,7 +75,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 3. Insert record in `documents` table with status = 'uploaded'
+    // 2. Insert record in `documents` table with status = 'uploaded'
     const { error: insertErr } = await adminClient.from("documents").insert({
       id: documentId,
       owner_id: user.id,
@@ -109,9 +95,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 4. Run the ingestion pipeline (extract -> chunk <= 16 -> embed -> ready)
-    // Finishes in ~2.5s total!
-    const pipelineResult = await runIngestionPipeline(documentId, user.id);
+    // 3. Run the ingestion pipeline directly with in-memory buffer (zero download delay!)
+    const pipelineResult = await runIngestionPipeline(
+      documentId,
+      user.id,
+      undefined,
+      undefined,
+      fileBuffer
+    );
 
     if (!pipelineResult.ok) {
       return NextResponse.json(

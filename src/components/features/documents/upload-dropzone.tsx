@@ -45,6 +45,7 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
           body: formData,
         });
 
+        const responseText = await response.text();
         let result: {
           ok: boolean;
           data?: { documentId: string; chunkCount?: number; pageCount?: number };
@@ -52,10 +53,14 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
         };
 
         try {
-          result = await response.json();
+          result = JSON.parse(responseText);
         } catch {
           setStatusMessage(null);
-          setErrorMessage("Server response error. Please try uploading again.");
+          setErrorMessage(
+            `Server error (${response.status}): ${
+              responseText.slice(0, 180) || "Server did not return a response"
+            }`
+          );
           return;
         }
 

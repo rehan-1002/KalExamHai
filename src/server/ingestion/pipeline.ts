@@ -26,7 +26,8 @@ export async function runIngestionPipeline(
   documentId: string,
   ownerId: string,
   preExtractedText?: string,
-  preExtractedPageCount?: number
+  preExtractedPageCount?: number,
+  directBuffer?: Buffer
 ): Promise<IngestionResult> {
   const supabase = getAdminClient();
 
@@ -77,7 +78,10 @@ export async function runIngestionPipeline(
     } else {
       let fileBuffer: Buffer;
 
-      if (doc.storage_path) {
+      if (directBuffer && directBuffer.length > 0) {
+        // Instant in-memory buffer: zero network download delay!
+        fileBuffer = directBuffer;
+      } else if (doc.storage_path) {
         // Download file from private Supabase Storage bucket 'documents'
         const { data: fileData, error: downloadErr } = await supabase.storage
           .from("documents")
