@@ -8,7 +8,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://kalexamhai.vercel.app";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://kalexamhai-one.vercel.app";
 
 export const viewport: Viewport = {
   themeColor: "#2563EB",

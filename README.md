@@ -4,8 +4,8 @@
 ### *The High-Fidelity AI Exam Preparation & Paper Generation Engine for Mumbai University (NEP-2020)*
 
 <p align="center">
-  <a href="https://kalexamhai.vercel.app">
-    <img src="https://img.shields.io/badge/Live%20Platform-KalExamHai.vercel.app-2563EB?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+  <a href="https://kalexamhai-one.vercel.app">
+    <img src="https://img.shields.io/badge/Live%20Platform-KalExamHai-2563EB?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
   </a>
   <img src="https://img.shields.io/badge/Next.js-16.4.3-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js 16" />
   <img src="https://img.shields.io/badge/Gemini-2.5%20Flash-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini 2.5" />
@@ -20,7 +20,7 @@
 
 ---
 
-[🚀 Explore Live App](https://kalexamhai.vercel.app) • [📖 Architecture](#-system-architecture) • [🎓 Student Features](#-student-panic-window-suite) • [🏛️ Tutor Engine](#%EF%B8%8F-tutor--faculty-engine) • [⚡ Daily Free Quota](#-launch-mode-economics) • [🛠️ Getting Started](#%EF%B8%8F-local-development--setup)
+[🚀 Explore Live App](https://kalexamhai-one.vercel.app) • [📖 Architecture](#-system-architecture) • [🎓 Student Features](#-student-panic-window-suite) • [🏛️ Tutor Engine](#%EF%B8%8F-tutor--faculty-engine) • [⚡ Daily Free Quota](#-launch-mode-economics) • [🛠️ Getting Started](#%EF%B8%8F-local-development--setup)
 
 ---
 
