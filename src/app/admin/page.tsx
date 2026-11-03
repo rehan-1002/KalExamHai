@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Shield, Sparkles, Users, CreditCard, Activity, Cpu, CheckCircle2, ArrowRight } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
+import { getAdminClient } from "@/server/supabase/admin";
 import { isAdminEmail } from "@/lib/auth/admin";
 import { AdminBar } from "@/components/navigation/admin-bar";
 import { grantCreditsAction } from "@/app/auth/actions";
@@ -26,27 +27,30 @@ async function AdminContent() {
     redirect("/login?redirectTo=/admin");
   }
 
+  // Use privileged admin client to bypass Row Level Security (RLS) for global platform metrics
+  const adminClient = getAdminClient();
+
   // Fetch quick metrics
-  const { count: totalProfiles } = await supabase
+  const { count: totalProfiles } = await adminClient
     .from("profiles")
     .select("*", { count: "exact", head: true });
 
-  const { count: totalTutors } = await supabase
+  const { count: totalTutors } = await adminClient
     .from("profiles")
     .select("*", { count: "exact", head: true })
     .eq("role", "tutor");
 
-  const { count: totalStudents } = await supabase
+  const { count: totalStudents } = await adminClient
     .from("profiles")
     .select("*", { count: "exact", head: true })
     .eq("role", "student");
 
-  // Fetch recent profiles
-  const { data: recentUsers } = await supabase
+  // Fetch recent profiles across all registered users
+  const { data: recentUsers } = await adminClient
     .from("profiles")
     .select("id, email, full_name, role, created_at")
     .order("created_at", { ascending: false })
-    .limit(8);
+    .limit(10);
 
   return (
     <div className="min-h-screen bg-[#F9F9F6] text-[#1F2937] flex flex-col">
@@ -211,12 +215,12 @@ async function AdminContent() {
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   <div>
-                    <span className="font-semibold text-[#1F2937] block">Google Gemini 1.5 Flash</span>
-                    <span className="text-[#6B7280]">Primary Question Paper &amp; Formula Generation Model</span>
+                    <span className="font-semibold text-[#1F2937] block">Google Gemini 3.5 Flash-Lite</span>
+                    <span className="text-[#6B7280]">Primary Question Paper &amp; Formula Generation Model (~2.2s latency)</span>
                   </div>
                 </div>
                 <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-mono text-[11px] border border-emerald-200">
-                  Ready (24k tokens)
+                  Ready (Active)
                 </span>
               </div>
 
@@ -224,7 +228,7 @@ async function AdminContent() {
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   <div>
-                    <span className="font-semibold text-[#1F2937] block">Gemini text-embedding-004</span>
+                    <span className="font-semibold text-[#1F2937] block">Google Gemini Embedding</span>
                     <span className="text-[#6B7280]">768-Dimension Dense Vectors for Syllabus RAG</span>
                   </div>
                 </div>

@@ -10,8 +10,8 @@ export async function signOutAction() {
 }
 
 import { revalidatePath } from "next/cache";
-
 import { isAdminEmail } from "@/lib/auth/admin";
+import { getAdminClient } from "@/server/supabase/admin";
 
 export async function grantCreditsAction(formData: FormData): Promise<void> {
   const supabase = await createClient();
@@ -28,8 +28,10 @@ export async function grantCreditsAction(formData: FormData): Promise<void> {
     return;
   }
 
-  // Find user in profiles
-  const { data: targetProfile, error: profileErr } = await supabase
+  const adminClient = getAdminClient();
+
+  // Find user in profiles (using adminClient to bypass RLS)
+  const { data: targetProfile, error: profileErr } = await adminClient
     .from("profiles")
     .select("id, role")
     .ilike("email", targetEmail)
@@ -40,7 +42,7 @@ export async function grantCreditsAction(formData: FormData): Promise<void> {
   }
 
   // Find latest balance
-  const { data: latestLedger } = await supabase
+  const { data: latestLedger } = await adminClient
     .from("credit_ledger")
     .select("balance_after")
     .eq("user_id", targetProfile.id)
@@ -52,7 +54,7 @@ export async function grantCreditsAction(formData: FormData): Promise<void> {
   const newBalance = currentBalance + amount;
 
   // Insert ledger entry
-  await supabase.from("credit_ledger").insert({
+  await adminClient.from("credit_ledger").insert({
     user_id: targetProfile.id,
     amount,
     balance_after: newBalance,
