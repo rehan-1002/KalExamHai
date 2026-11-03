@@ -212,6 +212,61 @@ export async function generatePaper(
         if (params.instituteName?.trim()) obj.institute_name = params.instituteName.trim();
         if (params.examTitle?.trim()) obj.exam_title = params.examTitle.trim();
         else if (!obj.exam_title) obj.exam_title = blueprint.name;
+
+        // Clean integer helper to extract numbers from "Q1" -> 1, "10 Marks" -> 10, "5M" -> 5
+        const extractNum = (val: unknown, fallback: number): number => {
+          if (typeof val === "number" && !isNaN(val)) return Math.max(1, Math.round(val));
+          if (typeof val === "string") {
+            const m = val.match(/\d+/);
+            if (m) {
+              const p = parseInt(m[0], 10);
+              if (!isNaN(p) && p > 0) return p;
+            }
+          }
+          return fallback;
+        };
+
+        // Normalize questions array so Zod never encounters NaN
+        if (Array.isArray(obj.questions)) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          obj.questions = obj.questions.map((q: any, qIdx: number) => {
+            const qBp = blueprint.questions[qIdx] || blueprint.questions[0]!;
+            const qNo = extractNum(q?.no, qBp.no);
+            const totalMarks = extractNum(q?.total_marks, qBp.marks);
+            const attemptCount = extractNum(q?.attempt_count, qBp.attempt);
+            const outOf = extractNum(q?.out_of, qBp.outOf);
+
+            const rawSubs = Array.isArray(q?.sub_questions) ? q.sub_questions : [];
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const subQuestions = rawSubs.map((sq: any, sqIdx: number) => {
+              const expectedSubMarks = qBp.subMarks[sqIdx] ?? 5;
+              const subMarks = extractNum(sq?.marks, expectedSubMarks);
+              const label =
+                typeof sq?.label === "string" && sq.label.trim()
+                  ? sq.label.trim().toLowerCase().replace(/[^a-z]/g, "") || String.fromCharCode(97 + sqIdx)
+                  : String.fromCharCode(97 + sqIdx);
+
+              return {
+                ...sq,
+                id: sq?.id ? String(sq.id) : `q${qNo}_${label}`,
+                label,
+                marks: subMarks,
+                text: typeof sq?.text === "string" ? sq.text : String(sq?.question || sq?.prompt || ""),
+              };
+            });
+
+            return {
+              ...q,
+              no: qNo,
+              total_marks: totalMarks,
+              attempt_count: attemptCount,
+              out_of: outOf,
+              compulsory: typeof q?.compulsory === "boolean" ? q.compulsory : qBp.compulsory,
+              instructions: typeof q?.instructions === "string" ? q.instructions : qBp.instructions,
+              sub_questions: subQuestions,
+            };
+          });
+        }
       }
 
       // Validate Zod schema

@@ -6,6 +6,23 @@ const nullableOptionalString = z
   .transform((v) => (v && v.trim() ? v.trim() : undefined))
   .optional();
 
+/**
+ * Robust integer parser that extracts numbers even if Gemini returns
+ * "Q1" -> 1, "10 Marks" -> 10, "5M" -> 5, or raw numbers.
+ */
+export const flexibleInt = (fallback = 1) =>
+  z.preprocess((val) => {
+    if (typeof val === "number" && !isNaN(val)) return Math.max(1, Math.round(val));
+    if (typeof val === "string") {
+      const match = val.match(/\d+/);
+      if (match) {
+        const parsed = parseInt(match[0], 10);
+        if (!isNaN(parsed) && parsed > 0) return parsed;
+      }
+    }
+    return fallback;
+  }, z.number().int().positive());
+
 export const BloomLevelSchema = z
   .preprocess((val) => {
     if (typeof val !== "string") return undefined;
@@ -31,7 +48,7 @@ export const SubQuestionSchema = z.object({
   id: z.string().nullish().transform((v) => v || crypto.randomUUID()),
   label: z.string().nullish().transform((v) => v || "a"),
   text: z.string().min(1, "Question text is required"),
-  marks: z.coerce.number().int().positive(),
+  marks: flexibleInt(5),
   source_chunk_ids: z
     .array(z.string())
     .nullish()
@@ -42,12 +59,12 @@ export const SubQuestionSchema = z.object({
 });
 
 export const QuestionSchema = z.object({
-  no: z.coerce.number().int().positive(),
+  no: flexibleInt(1),
   title: nullableOptionalString,
   compulsory: z.coerce.boolean().default(false),
-  total_marks: z.coerce.number().int().positive(),
-  attempt_count: z.coerce.number().int().positive(),
-  out_of: z.coerce.number().int().positive(),
+  total_marks: flexibleInt(10),
+  attempt_count: flexibleInt(1),
+  out_of: flexibleInt(1),
   instructions: z.string().nullish().transform((v) => v || "Attempt as instructed."),
   sub_questions: z.array(SubQuestionSchema),
 });
@@ -65,9 +82,9 @@ export const PaperJsonSchema = z.object({
   course_code: nullableOptionalString,
   institute_name: nullableOptionalString,
   exam_title: z.string().default("Examination Question Paper"),
-  duration_minutes: z.coerce.number().int().positive().default(60),
-  total_attemptable_marks: z.coerce.number().int().positive().default(20),
-  total_authored_marks: z.coerce.number().int().positive().default(30),
+  duration_minutes: flexibleInt(60),
+  total_attemptable_marks: flexibleInt(20),
+  total_authored_marks: flexibleInt(30),
   general_instructions: z
     .array(z.string())
     .nullish()

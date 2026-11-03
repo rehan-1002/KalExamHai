@@ -7,6 +7,20 @@ const nullableOptionalString = z
   .transform((v) => (v && v.trim() ? v.trim() : undefined))
   .optional();
 
+// Robust integer parser for rankings and marks
+const flexibleInt = (fallback = 1) =>
+  z.preprocess((val) => {
+    if (typeof val === "number" && !isNaN(val)) return Math.max(1, Math.round(val));
+    if (typeof val === "string") {
+      const match = val.match(/\d+/);
+      if (match) {
+        const parsed = parseInt(match[0], 10);
+        if (!isNaN(parsed) && parsed > 0) return parsed;
+      }
+    }
+    return fallback;
+  }, z.number().int().positive());
+
 // Case-tolerant Flashcard Importance
 const FlashcardImportanceEnum = z.preprocess((val) => {
   if (typeof val !== "string") return "high_yield";
@@ -117,8 +131,8 @@ export const VivaPrepPayloadSchema = z.object({
 export const SurvivalTopicSchema = z.object({
   title: z.string().min(1, "Topic title is required"),
   module_name: z.string().nullish().transform((v) => v || "Module 1"),
-  importance_rank: z.coerce.number().int().positive().default(1),
-  expected_marks: z.coerce.number().int().positive().default(5),
+  importance_rank: flexibleInt(1),
+  expected_marks: flexibleInt(5),
   summary_points: z
     .array(z.string())
     .nullish()
