@@ -1,5 +1,5 @@
 import "server-only";
-import { executeWithGeminiPool, getGenerationModel } from "../gemini/client";
+import { executeWithGeminiPool, getGenerationModel, formatGeminiErrorMessage } from "../gemini/client";
 import { getAdminClient } from "../supabase/admin";
 import { retrieveChunks } from "../rag/retrieve";
 import { buildContextFromChunks } from "../rag/context-builder";
@@ -246,17 +246,18 @@ export async function generatePaper(
       }
       break;
     } catch (err: unknown) {
-      lastErrors = [err instanceof Error ? err.message : String(err)];
+      lastErrors = [formatGeminiErrorMessage(err)];
     }
   }
 
   // 4. Handle failure after all attempts
   if (!validatedPaper) {
     await refundCredits(ownerId, creditCost, "generation_failure_refund", requestId);
+    const friendlyReason = lastErrors.slice(0, 2).join("; ");
     return {
       ok: false,
       code: "GENERATION_FAILED",
-      message: `We could not generate a paper matching NEP-2020 mark rules. Your ${creditCost} credit(s) have been returned. Errors: ${lastErrors.slice(0, 2).join("; ")}`,
+      message: `Generation could not be completed. Your ${creditCost} credit(s) have been returned. Reason: ${friendlyReason}`,
     };
   }
 

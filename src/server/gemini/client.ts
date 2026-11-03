@@ -72,22 +72,54 @@ export function getClientForKey(apiKey: string): GoogleGenAI {
 }
 
 /**
- * Checks whether an error is a 429 / Rate Limit / Resource Exhausted error.
+ * Checks whether an error is a retryable transient error:
+ * - 429: Rate limit / Resource exhausted
+ * - 503: Service Unavailable / Model overloaded / High demand
+ * - 500 / 502 / 504: Internal server error / Gateway timeout
  */
-export function isRateLimitError(err: unknown): boolean {
+export function isTransientGeminiError(err: unknown): boolean {
   if (!err) return false;
   const anyErr = err as { status?: number; statusCode?: number; code?: number; message?: string };
-  if (anyErr.status === 429 || anyErr.statusCode === 429 || anyErr.code === 429) {
+  const status = anyErr.status || anyErr.statusCode || anyErr.code;
+  if (status === 429 || status === 503 || status === 500 || status === 502 || status === 504) {
     return true;
   }
   const msg = String(anyErr.message || anyErr || "").toLowerCase();
   return (
     msg.includes("429") ||
+    msg.includes("503") ||
     msg.includes("resource_exhausted") ||
     msg.includes("rate limit") ||
     msg.includes("quota exceeded") ||
-    msg.includes("too many requests")
+    msg.includes("too many requests") ||
+    msg.includes("high demand") ||
+    msg.includes("overloaded") ||
+    msg.includes("unavailable") ||
+    msg.includes("try again later")
   );
+}
+
+// Backward compatibility alias
+export const isRateLimitError = isTransientGeminiError;
+
+/**
+ * Formats raw Gemini API errors into clean, student-friendly error messages.
+ */
+export function formatGeminiErrorMessage(err: unknown): string {
+  if (!err) return "AI generation failed. Please try again.";
+  const msg = String((err as { message?: string })?.message || err || "");
+  if (
+    msg.includes("503") ||
+    msg.includes("overloaded") ||
+    msg.includes("high demand") ||
+    msg.includes("UNAVAILABLE")
+  ) {
+    return "Google AI servers are experiencing temporary peak traffic (503 High Demand). Please wait a few seconds and retry.";
+  }
+  if (msg.includes("429") || msg.includes("RESOURCE_EXHAUSTED")) {
+    return "API rate limit momentarily reached. Please wait a few seconds and try again.";
+  }
+  return msg;
 }
 
 /**
@@ -115,7 +147,7 @@ export function getGeminiClient(): GoogleGenAI {
 
 /**
  * Executes a Gemini operation with automatic multi-key rotation and exponential backoff retry.
- * If Key A returns a 429, it immediately switches to Key B with zero failure.
+ * Handles both 429 (rate limits) and 503 (high demand / overloaded) with zero user-facing crash.
  */
 export async function executeWithGeminiPool<T>(
   operation: (client: GoogleGenAI, apiKey: string) => Promise<T>,
@@ -149,32 +181,43 @@ export async function executeWithGeminiPool<T>(
     } catch (err: unknown) {
       lastError = err;
 
-      if (isRateLimitError(err)) {
-        // Mark this key as cooling down for 45 seconds
-        rateLimitedKeys.set(availableKey, Date.now() + 45000);
-        console.warn(
-          `[${label}] Rate limit (429) hit on key ${maskedKey}. Cooling down for 45s. Attempt ${attempt + 1}/${maxAttempts}.`
-        );
+      if (isTransientGeminiError(err)) {
+        const anyErr = err as { status?: number; statusCode?: number; code?: number; message?: string };
+        const status = anyErr.status || anyErr.statusCode || anyErr.code;
+        const is429 = status === 429 || String(anyErr.message || "").includes("429");
+        const is503 =
+          status === 503 ||
+          String(anyErr.message || "").toLowerCase().includes("503") ||
+          String(anyErr.message || "").toLowerCase().includes("overloaded") ||
+          String(anyErr.message || "").toLowerCase().includes("high demand");
 
-        // Check if there are other keys available right now
-        const hasOtherKey = keys.some(
-          (k) => k !== availableKey && (rateLimitedKeys.get(k) || 0) <= Date.now()
-        );
+        if (is429) {
+          // Put this specific key on cooldown
+          rateLimitedKeys.set(availableKey, Date.now() + 45000);
+          console.warn(`[${label}] Rate limit (429) on key ${maskedKey}. Cooling down for 45s.`);
 
-        if (hasOtherKey) {
-          // Immediately try the other key
-          await new Promise((r) => setTimeout(r, 100));
-          continue;
+          // If another key is available, switch immediately (<100ms)
+          const hasOtherKey = keys.some(
+            (k) => k !== availableKey && (rateLimitedKeys.get(k) || 0) <= Date.now()
+          );
+          if (hasOtherKey) {
+            await new Promise((r) => setTimeout(r, 100));
+            continue;
+          }
         }
 
-        // If ALL keys are exhausted, wait with exponential backoff
-        const backoffMs = Math.min(1500 * Math.pow(1.5, attempt), 8000);
-        console.warn(`[${label}] All keys cooling down. Waiting ${backoffMs}ms before retry...`);
+        // For 503 (High Demand / Overloaded) or all keys cooling down:
+        // Exponential backoff with random jitter (prevents thundering herd)
+        const jitter = Math.floor(Math.random() * 400);
+        const backoffMs = Math.min(1000 * Math.pow(1.5, attempt) + jitter, 6000);
+        console.warn(
+          `[${label}] ${is503 ? "Model high demand (503)" : "Transient error"}. Rotating key and waiting ${Math.round(backoffMs)}ms (attempt ${attempt + 1}/${maxAttempts})...`
+        );
         await new Promise((r) => setTimeout(r, backoffMs));
         continue;
       }
 
-      // If it's not a rate limit error, rethrow immediately
+      // If it's a non-retryable error (e.g. 400 bad prompt syntax), throw immediately
       throw err;
     }
   }

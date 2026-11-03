@@ -1,6 +1,6 @@
 import "server-only";
 
-import { executeWithGeminiPool, getGenerationModel } from "@/server/gemini/client";
+import { executeWithGeminiPool, getGenerationModel, formatGeminiErrorMessage } from "@/server/gemini/client";
 import { getAdminClient } from "@/server/supabase/admin";
 import { retrieveChunks } from "@/server/rag/retrieve";
 import { buildContextFromChunks } from "@/server/rag/context-builder";
@@ -329,7 +329,7 @@ ${contextText}`;
   } catch (err: unknown) {
     return {
       ok: false,
-      error: err instanceof Error ? err.message : "Failed to generate study artifact.",
+      error: formatGeminiErrorMessage(err),
     };
   }
 }
