@@ -12,6 +12,7 @@ import {
   type GeneratePaperParams,
   type PaperJson,
 } from "@/lib/schemas/paper";
+import { paperCoalescer } from "../coalesce/single-flight";
 
 const PROMPT_VERSION = "v1.0";
 const MAX_RETRIES = parseInt(process.env.GEN_MAX_RETRIES || "2", 10);
@@ -146,162 +147,187 @@ export async function generatePaper(
   const validChunkIds = new Set(chunks.map((c) => c.id));
   const { contextText } = buildContextFromChunks(chunks);
 
-  // 3. Multi-attempt generation loop
+  // 3. Multi-attempt generation loop (with Single-Flight coalescing and 2-hour TTL cache)
+  const sortedDocs = [...params.documentIds].sort().join(",");
+  const coalesceKey = `paper::${params.format}::${params.subject.trim().toLowerCase()}::${params.difficulty || "balanced"}::${sortedDocs}`;
+
   const modelName = getGenerationModel();
   let lastErrors: string[] = [];
   let validatedPaper: PaperJson | null = null;
   let attempts = 0;
 
-  for (let attempt = 1; attempt <= MAX_RETRIES + 1; attempt++) {
-    attempts = attempt;
-    try {
-      const prompt = buildGenerationPrompt(
-        params,
-        contextText,
-        blueprint,
-        attempt > 1 ? lastErrors : undefined
-      );
+  try {
+    const coalesced = await paperCoalescer.execute(coalesceKey, async () => {
+      let candidatePaper: PaperJson | null = null;
+      let loopErrors: string[] = [];
 
-      const response = await executeWithGeminiPool(
-        (client) =>
-          client.models.generateContent({
-            model: modelName,
-            contents: [{ role: "user", parts: [{ text: prompt }] }],
-            config: {
-              responseMimeType: "application/json",
-              temperature: 0.2, // Low temperature for deterministic format adherence
-            },
-          }),
-        { label: "Gemini Paper Generation" }
-      );
+      for (let attempt = 1; attempt <= MAX_RETRIES + 1; attempt++) {
+        attempts = attempt;
+        try {
+          const prompt = buildGenerationPrompt(
+            params,
+            contextText,
+            blueprint,
+            attempt > 1 ? loopErrors : undefined
+          );
 
-      const rawText = response.text || "";
-      // Strip markdown fences defensively
-      const cleanJson = rawText
-        .replace(/^```json\s*/i, "")
-        .replace(/^```\s*/, "")
-        .replace(/```$/g, "")
-        .trim();
+          const response = await executeWithGeminiPool(
+            (client) =>
+              client.models.generateContent({
+                model: modelName,
+                contents: [{ role: "user", parts: [{ text: prompt }] }],
+                config: {
+                  responseMimeType: "application/json",
+                  temperature: 0.2, // Low temperature for deterministic format adherence
+                },
+              }),
+            { label: "Gemini Paper Generation" }
+          );
 
-      let parsed: unknown;
-      try {
-        parsed = JSON.parse(cleanJson);
-      } catch {
-        lastErrors = ["Model output was not valid JSON."];
-        continue;
-      }
+          const rawText = response.text || "";
+          // Strip markdown fences defensively
+          const cleanJson = rawText
+            .replace(/^```json\s*/i, "")
+            .replace(/^```\s*/, "")
+            .replace(/```$/g, "")
+            .trim();
 
-      // Defensive unnesting: if Gemini wrapped the object in { paper: ... } or { data: ... } or { exam: ... }
-      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
-        const obj = parsed as Record<string, unknown>;
-        if (obj.paper && typeof obj.paper === "object" && !Array.isArray(obj.paper)) {
-          parsed = obj.paper;
-        } else if (obj.data && typeof obj.data === "object" && !Array.isArray(obj.data)) {
-          parsed = obj.data;
-        } else if (obj.exam && typeof obj.exam === "object" && !Array.isArray(obj.exam)) {
-          parsed = obj.exam;
-        }
-      }
+          let parsed: unknown;
+          try {
+            parsed = JSON.parse(cleanJson);
+          } catch {
+            loopErrors = ["Model output was not valid JSON."];
+            continue;
+          }
 
-      // Force-inject known user parameters so validation never fails on missing/mismatched echoes
-      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
-        const obj = parsed as Record<string, unknown>;
-        obj.format = params.format;
-        obj.subject = params.subject.trim();
-        if (params.courseCode?.trim()) obj.course_code = params.courseCode.trim();
-        if (params.instituteName?.trim()) obj.institute_name = params.instituteName.trim();
-        if (params.examTitle?.trim()) obj.exam_title = params.examTitle.trim();
-        else if (!obj.exam_title) obj.exam_title = blueprint.name;
-
-        // Clean integer helper to extract numbers from "Q1" -> 1, "10 Marks" -> 10, "5M" -> 5
-        const extractNum = (val: unknown, fallback: number): number => {
-          if (typeof val === "number" && !isNaN(val)) return Math.max(1, Math.round(val));
-          if (typeof val === "string") {
-            const m = val.match(/\d+/);
-            if (m) {
-              const p = parseInt(m[0], 10);
-              if (!isNaN(p) && p > 0) return p;
+          // Defensive unnesting: if Gemini wrapped the object in { paper: ... } or { data: ... } or { exam: ... }
+          if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+            const obj = parsed as Record<string, unknown>;
+            if (obj.paper && typeof obj.paper === "object" && !Array.isArray(obj.paper)) {
+              parsed = obj.paper;
+            } else if (obj.data && typeof obj.data === "object" && !Array.isArray(obj.data)) {
+              parsed = obj.data;
+            } else if (obj.exam && typeof obj.exam === "object" && !Array.isArray(obj.exam)) {
+              parsed = obj.exam;
             }
           }
-          return fallback;
-        };
 
-        // Normalize questions array so Zod never encounters NaN
-        if (Array.isArray(obj.questions)) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          obj.questions = obj.questions.map((q: any, qIdx: number) => {
-            const qBp = blueprint.questions[qIdx] || blueprint.questions[0]!;
-            const qNo = extractNum(q?.no, qBp.no);
-            const totalMarks = extractNum(q?.total_marks, qBp.marks);
-            const attemptCount = extractNum(q?.attempt_count, qBp.attempt);
-            const outOf = extractNum(q?.out_of, qBp.outOf);
+          // Force-inject known user parameters so validation never fails on missing/mismatched echoes
+          if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+            const obj = parsed as Record<string, unknown>;
+            obj.format = params.format;
+            obj.subject = params.subject.trim();
+            if (params.courseCode?.trim()) obj.course_code = params.courseCode.trim();
+            if (params.instituteName?.trim()) obj.institute_name = params.instituteName.trim();
+            if (params.examTitle?.trim()) obj.exam_title = params.examTitle.trim();
+            else if (!obj.exam_title) obj.exam_title = blueprint.name;
 
-            const rawSubs = Array.isArray(q?.sub_questions) ? q.sub_questions : [];
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const subQuestions = rawSubs.map((sq: any, sqIdx: number) => {
-              const expectedSubMarks = qBp.subMarks[sqIdx] ?? 5;
-              const subMarks = extractNum(sq?.marks, expectedSubMarks);
-              const label =
-                typeof sq?.label === "string" && sq.label.trim()
-                  ? sq.label.trim().toLowerCase().replace(/[^a-z]/g, "") || String.fromCharCode(97 + sqIdx)
-                  : String.fromCharCode(97 + sqIdx);
-
-              return {
-                ...sq,
-                id: sq?.id ? String(sq.id) : `q${qNo}_${label}`,
-                label,
-                marks: subMarks,
-                text: typeof sq?.text === "string" ? sq.text : String(sq?.question || sq?.prompt || ""),
-              };
-            });
-
-            return {
-              ...q,
-              no: qNo,
-              total_marks: totalMarks,
-              attempt_count: attemptCount,
-              out_of: outOf,
-              compulsory: typeof q?.compulsory === "boolean" ? q.compulsory : qBp.compulsory,
-              instructions: typeof q?.instructions === "string" ? q.instructions : qBp.instructions,
-              sub_questions: subQuestions,
+            // Clean integer helper to extract numbers from "Q1" -> 1, "10 Marks" -> 10, "5M" -> 5
+            const extractNum = (val: unknown, fallback: number): number => {
+              if (typeof val === "number" && !isNaN(val)) return Math.max(1, Math.round(val));
+              if (typeof val === "string") {
+                const m = val.match(/\d+/);
+                if (m) {
+                  const p = parseInt(m[0], 10);
+                  if (!isNaN(p) && p > 0) return p;
+                }
+              }
+              return fallback;
             };
-          });
+
+            // Normalize questions array so Zod never encounters NaN
+            if (Array.isArray(obj.questions)) {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              obj.questions = obj.questions.map((q: any, qIdx: number) => {
+                const qBp = blueprint.questions[qIdx] || blueprint.questions[0]!;
+                const qNo = extractNum(q?.no, qBp.no);
+                const totalMarks = extractNum(q?.total_marks, qBp.marks);
+                const attemptCount = extractNum(q?.attempt_count, qBp.attempt);
+                const outOf = extractNum(q?.out_of, qBp.outOf);
+
+                const rawSubs = Array.isArray(q?.sub_questions) ? q.sub_questions : [];
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                const subQuestions = rawSubs.map((sq: any, sqIdx: number) => {
+                  const expectedSubMarks = qBp.subMarks[sqIdx] ?? 5;
+                  const subMarks = extractNum(sq?.marks, expectedSubMarks);
+                  const label =
+                    typeof sq?.label === "string" && sq.label.trim()
+                      ? sq.label.trim().toLowerCase().replace(/[^a-z]/g, "") || String.fromCharCode(97 + sqIdx)
+                      : String.fromCharCode(97 + sqIdx);
+
+                  return {
+                    ...sq,
+                    id: sq?.id ? String(sq.id) : `q${qNo}_${label}`,
+                    label,
+                    marks: subMarks,
+                    text: typeof sq?.text === "string" ? sq.text : String(sq?.question || sq?.prompt || ""),
+                  };
+                });
+
+                return {
+                  ...q,
+                  no: qNo,
+                  total_marks: totalMarks,
+                  attempt_count: attemptCount,
+                  out_of: outOf,
+                  compulsory: typeof q?.compulsory === "boolean" ? q.compulsory : qBp.compulsory,
+                  instructions: typeof q?.instructions === "string" ? q.instructions : qBp.instructions,
+                  sub_questions: subQuestions,
+                };
+              });
+            }
+          }
+
+          // Validate Zod schema
+          const zodResult = PaperJsonSchema.safeParse(parsed);
+          if (!zodResult.success) {
+            loopErrors = zodResult.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`);
+            continue;
+          }
+
+          // Programmatic NEP-2020 domain validator
+          const validation = validatePaper(zodResult.data, validChunkIds);
+          if (!validation.valid) {
+            loopErrors = validation.errors;
+            continue;
+          }
+
+          candidatePaper = validation.sanitizedPaper;
+          break;
+        } catch (err: unknown) {
+          loopErrors = [formatGeminiErrorMessage(err)];
         }
       }
 
-      // Validate Zod schema
-      const zodResult = PaperJsonSchema.safeParse(parsed);
-      if (!zodResult.success) {
-        lastErrors = zodResult.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`);
-        continue;
+      if (!candidatePaper) {
+        throw new Error(
+          loopErrors.slice(0, 2).join("; ") ||
+            "Failed to generate paper adhering to NEP-2020 rules."
+        );
       }
 
-      // Programmatic NEP-2020 domain validator
-      const validation = validatePaper(zodResult.data, validChunkIds);
-      if (!validation.valid) {
-        lastErrors = validation.errors;
-        continue;
-      }
+      return candidatePaper;
+    });
 
-      // Successfully validated!
-      validatedPaper = validation.sanitizedPaper;
+    // Deep copy coalesced or cached paper for current user
+    validatedPaper = JSON.parse(JSON.stringify(coalesced.data));
+  } catch (err: unknown) {
+    lastErrors = [err instanceof Error ? err.message : String(err)];
+  }
 
-      // Ensure exact user input overrides any generic text from LLM
-      if (params.examTitle?.trim()) {
-        validatedPaper.exam_title = params.examTitle.trim();
-      }
-      if (params.subject?.trim()) {
-        validatedPaper.subject = params.subject.trim();
-      }
-      if (params.courseCode?.trim()) {
-        validatedPaper.course_code = params.courseCode.trim();
-      }
-      if (params.instituteName?.trim()) {
-        validatedPaper.institute_name = params.instituteName.trim();
-      }
-      break;
-    } catch (err: unknown) {
-      lastErrors = [formatGeminiErrorMessage(err)];
+  // Ensure exact user input overrides any generic text from LLM or cache
+  if (validatedPaper) {
+    if (params.examTitle?.trim()) {
+      validatedPaper.exam_title = params.examTitle.trim();
+    }
+    if (params.subject?.trim()) {
+      validatedPaper.subject = params.subject.trim();
+    }
+    if (params.courseCode?.trim()) {
+      validatedPaper.course_code = params.courseCode.trim();
+    }
+    if (params.instituteName?.trim()) {
+      validatedPaper.institute_name = params.instituteName.trim();
     }
   }
 
