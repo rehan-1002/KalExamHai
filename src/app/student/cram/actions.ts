@@ -4,7 +4,11 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { getAdminClient } from "@/server/supabase/admin";
 import { generateCramArtifact } from "@/server/cram/generate-cram-artifact";
+import { isAdminEmail } from "@/lib/auth/admin";
 import type { CramArtifactType } from "@/lib/schemas/cram";
+
+// In-memory 45-second pacing map for study artifacts
+const lastCramGenMap = new Map<string, number>();
 
 interface GenerateCramActionParams {
   documentIds: string[];
@@ -22,6 +26,22 @@ export async function generateCramItemAction(params: GenerateCramActionParams) {
   if (!user) {
     return { ok: false as const, error: "You must be signed in to generate study artifacts." };
   }
+
+  const isAdmin = isAdminEmail(user.email);
+  const now = Date.now();
+  const lastGen = lastCramGenMap.get(user.id) || 0;
+  const elapsed = now - lastGen;
+  const COOLDOWN_MS = 45000;
+
+  if (!isAdmin && elapsed < COOLDOWN_MS) {
+    const remaining = Math.ceil((COOLDOWN_MS - elapsed) / 1000);
+    return {
+      ok: false as const,
+      error: `Engine cooling down to protect API limits. Please wait ${remaining}s before generating another study artifact.`,
+    };
+  }
+
+  lastCramGenMap.set(user.id, now);
 
   const result = await generateCramArtifact({
     documentIds: params.documentIds,

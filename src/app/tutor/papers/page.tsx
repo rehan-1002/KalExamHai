@@ -4,7 +4,6 @@ import { createClient } from "@/lib/supabase/server";
 import { getAdminClient } from "@/server/supabase/admin";
 import { PaperHistoryTable } from "@/components/features/papers/paper-history-table";
 import { BackButton } from "@/components/navigation/back-button";
-import type { PaperJson } from "@/lib/schemas/paper";
 
 export const dynamic = "force-dynamic";
 
@@ -22,21 +21,20 @@ async function PapersContent() {
 
   const { data: records, error } = await adminClient
     .from("generated_papers")
-    .select("id, format, title, subject, course_code, created_at, credits_charged, paper")
+    .select("id, format, title, subject, course_code, created_at, credits_charged")
     .eq("owner_id", user.id)
     .order("created_at", { ascending: false });
 
   const papers = (records || []).map((r) => {
-    const paperJson = r.paper as PaperJson;
     return {
       id: r.id,
       format: r.format as "IAT" | "END_SEM",
       title: r.title,
-      subject: r.subject || paperJson?.subject || "Subject",
-      course_code: r.course_code || paperJson?.course_code,
+      subject: r.subject || "Subject",
+      course_code: r.course_code,
       created_at: r.created_at,
       credits_charged: r.credits_charged,
-      total_attemptable_marks: paperJson?.total_attemptable_marks || (r.format === "IAT" ? 20 : 60),
+      total_attemptable_marks: r.format === "IAT" ? 20 : 60,
     };
   });
 

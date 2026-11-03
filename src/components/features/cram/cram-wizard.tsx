@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
+import React, { useState, useEffect, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
@@ -68,6 +68,35 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
   const [isPending, startTransition] = useTransition();
   const [statusStep, setStatusStep] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [cooldownSeconds, setCooldownSeconds] = useState<number>(0);
+
+  useEffect(() => {
+    try {
+      const lastGen = localStorage.getItem("keh_last_cram_gen");
+      if (lastGen) {
+        const elapsed = Date.now() - parseInt(lastGen, 10);
+        if (elapsed < 45000) {
+          setCooldownSeconds(Math.ceil((45000 - elapsed) / 1000));
+        }
+      }
+    } catch {
+      // safe fallback
+    }
+  }, []);
+
+  useEffect(() => {
+    if (cooldownSeconds <= 0) return;
+    const timer = setInterval(() => {
+      setCooldownSeconds((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [cooldownSeconds]);
 
   const handleDocChange = (docId: string) => {
     setSelectedDocId(docId);
@@ -96,6 +125,10 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
         });
 
         if (res.ok && res.artifactId) {
+          try {
+            localStorage.setItem("keh_last_cram_gen", Date.now().toString());
+          } catch {}
+          setCooldownSeconds(45);
           setStatusStep("Artifact verified! Loading your session...");
           router.push(`/student/cram/${res.artifactId}`);
         } else {
@@ -333,16 +366,24 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
       <div className="flex justify-end">
         <button
           type="button"
-          disabled={isPending || !selectedDocId}
+          disabled={isPending || cooldownSeconds > 0 || !selectedDocId}
           onClick={handleGenerate}
           className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-[6px] shadow-sm transition-colors disabled:opacity-50 cursor-pointer"
         >
           {isPending ? (
             <Loader2 className="w-4 h-4 animate-spin" />
+          ) : cooldownSeconds > 0 ? (
+            <Clock className="w-4 h-4 text-amber-300 animate-spin" />
           ) : (
             <Sparkles className="w-4 h-4" />
           )}
-          <span>{isPending ? "Generating..." : "Generate Study Artifact"}</span>
+          <span>
+            {isPending
+              ? "Generating..."
+              : cooldownSeconds > 0
+              ? `Cooldown Active (${cooldownSeconds}s)`
+              : "Generate Study Artifact"}
+          </span>
         </button>
       </div>
     </div>

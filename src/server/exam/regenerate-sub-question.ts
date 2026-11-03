@@ -82,7 +82,7 @@ ${contextText}`;
   const response = await executeWithGeminiPool(
     (client) =>
       client.models.generateContent({
-        model: process.env.GEMINI_MODEL_GENERATION || "gemini-2.5-flash",
+        model: process.env.GEMINI_MODEL_GENERATION || "gemini-3.5-flash",
         contents: [{ role: "user", parts: [{ text: prompt }] }],
         config: {
           responseMimeType: "application/json",

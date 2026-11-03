@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
+import React, { useState, useEffect, useTransition } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import {
   Sparkles,
@@ -63,6 +63,35 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
   const [isPending, startTransition] = useTransition();
   const [statusStep, setStatusStep] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [cooldownSeconds, setCooldownSeconds] = useState<number>(0);
+
+  useEffect(() => {
+    try {
+      const lastGen = localStorage.getItem("keh_last_paper_gen");
+      if (lastGen) {
+        const elapsed = Date.now() - parseInt(lastGen, 10);
+        if (elapsed < 45000) {
+          setCooldownSeconds(Math.ceil((45000 - elapsed) / 1000));
+        }
+      }
+    } catch {
+      // safe fallback
+    }
+  }, []);
+
+  useEffect(() => {
+    if (cooldownSeconds <= 0) return;
+    const timer = setInterval(() => {
+      setCooldownSeconds((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [cooldownSeconds]);
 
   const creditCost = selectedFormat === "IAT" ? 1 : 2;
   const hasEnoughCredits = creditBalance >= creditCost;
@@ -101,6 +130,10 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
         });
 
         if (result.ok) {
+          try {
+            localStorage.setItem("keh_last_paper_gen", Date.now().toString());
+          } catch {}
+          setCooldownSeconds(45);
           setStatusStep("Verifying NEP-2020 mark distribution in code...");
           setTimeout(() => {
             const redirectTarget = isStudent
@@ -371,13 +404,18 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
 
         <button
           type="submit"
-          disabled={isPending || !hasEnoughCredits || selectedDocIds.length === 0 || !subject.trim()}
+          disabled={isPending || cooldownSeconds > 0 || !hasEnoughCredits || selectedDocIds.length === 0 || !subject.trim()}
           className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-[#2563EB] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#1D4ED8] cursor-pointer disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-[#2563EB]"
         >
           {isPending ? (
             <>
               <Loader2 className="w-4 h-4 animate-spin" />
               <span>Generating Paper...</span>
+            </>
+          ) : cooldownSeconds > 0 ? (
+            <>
+              <Clock className="w-4 h-4 text-amber-300 animate-spin" />
+              <span>Cooldown Active ({cooldownSeconds}s)</span>
             </>
           ) : (
             <>

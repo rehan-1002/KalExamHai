@@ -46,7 +46,7 @@ export async function generateCramArtifact(
   const chunks = await retrieveChunks({
     documentIds,
     ownerId,
-    matchCount: 20,
+    matchCount: 12,
   });
 
   if (!chunks.length) {
@@ -200,7 +200,7 @@ Return ONLY valid JSON with no markdown wrapping.
 CONTEXT:
 ${contextText}`;
 
-  const model = process.env.GEMINI_MODEL_GENERATION || "gemini-2.5-flash";
+  const model = process.env.GEMINI_MODEL_GENERATION || "gemini-3.5-flash";
 
   try {
     const response = await executeWithGeminiPool(

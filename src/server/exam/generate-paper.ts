@@ -123,7 +123,7 @@ export async function generatePaper(
     chunks = await retrieveChunks({
       documentIds: params.documentIds,
       ownerId,
-      matchCount: 30,
+      matchCount: 15,
     });
   } catch (err: unknown) {
     await refundCredits(ownerId, creditCost, "retrieval_failure_refund", requestId);
@@ -147,7 +147,7 @@ export async function generatePaper(
   const { contextText } = buildContextFromChunks(chunks);
 
   // 3. Multi-attempt generation loop
-  const modelName = process.env.GEMINI_MODEL_GENERATION || "gemini-2.5-flash";
+  const modelName = process.env.GEMINI_MODEL_GENERATION || "gemini-3.5-flash";
   let lastErrors: string[] = [];
   let validatedPaper: PaperJson | null = null;
   let attempts = 0;
