@@ -2,8 +2,9 @@
 import "server-only";
 import { executeWithGeminiPool } from "./client";
 
-const rawModel = process.env.GEMINI_MODEL_EMBEDDING || "gemini-embedding-001";
-const DEFAULT_EMBEDDING_MODEL = rawModel;
+const rawModel = process.env.GEMINI_MODEL_EMBEDDING?.trim();
+const DEFAULT_EMBEDDING_MODEL =
+  !rawModel || rawModel.includes("text-embedding-004") ? "gemini-embedding-001" : rawModel;
 const EMBEDDING_DIM = parseInt(process.env.GEMINI_EMBEDDING_DIM || "768", 10);
 const MAX_BATCH_SIZE = 50; // Safe batch limit for embedding requests
 

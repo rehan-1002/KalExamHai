@@ -1,5 +1,5 @@
 import "server-only";
-import { executeWithGeminiPool } from "../gemini/client";
+import { executeWithGeminiPool, getGenerationModel } from "../gemini/client";
 import { getAdminClient } from "../supabase/admin";
 import { retrieveChunks } from "../rag/retrieve";
 import { buildContextFromChunks } from "../rag/context-builder";
@@ -82,7 +82,7 @@ ${contextText}`;
   const response = await executeWithGeminiPool(
     (client) =>
       client.models.generateContent({
-        model: process.env.GEMINI_MODEL_GENERATION || "gemini-3.5-flash",
+        model: getGenerationModel(),
         contents: [{ role: "user", parts: [{ text: prompt }] }],
         config: {
           responseMimeType: "application/json",

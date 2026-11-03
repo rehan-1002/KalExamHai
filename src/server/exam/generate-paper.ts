@@ -1,5 +1,5 @@
 import "server-only";
-import { executeWithGeminiPool } from "../gemini/client";
+import { executeWithGeminiPool, getGenerationModel } from "../gemini/client";
 import { getAdminClient } from "../supabase/admin";
 import { retrieveChunks } from "../rag/retrieve";
 import { buildContextFromChunks } from "../rag/context-builder";
@@ -147,7 +147,7 @@ export async function generatePaper(
   const { contextText } = buildContextFromChunks(chunks);
 
   // 3. Multi-attempt generation loop
-  const modelName = process.env.GEMINI_MODEL_GENERATION || "gemini-3.5-flash";
+  const modelName = getGenerationModel();
   let lastErrors: string[] = [];
   let validatedPaper: PaperJson | null = null;
   let attempts = 0;

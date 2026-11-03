@@ -10,6 +10,18 @@ const rateLimitedKeys = new Map<string, number>();
 let keyIndex = 0;
 
 /**
+ * Returns the active generation model, automatically overriding any stale or deprecated
+ * 2.5/2.0 values lingering in Vercel environment variables to gemini-3.5-flash.
+ */
+export function getGenerationModel(): string {
+  const envModel = process.env.GEMINI_MODEL_GENERATION?.trim();
+  if (!envModel || envModel.includes("2.5") || envModel.includes("2.0")) {
+    return "gemini-3.5-flash";
+  }
+  return envModel;
+}
+
+/**
  * Extracts and deduplicates all configured Gemini API keys from environment variables.
  * Supports:
  * - GEMINI_API_KEYS (comma or newline separated list)

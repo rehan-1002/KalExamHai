@@ -1,6 +1,6 @@
 import "server-only";
 
-import { executeWithGeminiPool } from "@/server/gemini/client";
+import { executeWithGeminiPool, getGenerationModel } from "@/server/gemini/client";
 import { getAdminClient } from "@/server/supabase/admin";
 import { retrieveChunks } from "@/server/rag/retrieve";
 import { buildContextFromChunks } from "@/server/rag/context-builder";
@@ -200,7 +200,7 @@ Return ONLY valid JSON with no markdown wrapping.
 CONTEXT:
 ${contextText}`;
 
-  const model = process.env.GEMINI_MODEL_GENERATION || "gemini-3.5-flash";
+  const model = getGenerationModel();
 
   try {
     const response = await executeWithGeminiPool(

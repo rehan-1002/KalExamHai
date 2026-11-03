@@ -1,5 +1,5 @@
 import "server-only";
-import { executeWithGeminiPool } from "../gemini/client";
+import { executeWithGeminiPool, getGenerationModel } from "../gemini/client";
 
 export interface PageContent {
   pageNumber: number;
@@ -189,7 +189,7 @@ async function extractPdfViaGeminiOcr(buffer: Buffer, filename: string): Promise
   const response = await executeWithGeminiPool(
     (client) =>
       client.models.generateContent({
-        model: process.env.GEMINI_MODEL_GENERATION || "gemini-3.5-flash",
+        model: getGenerationModel(),
         contents: [
           {
             role: "user",
