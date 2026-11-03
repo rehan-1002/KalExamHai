@@ -1,6 +1,6 @@
 import "server-only";
 
-import { getGeminiClient } from "@/server/gemini/client";
+import { executeWithGeminiPool } from "@/server/gemini/client";
 import { getAdminClient } from "@/server/supabase/admin";
 import { retrieveChunks } from "@/server/rag/retrieve";
 import { buildContextFromChunks } from "@/server/rag/context-builder";
@@ -200,23 +200,26 @@ Return ONLY valid JSON with no markdown wrapping.
 CONTEXT:
 ${contextText}`;
 
-  const ai = getGeminiClient();
   const model = process.env.GEMINI_MODEL_GENERATION || "gemini-2.5-flash";
 
   try {
-    const response = await ai.models.generateContent({
-      model,
-      contents: [
-        {
-          role: "user",
-          parts: [{ text: `${systemPrompt}\n\n${promptInstructions}` }],
-        },
-      ],
-      config: {
-        responseMimeType: "application/json",
-        temperature: 0.3,
-      },
-    });
+    const response = await executeWithGeminiPool(
+      (client) =>
+        client.models.generateContent({
+          model,
+          contents: [
+            {
+              role: "user",
+              parts: [{ text: `${systemPrompt}\n\n${promptInstructions}` }],
+            },
+          ],
+          config: {
+            responseMimeType: "application/json",
+            temperature: 0.3,
+          },
+        }),
+      { label: "Gemini Cram Generation" }
+    );
 
     const rawText = (response.text || "").trim();
     const cleanJson = rawText

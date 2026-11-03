@@ -1,5 +1,5 @@
 import "server-only";
-import { getGeminiClient } from "../gemini/client";
+import { executeWithGeminiPool } from "../gemini/client";
 import { getAdminClient } from "../supabase/admin";
 import { retrieveChunks } from "../rag/retrieve";
 import { buildContextFromChunks } from "../rag/context-builder";
@@ -79,15 +79,18 @@ RULES:
 CHUNKS:
 ${contextText}`;
 
-  const ai = getGeminiClient();
-  const response = await ai.models.generateContent({
-    model: process.env.GEMINI_MODEL_GENERATION || "gemini-2.5-flash",
-    contents: [{ role: "user", parts: [{ text: prompt }] }],
-    config: {
-      responseMimeType: "application/json",
-      temperature: 0.4,
-    },
-  });
+  const response = await executeWithGeminiPool(
+    (client) =>
+      client.models.generateContent({
+        model: process.env.GEMINI_MODEL_GENERATION || "gemini-2.5-flash",
+        contents: [{ role: "user", parts: [{ text: prompt }] }],
+        config: {
+          responseMimeType: "application/json",
+          temperature: 0.4,
+        },
+      }),
+    { label: "Gemini SubQuestion Reroll" }
+  );
 
   const cleanJson = (response.text || "")
     .replace(/^```json\s*/i, "")

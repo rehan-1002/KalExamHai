@@ -1,5 +1,5 @@
 import "server-only";
-import { getGeminiClient } from "../gemini/client";
+import { executeWithGeminiPool } from "../gemini/client";
 
 export interface PageContent {
   pageNumber: number;
@@ -184,33 +184,36 @@ export async function extractDocumentText(
  * Deciphers messy handwriting, cursive scripts, blackboard photos, and Xerox scans.
  */
 async function extractPdfViaGeminiOcr(buffer: Buffer, filename: string): Promise<string> {
-  const ai = getGeminiClient();
   const base64Data = buffer.toString("base64");
 
-  const response = await ai.models.generateContent({
-    model: process.env.GEMINI_MODEL_GENERATION || "gemini-2.5-flash",
-    contents: [
-      {
-        role: "user",
-        parts: [
+  const response = await executeWithGeminiPool(
+    (client) =>
+      client.models.generateContent({
+        model: process.env.GEMINI_MODEL_GENERATION || "gemini-2.5-flash",
+        contents: [
           {
-            inlineData: {
-              mimeType: "application/pdf",
-              data: base64Data,
-            },
-          },
-          {
-            text: `You are an expert OCR and handwriting transcription engine specialized in engineering notes, formulas, diagrams, and university syllabi.
+            role: "user",
+            parts: [
+              {
+                inlineData: {
+                  mimeType: "application/pdf",
+                  data: base64Data,
+                },
+              },
+              {
+                text: `You are an expert OCR and handwriting transcription engine specialized in engineering notes, formulas, diagrams, and university syllabi.
 Transcribe all readable text, handwriting, derivations, mathematical formulas, and diagrams from this document (${filename}).
 Even if the handwriting is messy, cursive, faint, or low contrast, decipher every word with highest precision.
 Preserve formulas using LaTeX math delimiters ($...$ for inline formulas, $$...$$ for standalone display equations).
 Preserve all Module, Unit, Chapter headings, step numbers, and bullet points.
 Output only the clean, transcribed text. Do not add conversational commentary.`,
+              },
+            ],
           },
         ],
-      },
-    ],
-  });
+      }),
+    { label: "Gemini Vision OCR" }
+  );
 
   return response.text || "";
 }

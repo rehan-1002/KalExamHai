@@ -63,3 +63,4 @@ export default function StudentPaperDetailsPage(props: StudentPaperDetailsPagePr
     </Suspense>
   );
 }
+

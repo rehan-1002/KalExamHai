@@ -1,5 +1,5 @@
 import "server-only";
-import { getGeminiClient } from "../gemini/client";
+import { executeWithGeminiPool } from "../gemini/client";
 import { getAdminClient } from "../supabase/admin";
 import { retrieveChunks } from "../rag/retrieve";
 import { buildContextFromChunks } from "../rag/context-builder";
@@ -147,7 +147,6 @@ export async function generatePaper(
   const { contextText } = buildContextFromChunks(chunks);
 
   // 3. Multi-attempt generation loop
-  const ai = getGeminiClient();
   const modelName = process.env.GEMINI_MODEL_GENERATION || "gemini-2.5-flash";
   let lastErrors: string[] = [];
   let validatedPaper: PaperJson | null = null;
@@ -163,14 +162,18 @@ export async function generatePaper(
         attempt > 1 ? lastErrors : undefined
       );
 
-      const response = await ai.models.generateContent({
-        model: modelName,
-        contents: [{ role: "user", parts: [{ text: prompt }] }],
-        config: {
-          responseMimeType: "application/json",
-          temperature: 0.2, // Low temperature for deterministic format adherence
-        },
-      });
+      const response = await executeWithGeminiPool(
+        (client) =>
+          client.models.generateContent({
+            model: modelName,
+            contents: [{ role: "user", parts: [{ text: prompt }] }],
+            config: {
+              responseMimeType: "application/json",
+              temperature: 0.2, // Low temperature for deterministic format adherence
+            },
+          }),
+        { label: "Gemini Paper Generation" }
+      );
 
       const rawText = response.text || "";
       // Strip markdown fences defensively
