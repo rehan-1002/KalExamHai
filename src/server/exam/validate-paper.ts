@@ -106,11 +106,14 @@ export function validatePaper(
         text: latexCheck.text,
         source_chunk_ids: sub.source_chunk_ids || [],
         unit_label: sub.unit_label || `Module ${(qBlueprint.no % 6) + 1}`,
+        coverage_warning: sub.coverage_warning || undefined,
+        bloom_level: sub.bloom_level || undefined,
       });
     }
 
     sanitizedQuestions.push({
       no: qBlueprint.no,
+      title: qActual.title || undefined,
       compulsory,
       total_marks: totalMarks,
       attempt_count: attemptCount,

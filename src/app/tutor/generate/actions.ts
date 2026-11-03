@@ -44,5 +44,9 @@ export async function generatePaperAction(rawParams: GeneratePaperParams) {
   }
 
   lastPaperGenMap.set(user.id, now);
-  return await generatePaper(parsed.data, user.id);
+  const result = await generatePaper(parsed.data, user.id);
+  if (!result.ok) {
+    lastPaperGenMap.delete(user.id);
+  }
+  return result;
 }

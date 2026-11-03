@@ -105,6 +105,26 @@ ${contextText}`;
     return { ok: false, error: "Model output was not valid JSON." };
   }
 
+  // Defensive unnesting
+  if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+    const obj = parsed as Record<string, unknown>;
+    if (obj.sub_question && typeof obj.sub_question === "object") {
+      parsed = obj.sub_question;
+    } else if (obj.question && typeof obj.question === "object") {
+      parsed = obj.question;
+    } else if (obj.data && typeof obj.data === "object") {
+      parsed = obj.data;
+    }
+  }
+
+  // Ensure immutable question identity
+  if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+    const obj = parsed as Record<string, unknown>;
+    obj.id = subQuestion.id;
+    obj.label = subQuestion.label;
+    obj.marks = subQuestion.marks;
+  }
+
   const parsedSub = SubQuestionSchema.safeParse(parsed);
   if (!parsedSub.success) {
     return { ok: false, error: "Generated sub-question did not match schema." };

@@ -191,6 +191,29 @@ export async function generatePaper(
         continue;
       }
 
+      // Defensive unnesting: if Gemini wrapped the object in { paper: ... } or { data: ... } or { exam: ... }
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+        const obj = parsed as Record<string, unknown>;
+        if (obj.paper && typeof obj.paper === "object" && !Array.isArray(obj.paper)) {
+          parsed = obj.paper;
+        } else if (obj.data && typeof obj.data === "object" && !Array.isArray(obj.data)) {
+          parsed = obj.data;
+        } else if (obj.exam && typeof obj.exam === "object" && !Array.isArray(obj.exam)) {
+          parsed = obj.exam;
+        }
+      }
+
+      // Force-inject known user parameters so validation never fails on missing/mismatched echoes
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+        const obj = parsed as Record<string, unknown>;
+        obj.format = params.format;
+        obj.subject = params.subject.trim();
+        if (params.courseCode?.trim()) obj.course_code = params.courseCode.trim();
+        if (params.instituteName?.trim()) obj.institute_name = params.instituteName.trim();
+        if (params.examTitle?.trim()) obj.exam_title = params.examTitle.trim();
+        else if (!obj.exam_title) obj.exam_title = blueprint.name;
+      }
+
       // Validate Zod schema
       const zodResult = PaperJsonSchema.safeParse(parsed);
       if (!zodResult.success) {

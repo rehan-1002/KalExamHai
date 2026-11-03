@@ -13,6 +13,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { generatePaperAction } from "@/app/tutor/generate/actions";
+import { Skeleton } from "@/components/ui/skeleton";
 import type { PaperFormat } from "@/lib/schemas/paper";
 
 interface DocumentOption {
@@ -118,7 +119,7 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
 
     startTransition(async () => {
       try {
-        setStatusStep("Orchestrating Gemini 2.5 Flash with strict context-only RAG...");
+        setStatusStep("Orchestrating Gemini 3.5 Flash with strict context-only RAG...");
         const result = await generatePaperAction({
           documentIds: selectedDocIds,
           format: selectedFormat,
@@ -377,11 +378,25 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
         </div>
       </div>
 
-      {/* Status or Error Display */}
+      {/* Status or Error Display with Live Generating Skeleton */}
       {isPending && statusStep && (
-        <div className="p-4 rounded-md bg-[#EFF6FF] border border-blue-200 text-xs text-[#1E40AF] flex items-center gap-3">
-          <Loader2 className="w-4 h-4 text-[#2563EB] animate-spin shrink-0" />
-          <span>{statusStep}</span>
+        <div className="space-y-4">
+          <div className="p-4 rounded-md bg-[#EFF6FF] border border-blue-200 text-xs text-[#1E40AF] flex items-center gap-3">
+            <Loader2 className="w-4 h-4 text-[#2563EB] animate-spin shrink-0" />
+            <span className="font-medium">{statusStep}</span>
+          </div>
+
+          <div className="bg-white border border-blue-100 rounded-xl p-6 shadow-sm space-y-4">
+            <div className="text-center space-y-2 border-b border-slate-100 pb-4">
+              <Skeleton className="h-5 w-56 mx-auto" />
+              <Skeleton className="h-3.5 w-36 mx-auto" />
+            </div>
+            <div className="space-y-3">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-5/6" />
+              <Skeleton className="h-4 w-3/4" />
+            </div>
+          </div>
         </div>
       )}
 

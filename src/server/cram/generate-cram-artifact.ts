@@ -235,6 +235,61 @@ ${contextText}`;
       return { ok: false, error: "AI response was not valid JSON." };
     }
 
+    // Defensive unnesting: if Gemini wrapped the object
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      const obj = parsed as Record<string, unknown>;
+      if (obj.data && typeof obj.data === "object" && !Array.isArray(obj.data)) {
+        parsed = obj.data;
+      } else if (obj.artifact && typeof obj.artifact === "object" && !Array.isArray(obj.artifact)) {
+        parsed = obj.artifact;
+      }
+    }
+
+    // Force-inject known parameters and enforce correct type
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      const obj = parsed as Record<string, unknown>;
+      obj.type = artifactType;
+      if (!obj.title || typeof obj.title !== "string" || !obj.title.trim()) {
+        obj.title = defaultTitle;
+      }
+      if (!obj.subject || typeof obj.subject !== "string" || !obj.subject.trim()) {
+        obj.subject = detectedSubject;
+      }
+
+      // If flashcards, ensure cards array exists and has IDs
+      if (artifactType === "flashcards") {
+        if (!Array.isArray(obj.cards)) {
+          if (Array.isArray(obj.flashcards)) obj.cards = obj.flashcards;
+          else obj.cards = [];
+        }
+        if (Array.isArray(obj.cards)) {
+          obj.cards = (obj.cards as Array<Record<string, unknown>>).map((c, idx) => ({
+            ...c,
+            id: c.id ? String(c.id) : `card_${idx + 1}`,
+          }));
+        }
+      }
+      // If viva_prep, ensure questions array exists and has IDs
+      if (artifactType === "viva_prep") {
+        if (!Array.isArray(obj.questions)) {
+          if (Array.isArray(obj.viva_questions)) obj.questions = obj.viva_questions;
+          else obj.questions = [];
+        }
+        if (Array.isArray(obj.questions)) {
+          obj.questions = (obj.questions as Array<Record<string, unknown>>).map((q, idx) => ({
+            ...q,
+            id: q.id ? String(q.id) : `viva_${idx + 1}`,
+          }));
+        }
+      }
+      // If survival_kit, ensure lists exist
+      if (artifactType === "survival_kit") {
+        if (!Array.isArray(obj.priority_topics) && Array.isArray(obj.topics)) {
+          obj.priority_topics = obj.topics;
+        }
+      }
+    }
+
     // Validate payload against schema
     const parseResult = CramArtifactPayloadSchema.safeParse(parsed);
     if (!parseResult.success) {

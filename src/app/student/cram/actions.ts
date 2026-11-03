@@ -57,6 +57,8 @@ export async function generateCramItemAction(params: GenerateCramActionParams) {
     return { ok: true as const, artifactId: result.artifactId };
   }
 
+  // If generation failed, release cooldown so user is not penalized
+  lastCramGenMap.delete(user.id);
   return { ok: false as const, error: result.error };
 }
 

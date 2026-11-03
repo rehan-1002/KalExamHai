@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { generateCramItemAction } from "@/app/student/cram/actions";
+import { Skeleton } from "@/components/ui/skeleton";
 import type { CramArtifactType } from "@/lib/schemas/cram";
 
 interface DocumentOption {
@@ -117,7 +118,7 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
 
     startTransition(async () => {
       try {
-        setStatusStep("Extracting high-yield concepts with Gemini 2.5 Flash...");
+        setStatusStep("Extracting high-yield concepts with Gemini 3.5 Flash...");
         const res = await generateCramItemAction({
           documentIds: [selectedDocId],
           artifactType: selectedType,
@@ -354,11 +355,27 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
         />
       </div>
 
-      {/* Loading Progress State */}
+      {/* Loading Progress State with Live Study Card Skeleton */}
       {isPending && statusStep && (
-        <div className="p-4 bg-blue-50 border border-blue-200 rounded-[6px] text-xs text-blue-900 flex items-center gap-3">
-          <Loader2 className="w-4 h-4 text-blue-600 animate-spin shrink-0" />
-          <span>{statusStep}</span>
+        <div className="space-y-4">
+          <div className="p-4 bg-blue-50 border border-blue-200 rounded-[6px] text-xs text-blue-900 flex items-center gap-3">
+            <Loader2 className="w-4 h-4 text-blue-600 animate-spin shrink-0" />
+            <span className="font-medium">{statusStep}</span>
+          </div>
+
+          <div className="w-full max-w-lg mx-auto bg-white border-2 border-blue-100 rounded-xl p-6 shadow-sm space-y-4">
+            <div className="flex justify-between items-center">
+              <Skeleton className="h-4 w-20 rounded-[5px]" />
+              <Skeleton className="h-4 w-16 rounded-[5px]" />
+            </div>
+            <div className="py-6 space-y-2">
+              <Skeleton className="h-5 w-4/5 mx-auto" />
+              <Skeleton className="h-5 w-3/5 mx-auto" />
+            </div>
+            <div className="flex justify-center">
+              <Skeleton className="h-3.5 w-36 rounded-[4px]" />
+            </div>
+          </div>
         </div>
       )}
 

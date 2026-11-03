@@ -16,8 +16,8 @@ export interface LatexSanitizeResult {
  * 5. Strips raw HTML tags
  */
 export function sanitizeLatex(input: string): LatexSanitizeResult {
-  if (!input) {
-    return { text: "", hasWarnings: false, warnings: [] };
+  if (!input || typeof input !== "string") {
+    return { text: String(input || ""), hasWarnings: false, warnings: [] };
   }
 
   const warnings: string[] = [];

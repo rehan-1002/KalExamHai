@@ -124,9 +124,11 @@ export async function executeWithGeminiPool<T>(
   }
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    // Pick the next available key not in cooldown
+    // True balanced round-robin: rotate candidate keys starting from keyIndex
+    const rotated = keys.map((_, i) => keys[(keyIndex + i) % keys.length]!);
     const availableKey =
-      keys.find((k) => (rateLimitedKeys.get(k) || 0) <= Date.now()) || keys[attempt % keys.length]!;
+      rotated.find((k) => (rateLimitedKeys.get(k) || 0) <= Date.now()) || keys[(keyIndex + attempt) % keys.length]!;
+    keyIndex = (keyIndex + 1) % keys.length;
     const client = getClientForKey(availableKey);
     const maskedKey = `${availableKey.slice(0, 6)}...${availableKey.slice(-4)}`;
 
