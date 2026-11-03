@@ -42,11 +42,11 @@ export async function generateCramArtifact(
     };
   }
 
-  // 1. Retrieve knowledge chunks
+  // 1. Retrieve knowledge chunks (optimized to 8 chunks for fast ~2-3s generation)
   const chunks = await retrieveChunks({
     documentIds,
     ownerId,
-    matchCount: 12,
+    matchCount: 8,
   });
 
   if (!chunks.length) {

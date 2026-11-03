@@ -123,7 +123,7 @@ export async function generatePaper(
     chunks = await retrieveChunks({
       documentIds: params.documentIds,
       ownerId,
-      matchCount: 15,
+      matchCount: params.format === "IAT" ? 8 : 12,
     });
   } catch (err: unknown) {
     await refundCredits(ownerId, creditCost, "retrieval_failure_refund", requestId);

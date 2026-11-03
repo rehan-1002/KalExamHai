@@ -10,13 +10,18 @@ const rateLimitedKeys = new Map<string, number>();
 let keyIndex = 0;
 
 /**
- * Returns the active generation model, automatically overriding any stale or deprecated
- * 2.5/2.0 values lingering in Vercel environment variables to gemini-3.5-flash.
+ * Returns the active generation model, automatically overriding any stale, deprecated,
+ * or rate-limited/slow models to gemini-3.5-flash-lite for blazing fast (~2-3s) generation.
  */
 export function getGenerationModel(): string {
   const envModel = process.env.GEMINI_MODEL_GENERATION?.trim();
-  if (!envModel || envModel.includes("2.5") || envModel.includes("2.0")) {
-    return "gemini-3.5-flash";
+  if (
+    !envModel ||
+    envModel.includes("2.5") ||
+    envModel.includes("2.0") ||
+    (envModel.includes("3.5-flash") && !envModel.includes("lite"))
+  ) {
+    return "gemini-3.5-flash-lite";
   }
   return envModel;
 }
