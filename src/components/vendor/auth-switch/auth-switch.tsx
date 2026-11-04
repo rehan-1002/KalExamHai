@@ -12,7 +12,7 @@
 import React, { useState, type FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BookOpen, GraduationCap, Loader2, Mail, Lock, User } from "lucide-react";
+import { BookOpen, GraduationCap, Loader2, Mail, Lock, User, CheckCircle2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { isDisposableEmail } from "@/lib/auth/disposable-domains";
@@ -47,6 +47,9 @@ export function AuthSwitchComponent({
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [awaitingVerificationEmail, setAwaitingVerificationEmail] = useState<string | null>(null);
+  const [isResending, setIsResending] = useState(false);
+  const [resendMessage, setResendMessage] = useState<string | null>(null);
 
   const handleSignIn = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -83,9 +86,12 @@ export function AuthSwitchComponent({
       }
       router.refresh();
     } catch (err: unknown) {
-      setErrorMessage(
-        err instanceof Error ? err.message : "Failed to sign in. Check your credentials."
-      );
+      const msg = err instanceof Error ? err.message : "Failed to sign in. Check your credentials.";
+      if (msg.toLowerCase().includes("email not confirmed")) {
+        setErrorMessage("Please check your email and click the confirmation link before signing in.");
+      } else {
+        setErrorMessage(msg);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -132,7 +138,8 @@ export function AuthSwitchComponent({
         }
         router.refresh();
       } else {
-        setSuccessMessage("Account created! Check your email to verify and get started.");
+        setAwaitingVerificationEmail(signUpEmail);
+        setSuccessMessage("Confirmation link sent! Please check your email inbox to verify your account.");
       }
     } catch (err: unknown) {
       setErrorMessage(
@@ -140,6 +147,29 @@ export function AuthSwitchComponent({
       );
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleResendEmail = async () => {
+    if (!awaitingVerificationEmail) return;
+    setIsResending(true);
+    setResendMessage(null);
+    try {
+      const { error } = await supabase.auth.resend({
+        type: "signup",
+        email: awaitingVerificationEmail,
+        options: {
+          emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(
+            redirectTo || (role === "tutor" ? "/tutor" : "/student")
+          )}&intended_role=${role}`,
+        },
+      });
+      if (error) throw error;
+      setResendMessage("Confirmation email resent! Please check your spam folder too.");
+    } catch (err: unknown) {
+      setErrorMessage(err instanceof Error ? err.message : "Failed to resend confirmation email.");
+    } finally {
+      setIsResending(false);
     }
   };
 
@@ -796,100 +826,156 @@ export function AuthSwitchComponent({
 
             {/* 2. Sign Up Form */}
             <form className="sign-up-form" onSubmit={handleSignUp}>
-              <h2 className="title">Create account</h2>
+              {awaitingVerificationEmail ? (
+                <div className="flex flex-col items-center text-center p-2 max-w-sm w-full">
+                  <div className="w-12 h-12 bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] rounded-md flex items-center justify-center mb-3">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <h2 className="title text-xl mb-1">Check your inbox</h2>
+                  <p className="text-xs text-[#6B7280] mb-3 leading-relaxed">
+                    We sent a verification link to:
+                    <br />
+                    <span className="font-semibold text-[#1F2937] text-sm break-all">
+                      {awaitingVerificationEmail}
+                    </span>
+                    <br />
+                    Please click the link in your email to activate your account and start generating papers.
+                  </p>
 
-              {/* Role Selector */}
-              <div className="role-selector-bar">
-                <button
-                  type="button"
-                  className={`role-btn ${role === "student" ? "active" : ""}`}
-                  onClick={() => setRole("student")}
-                >
-                  <BookOpen className="w-3.5 h-3.5" />
-                  <span>Student</span>
-                </button>
-                <button
-                  type="button"
-                  className={`role-btn ${role === "tutor" ? "active" : ""}`}
-                  onClick={() => setRole("tutor")}
-                >
-                  <GraduationCap className="w-3.5 h-3.5" />
-                  <span>Faculty (2 Free Credits)</span>
-                </button>
-              </div>
+                  {resendMessage && (
+                    <div className="feedback-banner success mb-2">{resendMessage}</div>
+                  )}
+                  {errorMessage && (
+                    <div className="feedback-banner error mb-2">{errorMessage}</div>
+                  )}
 
-              {/* Primary 1-Click Google Sign Up */}
-              <button
-                type="button"
-                onClick={handleGoogleSignIn}
-                disabled={isLoading}
-                className="google-btn"
-              >
-                <GoogleIcon />
-                <span>Continue with Google</span>
-              </button>
+                  <button
+                    type="button"
+                    onClick={handleResendEmail}
+                    disabled={isResending}
+                    className="btn"
+                  >
+                    {isResending ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Sending link...</span>
+                      </>
+                    ) : (
+                      <span>Resend verification link</span>
+                    )}
+                  </button>
 
-              <div className="auth-divider">
-                <span>or register with email</span>
-              </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAwaitingVerificationEmail(null);
+                      setIsSignUp(false);
+                      setErrorMessage(null);
+                      setSuccessMessage(null);
+                    }}
+                    className="text-xs text-[#2563EB] hover:underline mt-2 font-medium cursor-pointer"
+                  >
+                    &larr; Return to Sign In
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <h2 className="title">Create account</h2>
 
-              {errorMessage && (
-                <div className="feedback-banner error">{errorMessage}</div>
+                  {/* Role Selector */}
+                  <div className="role-selector-bar">
+                    <button
+                      type="button"
+                      className={`role-btn ${role === "student" ? "active" : ""}`}
+                      onClick={() => setRole("student")}
+                    >
+                      <BookOpen className="w-3.5 h-3.5" />
+                      <span>Student</span>
+                    </button>
+                    <button
+                      type="button"
+                      className={`role-btn ${role === "tutor" ? "active" : ""}`}
+                      onClick={() => setRole("tutor")}
+                    >
+                      <GraduationCap className="w-3.5 h-3.5" />
+                      <span>Faculty (2 Free Credits)</span>
+                    </button>
+                  </div>
+
+                  {/* Primary 1-Click Google Sign Up */}
+                  <button
+                    type="button"
+                    onClick={handleGoogleSignIn}
+                    disabled={isLoading}
+                    className="google-btn"
+                  >
+                    <GoogleIcon />
+                    <span>Continue with Google</span>
+                  </button>
+
+                  <div className="auth-divider">
+                    <span>or register with email</span>
+                  </div>
+
+                  {errorMessage && (
+                    <div className="feedback-banner error">{errorMessage}</div>
+                  )}
+                  {successMessage && (
+                    <div className="feedback-banner success">{successMessage}</div>
+                  )}
+
+                  <div className="input-field">
+                    <i>
+                      <User className="w-4 h-4 text-[#9CA3AF]" />
+                    </i>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Full Name"
+                      value={signUpName}
+                      onChange={(e) => setSignUpName(e.target.value)}
+                    />
+                  </div>
+                  <div className="input-field">
+                    <i>
+                      <Mail className="w-4 h-4 text-[#9CA3AF]" />
+                    </i>
+                    <input
+                      type="email"
+                      required
+                      placeholder="Email"
+                      value={signUpEmail}
+                      onChange={(e) => setSignUpEmail(e.target.value)}
+                    />
+                  </div>
+                  <div className="input-field">
+                    <i>
+                      <Lock className="w-4 h-4 text-[#9CA3AF]" />
+                    </i>
+                    <input
+                      type="password"
+                      required
+                      minLength={6}
+                      placeholder="Password (min 6 chars)"
+                      value={signUpPassword}
+                      onChange={(e) => setSignUpPassword(e.target.value)}
+                    />
+                  </div>
+
+                  <button type="submit" disabled={isLoading} className="btn">
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Creating account...</span>
+                      </>
+                    ) : (
+                      <span>
+                        Register as {role === "tutor" ? "Faculty" : "Student"}
+                      </span>
+                    )}
+                  </button>
+                </>
               )}
-              {successMessage && (
-                <div className="feedback-banner success">{successMessage}</div>
-              )}
-
-              <div className="input-field">
-                <i>
-                  <User className="w-4 h-4 text-[#9CA3AF]" />
-                </i>
-                <input
-                  type="text"
-                  required
-                  placeholder="Full Name"
-                  value={signUpName}
-                  onChange={(e) => setSignUpName(e.target.value)}
-                />
-              </div>
-              <div className="input-field">
-                <i>
-                  <Mail className="w-4 h-4 text-[#9CA3AF]" />
-                </i>
-                <input
-                  type="email"
-                  required
-                  placeholder="Email"
-                  value={signUpEmail}
-                  onChange={(e) => setSignUpEmail(e.target.value)}
-                />
-              </div>
-              <div className="input-field">
-                <i>
-                  <Lock className="w-4 h-4 text-[#9CA3AF]" />
-                </i>
-                <input
-                  type="password"
-                  required
-                  minLength={6}
-                  placeholder="Password (min 6 chars)"
-                  value={signUpPassword}
-                  onChange={(e) => setSignUpPassword(e.target.value)}
-                />
-              </div>
-
-              <button type="submit" disabled={isLoading} className="btn">
-                {isLoading ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Creating account...</span>
-                  </>
-                ) : (
-                  <span>
-                    Register as {role === "tutor" ? "Faculty" : "Student"}
-                  </span>
-                )}
-              </button>
             </form>
           </div>
         </div>
