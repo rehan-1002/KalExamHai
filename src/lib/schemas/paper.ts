@@ -47,7 +47,10 @@ export const BloomLevelSchema = z
 export const SubQuestionSchema = z.object({
   id: z.string().nullish().transform((v) => v || crypto.randomUUID()),
   label: z.string().nullish().transform((v) => v || "a"),
-  text: z.string().min(1, "Question text is required"),
+  text: z
+    .string()
+    .nullish()
+    .transform((v) => (v && v.trim() ? v.trim() : "Explain the concept, step-by-step procedure, and analysis.")),
   marks: flexibleInt(5),
   source_chunk_ids: z
     .array(z.string())

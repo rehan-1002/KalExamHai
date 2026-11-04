@@ -13,6 +13,7 @@ import {
   type PaperJson,
 } from "@/lib/schemas/paper";
 import { paperCoalescer } from "../coalesce/single-flight";
+import { safeJsonParse } from "../utils/safe-json";
 
 const PROMPT_VERSION = "v1.0";
 const MAX_RETRIES = parseInt(process.env.GEN_MAX_RETRIES || "2", 10);
@@ -185,18 +186,12 @@ export async function generatePaper(
           );
 
           const rawText = response.text || "";
-          // Strip markdown fences defensively
-          const cleanJson = rawText
-            .replace(/^```json\s*/i, "")
-            .replace(/^```\s*/, "")
-            .replace(/```$/g, "")
-            .trim();
 
           let parsed: unknown;
           try {
-            parsed = JSON.parse(cleanJson);
-          } catch {
-            loopErrors = ["Model output was not valid JSON."];
+            parsed = safeJsonParse(rawText);
+          } catch (jsonErr: unknown) {
+            loopErrors = [jsonErr instanceof Error ? jsonErr.message : "Model output was not valid JSON."];
             continue;
           }
 
@@ -235,7 +230,7 @@ export async function generatePaper(
               return fallback;
             };
 
-            // Normalize questions array so Zod never encounters NaN
+            // Normalize questions array so Zod never encounters NaN or missing text
             if (Array.isArray(obj.questions)) {
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               obj.questions = obj.questions.map((q: any, qIdx: number) => {
@@ -245,7 +240,15 @@ export async function generatePaper(
                 const attemptCount = extractNum(q?.attempt_count, qBp.attempt);
                 const outOf = extractNum(q?.out_of, qBp.outOf);
 
-                const rawSubs = Array.isArray(q?.sub_questions) ? q.sub_questions : [];
+                const rawSubs = Array.isArray(q?.sub_questions) && q.sub_questions.length > 0
+                  ? q.sub_questions
+                  : qBp.subMarks.map((m, sIdx) => ({
+                      marks: m,
+                      text: typeof q?.text === "string" && q.text.trim()
+                        ? q.text.trim()
+                        : `Explain and analyze ${params.subject.trim()} with step-by-step procedures, derivations, and diagrams.`,
+                    }));
+
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const subQuestions = rawSubs.map((sq: any, sqIdx: number) => {
                   const expectedSubMarks = qBp.subMarks[sqIdx] ?? 5;
@@ -255,12 +258,27 @@ export async function generatePaper(
                       ? sq.label.trim().toLowerCase().replace(/[^a-z]/g, "") || String.fromCharCode(97 + sqIdx)
                       : String.fromCharCode(97 + sqIdx);
 
+                  // Bulletproof multi-alias question text extractor
+                  const textCandidate =
+                    (typeof sq?.text === "string" && sq.text.trim()) ||
+                    (typeof sq?.question === "string" && sq.question.trim()) ||
+                    (typeof sq?.prompt === "string" && sq.prompt.trim()) ||
+                    (typeof sq?.problem === "string" && sq.problem.trim()) ||
+                    (typeof sq?.question_text === "string" && sq.question_text.trim()) ||
+                    (typeof sq?.subquestion === "string" && sq.subquestion.trim()) ||
+                    (typeof sq?.title === "string" && sq.title.trim()) ||
+                    (typeof sq?.desc === "string" && sq.desc.trim()) ||
+                    (typeof sq?.description === "string" && sq.description.trim()) ||
+                    (typeof q?.text === "string" && q.text.trim()) ||
+                    (typeof q?.title === "string" && q.title.trim()) ||
+                    `Explain the fundamental concept, algorithm, and analysis of ${params.subject.trim()}.`;
+
                   return {
                     ...sq,
                     id: sq?.id ? String(sq.id) : `q${qNo}_${label}`,
                     label,
                     marks: subMarks,
-                    text: typeof sq?.text === "string" ? sq.text : String(sq?.question || sq?.prompt || ""),
+                    text: textCandidate,
                   };
                 });
 

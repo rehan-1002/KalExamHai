@@ -44,8 +44,8 @@ const VivaDifficultyEnum = z.preprocess((val) => {
 // ==========================================
 export const FlashcardItemSchema = z.object({
   id: z.string().nullish().transform((v) => v || crypto.randomUUID()),
-  front: z.string().min(1, "Front prompt is required"),
-  back: z.string().min(1, "Back answer is required"),
+  front: z.string().nullish().transform((v) => (v && v.trim() ? v.trim() : "Core Concept / Formula")),
+  back: z.string().nullish().transform((v) => (v && v.trim() ? v.trim() : "Key explanation and step-by-step procedure.")),
   category: z.string().nullish().transform((v) => v || "General"),
   importance: FlashcardImportanceEnum,
   hint: nullableOptionalString,
@@ -53,8 +53,8 @@ export const FlashcardItemSchema = z.object({
 
 export const FlashcardsPayloadSchema = z.object({
   type: z.literal("flashcards"),
-  title: z.string(),
-  subject: z.string(),
+  title: z.string().default("3D Holo Flashcards"),
+  subject: z.string().default("Engineering Subject"),
   cards: z.array(FlashcardItemSchema).min(1, "At least one flashcard required"),
 });
 
@@ -62,13 +62,13 @@ export const FlashcardsPayloadSchema = z.object({
 // 2. Quick Notes Schema
 // ==========================================
 export const DefinitionItemSchema = z.object({
-  term: z.string().min(1, "Term is required"),
-  definition: z.string().min(1, "Definition is required"),
+  term: z.string().nullish().transform((v) => (v && v.trim() ? v.trim() : "Core Term")),
+  definition: z.string().nullish().transform((v) => (v && v.trim() ? v.trim() : "Key textbook definition.")),
   formula: nullableOptionalString,
 });
 
 export const FormulaDerivationItemSchema = z.object({
-  title: z.string().min(1, "Formula title is required"),
+  title: z.string().nullish().transform((v) => (v && v.trim() ? v.trim() : "Key Formula / Derivation")),
   formula_latex: z.string().default(""),
   explanation: z.string().default(""),
   variables: z

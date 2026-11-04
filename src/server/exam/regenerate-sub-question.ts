@@ -5,6 +5,7 @@ import { retrieveChunks } from "../rag/retrieve";
 import { buildContextFromChunks } from "../rag/context-builder";
 import { sanitizeLatex } from "./sanitize-latex";
 import { SubQuestionSchema, type PaperJson, type SubQuestion } from "@/lib/schemas/paper";
+import { safeJsonParse } from "../utils/safe-json";
 
 export interface RegenerateSubQuestionResult {
   ok: boolean;
@@ -92,15 +93,9 @@ ${contextText}`;
     { label: "Gemini SubQuestion Reroll" }
   );
 
-  const cleanJson = (response.text || "")
-    .replace(/^```json\s*/i, "")
-    .replace(/^```\s*/, "")
-    .replace(/```$/g, "")
-    .trim();
-
   let parsed: unknown;
   try {
-    parsed = JSON.parse(cleanJson);
+    parsed = safeJsonParse(response.text || "");
   } catch {
     return { ok: false, error: "Model output was not valid JSON." };
   }
@@ -117,12 +112,17 @@ ${contextText}`;
     }
   }
 
-  // Ensure immutable question identity
+  // Ensure immutable question identity and robust text extraction
   if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
     const obj = parsed as Record<string, unknown>;
     obj.id = subQuestion.id;
     obj.label = subQuestion.label;
     obj.marks = subQuestion.marks;
+    obj.text =
+      (typeof obj.text === "string" && obj.text.trim()) ||
+      (typeof obj.question === "string" && obj.question.trim()) ||
+      (typeof obj.prompt === "string" && obj.prompt.trim()) ||
+      subQuestion.text;
   }
 
   const parsedSub = SubQuestionSchema.safeParse(parsed);

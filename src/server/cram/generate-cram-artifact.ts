@@ -11,6 +11,7 @@ import {
   type CramArtifactPayload,
 } from "@/lib/schemas/cram";
 import { cramCoalescer } from "../coalesce/single-flight";
+import { safeJsonParse } from "../utils/safe-json";
 
 interface GenerateCramParams {
   documentIds: string[];
@@ -208,103 +209,169 @@ ${contextText}`;
 
   try {
     const coalesced = await cramCoalescer.execute(coalesceKey, async () => {
-      const response = await executeWithGeminiPool(
-        (client) =>
-          client.models.generateContent({
-            model,
-            contents: [
-              {
-                role: "user",
-                parts: [{ text: `${systemPrompt}\n\n${promptInstructions}` }],
-              },
-            ],
-            config: {
-              responseMimeType: "application/json",
-              temperature: 0.3,
-            },
-          }),
-        { label: "Gemini Cram Generation" }
-      );
+      let candidatePayload: CramArtifactPayload | null = null;
+      let lastErrMessage = "";
 
-      const rawText = (response.text || "").trim();
-      const cleanJson = rawText
-        .replace(/^```json\s*/i, "")
-        .replace(/^```\s*/, "")
-        .replace(/```$/g, "")
-        .trim();
+      // Multi-attempt self-healing loop (up to 2 attempts)
+      for (let attempt = 1; attempt <= 2; attempt++) {
+        try {
+          const attemptPrompt = attempt > 1 && lastErrMessage
+            ? `${systemPrompt}\n\nCRITICAL FIX: Your previous response failed with "${lastErrMessage}". Format strictly as clean valid JSON with properly escaped LaTeX backslashes ($...$).\n\n${promptInstructions}`
+            : `${systemPrompt}\n\n${promptInstructions}`;
 
-      let parsed: unknown;
-      try {
-        parsed = JSON.parse(cleanJson);
-      } catch {
-        throw new Error("AI response was not valid JSON.");
+          const response = await executeWithGeminiPool(
+            (client) =>
+              client.models.generateContent({
+                model,
+                contents: [
+                  {
+                    role: "user",
+                    parts: [{ text: attemptPrompt }],
+                  },
+                ],
+                config: {
+                  responseMimeType: "application/json",
+                  temperature: 0.3,
+                },
+              }),
+            { label: "Gemini Cram Generation" }
+          );
+
+          const rawText = (response.text || "").trim();
+          let parsed: unknown;
+          try {
+            parsed = safeJsonParse(rawText);
+          } catch (jsonErr: unknown) {
+            lastErrMessage = jsonErr instanceof Error ? jsonErr.message : "AI response was not valid JSON.";
+            continue;
+          }
+
+          // Defensive unnesting: if Gemini wrapped the object in { data: ... } or { artifact: ... }
+          if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+            const obj = parsed as Record<string, unknown>;
+            if (obj.data && typeof obj.data === "object" && !Array.isArray(obj.data)) {
+              parsed = obj.data;
+            } else if (obj.artifact && typeof obj.artifact === "object" && !Array.isArray(obj.artifact)) {
+              parsed = obj.artifact;
+            }
+          }
+
+          // Force-inject known parameters and enforce correct type
+          if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+            const obj = parsed as Record<string, unknown>;
+            obj.type = artifactType;
+            if (!obj.title || typeof obj.title !== "string" || !obj.title.trim()) {
+              obj.title = defaultTitle;
+            }
+            if (!obj.subject || typeof obj.subject !== "string" || !obj.subject.trim()) {
+              obj.subject = detectedSubject;
+            }
+
+            // If flashcards, ensure cards array exists and has robust front/back properties
+            if (artifactType === "flashcards") {
+              if (!Array.isArray(obj.cards)) {
+                if (Array.isArray(obj.flashcards)) obj.cards = obj.flashcards;
+                else obj.cards = [];
+              }
+              if (Array.isArray(obj.cards)) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                obj.cards = (obj.cards as any[]).map((c: any, idx: number) => {
+                  const frontText =
+                    (typeof c?.front === "string" && c.front.trim()) ||
+                    (typeof c?.question === "string" && c.question.trim()) ||
+                    (typeof c?.prompt === "string" && c.prompt.trim()) ||
+                    (typeof c?.term === "string" && c.term.trim()) ||
+                    `Core Exam Concept ${idx + 1}`;
+
+                  const backText =
+                    (typeof c?.back === "string" && c.back.trim()) ||
+                    (typeof c?.answer === "string" && c.answer.trim()) ||
+                    (typeof c?.explanation === "string" && c.explanation.trim()) ||
+                    (typeof c?.solution === "string" && c.solution.trim()) ||
+                    `Detailed examination answer, derivation, and breakdown for Concept ${idx + 1}.`;
+
+                  return {
+                    ...c,
+                    id: c?.id ? String(c.id) : `card_${idx + 1}`,
+                    front: frontText,
+                    back: backText,
+                    category: typeof c?.category === "string" && c.category.trim() ? c.category.trim() : "General",
+                  };
+                });
+              }
+            }
+
+            // If viva_prep, ensure questions array exists and has valid questions & answers
+            if (artifactType === "viva_prep") {
+              if (!Array.isArray(obj.questions)) {
+                if (Array.isArray(obj.viva_questions)) obj.questions = obj.viva_questions;
+                else obj.questions = [];
+              }
+              if (Array.isArray(obj.questions)) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                obj.questions = (obj.questions as any[]).map((q: any, idx: number) => ({
+                  ...q,
+                  id: q?.id ? String(q.id) : `viva_${idx + 1}`,
+                  question:
+                    (typeof q?.question === "string" && q.question.trim()) ||
+                    (typeof q?.text === "string" && q.text.trim()) ||
+                    (typeof q?.prompt === "string" && q.prompt.trim()) ||
+                    `Viva Question ${idx + 1}`,
+                  answer:
+                    (typeof q?.answer === "string" && q.answer.trim()) ||
+                    (typeof q?.explanation === "string" && q.explanation.trim()) ||
+                    `Expected model viva answer for question ${idx + 1}.`,
+                }));
+              }
+            }
+
+            // If quick_notes, ensure core_definitions and formulas exist
+            if (artifactType === "quick_notes") {
+              if (Array.isArray(obj.core_definitions)) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                obj.core_definitions = (obj.core_definitions as any[]).map((d: any, idx: number) => ({
+                  ...d,
+                  term: (typeof d?.term === "string" && d.term.trim()) || `Term ${idx + 1}`,
+                  definition: (typeof d?.definition === "string" && d.definition.trim()) || `Definition for term ${idx + 1}.`,
+                }));
+              }
+              if (Array.isArray(obj.formulas_and_derivations)) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                obj.formulas_and_derivations = (obj.formulas_and_derivations as any[]).map((f: any, idx: number) => ({
+                  ...f,
+                  title: (typeof f?.title === "string" && f.title.trim()) || `Formula ${idx + 1}`,
+                }));
+              }
+            }
+
+            // If survival_kit, ensure lists exist
+            if (artifactType === "survival_kit") {
+              if (!Array.isArray(obj.priority_topics) && Array.isArray(obj.topics)) {
+                obj.priority_topics = obj.topics;
+              }
+            }
+          }
+
+          // Validate payload against schema
+          const parseResult = CramArtifactPayloadSchema.safeParse(parsed);
+          if (!parseResult.success) {
+            console.error("Cram validation issues:", parseResult.error.issues);
+            lastErrMessage = parseResult.error.issues.map((i) => i.message).join(", ");
+            continue;
+          }
+
+          candidatePayload = parseResult.data;
+          break;
+        } catch (attemptErr: unknown) {
+          lastErrMessage = formatGeminiErrorMessage(attemptErr);
+        }
       }
 
-      // Defensive unnesting: if Gemini wrapped the object
-      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
-        const obj = parsed as Record<string, unknown>;
-        if (obj.data && typeof obj.data === "object" && !Array.isArray(obj.data)) {
-          parsed = obj.data;
-        } else if (obj.artifact && typeof obj.artifact === "object" && !Array.isArray(obj.artifact)) {
-          parsed = obj.artifact;
-        }
+      if (!candidatePayload) {
+        throw new Error(lastErrMessage || "Failed to generate study artifact. Please try again.");
       }
 
-      // Force-inject known parameters and enforce correct type
-      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
-        const obj = parsed as Record<string, unknown>;
-        obj.type = artifactType;
-        if (!obj.title || typeof obj.title !== "string" || !obj.title.trim()) {
-          obj.title = defaultTitle;
-        }
-        if (!obj.subject || typeof obj.subject !== "string" || !obj.subject.trim()) {
-          obj.subject = detectedSubject;
-        }
-
-        // If flashcards, ensure cards array exists and has IDs
-        if (artifactType === "flashcards") {
-          if (!Array.isArray(obj.cards)) {
-            if (Array.isArray(obj.flashcards)) obj.cards = obj.flashcards;
-            else obj.cards = [];
-          }
-          if (Array.isArray(obj.cards)) {
-            obj.cards = (obj.cards as Array<Record<string, unknown>>).map((c, idx) => ({
-              ...c,
-              id: c.id ? String(c.id) : `card_${idx + 1}`,
-            }));
-          }
-        }
-        // If viva_prep, ensure questions array exists and has IDs
-        if (artifactType === "viva_prep") {
-          if (!Array.isArray(obj.questions)) {
-            if (Array.isArray(obj.viva_questions)) obj.questions = obj.viva_questions;
-            else obj.questions = [];
-          }
-          if (Array.isArray(obj.questions)) {
-            obj.questions = (obj.questions as Array<Record<string, unknown>>).map((q, idx) => ({
-              ...q,
-              id: q.id ? String(q.id) : `viva_${idx + 1}`,
-            }));
-          }
-        }
-        // If survival_kit, ensure lists exist
-        if (artifactType === "survival_kit") {
-          if (!Array.isArray(obj.priority_topics) && Array.isArray(obj.topics)) {
-            obj.priority_topics = obj.topics;
-          }
-        }
-      }
-
-      // Validate payload against schema
-      const parseResult = CramArtifactPayloadSchema.safeParse(parsed);
-      if (!parseResult.success) {
-        console.error("Cram validation issues:", parseResult.error.issues);
-        throw new Error(
-          `Artifact validation failed: ${parseResult.error.issues.map((i) => i.message).join(", ")}`
-        );
-      }
-
-      return parseResult.data;
+      return candidatePayload;
     });
 
     const payload = JSON.parse(JSON.stringify(coalesced.data)) as CramArtifactPayload;
