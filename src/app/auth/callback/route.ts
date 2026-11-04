@@ -6,6 +6,7 @@ export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
   const next = searchParams.get("next") ?? "/";
+  const intendedRole = searchParams.get("intended_role");
 
   if (code) {
     const supabase = await createClient();
@@ -23,8 +24,12 @@ export async function GET(request: Request) {
           .select("role")
           .eq("id", user.id)
           .maybeSingle();
+
         if (profile?.role) {
           role = profile.role;
+        } else if (intendedRole === "tutor") {
+          role = "tutor";
+          await supabase.from("profiles").update({ role: "tutor" }).eq("id", user.id);
         } else {
           role = "student";
         }

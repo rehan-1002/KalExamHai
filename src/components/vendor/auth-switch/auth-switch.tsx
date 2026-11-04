@@ -15,6 +15,7 @@ import Link from "next/link";
 import { BookOpen, GraduationCap, Loader2, Mail, Lock, User } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
+import { isDisposableEmail } from "@/lib/auth/disposable-domains";
 
 export type UserRole = "student" | "tutor";
 
@@ -53,6 +54,14 @@ export function AuthSwitchComponent({
     setErrorMessage(null);
     setSuccessMessage(null);
 
+    if (isDisposableEmail(signInEmail)) {
+      setErrorMessage(
+        "Disposable email addresses are not permitted. Please use your personal (Gmail, Outlook) or college email, or continue with Google."
+      );
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email: signInEmail,
@@ -88,6 +97,14 @@ export function AuthSwitchComponent({
     setErrorMessage(null);
     setSuccessMessage(null);
 
+    if (isDisposableEmail(signUpEmail)) {
+      setErrorMessage(
+        "Disposable email addresses are not permitted. Please use your personal (Gmail, Outlook) or college email, or continue with Google."
+      );
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const { data, error } = await supabase.auth.signUp({
         email: signUpEmail,
@@ -99,7 +116,7 @@ export function AuthSwitchComponent({
           },
           emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(
             redirectTo || (role === "tutor" ? "/tutor" : "/student")
-          )}`,
+          )}&intended_role=${role}`,
         },
       });
 
@@ -128,21 +145,23 @@ export function AuthSwitchComponent({
 
   const handleGoogleSignIn = async () => {
     try {
+      setIsLoading(true);
+      setErrorMessage(null);
       await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
           redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(
             redirectTo || (role === "tutor" ? "/tutor" : "/student")
-          )}`,
+          )}&intended_role=${role}`,
           queryParams: {
             access_type: "offline",
             prompt: "select_account",
-            role: role,
           },
         },
       });
     } catch (err: unknown) {
       setErrorMessage(err instanceof Error ? err.message : "Google authentication failed.");
+      setIsLoading(false);
     }
   };
 
@@ -367,6 +386,67 @@ export function AuthSwitchComponent({
         .btn:disabled {
           opacity: 0.65;
           pointer-events: none;
+        }
+
+        .google-btn {
+          width: 100%;
+          max-width: 380px;
+          background-color: #ffffff;
+          border: 1.5px solid #E5E7EB;
+          height: 44px;
+          border-radius: 8px;
+          color: #1F2937;
+          font-weight: 600;
+          margin-top: 4px;
+          margin-bottom: 8px;
+          cursor: pointer;
+          transition: all 0.2s;
+          font-size: 0.88rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .google-btn:hover {
+          background-color: #F9FAFB;
+          border-color: #D1D5DB;
+          transform: translateY(-1px);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .google-btn:active {
+          transform: translateY(0);
+        }
+
+        .google-btn:disabled {
+          opacity: 0.65;
+          pointer-events: none;
+        }
+
+        .auth-divider {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          max-width: 380px;
+          margin: 6px 0 8px 0;
+          color: #9CA3AF;
+          font-size: 0.72rem;
+          font-weight: 500;
+        }
+
+        .auth-divider::before,
+        .auth-divider::after {
+          content: "";
+          flex: 1;
+          border-bottom: 1px solid #E5E7EB;
+        }
+
+        .auth-divider span {
+          padding: 0 10px;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
         }
 
         .panels-container {
@@ -655,6 +735,21 @@ export function AuthSwitchComponent({
                 </button>
               </div>
 
+              {/* Primary 1-Click Google Sign In */}
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                disabled={isLoading}
+                className="google-btn"
+              >
+                <GoogleIcon />
+                <span>Continue with Google</span>
+              </button>
+
+              <div className="auth-divider">
+                <span>or sign in with email</span>
+              </div>
+
               {errorMessage && (
                 <div className="feedback-banner error">{errorMessage}</div>
               )}
@@ -697,18 +792,6 @@ export function AuthSwitchComponent({
                   <span>Sign in as {role === "tutor" ? "Faculty" : "Student"}</span>
                 )}
               </button>
-
-              <p className="social-text">Or continue with Google</p>
-              <div className="social-media">
-                <button
-                  type="button"
-                  onClick={handleGoogleSignIn}
-                  className="social-icon"
-                  title="Sign in with Google"
-                >
-                  <GoogleIcon />
-                </button>
-              </div>
             </form>
 
             {/* 2. Sign Up Form */}
@@ -733,6 +816,21 @@ export function AuthSwitchComponent({
                   <GraduationCap className="w-3.5 h-3.5" />
                   <span>Faculty (2 Free Credits)</span>
                 </button>
+              </div>
+
+              {/* Primary 1-Click Google Sign Up */}
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                disabled={isLoading}
+                className="google-btn"
+              >
+                <GoogleIcon />
+                <span>Continue with Google</span>
+              </button>
+
+              <div className="auth-divider">
+                <span>or register with email</span>
               </div>
 
               {errorMessage && (
@@ -792,18 +890,6 @@ export function AuthSwitchComponent({
                   </span>
                 )}
               </button>
-
-              <p className="social-text">Or register with Google</p>
-              <div className="social-media">
-                <button
-                  type="button"
-                  onClick={handleGoogleSignIn}
-                  className="social-icon"
-                  title="Sign up with Google"
-                >
-                  <GoogleIcon />
-                </button>
-              </div>
             </form>
           </div>
         </div>
