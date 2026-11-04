@@ -95,7 +95,14 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
   }, [cooldownSeconds]);
 
   const creditCost = selectedFormat === "IAT" ? 1 : 2;
-  const hasEnoughCredits = creditBalance >= creditCost;
+  const isEndSemTrialUsed = selectedFormat === "END_SEM" && Boolean(quota?.premiumTrialsUsed?.endSem);
+
+  // Can generate if user is admin, has remaining daily free quota (with end-sem trial check), or has credit balance
+  const canUseDailyQuota = Boolean(
+    quota?.isUnlimited ||
+    (quota && quota.remainingToday > 0 && !isEndSemTrialUsed)
+  );
+  const hasEnoughCredits = canUseDailyQuota || creditBalance >= creditCost;
 
   const toggleDocSelection = (id: string) => {
     setSelectedDocIds((prev) =>
@@ -413,8 +420,26 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
       {/* Action Bar */}
       <div className="flex items-center justify-between p-4 rounded-xl bg-[#FFFFFF] border border-[#E7E5E0] shadow-sm">
         <div className="text-xs text-[#6B7280]">
-          Total Cost: <strong className="text-[#1F2937]">{creditCost} Credit{creditCost > 1 ? "s" : ""}</strong>
-          {!hasEnoughCredits && <span className="text-[#B42318] ml-2 font-medium">(Insufficient Balance)</span>}
+          Total Cost:{" "}
+          {canUseDailyQuota ? (
+            <span className="text-emerald-700 font-semibold">
+              Free Daily Quota ({quota?.remainingToday ?? 3}/{quota?.totalDailyLimit ?? 3} Left Today)
+            </span>
+          ) : (
+            <strong className="text-[#1F2937]">
+              {creditCost} Credit{creditCost > 1 ? "s" : ""}
+            </strong>
+          )}
+          {!hasEnoughCredits && isEndSemTrialUsed && (
+            <span className="text-amber-700 ml-2 font-medium">
+              (1/1 Free End-Sem Trial Used for today)
+            </span>
+          )}
+          {!hasEnoughCredits && !isEndSemTrialUsed && (
+            <span className="text-[#B42318] ml-2 font-medium">
+              (Daily Free Quota Reached — Resets at Midnight)
+            </span>
+          )}
         </div>
 
         <button
@@ -435,7 +460,10 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
           ) : (
             <>
               <Sparkles className="w-4 h-4" />
-              <span>Generate NEP-2020 Paper ({creditCost} Credit{creditCost > 1 ? "s" : ""})</span>
+              <span>
+                Generate NEP-2020 Paper{" "}
+                {canUseDailyQuota ? "(Free Today)" : `(${creditCost} Credit${creditCost > 1 ? "s" : ""})`}
+              </span>
             </>
           )}
         </button>
