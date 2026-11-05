@@ -17,6 +17,7 @@ import {
   ArrowRightLeft,
 } from "lucide-react";
 import { signOutAction } from "@/app/auth/actions";
+import { SunMoonThemeToggle } from "@/components/ui/sun-moon-theme-toggle";
 
 interface QuotaInfo {
   isUnlimited: boolean;
@@ -124,6 +125,9 @@ export function WorkspaceNav({
               </span>
             </div>
           )}
+
+          {/* Theme Toggle (Night Before Exam Mode) */}
+          <SunMoonThemeToggle size={32} storageKey="keh_theme" defaultTheme="light" />
 
           {/* User Account / Sign Out */}
           <div className="flex items-center gap-2 text-xs text-slate-600 pl-1 border-l border-slate-200">

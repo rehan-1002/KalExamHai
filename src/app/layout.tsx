@@ -67,8 +67,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#F9F9F6] text-[#1F2937]">
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} h-full antialiased`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{const t=localStorage.getItem('keh_theme');if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}`,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-[#F9F9F6] text-[#1F2937] dark:bg-[#090D16] dark:text-[#F8FAFC]">
         {children}
       </body>
     </html>

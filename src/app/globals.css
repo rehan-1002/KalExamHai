@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "katex/dist/katex.min.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-canvas: #F9F9F6;
   --color-surface: #FFFFFF;
@@ -21,14 +23,84 @@
 :root {
   --background: #F9F9F6;
   --foreground: #1F2937;
+  --card: #FFFFFF;
+  --card-border: #E7E5E0;
+  --muted-text: #6B7280;
 }
 
-/* Light theme only as per KalExamHai design specification */
+.dark {
+  --background: #090D16;
+  --foreground: #F8FAFC;
+  --card: #111827;
+  --card-border: #1E293B;
+  --muted-text: #94A3B8;
+  color-scheme: dark;
+}
+
+/* Base Body Styles */
 body {
   background-color: #F9F9F6;
   color: #1F2937;
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+.dark body {
+  background-color: #090D16 !important;
+  color: #F8FAFC !important;
+}
+
+/* Dark Mode Surface Overrides (Ensures zero UI breaking in dark mode) */
+.dark .bg-white,
+.dark .bg-\[\#FFFFFF\] {
+  background-color: #111827 !important;
+}
+
+.dark .bg-\[\#F9F9F6\],
+.dark .bg-slate-50,
+.dark .bg-slate-50\/60,
+.dark .bg-slate-50\/75 {
+  background-color: #0F172A !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: #1E293B !important;
+}
+
+.dark .border-slate-200,
+.dark .border-slate-100,
+.dark .border-\[\#E7E5E0\] {
+  border-color: #1E293B !important;
+}
+
+.dark .text-slate-900,
+.dark .text-\[\#1F2937\] {
+  color: #F8FAFC !important;
+}
+
+.dark .text-slate-800,
+.dark .text-slate-700 {
+  color: #E2E8F0 !important;
+}
+
+.dark .text-slate-600,
+.dark .text-slate-500,
+.dark .text-\[\#6B7280\],
+.dark .text-\[\#4B5563\] {
+  color: #94A3B8 !important;
+}
+
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark textarea,
+.dark select {
+  background-color: #111827 !important;
+  color: #F8FAFC !important;
+  border-color: #334155 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748B !important;
 }
 
 /* Glassmorphic backdrop utilities */
@@ -37,6 +109,11 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 
