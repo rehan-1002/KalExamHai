@@ -184,34 +184,47 @@ export async function extractDocumentText(
       "Could not decipher text from this document. Please ensure the document is legible or try taking a clearer photo."
     );
   } catch (pdfErr) {
+    // Edge case D-04: Explicit detection for password-protected PDFs
+    const pdfErrName = (pdfErr as { name?: string })?.name || "";
+    const pdfErrMsg = pdfErr instanceof Error ? pdfErr.message : String(pdfErr);
+    if (pdfErrName === "PasswordException" || /password/i.test(pdfErrMsg)) {
+      throw new Error(
+        "This PDF is password-protected. Please remove the password protection before uploading."
+      );
+    }
+
     console.warn(
       `[PDF Extraction] Local parser failed for "${filename}", falling back to Gemini Vision OCR:`,
-      pdfErr instanceof Error ? pdfErr.message : pdfErr
+      pdfErrMsg
     );
 
     // Guaranteed fallback: Gemini Multimodal Vision & Handwriting OCR
-    const ocrText = await extractMediaViaGeminiOcr(buffer, "application/pdf", filename);
-    if (ocrText && ocrText.trim().length > 20) {
-      const cleanedOcr = normalizeText(ocrText);
-      const estimatedPages = Math.max(1, Math.ceil(cleanedOcr.length / 2500));
-      const pages: PageContent[] = [];
-      const pageSize = 2500;
-      for (let i = 0; i < estimatedPages; i++) {
-        pages.push({
-          pageNumber: i + 1,
-          text: cleanedOcr.slice(i * pageSize, (i + 1) * pageSize),
-        });
+    try {
+      const ocrText = await extractMediaViaGeminiOcr(buffer, "application/pdf", filename);
+      if (ocrText && ocrText.trim().length > 20) {
+        const cleanedOcr = normalizeText(ocrText);
+        const estimatedPages = Math.max(1, Math.ceil(cleanedOcr.length / 2500));
+        const pages: PageContent[] = [];
+        const pageSize = 2500;
+        for (let i = 0; i < estimatedPages; i++) {
+          pages.push({
+            pageNumber: i + 1,
+            text: cleanedOcr.slice(i * pageSize, (i + 1) * pageSize),
+          });
+        }
+        return {
+          text: cleanedOcr,
+          pages,
+          pageCount: estimatedPages,
+          extractionQuality: 0.95,
+        };
       }
-      return {
-        text: cleanedOcr,
-        pages,
-        pageCount: estimatedPages,
-        extractionQuality: 0.95,
-      };
+    } catch {
+      // Fall through to corrupt/unreadable error
     }
 
     throw new Error(
-      `Could not extract text from "${filename}". Please ensure the upload is a valid document.`
+      `This file appears to be damaged, password-protected, or corrupted and could not be read.`
     );
   }
 }
