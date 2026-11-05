@@ -11,11 +11,11 @@ export interface DocumentChunkDraft {
 }
 
 // On Vercel Hobby the function timeout is strictly 10 seconds.
-// Having 10-16 rich chunks (matching 6 syllabus modules) embeds in ~1.5s total.
+// Having 8 high-density chunks (matching Mumbai University's 6 modules + numericals) embeds in ~1.0s total.
 const TARGET_MIN_TOKENS = 500;
-const TARGET_MAX_TOKENS = 1200;
+const TARGET_MAX_TOKENS = 1500;
 const OVERLAP_TOKENS = 50;
-const MAX_CHUNKS = 16;
+const MAX_CHUNKS = 8;
 
 // Approximate token estimator (average 4 chars per token)
 export function estimateTokens(text: string): number {

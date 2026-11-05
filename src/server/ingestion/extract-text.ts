@@ -71,15 +71,52 @@ async function extractPdfWithPdfJs(
 }
 
 /**
- * Extracts text from PDF, TXT, or Markdown buffers.
+ * Extracts text from PDF, Images (JPG, PNG, WebP), TXT, or Markdown buffers.
  */
 export async function extractDocumentText(
   buffer: Buffer,
   mimeType: string,
   filename: string
 ): Promise<ExtractedDocument> {
+  const lowerName = filename.toLowerCase();
+  const lowerMime = (mimeType || "").toLowerCase();
+
+  const isImage =
+    lowerMime.startsWith("image/") ||
+    lowerName.endsWith(".jpg") ||
+    lowerName.endsWith(".jpeg") ||
+    lowerName.endsWith(".png") ||
+    lowerName.endsWith(".webp");
+
+  if (isImage) {
+    const resolvedMime = lowerMime.startsWith("image/")
+      ? lowerMime
+      : lowerName.endsWith(".png")
+      ? "image/png"
+      : lowerName.endsWith(".webp")
+      ? "image/webp"
+      : "image/jpeg";
+
+    const ocrText = await extractMediaViaGeminiOcr(buffer, resolvedMime, filename);
+    if (!ocrText || ocrText.trim().length === 0) {
+      throw new Error(
+        "Could not detect readable text from this image. Please ensure the photo is clear, upright, and legible."
+      );
+    }
+
+    const cleanedText = normalizeText(ocrText);
+    const pages: PageContent[] = [{ pageNumber: 1, text: cleanedText }];
+
+    return {
+      text: cleanedText,
+      pages,
+      pageCount: 1,
+      extractionQuality: 0.95,
+    };
+  }
+
   const isPdf =
-    mimeType === "application/pdf" || filename.toLowerCase().endsWith(".pdf");
+    lowerMime === "application/pdf" || lowerName.endsWith(".pdf");
 
   if (!isPdf) {
     const rawText = buffer.toString("utf-8");
@@ -123,7 +160,7 @@ export async function extractDocumentText(
     );
 
     // Automatic fallback: Gemini Vision & Handwriting OCR for handwritten/scanned PDFs
-    const ocrText = await extractPdfViaGeminiOcr(buffer, filename);
+    const ocrText = await extractMediaViaGeminiOcr(buffer, "application/pdf", filename);
     if (ocrText && ocrText.trim().length > 20) {
       const cleanedOcr = normalizeText(ocrText);
       const estimatedPages = Math.max(1, Math.ceil(cleanedOcr.length / 2500));
@@ -153,7 +190,7 @@ export async function extractDocumentText(
     );
 
     // Guaranteed fallback: Gemini Multimodal Vision & Handwriting OCR
-    const ocrText = await extractPdfViaGeminiOcr(buffer, filename);
+    const ocrText = await extractMediaViaGeminiOcr(buffer, "application/pdf", filename);
     if (ocrText && ocrText.trim().length > 20) {
       const cleanedOcr = normalizeText(ocrText);
       const estimatedPages = Math.max(1, Math.ceil(cleanedOcr.length / 2500));
@@ -180,10 +217,14 @@ export async function extractDocumentText(
 }
 
 /**
- * Multimodal fallback for scanned, handwritten, or image-based PDFs using Gemini 2.5 Flash.
+ * Multimodal extraction for images (JPG, PNG, WebP) and scanned/handwritten PDFs using Gemini Flash Vision.
  * Deciphers messy handwriting, cursive scripts, blackboard photos, and Xerox scans.
  */
-async function extractPdfViaGeminiOcr(buffer: Buffer, filename: string): Promise<string> {
+async function extractMediaViaGeminiOcr(
+  buffer: Buffer,
+  mimeType: string,
+  filename: string
+): Promise<string> {
   const base64Data = buffer.toString("base64");
 
   const response = await executeWithGeminiPool(
@@ -196,7 +237,7 @@ async function extractPdfViaGeminiOcr(buffer: Buffer, filename: string): Promise
             parts: [
               {
                 inlineData: {
-                  mimeType: "application/pdf",
+                  mimeType,
                   data: base64Data,
                 },
               },

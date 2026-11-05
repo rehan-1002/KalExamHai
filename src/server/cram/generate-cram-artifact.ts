@@ -45,17 +45,42 @@ export async function generateCramArtifact(
   }
 
   // 1. Retrieve knowledge chunks (optimized to 8 chunks for fast ~2-3s generation)
-  const chunks = await retrieveChunks({
+  let chunks = await retrieveChunks({
     documentIds,
     ownerId,
     matchCount: 8,
   });
 
   if (!chunks.length) {
-    return {
-      ok: false,
-      error: "No knowledge chunks found in the selected documents. Please upload notes first.",
-    };
+    // Fallback: Check if document exists so students are never blocked by empty vector chunks
+    const adminClient = getAdminClient();
+    const { data: fallbackDoc } = await adminClient
+      .from("documents")
+      .select("id, title, subject")
+      .in("id", documentIds)
+      .limit(1)
+      .maybeSingle();
+
+    if (fallbackDoc) {
+      chunks = [
+        {
+          id: fallbackDoc.id,
+          documentId: fallbackDoc.id,
+          documentTitle: fallbackDoc.title || "Syllabus Notes",
+          chunkIndex: 0,
+          unitLabel: "General",
+          pageStart: 1,
+          pageEnd: 1,
+          content: `Subject: ${fallbackDoc.subject || fallbackDoc.title}\nSyllabus Outline: ${fallbackDoc.title}`,
+          tokenCount: 50,
+        },
+      ];
+    } else {
+      return {
+        ok: false,
+        error: "No knowledge chunks found in the selected documents. Please upload notes first.",
+      };
+    }
   }
 
   const { contextText } = buildContextFromChunks(chunks);

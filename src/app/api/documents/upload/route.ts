@@ -46,7 +46,16 @@ export async function POST(request: NextRequest) {
     }
 
     const title = customTitle || file.name.replace(/\.[^/.]+$/, "");
-    const mimeType = file.type || "application/pdf";
+    let mimeType = file.type;
+    if (!mimeType) {
+      const lower = file.name.toLowerCase();
+      if (lower.endsWith(".jpg") || lower.endsWith(".jpeg")) mimeType = "image/jpeg";
+      else if (lower.endsWith(".png")) mimeType = "image/png";
+      else if (lower.endsWith(".webp")) mimeType = "image/webp";
+      else if (lower.endsWith(".txt")) mimeType = "text/plain";
+      else if (lower.endsWith(".md")) mimeType = "text/markdown";
+      else mimeType = "application/pdf";
+    }
     const documentId = crypto.randomUUID();
     const sanitizedFilename = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
     const storagePath = `${user.id}/${documentId}/${sanitizedFilename}`;

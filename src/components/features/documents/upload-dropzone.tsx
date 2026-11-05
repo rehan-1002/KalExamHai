@@ -214,9 +214,9 @@ export function DocumentUploadDropzone({ onIngestionComplete }: DocumentUploadPr
             {/* Vendor Isometric Illos Upload Dropzone */}
             <IllosUploadDropzone
               title="Drop Mumbai University notes or syllabus here"
-              description="PDF, TXT, or Markdown files up to 25 MB. Text extraction and vector chunking happen automatically."
+              description="PDF, JPG, PNG photos, TXT, or Markdown up to 25 MB. Handwriting OCR and vector indexing happen automatically."
               buttonLabel={isPending ? "Processing..." : "Browse files"}
-              accept=".pdf,.txt,.md,application/pdf,text/plain,text/markdown"
+              accept=".pdf,.jpg,.jpeg,.png,.webp,.txt,.md,application/pdf,image/jpeg,image/png,image/webp,text/plain,text/markdown"
               multiple={false}
               onFiles={handleFiles}
             />

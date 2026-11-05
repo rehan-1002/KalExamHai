@@ -91,9 +91,9 @@ const sizeOf = (bytes: number) =>
 
 export function IllosUploadDropzone({
   title = "Drop files to upload",
-  description = "PDF, TXT, or MD notes & syllabi (up to 25 MB each).",
+  description = "PDF, JPG, PNG, TXT, or MD notes & syllabi (up to 25 MB each).",
   buttonLabel = "Browse files",
-  accept = ".pdf,.txt,.md,application/pdf,text/plain,text/markdown",
+  accept = ".pdf,.jpg,.jpeg,.png,.webp,.txt,.md,application/pdf,image/jpeg,image/png,image/webp,text/plain,text/markdown",
   multiple = true,
   onFiles,
   className,
