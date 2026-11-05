@@ -65,3 +65,45 @@ export async function grantCreditsAction(formData: FormData): Promise<void> {
   revalidatePath("/admin");
 }
 
+/**
+ * Edge case V-06: Self-service account deletion.
+ * Cascades through foreign keys, deleting user documents, chunks, papers, and auth user.
+ */
+export async function deleteAccountAction(): Promise<{ ok: boolean; error?: string }> {
+  try {
+    const supabase = await createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      return { ok: false, error: "Not authenticated" };
+    }
+
+    const adminClient = getAdminClient();
+    // 1. Delete user files from storage
+    const { data: userFiles } = await adminClient.storage
+      .from("documents")
+      .list(user.id);
+    if (userFiles && userFiles.length > 0) {
+      const filePaths = userFiles.map((f) => `${user.id}/${f.name}`);
+      await adminClient.storage.from("documents").remove(filePaths);
+    }
+
+    // 2. Delete profile (cascades via Postgres foreign keys to documents, chunks, papers)
+    await adminClient.from("profiles").delete().eq("id", user.id);
+
+    // 3. Delete user from auth.users
+    await adminClient.auth.admin.deleteUser(user.id);
+
+    // 4. Sign out
+    await supabase.auth.signOut();
+    return { ok: true };
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("[deleteAccountAction] Error deleting account:", msg);
+    return { ok: false, error: msg };
+  }
+}
+
+

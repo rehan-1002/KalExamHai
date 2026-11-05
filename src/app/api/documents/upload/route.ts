@@ -62,6 +62,29 @@ export async function POST(request: NextRequest) {
 
     const adminClient = getAdminClient();
 
+    // Edge case D-09: Duplicate upload check (reuse existing ready document, zero re-embedding delay)
+    const { data: existingDoc } = await adminClient
+      .from("documents")
+      .select("id, page_count, status")
+      .eq("owner_id", user.id)
+      .eq("title", title)
+      .eq("size_bytes", file.size)
+      .eq("status", "ready")
+      .limit(1)
+      .maybeSingle();
+
+    if (existingDoc) {
+      return NextResponse.json({
+        ok: true,
+        data: {
+          documentId: existingDoc.id,
+          pageCount: existingDoc.page_count,
+          status: "ready",
+          reused: true,
+        },
+      });
+    }
+
     // 1. Upload file buffer to Supabase Storage
     const fileArrayBuffer = await file.arrayBuffer();
     const fileBuffer = Buffer.from(fileArrayBuffer);

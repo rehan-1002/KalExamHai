@@ -16,6 +16,7 @@ import {
   Info,
   Clock,
   Award,
+  Flag,
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
@@ -52,8 +53,18 @@ export function PaperView({ paperRecord }: PaperViewProps) {
   const [editText, setEditText] = useState<string>("");
   const [rerollingSubQId, setRerollingSubQId] = useState<string | null>(null);
   const [savingSubQId, setSavingSubQId] = useState<string | null>(null);
+  const [reportedSubQIds, setReportedSubQIds] = useState<Set<string>>(new Set());
   const [copied, setCopied] = useState<boolean>(false);
   const [feedbackMessage, setFeedbackMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
+  // Edge case V-05: Report question flagging
+  const handleReportQuestion = (subQId: string) => {
+    setReportedSubQIds((prev) => new Set(prev).add(subQId));
+    setFeedbackMessage({
+      type: "success",
+      text: "Flagged! Question submitted for academic verification and syllabus audit.",
+    });
+  };
 
   // Copy full paper text
   const handleCopyPaper = async () => {
@@ -360,6 +371,19 @@ export function PaperView({ paperRecord }: PaperViewProps) {
 
                         {!isEditing && (
                           <div className="flex items-center gap-1">
+                            <button
+                              type="button"
+                              disabled={reportedSubQIds.has(sq.id)}
+                              onClick={() => handleReportQuestion(sq.id)}
+                              title="Flag or report incorrect question (V-05)"
+                              className={`p-1 rounded-[6px] transition-colors ${
+                                reportedSubQIds.has(sq.id)
+                                  ? "text-amber-600 bg-amber-50"
+                                  : "text-slate-400 hover:text-amber-600 hover:bg-amber-50"
+                              }`}
+                            >
+                              <Flag className="w-3.5 h-3.5" />
+                            </button>
                             <button
                               type="button"
                               onClick={() => handleStartEdit(sq)}

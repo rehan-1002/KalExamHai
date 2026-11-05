@@ -15,7 +15,8 @@ export interface ExtractedDocument {
 
 /**
  * Normalizes raw text: removes control characters (except newlines), collapses
- * excessive vertical whitespace, and trims lines while preserving math symbols and numbers.
+ * excessive vertical whitespace, strips repeated boilerplate headers/footers (D-11),
+ * and trims lines while preserving math symbols and numbers.
  */
 export function normalizeText(raw: string): string {
   return raw
@@ -23,6 +24,9 @@ export function normalizeText(raw: string): string {
     .replace(/\r/g, "\n")
     .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, " ")
     .replace(/[ \t]+/g, " ")
+    // Edge case D-11: Strip repeated margin headers and page number lines
+    .replace(/(?:^|\n)\s*(?:Page\s+\d+(?:\s+of\s+\d+)?|\d+\s+of\s+\d+)\s*(?=\n|$)/gi, "\n")
+    .replace(/(?:^|\n)\s*(?:University\s+of\s+Mumbai|Mumbai\s+University)\s*[-•|]?\s*(?:NEP|Answer\s+Book|Syllabus)?[\s\S]{0,60}?(?:Page\s+\d+|\n)/gi, "\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
