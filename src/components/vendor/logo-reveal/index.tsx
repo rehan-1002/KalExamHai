@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { RotateCcw } from "lucide-react";
 import { LiquidGlassCanvas } from "./liquid-glass-webgl";
-import { SunMoonThemeToggle } from "@/components/ui/sun-moon-theme-toggle";
 
 /**
  * KalExamHai Symmetrical Centered Hero
@@ -18,6 +17,11 @@ import { SunMoonThemeToggle } from "@/components/ui/sun-moon-theme-toggle";
 export function LiquidGlassReveal() {
   const [isRevealed, setIsRevealed] = useState(false);
   const [replayKey, setReplayKey] = useState(0);
+
+  // Guarantee light theme on landing page
+  React.useEffect(() => {
+    document.documentElement.classList.remove("dark");
+  }, []);
 
   const handleRevealComplete = useCallback(() => {
     setIsRevealed(true);
@@ -35,8 +39,7 @@ export function LiquidGlassReveal() {
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center justify-center bg-[#F9F9F6] text-[#1F2937] selection:bg-[#EFF6FF] selection:text-[#2563EB] px-4 sm:px-6 py-8 overflow-hidden">
       {/* Absolute Corner Controls (Does not disrupt vertical center) */}
-      <div className="absolute top-5 right-5 sm:top-8 sm:right-8 z-30 flex items-center gap-3">
-        <SunMoonThemeToggle size={34} defaultTheme="light" storageKey="keh_theme" />
+      <div className="absolute top-5 right-5 sm:top-8 sm:right-8 z-30">
         {!isRevealed ? (
           <button
             onClick={handleSkip}

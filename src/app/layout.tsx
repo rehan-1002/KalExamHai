@@ -72,7 +72,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{const t=localStorage.getItem('keh_theme');if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}`,
+            __html: `try{const p=window.location.pathname;const isPublic=p==='/'||p.startsWith('/login')||p.startsWith('/signup');if(!isPublic&&localStorage.getItem('keh_theme')==='dark'){document.documentElement.classList.add('dark');}else if(isPublic){document.documentElement.classList.remove('dark');}}catch(e){}`,
           }}
         />
       </head>

@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import { AuthSwitch } from "@/components/vendor/auth-switch";
-import { SunMoonThemeToggle } from "@/components/ui/sun-moon-theme-toggle";
 
 export const metadata = {
   title: "Sign In — KalExamHai",
@@ -8,14 +7,7 @@ export const metadata = {
 };
 
 function LoginContent() {
-  return (
-    <div className="relative min-h-screen">
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50">
-        <SunMoonThemeToggle size={34} defaultTheme="light" storageKey="keh_theme" />
-      </div>
-      <AuthSwitch initialMode="signin" />
-    </div>
-  );
+  return <AuthSwitch initialMode="signin" />;
 }
 
 export default function LoginPage() {

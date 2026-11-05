@@ -36,6 +36,11 @@ export function AuthSwitchComponent({
   const [isSignUp, setIsSignUp] = useState(initialMode === "signup");
   const [role, setRole] = useState<UserRole>(initialRole);
 
+  // Guarantee light theme on auth screens
+  React.useEffect(() => {
+    document.documentElement.classList.remove("dark");
+  }, []);
+
   // Form states
   const [signInEmail, setSignInEmail] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
@@ -214,44 +219,6 @@ export function AuthSwitchComponent({
           align-items: center;
           padding: 20px;
           position: relative;
-        }
-
-        .dark .auth-switch {
-          background: #090D16;
-        }
-
-        .dark .container {
-          background: #111827;
-          border-color: #1E293B;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .dark .title {
-          color: #F8FAFC;
-        }
-
-        .dark .input-field {
-          background-color: #0F172A;
-          border-color: #334155;
-          color: #F8FAFC;
-        }
-
-        .dark .input-field input {
-          color: #F8FAFC;
-        }
-
-        .dark .input-field input::placeholder {
-          color: #64748B;
-        }
-
-        .dark .role-selector-bar {
-          background: #1E293B;
-          border-color: #334155;
-        }
-
-        .dark .role-btn.active {
-          background: #0F172A;
-          color: #F8FAFC;
         }
 
         .container {
