@@ -14,14 +14,37 @@ interface Segment {
 }
 
 /**
+ * Normalizes common LaTeX delimiters and LLM quirks:
+ * - Strips quotes around math like '$G$' or "$G$" -> $G$
+ * - Converts \[ ... \] to $$ ... $$
+ * - Converts \( ... \) to $ ... $
+ */
+function normalizeLatexInput(input: string): string {
+  if (!input) return "";
+
+  // 1. Remove single/double quotes wrapping inline math (e.g. '$G$' or "'$i$'" -> $G$, $i$)
+  let normalized = input.replace(/["']\$([^$]+)\$["']/g, "$$$1$");
+
+  // 2. Normalize display math \[ ... \] to $$ ... $$
+  normalized = normalized.replace(/\\\[([\s\S]*?)\\\]/g, (_, eq) => `$$${eq.trim()}$$`);
+
+  // 3. Normalize inline math \( ... \) to $ ... $
+  normalized = normalized.replace(/\\\(([\s\S]*?)\\\)/g, (_, eq) => `$${eq.trim()}$`);
+
+  return normalized;
+}
+
+/**
  * Splits text with LaTeX delimiters ($...$ and $$...$$) into distinct rendering segments.
  */
 function splitLatexSegments(input: string): Segment[] {
   if (!input) return [];
 
+  const normalized = normalizeLatexInput(input);
   const segments: Segment[] = [];
+
   // Split on display math $$...$$ first
-  const displayParts = input.split("$$");
+  const displayParts = normalized.split("$$");
 
   for (let i = 0; i < displayParts.length; i++) {
     const part = displayParts[i]!;
@@ -52,11 +75,14 @@ function splitLatexSegments(input: string): Segment[] {
 function KaTeXSegment({ math, display }: { math: string; display: boolean }) {
   const html = useMemo(() => {
     try {
-      return katex.renderToString(math, {
+      const trimmed = math.trim();
+      if (!trimmed) return "";
+      return katex.renderToString(trimmed, {
         displayMode: display,
         throwOnError: false,
         errorColor: "#B42318",
-        trust: false,
+        trust: true,
+        strict: false,
         output: "htmlAndMathml",
       });
     } catch {
@@ -81,7 +107,7 @@ function KaTeXSegment({ math, display }: { math: string; display: boolean }) {
     );
   }
 
-  return <span dangerouslySetInnerHTML={{ __html: html }} />;
+  return <span className="inline-block" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 /**
@@ -109,4 +135,3 @@ export function MathText({ content, className = "" }: MathTextProps) {
 }
 
 export default MathText;
-

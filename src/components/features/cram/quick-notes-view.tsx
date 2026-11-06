@@ -97,11 +97,15 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {payload.formulas_and_derivations.map((f, i) => (
               <div key={i} className="p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-2">
-                <h3 className="text-xs font-bold text-slate-900">{f.title}</h3>
+                <h3 className="text-xs font-bold text-slate-900">
+                  <MathText content={f.title} />
+                </h3>
                 <div className="py-2 px-3 bg-white border border-slate-200 rounded-md text-center text-sm font-serif">
                   <MathText content={f.formula_latex} />
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">{f.explanation}</p>
+                <div className="text-xs text-slate-600 leading-relaxed">
+                  <MathText content={f.explanation} />
+                </div>
                 {f.variables && f.variables.length > 0 && (
                   <div className="pt-2 border-t border-slate-200/60 text-[11px] text-slate-500 flex flex-wrap gap-2">
                     {f.variables.map((v, vi) => (
@@ -127,11 +131,13 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
             {payload.core_definitions.map((def, i) => (
               <div key={i} className="py-3 first:pt-0 last:pb-0">
                 <div className="flex items-start justify-between gap-4">
-                  <span className="font-semibold text-xs text-slate-900 shrink-0">{def.term}</span>
-                  <div className="text-xs text-slate-600 text-right sm:text-left flex-1">
-                    {def.definition}
+                  <span className="font-semibold text-xs text-slate-900 shrink-0">
+                    <MathText content={def.term} />
+                  </span>
+                  <div className="text-xs text-slate-600 text-right sm:text-left flex-1 leading-relaxed">
+                    <MathText content={def.definition} />
                     {def.formula && (
-                      <span className="ml-2 font-mono text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">
+                      <span className="ml-2 font-mono text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded inline-block">
                         <MathText content={def.formula} />
                       </span>
                     )}
@@ -152,10 +158,14 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
           <div className="space-y-3">
             {payload.step_by_step_algorithms.map((algo, i) => (
               <div key={i} className="p-4 bg-slate-50 border border-slate-200 rounded-lg">
-                <h3 className="text-xs font-bold text-slate-900 mb-2">{algo.title}</h3>
-                <ol className="list-decimal list-inside space-y-1 text-xs text-slate-700">
+                <h3 className="text-xs font-bold text-slate-900 mb-2">
+                  <MathText content={algo.title} />
+                </h3>
+                <ol className="list-decimal list-inside space-y-1.5 text-xs text-slate-700 leading-relaxed">
                   {algo.steps.map((step, si) => (
-                    <li key={si}>{step}</li>
+                    <li key={si}>
+                      <MathText content={step} />
+                    </li>
                   ))}
                 </ol>
               </div>
@@ -171,9 +181,11 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
             <AlertTriangle className="w-4 h-4 text-red-600" />
             Exam Hall Traps &amp; Common Blunders
           </h2>
-          <ul className="list-disc list-inside space-y-1.5 text-xs text-red-800">
+          <ul className="list-disc list-inside space-y-1.5 text-xs text-red-800 leading-relaxed">
             {payload.exam_hall_traps.map((trap, i) => (
-              <li key={i}>{trap}</li>
+              <li key={i}>
+                <MathText content={trap} />
+              </li>
             ))}
           </ul>
         </div>

@@ -74,7 +74,7 @@ export function VivaPrepView({ payload }: VivaPrepViewProps) {
         <Sparkles className="w-4 h-4 text-purple-600 shrink-0 mt-0.5" />
         <div>
           <span className="font-bold block mb-1">Examiner Evaluation Strategy:</span>
-          {payload.overview}
+          <MathText content={payload.overview} />
         </div>
       </div>
 
@@ -136,7 +136,9 @@ export function VivaPrepView({ payload }: VivaPrepViewProps) {
                         <ShieldAlert className="w-3.5 h-3.5 text-amber-600" />
                         <span>The Examiner Trap to Watch For:</span>
                       </div>
-                      <p className="text-amber-800 leading-relaxed pl-5">{q.examiner_trap}</p>
+                      <div className="text-amber-800 leading-relaxed pl-5">
+                        <MathText content={q.examiner_trap} />
+                      </div>
                     </div>
                   )}
 
@@ -147,7 +149,9 @@ export function VivaPrepView({ payload }: VivaPrepViewProps) {
                         <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
                         <span>Follow-Up Defense if Challenged:</span>
                       </div>
-                      <p className="text-blue-800 leading-relaxed pl-5">{q.follow_up_defense}</p>
+                      <div className="text-blue-800 leading-relaxed pl-5">
+                        <MathText content={q.follow_up_defense} />
+                      </div>
                     </div>
                   )}
                 </div>

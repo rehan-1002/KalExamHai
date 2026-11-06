@@ -118,7 +118,7 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
               {top.must_draw_diagram && (
                 <div className="p-2.5 bg-blue-50/70 border border-blue-200 rounded text-xs text-blue-900">
                   <span className="font-bold">Must-Draw Diagram: </span>
-                  {top.must_draw_diagram}
+                  <MathText content={top.must_draw_diagram} />
                 </div>
               )}
             </div>
@@ -157,7 +157,9 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
                   ) : (
                     <Square className="w-4 h-4 text-slate-400 shrink-0" />
                   )}
-                  <span className="flex-1 font-medium">{item}</span>
+                  <span className="flex-1 font-medium">
+                    <MathText content={item} />
+                  </span>
                 </div>
               );
             })}
