@@ -55,6 +55,7 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
   const [selectedSubjectCode, setSelectedSubjectCode] = useState<string>("BSC101");
 
   const [selectedFormat, setSelectedFormat] = useState<PaperFormat>(initialFormat || "IAT");
+  const [iatTerm, setIatTerm] = useState<"IAT-1" | "IAT-2">("IAT-1");
   const [selectedDocIds, setSelectedDocIds] = useState<string[]>(["mu:BSC101"]);
   const [subject, setSubject] = useState("Applied Mathematics -I");
   const [courseCode, setCourseCode] = useState("BSC101");
@@ -142,15 +143,21 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
     startTransition(async () => {
       try {
         setStatusStep("Orchestrating Gemini 3.5 Flash with NEP-2020 syllabus & PYQ engine...");
+        const defaultTitle =
+          selectedFormat === "IAT"
+            ? (iatTerm === "IAT-1" ? "Internal Assessment Test - I" : "Internal Assessment Test - II")
+            : "Semester End Examination";
+
         const result = await generatePaperAction({
           documentIds: sourceMode === "official" ? [`mu:${selectedSubjectCode}`] : selectedDocIds,
           format: selectedFormat,
+          iatTerm: selectedFormat === "IAT" ? iatTerm : undefined,
           subject: subject.trim(),
           courseCode: courseCode.trim() || undefined,
           branchId: sourceMode === "official" ? selectedBranchId : undefined,
           semester: sourceMode === "official" ? selectedSemester : undefined,
           instituteName: instituteName.trim() || undefined,
-          examTitle: examTitle.trim() || undefined,
+          examTitle: examTitle.trim() || defaultTitle,
           difficulty,
         });
 
@@ -283,6 +290,52 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
             </div>
           </div>
         </div>
+
+        {/* IAT Term Selector (IAT-1 vs IAT-2 Syllabus Scope) */}
+        {selectedFormat === "IAT" && (
+          <div className="mt-4 p-4 rounded-[8px] bg-blue-50/70 border border-blue-200 space-y-2.5">
+            <div className="flex items-center justify-between gap-2 flex-wrap">
+              <label className="text-xs font-bold text-blue-900 uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                Select IAT Syllabus Scope
+              </label>
+              <span className="text-[11px] text-blue-700 font-medium">
+                Mumbai University NEP-2020 Mid-Term Rule
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <button
+                type="button"
+                onClick={() => setIatTerm("IAT-1")}
+                className={`p-3 rounded-[6px] border text-left transition-all cursor-pointer ${
+                  iatTerm === "IAT-1"
+                    ? "border-blue-600 bg-white text-blue-950 font-semibold shadow-xs ring-1 ring-blue-600"
+                    : "border-blue-200/80 bg-white/70 text-slate-700 hover:bg-white"
+                }`}
+              >
+                <div className="text-xs font-bold text-blue-900">⚡ IAT - 1 (First Assessment)</div>
+                <div className="text-[11px] text-slate-600 mt-0.5">
+                  Covers <strong>First 35–40% Syllabus</strong> (Modules 1 &amp; 2)
+                </div>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setIatTerm("IAT-2")}
+                className={`p-3 rounded-[6px] border text-left transition-all cursor-pointer ${
+                  iatTerm === "IAT-2"
+                    ? "border-blue-600 bg-white text-blue-950 font-semibold shadow-xs ring-1 ring-blue-600"
+                    : "border-blue-200/80 bg-white/70 text-slate-700 hover:bg-white"
+                }`}
+              >
+                <div className="text-xs font-bold text-blue-900">⚡ IAT - 2 (Second Assessment)</div>
+                <div className="text-[11px] text-slate-600 mt-0.5">
+                  Covers <strong>Remaining 60% Syllabus</strong> (Modules 3, 4, 5 &amp; 6)
+                </div>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* 2. Select Syllabus & Subject Source */}

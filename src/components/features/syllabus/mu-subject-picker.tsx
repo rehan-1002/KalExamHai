@@ -149,7 +149,7 @@ export function MuSubjectPicker({
             >
               {availableSubjects.map((subj) => (
                 <option key={subj.code} value={subj.code}>
-                  [{subj.code}] {subj.name} ({subj.shortName}) — {subj.endSemMarks}M End-Sem
+                  [{subj.code}] {subj.name} ({subj.shortName}) • NEP-2020
                 </option>
               ))}
             </select>
@@ -173,7 +173,7 @@ export function MuSubjectPicker({
                 Code: {currentSubject.code}
               </span>
               <span className="bg-emerald-100 text-emerald-800 font-medium px-2 py-0.5 rounded-[6px]">
-                {currentSubject.endSemMarks} Marks End-Sem
+                60M End-Sem • 20M IAT-1 / IAT-2
               </span>
             </div>
           </div>

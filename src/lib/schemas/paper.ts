@@ -113,6 +113,7 @@ export const GeneratePaperParamsSchema = z.object({
   focusUnits: z.array(z.string()).optional(),
   branchId: nullableOptionalString,
   semester: z.number().int().optional(),
+  iatTerm: z.enum(["IAT-1", "IAT-2"]).optional(),
 });
 
 export type GeneratePaperParams = z.infer<typeof GeneratePaperParamsSchema>;

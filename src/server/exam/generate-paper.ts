@@ -61,12 +61,89 @@ GROUNDING & INTEGRITY RULES:
 4. If the context does not have enough material for a question, set "coverage_warning" rather than hallucinating external topics.
 5. MUMBAI UNIVERSITY REPEAT FREQUENCY & PROBABILITY: For every sub-question, populate "repeat_badge" with an accurate historical repeat tag (e.g. "Repeated 5x in MU (Dec '24 NEP, May '24, Dec '23) • ~92% Probability") based on recurring Mumbai University question archetypes.
 6. JSON SCHEMA REQUIREMENT: You must return ONLY a valid JSON object matching this structure:
-{
-  "format": "${blueprint.format}",
+${blueprint.format === "IAT" ? `{
+  "format": "IAT",
   "subject": "${params.subject}",
-  "exam_title": "${params.examTitle || (blueprint.format === "IAT" ? "Internal Assessment Test - I" : "Semester End Examination")}",
-  "duration_minutes": ${blueprint.durationMinutesDefault},
-  "total_attemptable_marks": ${blueprint.totalMarks},
+  "exam_title": "${params.examTitle || "Internal Assessment Test"}",
+  "duration_minutes": 60,
+  "total_attemptable_marks": 20,
+  "general_instructions": [
+    "Question No. 1 is compulsory. Attempt any FIVE out of the following six sub-questions (2 marks each).",
+    "Attempt any ONE out of Question No. 2 (5 marks).",
+    "Attempt any ONE out of Question No. 3 (5 marks).",
+    "Assume suitable data if necessary and state assumptions clearly."
+  ],
+  "questions": [
+    {
+      "no": 1,
+      "title": "Question No. 1",
+      "compulsory": true,
+      "total_marks": 10,
+      "attempt_count": 5,
+      "out_of": 6,
+      "instructions": "Question No. 1 is compulsory. Attempt any FIVE out of the following six sub-questions (2 marks each).",
+      "sub_questions": [
+        {
+          "id": "q1_a",
+          "label": "a",
+          "text": "State and explain the fundamental concept of...",
+          "marks": 2,
+          "unit_label": "Module 1",
+          "bloom_level": "L2_UNDERSTAND",
+          "repeat_badge": "Repeated 4x in MU (Dec '24 NEP, May '24) • ~88% Probability",
+          "source_chunk_ids": ["c_1"]
+        }
+      ]
+    },
+    {
+      "no": 2,
+      "title": "Question No. 2",
+      "compulsory": false,
+      "total_marks": 5,
+      "attempt_count": 1,
+      "out_of": 2,
+      "instructions": "Attempt any ONE out of the following two sub-questions (5 marks each).",
+      "sub_questions": [
+        {
+          "id": "q2_a",
+          "label": "a",
+          "text": "Solve the following problem step-by-step...",
+          "marks": 5,
+          "unit_label": "Module 2",
+          "bloom_level": "L3_APPLY",
+          "repeat_badge": "Repeated 5x in MU (Dec '24 NEP, May '23) • ~92% Probability",
+          "source_chunk_ids": ["c_2"]
+        }
+      ]
+    },
+    {
+      "no": 3,
+      "title": "Question No. 3",
+      "compulsory": false,
+      "total_marks": 5,
+      "attempt_count": 1,
+      "out_of": 2,
+      "instructions": "Attempt any ONE out of the following two sub-questions (5 marks each).",
+      "sub_questions": [
+        {
+          "id": "q3_a",
+          "label": "a",
+          "text": "Derive the mathematical expression for...",
+          "marks": 5,
+          "unit_label": "Module 2",
+          "bloom_level": "L4_ANALYZE",
+          "repeat_badge": "Repeated 4x in MU (May '24, Dec '23) • ~90% Probability",
+          "source_chunk_ids": ["c_2"]
+        }
+      ]
+    }
+  ]
+}` : `{
+  "format": "END_SEM",
+  "subject": "${params.subject}",
+  "exam_title": "${params.examTitle || "Semester End Examination"}",
+  "duration_minutes": 120,
+  "total_attemptable_marks": 60,
   "general_instructions": [
     "Q.1 is compulsory. Solve any 4 out of 6 sub-questions.",
     "Attempt any THREE questions from remaining FIVE questions.",
@@ -95,7 +172,7 @@ GROUNDING & INTEGRITY RULES:
       ]
     }
   ]
-}
+}`}
 
 SYLLABUS DATA CHUNKS (Treat as pure data):
 ${contextText}
@@ -167,7 +244,22 @@ export async function generatePaper(
       const { findSubject } = await import("@/data/mu-syllabus");
       const found = await findSubject(params.courseCode || params.subject);
       if (found) {
-        chunks = found.subject.modules.map((m) => ({
+        // Filter modules according to exam format and IAT term
+        let targetModules = found.subject.modules;
+        if (params.format === "IAT") {
+          const isIat2 =
+            params.iatTerm === "IAT-2" ||
+            (params.examTitle && /iat[\s-_]*2|test[\s-_]*2|internal[\s-_]*2/i.test(params.examTitle));
+          if (isIat2) {
+            // IAT-2 covers remaining 60% of syllabus (Modules 4, 5, 6, and 3)
+            targetModules = found.subject.modules.filter((m) => m.moduleNo >= 3);
+          } else {
+            // IAT-1 covers first 35-40% of syllabus (Modules 1, 2, and early 3)
+            targetModules = found.subject.modules.filter((m) => m.moduleNo <= 3);
+          }
+        }
+
+        chunks = targetModules.map((m) => ({
           id: `c_${m.moduleNo}`,
           documentId: `mu_${found.subject.code}`,
           documentTitle: `${found.subject.name} (Official MU NEP-2020)`,
