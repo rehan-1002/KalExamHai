@@ -90,3 +90,4 @@ export async function incrementTelegramQuota(chatId: number | string): Promise<n
 
   return current;
 }
+

@@ -207,43 +207,58 @@ STRICT FORMATTING RULES:
       break;
 
     case "formula":
-      systemPrompt = `You are a strict, veteran Mumbai University engineering professor creating a High-Yield Formula & Exam Cheat Sheet.
-Format cleanly with distinct sections, emojis, and clear line breaks.
+      systemPrompt = `You are a strict, veteran Mumbai University engineering professor creating a High-Yield Formula & Exam Cheat Sheet for students revising on Telegram.
 
+CRITICAL TELEGRAM RULES (NEVER BREAK THESE):
+1. NO LATEX OR MATHJAX! Telegram CANNOT render LaTeX math syntax.
+   - NEVER use \\times, \\frac, \\text, \\le, \\ge, \\approx, \\ll, or dollar signs ($...$).
+   - ALWAYS use clean Unicode:
+     • Multiplication: ×
+     • Division / Fractions: / (e.g., (IC × CPI) / f)
+     • Comparisons: ≤, ≥, ≈, ≠
+     • Powers: ², ³, ^n
+     • Variable names: use plain text like EAT, H, Tc, Tm, PA, EA instead of LaTeX subscripts (NO T_c or H_1).
+2. WRAP EVERY FORMULA in a single-line inline code block: \`formula here\`
+   Example:
+   • *Effective Access Time (EAT):*
+     \`EAT = (H × Tc) + ((1 - H) × Tm)\`
+     └─ *Where:* H = Hit Ratio (0 ≤ H ≤ 1) | Tc = Cache Access Time | Tm = Main Memory Time
+3. NEVER repeat prompt instructions or meta-talk like "List 6-8 critical formulas", "For each:", or "List 4-5 definitions". Output only headings and content directly!
+
+STRICT STRUCTURE:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 📑 *HIGH-YIELD FORMULA & CHEAT SHEET*
 *Subject:* ${subject}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📌 *1. CORE FORMULAS & EQUATIONS*
-List 6-8 critical formulas. For each:
-• *Formula Name:*
-  \`[LaTeX Formula]\`
-  └─ Explanation & Variable Units
+[Generate 6 to 8 critical formulas with \`code blocks\` and └─ *Where:* parameter breakdown]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-📖 *2. KEY EXAM DEFINITIONS*
-List 4-5 definitions that MU evaluators strictly check for keywords:
-• *[Term]:* Definition with key concepts highlighted.
+📖 *2. KEY EXAM DEFINITIONS (EXACT KEYWORDS)*
+• *[Term 1]:* Crisp definition highlighting the exact keywords MU examiners look for.
+• *[Term 2]:* Crisp definition highlighting the exact keywords MU examiners look for.
+[Provide 4-5 high-yield definitions]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⚙️ *3. STEP-BY-STEP ALGORITHM / DERIVATION*
-Walk through the #1 most frequently asked algorithm or derivation:
-1. Step 1...
-2. Step 2...
-3. Step 3...
+*[Name of the #1 most frequently asked algorithm or derivation in MU papers]*
+1. Step 1: ...
+2. Step 2: ...
+3. Step 3: ...
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⚠️ *4. EXAM HALL TRAPS & COMMON BLUNDERS*
-• *Trap 1:* Where students lose easy marks.
-• *Trap 2:* Common formula misconception.
-• *Trap 3:* Boundary condition errors.`;
+• *Trap 1:* [Where students lose easy marks]
+• *Trap 2:* [Common formula misconception]
+• *Trap 3:* [Boundary condition / unit conversion error]`;
 
-      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the High-Yield Formula Notes now.`;
+      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the clean High-Yield Formula Notes now. Remember: NO LaTeX dollar signs or LaTeX commands, use clean Unicode inside \`code blocks\`.`;
       break;
 
     case "survival":
       systemPrompt = `You are an expert Mumbai University academic coach creating a 12-Hour Last-Minute Panic Survival Kit.
+NEVER repeat prompt instructions or meta-talk. Output content directly.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎯 *12-HOUR LAST-MINUTE SURVIVAL KIT*
@@ -257,7 +272,6 @@ Walk through the #1 most frequently asked algorithm or derivation:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 🏆 *2. HIGH-YIELD TOPICS RANKED BY EXPECTED MARKS*
-Rank the top 4 modules carrying 60%+ marks:
 1. *[Topic 1]* — ~16 Marks (Module X)
 2. *[Topic 2]* — ~12 Marks (Module Y)
 3. *[Topic 3]* — ~10 Marks (Module Z)
@@ -280,13 +294,12 @@ Rank the top 4 modules carrying 60%+ marks:
     case "viva":
       systemPrompt = `You are a tough external viva examiner visiting a Mumbai University college.
 Generate 5 high-frequency oral viva questions based on the syllabus.
+NEVER repeat prompt instructions or meta-talk. Output content directly.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎤 *EXAMINER VIVA QUESTIONS & TRAPS*
 *Subject:* ${subject}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-For each question use this exact structure:
 
 ❓ *Question 1: [Viva Question]*
 🗣️ *Spoken Answer:* The exact 2-sentence crisp answer to say aloud.
@@ -294,7 +307,23 @@ For each question use this exact structure:
 
 ──────────────────────────
 ❓ *Question 2: [Viva Question]*
-...`;
+🗣️ *Spoken Answer:* Crisp answer.
+⚠️ *Examiner Trap:* Counter-question and defense.
+
+──────────────────────────
+❓ *Question 3: [Viva Question]*
+🗣️ *Spoken Answer:* Crisp answer.
+⚠️ *Examiner Trap:* Counter-question and defense.
+
+──────────────────────────
+❓ *Question 4: [Viva Question]*
+🗣️ *Spoken Answer:* Crisp answer.
+⚠️ *Examiner Trap:* Counter-question and defense.
+
+──────────────────────────
+❓ *Question 5: [Viva Question]*
+🗣️ *Spoken Answer:* Crisp answer.
+⚠️ *Examiner Trap:* Counter-question and defense.`;
 
       userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the 5 Examiner Viva Questions & Traps now.`;
       break;
@@ -313,5 +342,138 @@ For each question use this exact structure:
     });
   });
 
-  return result.text?.trim() || "⚠️ Generation failed. Please try again or open the web dashboard.";
+  const rawGeneratedText = result.text?.trim() || "";
+  if (!rawGeneratedText) {
+    return "⚠️ Generation failed. Please try again or open the web dashboard.";
+  }
+
+  return cleanTelegramOutput(rawGeneratedText);
+}
+
+/**
+ * Robust sanitizer for Telegram bot output:
+ * 1. Replaces LaTeX fractions and symbols with clean Unicode math.
+ * 2. Unpacks LaTeX \\text{} and removes dollar signs ($...$).
+ * 3. Strips prompt instructions that might leak into generation.
+ * 4. Ensures raw formulas are enclosed in monospace code spans.
+ * 5. Balances unmatched Markdown backticks so Telegram never rejects parse_mode.
+ */
+export function cleanTelegramOutput(rawText: string): string {
+  let text = rawText;
+
+  // 1. Strip leaked prompt instructions
+  text = text.replace(/List\s+\d+[-–]\d+\s+critical\s+formulas[^\n]*\n?/gi, "");
+  text = text.replace(/List\s+\d+[-–]\d+\s+definitions[^\n]*\n?/gi, "");
+  text = text.replace(/For each:[^\n]*\n?/gi, "");
+  text = text.replace(/\[(?:Generate|Provide)\s+\d+[-–]\d+\s+[^\]\n]+\]\n?/gi, "");
+  text = text.replace(/\(Provide\s+\d+[-–]\d+\s+[^\n)]+\)\n?/gi, "");
+  text = text.replace(/Walk through the #1 most frequently asked[^\n]*\n?/gi, "");
+  text = text.replace(/Rank the top \d+ modules[^\n]*\n?/gi, "");
+
+  // 2. Helper to replace \\frac{num}{den} recursively using brace counting
+  function replaceFrac(str: string): string {
+    let res = str;
+    let idx = res.indexOf("\\frac{");
+    while (idx !== -1) {
+      let depth = 0;
+      let numEnd = -1;
+      for (let i = idx + 5; i < res.length; i++) {
+        if (res[i] === "{") depth++;
+        else if (res[i] === "}") {
+          depth--;
+          if (depth === 0) {
+            numEnd = i;
+            break;
+          }
+        }
+      }
+      if (numEnd !== -1 && res[numEnd + 1] === "{") {
+        let denEnd = -1;
+        depth = 0;
+        for (let j = numEnd + 1; j < res.length; j++) {
+          if (res[j] === "{") depth++;
+          else if (res[j] === "}") {
+            depth--;
+            if (depth === 0) {
+              denEnd = j;
+              break;
+            }
+          }
+        }
+        if (denEnd !== -1) {
+          const num = res.slice(idx + 6, numEnd);
+          const den = res.slice(numEnd + 2, denEnd);
+          res = res.slice(0, idx) + `(${num}) / (${den})` + res.slice(denEnd + 1);
+          idx = res.indexOf("\\frac{");
+          continue;
+        }
+      }
+      idx = res.indexOf("\\frac{", idx + 1);
+    }
+    return res;
+  }
+
+  text = replaceFrac(text);
+
+  // 3. Unpack \\text{...}
+  for (let i = 0; i < 3; i++) {
+    text = text.replace(/\\text\{([^{}]+)\}/g, "$1");
+  }
+
+  // 4. Unpack remaining single subscript braces e.g. T{words} -> T(words) or 16{10} -> 16
+  text = text.replace(/([a-zA-Z0-9])\{([^{}]+)\}/g, "$1($2)");
+  text = text.replace(/\{([^{}]+)\}/g, "$1");
+
+  // 5. Convert LaTeX math symbols to clean Unicode
+  text = text.replace(/\\times/g, "×");
+  text = text.replace(/\\cdot/g, "·");
+  text = text.replace(/\\pm/g, "±");
+  text = text.replace(/\\approx/g, "≈");
+  text = text.replace(/\\le(q)?\b/g, "≤");
+  text = text.replace(/\\ge(q)?\b/g, "≥");
+  text = text.replace(/\\ne(q)?\b/g, "≠");
+  text = text.replace(/\\to\b/g, "→");
+  text = text.replace(/\\rightarrow\b/g, "→");
+  text = text.replace(/\\infty\b/g, "∞");
+  text = text.replace(/\\ll\b/g, "<<");
+  text = text.replace(/\\gg\b/g, ">>");
+  text = text.replace(/\\log_?2\b/g, "log₂");
+
+  // 6. Subscripts: T_c -> Tc, H_1 -> H1
+  text = text.replace(/([A-Za-z])_([A-Za-z0-9])/g, "$1$2");
+
+  // 7. Strip LaTeX dollar signs
+  text = text.replace(/\$([^\$\n]+)\$/g, "$1");
+  text = text.replace(/\$/g, "");
+
+  // 8. Balance backticks and wrap bare formula lines in monospace code blocks
+  const lines = text.split("\n");
+  const cleanedLines = lines.map((line) => {
+    let trimmed = line.trim();
+
+    // Fix unclosed / mismatched backticks
+    const backtickCount = (trimmed.match(/`/g) || []).length;
+    if (backtickCount % 2 !== 0) {
+      trimmed = trimmed.endsWith("`") ? trimmed.slice(0, -1) : `${trimmed}\``;
+    }
+
+    // Wrap bare formula lines that aren't already wrapped in `...`
+    if (
+      trimmed.includes(" = ") &&
+      !trimmed.startsWith("•") &&
+      !trimmed.startsWith("└") &&
+      !trimmed.startsWith("`") &&
+      !trimmed.startsWith("*") &&
+      (trimmed.includes("×") || trimmed.includes("/") || trimmed.includes("+") || trimmed.includes("^") || trimmed.includes("<<"))
+    ) {
+      return `  \`${trimmed}\``;
+    }
+
+    return line.startsWith("  ") ? `  ${trimmed}` : trimmed;
+  });
+
+  text = cleanedLines.join("\n");
+  text = text.replace(/\n{3,}/g, "\n\n");
+
+  return text.trim();
 }
