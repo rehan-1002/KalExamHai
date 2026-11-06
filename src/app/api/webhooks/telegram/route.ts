@@ -11,6 +11,10 @@ import {
   saveTelegramExport,
 } from "@/server/telegram/session";
 import {
+  checkTelegramQuota,
+  incrementTelegramQuota,
+} from "@/server/telegram/quota";
+import {
   generateTelegramArtifact,
   buildRemainingKeyboard,
   ARTIFACT_NAMES,
@@ -73,11 +77,34 @@ export async function POST(req: NextRequest) {
 
       const meta = ARTIFACT_NAMES[chosenType] || { label: "Exam Kit", short: "Exam Kit" };
 
+      // 1. Check daily free Telegram quota (prevents Gemini API exhaustion)
+      const quota = await checkTelegramQuota(chatId);
+      if (!quota.allowed) {
+        await sendTelegramMessage(
+          chatId,
+          `⏳ *Daily Free Telegram Limit Reached (${quota.used}/${quota.limit} used)*\n\nBhai, you've used your 5 free Telegram generations for today! Your free quota resets tonight at 12:00 AM IST.\n\nWant to continue studying right now without waiting? Open your full 3D student workspace on our web app (100% free):`,
+          {
+            reply_markup: {
+              inline_keyboard: [
+                [{ text: "🌐 Open KalExamHai Web (100% Free)", url: "https://kalexamhai-one.vercel.app" }],
+                [
+                  {
+                    text: "📤 Share Bot with Classmates",
+                    url: "https://t.me/share/url?url=https://t.me/kalexamhai_bot&text=Bhai%20kal%20exam%20hai!%20Check%20out%20this%20free%20AI%20bot%20for%20Mumbai%20University%20papers%20and%20notes",
+                  },
+                ],
+              ],
+            },
+          }
+        );
+        return NextResponse.json({ ok: true });
+      }
+
       // Inform user generation started
       await sendChatAction(chatId, "typing");
       await sendTelegramMessage(
         chatId,
-        `⏳ *Generating your ${meta.short}...*\nApplying strict Mumbai University NEP-2020 marking scheme.`
+        `⏳ *Generating your ${meta.short}...*\nApplying strict Mumbai University NEP-2020 marking scheme.\n_(Daily Quota: ${quota.used + 1}/${quota.limit} today)_`
       );
 
       // Generate the requested artifact via Gemini
@@ -86,6 +113,9 @@ export async function POST(req: NextRequest) {
         session.text,
         session.subject
       );
+
+      // Increment daily quota after successful generation
+      await incrementTelegramQuota(chatId);
 
       // Save export for 1-tap A4 Print and Web PDF preview
       const exportId = `${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
