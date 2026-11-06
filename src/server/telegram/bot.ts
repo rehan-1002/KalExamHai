@@ -19,9 +19,10 @@ export interface SendMessageOptions {
 }
 
 function getBotToken(): string {
-  const token =
-    process.env.TELEGRAM_BOT_TOKEN?.trim() ||
-    "9104065578:AAFTBMA842Y4W6dfg7XPzOiRvgeKSP_vunE";
+  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  if (!token) {
+    throw new Error("TELEGRAM_BOT_TOKEN is not configured in environment variables.");
+  }
   return token;
 }
 
