@@ -103,7 +103,7 @@ export type PaperFormat = z.infer<typeof PaperFormatEnum>;
 export type PaperJson = z.infer<typeof PaperJsonSchema>;
 
 export const GeneratePaperParamsSchema = z.object({
-  documentIds: z.array(z.string().uuid()).min(1, "Select at least one document"),
+  documentIds: z.array(z.string()).default([]),
   format: PaperFormatEnum,
   subject: z.string().min(1, "Subject is required"),
   courseCode: nullableOptionalString,
@@ -111,6 +111,8 @@ export const GeneratePaperParamsSchema = z.object({
   examTitle: nullableOptionalString,
   difficulty: z.enum(["balanced", "easy", "rigorous"]).default("balanced"),
   focusUnits: z.array(z.string()).optional(),
+  branchId: nullableOptionalString,
+  semester: z.number().int().optional(),
 });
 
 export type GeneratePaperParams = z.infer<typeof GeneratePaperParamsSchema>;

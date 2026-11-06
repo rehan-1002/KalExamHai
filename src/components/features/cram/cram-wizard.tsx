@@ -19,6 +19,8 @@ import { BackButton } from "@/components/navigation/back-button";
 import { generateCramItemAction } from "@/app/student/cram/actions";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { CramArtifactType } from "@/lib/schemas/cram";
+import { MuSubjectPicker } from "@/components/features/syllabus/mu-subject-picker";
+import type { MuCatalogSubject } from "@/data/mu-syllabus";
 
 interface DocumentOption {
   id: string;
@@ -50,6 +52,11 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
   const router = useRouter();
   const readyDocs = documents.filter((d) => d.status === "ready");
 
+  const [sourceMode, setSourceMode] = useState<"official" | "custom">("official");
+  const [selectedBranchId, setSelectedBranchId] = useState<string>("fe");
+  const [selectedSemester, setSelectedSemester] = useState<number>(1);
+  const [selectedSubjectCode, setSelectedSubjectCode] = useState<string>("BSC101");
+
   const [selectedDocId, setSelectedDocId] = useState<string>(() => {
     if (initialDocId && readyDocs.some((d) => d.id === initialDocId)) {
       return initialDocId;
@@ -61,15 +68,17 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
     initialType || "flashcards"
   );
 
-  const [subject, setSubject] = useState(() => {
-    const active = readyDocs.find((d) => d.id === selectedDocId);
-    return active?.subject || active?.title || "";
-  });
+  const [subject, setSubject] = useState("Applied Mathematics -I");
 
   const [isPending, startTransition] = useTransition();
   const [statusStep, setStatusStep] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [cooldownSeconds, setCooldownSeconds] = useState<number>(0);
+
+  const handleSelectMuSubject = (subj: MuCatalogSubject) => {
+    setSelectedSubjectCode(subj.code);
+    setSubject(subj.name);
+  };
 
   useEffect(() => {
     try {
@@ -108,21 +117,37 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
   };
 
   const handleGenerate = () => {
-    if (!selectedDocId) {
-      setErrorMessage("Please select a syllabus document from your library.");
-      return;
+    if (sourceMode === "official") {
+      if (!selectedSubjectCode || !subject.trim()) {
+        setErrorMessage("Please select an official MU subject.");
+        return;
+      }
+    } else {
+      if (!selectedDocId) {
+        setErrorMessage("Please select a syllabus document from your library.");
+        return;
+      }
     }
 
     setErrorMessage(null);
-    setStatusStep("Retrieving syllabus chunks from pgvector...");
+    setStatusStep("Extracting official syllabus & repeat question patterns...");
 
     startTransition(async () => {
       try {
-        setStatusStep("Extracting high-yield concepts with Gemini 3.5 Flash...");
+        setStatusStep("Synthesizing high-yield concepts with Gemini 3.5 Flash...");
         const res = await generateCramItemAction({
-          documentIds: [selectedDocId],
+          documentIds: sourceMode === "official" ? [`mu:${selectedSubjectCode}`] : [selectedDocId],
           artifactType: selectedType,
           subject: subject.trim() || undefined,
+          title: `${subject} — ${
+            selectedType === "flashcards"
+              ? "3D Holo Flashcards"
+              : selectedType === "quick_notes"
+              ? "High-Yield Formula Notes"
+              : selectedType === "survival_kit"
+              ? "Last-Minute Survival Kit"
+              : "Examiner Viva Prep"
+          }`,
         });
 
         if (res.ok && res.artifactId) {
@@ -142,24 +167,6 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
       }
     });
   };
-
-  if (readyDocs.length === 0) {
-    return (
-      <div className="bg-white border border-slate-200 rounded-xl p-8 sm:p-12 text-center max-w-lg mx-auto shadow-sm space-y-4">
-        <FileText className="w-12 h-12 text-slate-300 mx-auto" />
-        <h2 className="text-base font-bold text-slate-900">No Ready Documents Found</h2>
-        <p className="text-xs text-slate-500 leading-relaxed">
-          Please upload your semester syllabus or lecture notes first before generating flashcards or quick notes.
-        </p>
-        <Link
-          href="/student/library"
-          className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-[6px] hover:bg-blue-700 transition-colors"
-        >
-          Go to Knowledge Library &rarr;
-        </Link>
-      </div>
-    );
-  }
 
   return (
     <div className="max-w-3xl mx-auto space-y-6">
@@ -214,23 +221,85 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
         </div>
       )}
 
-      {/* 1. Document Selection */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-3">
-        <label className="text-xs font-bold text-slate-900 uppercase tracking-wider block">
-          1. Select Source Document
-        </label>
-        <select
-          value={selectedDocId}
-          disabled={isPending}
-          onChange={(e) => handleDocChange(e.target.value)}
-          className="w-full text-xs p-2.5 bg-slate-50 border border-slate-300 rounded-[6px] focus:outline-none focus:ring-1 focus:ring-blue-500 text-slate-800 font-medium"
-        >
-          {readyDocs.map((doc) => (
-            <option key={doc.id} value={doc.id}>
-              {doc.title} {doc.subject ? `(${doc.subject})` : ""}
-            </option>
-          ))}
-        </select>
+      {/* 1. Document & Syllabus Selection */}
+      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E5E7EB]">
+          <div>
+            <label className="text-xs font-bold text-slate-900 uppercase tracking-wider block">
+              1. Choose Syllabus &amp; Subject Source
+            </label>
+            <p className="text-xs text-slate-500 mt-0.5">
+              Select directly from official MU directory (Zero-Upload) or attach your uploaded notes.
+            </p>
+          </div>
+
+          <div className="inline-flex rounded-[8px] bg-slate-100 p-1 border border-slate-200 shrink-0">
+            <button
+              type="button"
+              onClick={() => setSourceMode("official")}
+              className={`px-3 py-1.5 rounded-[6px] text-xs font-semibold transition-all cursor-pointer ${
+                sourceMode === "official"
+                  ? "bg-white text-blue-700 shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              🏛️ Official MU Directory (Zero-Upload)
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setSourceMode("custom");
+                if (readyDocs.length > 0 && !selectedDocId) {
+                  setSelectedDocId(readyDocs[0]!.id);
+                  setSubject(readyDocs[0]!.subject || readyDocs[0]!.title || "");
+                }
+              }}
+              className={`px-3 py-1.5 rounded-[6px] text-xs font-semibold transition-all cursor-pointer ${
+                sourceMode === "custom"
+                  ? "bg-white text-blue-700 shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              📁 My Uploaded Notes
+            </button>
+          </div>
+        </div>
+
+        {sourceMode === "official" ? (
+          <MuSubjectPicker
+            selectedBranchId={selectedBranchId}
+            onSelectBranch={setSelectedBranchId}
+            selectedSemester={selectedSemester}
+            onSelectSemester={setSelectedSemester}
+            selectedSubjectCode={selectedSubjectCode}
+            onSelectSubject={handleSelectMuSubject}
+            disabled={isPending}
+          />
+        ) : (
+          <div>
+            {readyDocs.length === 0 ? (
+              <div className="p-4 rounded-[8px] bg-amber-50 border border-amber-200 text-xs text-amber-800 space-y-2">
+                <div>No ready documents found in your library.</div>
+                <div className="text-[11px] text-amber-700">
+                  Switch to the <strong>Official MU Directory</strong> tab above to generate flashcards, formulas, and survival kits instantly with zero upload!
+                </div>
+              </div>
+            ) : (
+              <select
+                value={selectedDocId}
+                disabled={isPending}
+                onChange={(e) => handleDocChange(e.target.value)}
+                className="w-full text-xs p-2.5 bg-slate-50 border border-slate-300 rounded-[6px] focus:outline-none focus:ring-1 focus:ring-blue-500 text-slate-800 font-medium cursor-pointer"
+              >
+                {readyDocs.map((doc) => (
+                  <option key={doc.id} value={doc.id}>
+                    {doc.title} {doc.subject ? `(${doc.subject})` : ""}
+                  </option>
+                ))}
+              </select>
+            )}
+          </div>
+        )}
       </div>
 
       {/* 2. Cram Tool Selection */}

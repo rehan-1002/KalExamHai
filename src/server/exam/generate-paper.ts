@@ -120,29 +120,59 @@ export async function generatePaper(
     };
   }
 
-  // 2. Retrieve RAG chunks from user's selected documents
-  let chunks;
-  try {
-    chunks = await retrieveChunks({
-      documentIds: params.documentIds,
-      ownerId,
-      matchCount: params.format === "IAT" ? 8 : 12,
-    });
-  } catch (err: unknown) {
-    await refundCredits(ownerId, creditCost, "retrieval_failure_refund", requestId);
-    return {
-      ok: false,
-      code: "RETRIEVAL_FAILED",
-      message: `Failed to retrieve knowledge chunks: ${err instanceof Error ? err.message : String(err)}`,
-    };
+  // 2. Retrieve context chunks (Official MU Syllabus or User RAG documents)
+  let chunks: import("../rag/context-builder").RetrievedChunk[] | undefined;
+
+  const isMuOfficial =
+    params.documentIds.length === 0 ||
+    params.documentIds.some((id) => id.startsWith("mu:"));
+
+  if (isMuOfficial) {
+    try {
+      const { findSubject } = await import("@/data/mu-syllabus");
+      const found = await findSubject(params.courseCode || params.subject);
+      if (found) {
+        chunks = found.subject.modules.map((m) => ({
+          id: `c_${m.moduleNo}`,
+          documentId: `mu_${found.subject.code}`,
+          documentTitle: `${found.subject.name} (Official MU NEP-2020)`,
+          chunkIndex: m.moduleNo,
+          unitLabel: `Module ${m.moduleNo}: ${m.title}`,
+          pageStart: 1,
+          pageEnd: 1,
+          content: `[Module ${m.moduleNo}: ${m.title}] (Expected Marks: ~${m.weightageMarks}M)\n` +
+            m.topics.map((t) => `• ${t}`).join("\n"),
+          tokenCount: 80,
+        }));
+      }
+    } catch {
+      // Continue to RAG fallback
+    }
   }
 
-  if (chunks.length === 0) {
+  if (!chunks || chunks.length === 0) {
+    try {
+      chunks = await retrieveChunks({
+        documentIds: params.documentIds,
+        ownerId,
+        matchCount: params.format === "IAT" ? 8 : 12,
+      });
+    } catch (err: unknown) {
+      await refundCredits(ownerId, creditCost, "retrieval_failure_refund", requestId);
+      return {
+        ok: false,
+        code: "RETRIEVAL_FAILED",
+        message: `Failed to retrieve knowledge chunks: ${err instanceof Error ? err.message : String(err)}`,
+      };
+    }
+  }
+
+  if (!chunks || chunks.length === 0) {
     await refundCredits(ownerId, creditCost, "insufficient_context_refund", requestId);
     return {
       ok: false,
       code: "INSUFFICIENT_CONTEXT",
-      message: "The selected documents contain no readable text or chunks. Please upload valid syllabus notes first.",
+      message: "Could not find syllabus material. Please select an official MU subject or upload valid notes first.",
     };
   }
 
@@ -377,7 +407,9 @@ export async function generatePaper(
     title: resolvedPaperTitle,
     subject: params.subject,
     course_code: params.courseCode || null,
-    document_ids: params.documentIds,
+    document_ids: (params.documentIds || []).filter((id) =>
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)
+    ),
     params: {
       difficulty: params.difficulty,
       focusUnits: params.focusUnits || [],

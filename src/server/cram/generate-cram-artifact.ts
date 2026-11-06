@@ -28,10 +28,14 @@ export type GenerateCramResult =
 export async function generateCramArtifact(
   params: GenerateCramParams
 ): Promise<GenerateCramResult> {
-  const { documentIds, artifactType, ownerId } = params;
+  const { documentIds = [], artifactType, ownerId } = params;
 
-  if (!documentIds.length) {
-    return { ok: false, error: "Please select at least one syllabus document." };
+  const isMuOfficial =
+    documentIds.length === 0 ||
+    documentIds.some((id) => id.startsWith("mu:"));
+
+  if (!documentIds.length && !params.subject?.trim()) {
+    return { ok: false, error: "Please select an official MU subject or upload a syllabus document." };
   }
 
   // 0. Check Daily Free Quota & 1-Trial Limits
@@ -44,14 +48,44 @@ export async function generateCramArtifact(
     };
   }
 
-  // 1. Retrieve knowledge chunks (optimized to 8 chunks for fast ~2-3s generation)
-  let chunks = await retrieveChunks({
-    documentIds,
-    ownerId,
-    matchCount: 8,
-  });
+  // 1. Retrieve knowledge chunks (Official MU Syllabus or User RAG documents)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let chunks: any[] = [];
+  let detectedSubject = params.subject?.trim() || "";
 
-  if (!chunks.length) {
+  if (isMuOfficial && (params.subject || params.title)) {
+    try {
+      const { findSubject } = await import("@/data/mu-syllabus");
+      const found = await findSubject(params.subject || params.title || "");
+      if (found) {
+        detectedSubject = found.subject.name;
+        chunks = found.subject.modules.map((m) => ({
+          id: `c_${m.moduleNo}`,
+          documentId: `mu_${found.subject.code}`,
+          documentTitle: `${found.subject.name} (Official MU NEP-2020)`,
+          chunkIndex: m.moduleNo,
+          unitLabel: `Module ${m.moduleNo}: ${m.title}`,
+          pageStart: 1,
+          pageEnd: 1,
+          content: `[Module ${m.moduleNo}: ${m.title}] (Expected Marks: ~${m.weightageMarks}M)\n` +
+            m.topics.map((t) => `• ${t}`).join("\n"),
+          tokenCount: 80,
+        }));
+      }
+    } catch {
+      // Continue to RAG fallback
+    }
+  }
+
+  if (chunks.length === 0 && documentIds.length > 0) {
+    chunks = await retrieveChunks({
+      documentIds,
+      ownerId,
+      matchCount: 8,
+    });
+  }
+
+  if (!chunks.length && documentIds.length > 0) {
     // Fallback: Check if document exists so students are never blocked by empty vector chunks
     const adminClient = getAdminClient();
     const { data: fallbackDoc } = await adminClient
@@ -75,26 +109,32 @@ export async function generateCramArtifact(
           tokenCount: 50,
         },
       ];
-    } else {
-      return {
-        ok: false,
-        error: "No knowledge chunks found in the selected documents. Please upload notes first.",
-      };
     }
+  }
+
+  if (!chunks.length) {
+    return {
+      ok: false,
+      error: "No syllabus material found. Please select an official MU subject or upload valid notes.",
+    };
   }
 
   const { contextText } = buildContextFromChunks(chunks);
 
   // 2. Determine subject / title
   const adminClient = getAdminClient();
-  const { data: docData } = await adminClient
-    .from("documents")
-    .select("title, subject")
-    .in("id", documentIds)
-    .limit(1)
-    .maybeSingle();
-
-  const detectedSubject = params.subject?.trim() || docData?.subject || docData?.title || "Exam Subject";
+  if (!detectedSubject && documentIds.length > 0) {
+    const { data: docData } = await adminClient
+      .from("documents")
+      .select("title, subject")
+      .in("id", documentIds)
+      .limit(1)
+      .maybeSingle();
+    detectedSubject = docData?.subject || docData?.title || "Exam Subject";
+  }
+  if (!detectedSubject) {
+    detectedSubject = "Exam Subject";
+  }
   const defaultTitle =
     params.title?.trim() ||
     (artifactType === "flashcards"
@@ -415,7 +455,9 @@ ${contextText}`;
       .from("cram_artifacts")
       .insert({
         owner_id: ownerId,
-        document_ids: documentIds,
+        document_ids: (documentIds || []).filter((id) =>
+          /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)
+        ),
         artifact_type: artifactType,
         title: payload.title,
         subject: payload.subject,

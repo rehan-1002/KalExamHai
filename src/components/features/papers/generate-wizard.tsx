@@ -15,6 +15,8 @@ import {
 import { generatePaperAction } from "@/app/tutor/generate/actions";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { PaperFormat } from "@/lib/schemas/paper";
+import { MuSubjectPicker } from "@/components/features/syllabus/mu-subject-picker";
+import { MU_CATALOG_SUBJECTS, type MuCatalogSubject } from "@/data/mu-syllabus";
 
 interface DocumentOption {
   id: string;
@@ -47,19 +49,25 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
   const router = useRouter();
   const pathname = usePathname();
   const isStudent = pathname?.startsWith("/student") ?? false;
+  const [sourceMode, setSourceMode] = useState<"official" | "custom">("official");
+  const [selectedBranchId, setSelectedBranchId] = useState<string>("fe");
+  const [selectedSemester, setSelectedSemester] = useState<number>(1);
+  const [selectedSubjectCode, setSelectedSubjectCode] = useState<string>("BSC101");
+
   const [selectedFormat, setSelectedFormat] = useState<PaperFormat>(initialFormat || "IAT");
-  const [selectedDocIds, setSelectedDocIds] = useState<string[]>(() => {
-    const readyDocs = documents.filter((d) => d.status === "ready");
-    return readyDocs.length > 0 ? [readyDocs[0]!.id] : [];
-  });
-  const [subject, setSubject] = useState(() => {
-    const firstReady = documents.find((d) => d.status === "ready");
-    return firstReady?.subject || firstReady?.title || "";
-  });
-  const [courseCode, setCourseCode] = useState("");
+  const [selectedDocIds, setSelectedDocIds] = useState<string[]>(["mu:BSC101"]);
+  const [subject, setSubject] = useState("Applied Mathematics -I");
+  const [courseCode, setCourseCode] = useState("BSC101");
   const [instituteName, setInstituteName] = useState("University of Mumbai");
   const [examTitle, setExamTitle] = useState("");
   const [difficulty, setDifficulty] = useState<"balanced" | "easy" | "rigorous">("balanced");
+
+  const handleSelectMuSubject = (subj: MuCatalogSubject) => {
+    setSelectedSubjectCode(subj.code);
+    setSubject(subj.name);
+    setCourseCode(subj.code);
+    setSelectedDocIds([`mu:${subj.code}`]);
+  };
 
   const [isPending, startTransition] = useTransition();
   const [statusStep, setStatusStep] = useState<string | null>(null);
@@ -112,26 +120,35 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (selectedDocIds.length === 0) {
-      setErrorMessage("Please select at least one syllabus/notes document.");
-      return;
-    }
-    if (!subject.trim()) {
-      setErrorMessage("Please enter the course/subject name.");
-      return;
+    if (sourceMode === "official") {
+      if (!selectedSubjectCode || !subject.trim()) {
+        setErrorMessage("Please select an official MU subject.");
+        return;
+      }
+    } else {
+      if (selectedDocIds.length === 0) {
+        setErrorMessage("Please select at least one syllabus/notes document.");
+        return;
+      }
+      if (!subject.trim()) {
+        setErrorMessage("Please enter the course/subject name.");
+        return;
+      }
     }
 
     setErrorMessage(null);
-    setStatusStep("Reserving credits and retrieving syllabus chunks...");
+    setStatusStep("Configuring official syllabus and retrieving repeat patterns...");
 
     startTransition(async () => {
       try {
-        setStatusStep("Orchestrating Gemini 3.5 Flash with strict context-only RAG...");
+        setStatusStep("Orchestrating Gemini 3.5 Flash with NEP-2020 syllabus & PYQ engine...");
         const result = await generatePaperAction({
-          documentIds: selectedDocIds,
+          documentIds: sourceMode === "official" ? [`mu:${selectedSubjectCode}`] : selectedDocIds,
           format: selectedFormat,
           subject: subject.trim(),
           courseCode: courseCode.trim() || undefined,
+          branchId: sourceMode === "official" ? selectedBranchId : undefined,
+          semester: sourceMode === "official" ? selectedSemester : undefined,
           instituteName: instituteName.trim() || undefined,
           examTitle: examTitle.trim() || undefined,
           difficulty,
@@ -268,53 +285,106 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
         </div>
       </div>
 
-      {/* 2. Select Source Documents */}
-      <div className="bg-[#FFFFFF] rounded-xl border border-[#E7E5E0] p-6 shadow-sm">
-        <h3 className="text-base font-semibold text-[#1F2937]">2. Select Source Notes &amp; Syllabus</h3>
-        <p className="text-xs text-[#6B7280] mt-0.5 mb-4">
-          All questions and formulas will be strictly retrieved from these embedded documents.
-        </p>
-
-        {documents.length === 0 ? (
-          <div className="p-4 rounded-md bg-amber-50 border border-amber-200 text-xs text-amber-800">
-            No documents available. Please upload notes in the Document Library first.
+      {/* 2. Select Syllabus & Subject Source */}
+      <div className="bg-[#FFFFFF] rounded-xl border border-[#E7E5E0] p-6 shadow-sm space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E5E7EB]">
+          <div>
+            <h3 className="text-base font-semibold text-[#1F2937]">2. Choose Syllabus &amp; Subject Source</h3>
+            <p className="text-xs text-[#6B7280] mt-0.5">
+              Select directly from the official Mumbai University directory (Zero-Upload) or attach personal notes.
+            </p>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-56 overflow-y-auto">
-            {documents.map((doc) => {
-              const isSelected = selectedDocIds.includes(doc.id);
-              const isReady = doc.status === "ready";
 
-              return (
-                <div
-                  key={doc.id}
-                  onClick={() => isReady && !isPending && toggleDocSelection(doc.id)}
-                  className={`p-3.5 rounded-lg border text-left transition-all flex items-start gap-3 ${
-                    !isReady
-                      ? "opacity-50 border-dashed border-[#E7E5E0] cursor-not-allowed"
-                      : isSelected
-                      ? "border-[#2563EB] bg-[#EFF6FF] cursor-pointer"
-                      : "border-[#E7E5E0] bg-[#FFFFFF] hover:border-[#3B82F6] cursor-pointer"
-                  }`}
-                >
-                  <input
-                    type="checkbox"
-                    checked={isSelected}
-                    disabled={!isReady || isPending}
-                    onChange={() => {}}
-                    className="mt-0.5 rounded text-[#2563EB] focus:ring-[#2563EB]"
-                  />
-                  <div className="min-w-0 flex-1">
-                    <span className="font-medium text-xs text-[#1F2937] block truncate">
-                      {doc.title}
-                    </span>
-                    <span className="text-[11px] text-[#6B7280] block truncate">
-                      {doc.subject || "No subject label"} • {doc.page_count || 1} p.
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="inline-flex rounded-[8px] bg-slate-100 p-1 border border-slate-200 shrink-0">
+            <button
+              type="button"
+              onClick={() => {
+                setSourceMode("official");
+                setSelectedDocIds([`mu:${selectedSubjectCode}`]);
+              }}
+              className={`px-3 py-1.5 rounded-[6px] text-xs font-semibold transition-all cursor-pointer ${
+                sourceMode === "official"
+                  ? "bg-white text-blue-700 shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              🏛️ Official MU Directory (Zero-Upload)
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setSourceMode("custom");
+                const readyDocs = documents.filter((d) => d.status === "ready");
+                if (readyDocs.length > 0) {
+                  setSelectedDocIds([readyDocs[0]!.id]);
+                  setSubject(readyDocs[0]!.subject || readyDocs[0]!.title || "");
+                }
+              }}
+              className={`px-3 py-1.5 rounded-[6px] text-xs font-semibold transition-all cursor-pointer ${
+                sourceMode === "custom"
+                  ? "bg-white text-blue-700 shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              📁 My Uploaded Notes
+            </button>
+          </div>
+        </div>
+
+        {sourceMode === "official" ? (
+          <MuSubjectPicker
+            selectedBranchId={selectedBranchId}
+            onSelectBranch={setSelectedBranchId}
+            selectedSemester={selectedSemester}
+            onSelectSemester={setSelectedSemester}
+            selectedSubjectCode={selectedSubjectCode}
+            onSelectSubject={handleSelectMuSubject}
+            disabled={isPending}
+          />
+        ) : (
+          <div>
+            {documents.length === 0 ? (
+              <div className="p-4 rounded-[8px] bg-amber-50 border border-amber-200 text-xs text-amber-800">
+                No documents found in your library. Use the <strong>Official MU Directory</strong> tab above to generate papers instantly with zero uploads!
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-56 overflow-y-auto">
+                {documents.map((doc) => {
+                  const isSelected = selectedDocIds.includes(doc.id);
+                  const isReady = doc.status === "ready";
+
+                  return (
+                    <div
+                      key={doc.id}
+                      onClick={() => isReady && !isPending && toggleDocSelection(doc.id)}
+                      className={`p-3.5 rounded-[8px] border text-left transition-all flex items-start gap-3 ${
+                        !isReady
+                          ? "opacity-50 border-dashed border-[#E7E5E0] cursor-not-allowed"
+                          : isSelected
+                          ? "border-[#2563EB] bg-[#EFF6FF] cursor-pointer"
+                          : "border-[#E7E5E0] bg-[#FFFFFF] hover:border-[#3B82F6] cursor-pointer"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={isSelected}
+                        disabled={!isReady || isPending}
+                        onChange={() => {}}
+                        className="mt-0.5 rounded text-[#2563EB] focus:ring-[#2563EB]"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <span className="font-medium text-xs text-[#1F2937] block truncate">
+                          {doc.title}
+                        </span>
+                        <span className="text-[11px] text-[#6B7280] block truncate">
+                          {doc.subject || "No subject label"} • {doc.page_count || 1} p.
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         )}
       </div>

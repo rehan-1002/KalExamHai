@@ -1,3 +1,5 @@
+export * from "./catalog";
+
 export interface SyllabusModule {
   moduleNo: number;
   title: string;
