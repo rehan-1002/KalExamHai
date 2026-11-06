@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { MiniRobotCompanion } from "@/components/ui/mini-robot-companion";
 import "./globals.css";
 
 const inter = Inter({
@@ -79,6 +80,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#F9F9F6] text-[#1F2937] dark:bg-[#090D16] dark:text-[#F8FAFC]">
         {children}
         <Analytics />
+        <MiniRobotCompanion />
       </body>
     </html>
   );
