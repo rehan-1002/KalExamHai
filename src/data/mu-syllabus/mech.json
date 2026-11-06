@@ -1,0 +1,539 @@
+[
+  {
+    "code": "2403111",
+    "name": "Engineering Mathematics-III",
+    "shortName": "EM-III",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Laplace Transform",
+        "topics": [
+          "Definition of Laplace transform",
+          "Condition of Existence of Laplace transform",
+          "Laplace Transform (L) of Standard Functions like e^at, sin(at), cos(at), sinh(at), cosh(at) and t^n, where n ≥ 0",
+          "Properties of Laplace Transform: Linearity, First Shifting theorem, change of scale Property, multiplication by t, Division by t (Properties without proof)",
+          "Evaluation of integrals by using Laplace Transformation",
+          "Self-learning topics: Laplace Transform of derivatives, Heaviside’s Unit Step function, Laplace Transform of Periodic functions, Dirac Delta Function, Second Shifting Theorem"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Inverse Laplace Transform",
+        "topics": [
+          "Inverse Laplace Transform, Linearity property, use of standard formulae to find inverse Laplace Transform, finding Inverse Laplace transform using derivative",
+          "Partial fractions method & first shift property to find inverse Laplace transform",
+          "Inverse Laplace transform using Convolution theorem (without proof)",
+          "Self-learning Topics: Applications to solve initial and boundary value problems involving ordinary differential equations"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Fourier Series",
+        "topics": [
+          "Dirichlet’s conditions, Definition of Fourier series",
+          "Fourier series of periodic function with period 2π and 2l (No questions should be ask on split function)",
+          "Fourier series of even and odd functions (No question should be ask on split function)",
+          "Half range Sine and Cosine Series",
+          "Self-learning Topics: Complex form of Fourier Series, orthogonal and orthonormal set of functions, Parseval’s Identity"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Complex Variables",
+        "topics": [
+          "Function f(z) of complex variable, limit, continuity and differentiability of f(z)",
+          "Analytic function, necessary and sufficient conditions for f(z) to be analytic (without proof), Cauchy-Riemann equations in cartesian coordinates (without proof)",
+          "Milne-Thomson method to determine analytic function f(z) when real part (u) or Imaginary part (v) is given",
+          "Harmonic function, Harmonic conjugate",
+          "Self-learning Topics: Milne-Thomson method to determine analytic function f(z) when (u+v or u-v) is given, Conformal mapping, linear, bilinear mapping, cross ratio, fixed points and standard transformations, orthogonal trajectories"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Matrices",
+        "topics": [
+          "Characteristic equation, Eigen values and Eigen vectors, Properties of Eigen values and Eigen vectors (No theorems/ proof)",
+          "Cayley-Hamilton theorem (without proof): Application to find the inverse of the given square matrix and to determine the given higher degree polynomial matrix",
+          "Similarity of matrices, Diagonalization of matrices",
+          "Self-learning Topics: Verification of Cayley Hamilton theorem, Minimal polynomial and Derogatory matrix & Quadratic Forms (Congruent transformation & Orthogonal Reduction), Functions of square matrix"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Numerical methods for PDE",
+        "topics": [
+          "Introduction of Partial Differential equations, method of separation of variables, Vibrations of string, Analytical method for one dimensional heat equations (only problems)",
+          "Crank Nicholson method",
+          "Bender Schmidt method",
+          "Self-learning Topics: Analytical method for one dimensional wave equations, Analytical methods of solving two and three dimensional problems"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2403112",
+    "name": "Strength of Materials",
+    "shortName": "SOM",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction-Concept of Stress & Principal Stresses",
+        "topics": [
+          "Introduction-Concept of Stress",
+          "Deformation in solids- Hooke’s law, stress and strain- tension, compression and shear stresses, Stress Strain Diagram, elastic constants and their relations- volumetric, linear and shear strains. Thermal stress and strain.",
+          "Principal Stresses",
+          "Principal stresses and Principal planes- Mohr’s circle."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Area Moment of Inertia, Torsion, Strain Energy",
+        "topics": [
+          "Area Moment of Inertia about centroidal axes, Parallel Axes theorem, Polar Moment of Inertia.",
+          "Torsion equation, Torsion of circular shafts-solid and hollow, stresses in shafts when transmitting power",
+          "Strain energy stored in the member due to gradual, sudden and impact loads, Strain energy due to bending and torsion."
+        ],
+        "hours": 10,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Shear Force and Bending Moment Diagrams in Beams",
+        "topics": [
+          "Introduction to types of beams, supports and loadings.",
+          "Definition of bending moment and shear force, relationship between load intensity, bending moment and shear force.",
+          "Shear force and bending moment diagrams for statically determinate beams subjected to point load, uniformly distributed loads, couple and their combinations."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Stresses in Beams and Thin Shells",
+        "topics": [
+          "Theory of bending of beams, bending stress distribution, shear stress distribution for point and distributed loads in simply supported and cantilever beams.",
+          "Stresses and deformation in Thin Cylindrical and Spherical Shells subjected to internal pressure."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Deflection of Beams",
+        "topics": [
+          "Deflection of a beam: Double integration method, Macauley's method for computation of slopes and deflection in beams for point and distributed loads."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Columns",
+        "topics": [
+          "Buckling load, Types of end conditions for column, Euler’s column theory and its limitations and Rankine formula."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2403113",
+    "name": "Thermodynamics",
+    "shortName": "TD",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Basic Concepts & First Law of Thermodynamics",
+        "topics": [
+          "Thermodynamic state, path, process and cycle, Point and Path functions, Quasi-static process & Equilibrium, Characteristic gas equation, Heat and Work. Concept of PdV work.",
+          "First Law of Thermodynamics: Statement & Equation, First law for Cyclic process (Joule’s experiment), Perpetual Motion Machine of the First Kind, Application of first law to non-flow systems (Ideal gas processes with numerical)",
+          "First law applied to flow system: Concept of flow process and flow energy, Concept of the steady flow process, Energy balance in a steady flow, Application of steady flow energy equation to nozzle, turbine, compressor, pump, boiler, condenser, heat exchanger, throttling device. Steady flow work, Significance of – VdP work, Relation between flow and non-flow work"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Second Law of Thermodynamics & Entropy",
+        "topics": [
+          "Second Law of Thermodynamics: Limitation of the first law of thermodynamics, Thermal reservoir, Concept of heat engine, Heat pump and Refrigerator, Statement of the second law of thermodynamics, Reversible and irreversible Process, Causes of irreversibility, Perpetual Motion Machine of the second kind, Carnot cycle, Carnot theorem.",
+          "Entropy: Clausius theorem, Entropy is property of a system, Temperature-Entropy diagram, Clausius inequality, Increase of entropy principle, T ds relations, Entropy change During a process."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Availability & Thermodynamic Relations",
+        "topics": [
+          "Availability: High grade and low-grade energy, Available and Unavailable energy, Dead State, Useful work, Irreversibility, Availability of closed system & steady flow process, Helmholtz & Gibbs function (Only Theory)",
+          "Thermodynamic Relations: Maxwell relations, Clausis-Clapeyron Equation, Mayer relation, Joule-Thomson coefficient (Only Theory)"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Properties of Pure Substance & Vapour Power cycle",
+        "topics": [
+          "Properties of Pure Substance: Advantages and applications of steam, Phase change process of water, Saturation pressure and temperature, Terminology associated with steam, Different types of steam. Property diagram: T-v diagram, p-v diagram, p-T diagram, Critical and triple point, T-s and an h-s diagram for water, Calculation of various properties of wet, dry and superheated steam using the steam table and Mollier chart.",
+          "Vapour Power cycle: Principal components of a simple steam power plant, Carnot cycle and its limitations as a vapour cycle, Rankine cycle with different turbine inlet conditions, Mean temperature of heat addition, Reheat Rankine Cycle."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Gas Power cycles",
+        "topics": [
+          "Nomenclature of a reciprocating engine, Mean effective pressure, Assumptions for Air Standard Cycle, Otto cycle, Diesel Cycle and Dual cycle, Comparison of Otto and Diesel cycle for same compression ratio, Brayton Cycle.",
+          "Sterling Cycle, Ericsson Cycle, Lenoir cycle, and Atkinson cycle (Only theory)."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Compressible Fluid flow & Reactive Systems",
+        "topics": [
+          "Compressible Fluid flow: Propagation of sound waves through compressible fluids, Sonic velocity and Mach number; Stagnation properties, Application of continuity, momentum and energy equations for steady-state conditions; Steady flow through the nozzle, Isentropic flow through ducts of varying cross-sectional area, Effect of varying back pressure on nozzle performance, Critical pressure ratio (Only Theory)",
+          "Reactive Systems: Combustion, theoretical and actual combustion processes, enthalpy of formation and enthalpy of combustion, Adiabatic flame temperature, first law analysis of reactive system (Only Theory)"
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2403114",
+    "name": "Material Science",
+    "shortName": "MS",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Crystals and Imperfections",
+        "topics": [
+          "Classification of materials: Introduction to engineering materials, significance of structure property correlations in all classes of engineering materials.",
+          "Concepts of crystals- Crystalline and Non-crystalline Materials Unit cell, Crystal structures of metals, Crystal systems, Crystallographic planes and directions, Crystal Defects: Crystal Imperfections- definition, classification and significance of imperfections ,point defects, line defects, Surface defects and volume defects. Importance of dislocations in deformation and its mechanisms. Critical resolved shear stress, Slip systems and deformability of FCC, BCC and HCP lattice systems."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Hot -Cold Working mechanisms",
+        "topics": [
+          "Concept of Recrystallization, effects and mechanism of cold work and hot work, Need for Recrystallization Annealing, the stages of recrystallization annealing and factors affecting."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Crystallization & Phase Transformations",
+        "topics": [
+          "Nucleation-Homogeneous and Heterogeneous Nucleation and Growth. Solidification of metals and alloys, Cooling curves.",
+          "Classification of Alloys based on phases and phase -diagrams Binary alloy phase diagrams –, Isomorphous, Eutectics type I and II, Peritectic."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Iron-Iron carbide phase diagram",
+        "topics": [
+          "Invariant reactions, microstructural changes of hypo and hyper-eutectoid steel, Solidification of different alloys from the Iron-Iron carbide diagram, TTT and CCT diagram-Hardenability and its tests, Graphitization in cast irons."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Heat treatment & Alloy Steel",
+        "topics": [
+          "Objectives, Thorough treatments: Annealing and types, normalizing, hardening and tempering. Isothermal treatments austempering and martempering.",
+          "Surface hardening processes: Carburizing , Nitriding ,Cyaniding and Carbonitriding, induction and flame hardening.",
+          "Alloy steels-Stainless steels, Tool steels, Maraging steels and Ausformed steels"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Fracture & Failure Mechanism",
+        "topics": [
+          "Fracture of metals, Ductile Fracture, Brittle Fracture, Ductile to Brittle Transition Temperature (DBTT), Griffith’s criteria and Orowan’s modification.",
+          "Fatigue/Endurance limit of ferrous and non-ferrous metals, Fatigue test, S-N curves, factors affecting fatigue, structural changes accompanying fatigue.",
+          "Creep, mechanism of creep, stages of creep and creep test, creep resistant materials."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2404111",
+    "name": "Finite Element Analysis",
+    "shortName": "FEA",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction",
+        "topics": [
+          "Brief History of FEM, Finite Element Terminology (nodes, elements, domain, continuum, Degrees of freedom, loads & constraints).",
+          "Application, Advantages, Steps of FEM, Stress and Equilibrium, Boundary conditions, Strain Displacement Relations, Stress-strain Relations, Von mises stress, Temperature effect, Potential Energy & Equilibrium, Gelerkin’s Method, stiffness (Displacement) Method.",
+          "Home Exercise 1: Introduction to Ansys Tools (Pre-Processing, Processing and Post-Processing)"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Matrix Algebra & Gaussian Elimination",
+        "topics": [
+          "Matrix Multiplication, Transposition, Diagonal Matrix, Symmetric Matrix, Upper Triangular Matrix, Determinant of Matrix, Matrix Inversion Eligen values & Elgen vectors, Gaussian elimination.",
+          "Home Exercise 2: Finite Element Analysis (element selection, assigning properties, meshing, assigning loads, and boundary conditions, analysis and result interpretation)."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "1D ELEMENT",
+        "topics": [
+          "Types of 1D element: Displacement function, Global and local coordinate systems, Order of element, primary and secondary variables, shape functions and its properties.",
+          "Formulation of elemental stiffness matrix and load vector for spring, bar, beam, truss and Plane frame.",
+          "Transformation matrix for truss and plane frame, Assembly of global stiffness matrix and load vector, Properties of stiffness matrix, half bandwidth, Boundary conditions elimination method and penalty approach, Symmetric boundary conditions, Stress calculations.",
+          "Home Exercise 3: Any two problems using bar element"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "1D Steady State Heat Transfer Problems",
+        "topics": [
+          "Introduction, Governing differential equation, steady-state heat transfer formulation of 1D element for conduction and convection problem, boundary conditions and solving for temperature distribution.",
+          "Home Exercise 4: Any one problem on steady state heat conduction"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Dynamic Analysis",
+        "topics": [
+          "Types of dynamic analysis, General dynamic equation of motion, point and distributed mass, lumped and Consistent mass, Mass matrices formulation of bar and beam element.",
+          "Undamped-free vibration- Eigen value problem, Evaluation of eigen values and eigenvectors (natural frequencies and mode shapes).",
+          "Home Exercise 5: Any one problem of free vibration analysis using bar element"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "2D ELEMENTS",
+        "topics": [
+          "Second Order 2D Equations involving Scalar Variable Functions — Variation formulation –Finite Element formulation — Triangular elements — Shape functions and element matrices and vectors.",
+          "Application to Field Problems —Torsion of Non circular shafts – Quadrilateral elements. Stress analysis of CST.",
+          "Home Exercise 6: Any two problems using CST element"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2404112",
+    "name": "Manufacturing Processes",
+    "shortName": "MP",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Manufacturing process and Metal Casting",
+        "topics": [
+          "Classification of Manufacturing Processes and applications areas",
+          "Pattern making materials, Types of pattern and allowances.",
+          "Sand molding and Machine molding",
+          "Gating system: Types of riser, types of gates, solidification",
+          "Special casting processes: CO2 and shell molding, Investment casting, Die casting, Vacuum casting",
+          "Inspection & casting defects and remedies."
+        ],
+        "hours": 6,
+        "weightageMarks": 11
+      },
+      {
+        "moduleNo": 2,
+        "title": "Joining Processes",
+        "topics": [
+          "Classification of various joining processes; Applicability, advantages and limitations of Adhesive bonding, Mechanical Fastening; Welding and allied processes, Hybrid joining processes.",
+          "Classification and Working of various welding methods: Gas, Arc, Chemical, Radiant, Solid State etc.",
+          "Welding Joints, Welding Positions, Welding defects and their remedies."
+        ],
+        "hours": 7,
+        "weightageMarks": 13
+      },
+      {
+        "moduleNo": 3,
+        "title": "Metal Forming Process and Sheet metal working processes",
+        "topics": [
+          "Metal Forming Process: Introduction and classification of metal working processes, hot and cold working processes",
+          "Introduction, classification and analysis of forging and rolling operations, Defects in rolled and forged components, Extrusion process, Classification and analysis of wire and tube drawing processes.",
+          "Sheet metal working processes: Classification of Sheet metal operations, types of Presses use din sheet metal operations, types of dies."
+        ],
+        "hours": 6,
+        "weightageMarks": 11
+      },
+      {
+        "moduleNo": 4,
+        "title": "Machine Tools, Machining Process",
+        "topics": [
+          "Machine Tools and Machining Processes: Lathe Machines, Milling Machines, Drilling Machines, and Grinding Machines and selection of grinding wheel, Broaching machines, Lapping/Honing machines (Super Finishing Operations) and shaping/slotting/planning Machines.",
+          "Gear Manufacturing: Gear milling, standard cutters and limitations, Gear Hobbing, Gear Shaping, Gear Shaving and Gear Grinding processes",
+          "Theory of Metal cutting: Geometry and nomenclature of single point cutting tool, Speed, feed, depth of cut, Concept of chip formation and types of chips."
+        ],
+        "hours": 10,
+        "weightageMarks": 18
+      },
+      {
+        "moduleNo": 5,
+        "title": "Non Traditional Machining Processes",
+        "topics": [
+          "Electro-chemical machining (ECM)",
+          "Electric-discharge machining (EDM)",
+          "Ultrasonic machining (USM)",
+          "Laser Beam Machining (LBM)"
+        ],
+        "hours": 4,
+        "weightageMarks": 7
+      },
+      {
+        "moduleNo": 6,
+        "title": "Polymer Processing",
+        "topics": [
+          "Detailed content for this module is not provided in the syllabus document snippet."
+        ],
+        "hours": 0,
+        "weightageMarks": 0
+      }
+    ]
+  },
+  {
+    "code": "2404113",
+    "name": "Theory of Machines",
+    "shortName": "TOM",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Detailed syllabus not available in the provided document snippet.",
+        "topics": [
+          "N/A"
+        ],
+        "hours": 0,
+        "weightageMarks": 0
+      },
+      {
+        "moduleNo": 2,
+        "title": "Detailed syllabus not available in the provided document snippet.",
+        "topics": [
+          "N/A"
+        ],
+        "hours": 0,
+        "weightageMarks": 0
+      },
+      {
+        "moduleNo": 3,
+        "title": "Detailed syllabus not available in the provided document snippet.",
+        "topics": [
+          "N/A"
+        ],
+        "hours": 0,
+        "weightageMarks": 0
+      },
+      {
+        "moduleNo": 4,
+        "title": "Detailed syllabus not available in the provided document snippet.",
+        "topics": [
+          "N/A"
+        ],
+        "hours": 0,
+        "weightageMarks": 0
+      },
+      {
+        "moduleNo": 5,
+        "title": "Detailed syllabus not available in the provided document snippet.",
+        "topics": [
+          "N/A"
+        ],
+        "hours": 0,
+        "weightageMarks": 0
+      },
+      {
+        "moduleNo": 6,
+        "title": "Detailed syllabus not available in the provided document snippet.",
+        "topics": [
+          "N/A"
+        ],
+        "hours": 0,
+        "weightageMarks": 0
+      }
+    ]
+  }
+]

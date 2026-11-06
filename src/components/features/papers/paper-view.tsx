@@ -343,6 +343,11 @@ export function PaperView({ paperRecord }: PaperViewProps) {
 
                             {/* Metadata Badges */}
                             <div className="flex items-center gap-2 mt-2 flex-wrap">
+                              {sq.repeat_badge && (
+                                <span className="text-[10px] font-semibold px-2 py-0.5 bg-amber-50 text-amber-900 border border-amber-200 rounded-[6px]">
+                                  🔥 {sq.repeat_badge}
+                                </span>
+                              )}
                               {sq.unit_label && (
                                 <span className="text-[10px] font-medium px-2 py-0.5 bg-slate-100 text-slate-600 border border-slate-200 rounded-[6px]">
                                   {sq.unit_label}

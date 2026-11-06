@@ -1,0 +1,544 @@
+[
+  {
+    "code": "2163111",
+    "name": "Mathematics for Computer Engineering",
+    "shortName": "MCE",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Linear Algebra (Theory of Matrices)",
+        "topics": [
+          "Characteristic Equation, Eigenvalues and Eigenvectors, and properties (without proof)",
+          "Cayley-Hamilton Theorem (without proof), verification and reduction of higher degree polynomials",
+          "Similarity of matrices, diagonalizable and non-diagonalizable matrices",
+          "Self-learning Topics: Derogatory and non-derogatory matrices, Functions of Square Matrix, Linear Transformations, Quadratic forms."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Linear and Non-Linear Programming Problems",
+        "topics": [
+          "Types of solutions, Standard and Canonical of LPP, Basic and Feasible solutions, slack variables, surplus variables, Simplex method.",
+          "NLPP with one and two equality constraint (two or three variables) using the method of Lagrange’s multipliers",
+          "Self-learning Topics: Sensitivity Analysis, Big-M method, Artificial variables, Kuhn-Tucker conditions"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Modular Arithmetic",
+        "topics": [
+          "Introduction to Congruence, Linear congruence, reminder theorem, solving polynomials, system of linear congruence",
+          "Eluer’s theorem, Fermat’s little theorem, Application of congruence-RSA algorithm.",
+          "Self-learning Topics: Divisiblility, GCD, properties of prime numbers, fundamental theorem of arithmetic."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Fourier Series",
+        "topics": [
+          "Dirichlet’s conditions, Fourier series of periodic function with period 2π and 2l.",
+          "Fourier series of even and odd functions.",
+          "Self-learning Topics: Orthogonal and orthonormal set of functions, Complex form of Fourier Series, Half range Sine and Cosine Series."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Statistical Techniques",
+        "topics": [
+          "Karl Pearson’s coefficient of correlation (r).",
+          "Spearman’s Rank correlation coefficient (R) (with repeated and non-repeated ranks).",
+          "Lines of regression, fitting of first-degree curves.",
+          "Self-learning Topics: Covariance, Fitting of second-degree and exponential curve."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Probability",
+        "topics": [
+          "Moment generating function, Raw moments.",
+          "Poisson Distribution, Normal Distribution",
+          "Self-learning Topics: Skewness and Kurtosis of distribution (data), types of distribution and their application."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2163112",
+    "name": "Discrete Structures and Graph Theory",
+    "shortName": "DSGT",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Crisp Set Theory and Logic",
+        "topics": [
+          "Set Theory: Sets, Subsets, Universal and Empty Sets, Set Operations, Set Representation, Laws of Set theory.",
+          "Logic: Propositional Logic, Predicate Logic, Quantifiers (Universal and Existential).",
+          "Types of Mathematical Proof: Direct proof, Proof by contradiction, Proof by deduction, Proof by cases, Proof by exhaustion, Proof by counterexample, Mathematical induction.",
+          "Self-learning Topics: PROLOG / LISP programming to create expert system using Propositional and Predicate Logic, Other types of logic and sets."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Mathematical Relations",
+        "topics": [
+          "Relations: Definition, Representation of Relations, Properties of Relations, Equivalence Relations, Equivalence Classes, Closures of Relations, Warshall’s algorithm.",
+          "Posets and Lattice: Partial Order Relations, Poset, Hasse Diagram, Chain and Anti chains, Lattice, Types of Lattices, Sub lattice.",
+          "Self-learning Topics: Practical applications of relations in real life in the field of Database Management, Economics, Social Network, Sports, Medical Diagnosis, Weather, etc."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Functions",
+        "topics": [
+          "Functions: Types: Injective, Surjective, and Bijective Functions. Composition, Inverse Functions. Real life applications of Functions.",
+          "Self-learning Topics: Practical applications of function in Neural Network, Determining risk factors for insurance rates, Taxes and tax brackets, Vending machines, etc."
+        ],
+        "hours": 3,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Counting",
+        "topics": [
+          "Pigeonhole Principle, Inclusion-Exclusion Principle.",
+          "Recurrence relations, Solving recurrence relations",
+          "Self-learning Topics: Applications of Recurrence Relations – Analysis of recursive algorithms in computing. Combinatorial Problem Solving – Using counting techniques in probability and decision-making."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Algebraic Structures",
+        "topics": [
+          "Algebraic structures with one binary operation: Semi group, Monoid, Groups, Subgroups, Abelian Group, and Cyclic group.",
+          "Algebraic structures with two binary operations: Ring.",
+          "Self-learning Topics: Error Correcting codes."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Graph Theory",
+        "topics": [
+          "Types of graphs, Graph Representation, Sub graphs, Operations on Graphs, Walk, Path, Circuit, Connected Graphs, Disconnected Graph, Components, Homomorphism and Isomorphism of Graphs, Euler and Hamiltonian Graphs, Planar Graph, Cut Set, Cut Vertex, Real life applications of Graph Theory.",
+          "Self-learning Topics: Network Flow Problems – Understanding flow in networks and its optimization. Graph Coloring Applications in Scheduling – Use of graph coloring in timetabling and resource allocation. Optimization Techniques – Application of graphs in shortest path problems, spanning trees, and clustering."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2163113",
+    "name": "Analysis of Algorithm",
+    "shortName": "AOA",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction",
+        "topics": [
+          "Performance analysis- Master Method, space, and time complexity Growth of function, Big-Oh, Omega Theta notation Mathematical background for algorithm analysis. Analysis of selection sort, insertion sort.",
+          "Self-learning Topics: Complexity class: Definition of P, NP, NP-Hard, NP-Complete"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Divide and Conquer Approach",
+        "topics": [
+          "General method, Merge sort, Quick sort, Analysis of Binary search.",
+          "Self-learning Topics: Finding minimum and maximum algorithms and their Analysis, Strassen's Algorithm, real life applications of all algorithms"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Greedy Method Approach",
+        "topics": [
+          "General Method, Single source shortest path: Dijkstra AlgorithmFractional Knapsack problem, Minimum cost spanning trees: Kruskal and Prim’s algorithms",
+          "Self-learning Topics: Job sequencing with deadlines, real life applications of all algorithms"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Dynamic Programming Approach",
+        "topics": [
+          "General Method, Multistage graphs, All pair shortest path: Floyd Warshall Algorithm, 0/1 knapsack Problem, Travelling Salesperson problem, Longest common subsequence.",
+          "Self-learning Topics: Bellman Ford Algorithm, real life applications of all algorithms"
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Backtracking and Branch and bound",
+        "topics": [
+          "General Method, Backtracking: N-queen problem, Sum of subsets, Graph coloring.",
+          "Branch and Bound: Travelling Salesperson Problem, 15 Puzzle problem",
+          "Self-learning Topics: Real life applications of all algorithms"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "String Matching Algorithms",
+        "topics": [
+          "The Naïve string-matching algorithm, The Rabin Karp algorithm, The Knuth-Morris-Pratt algorithm",
+          "Self-learning Topics: Real life applications of all algorithms"
+        ],
+        "hours": 3,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2163114",
+    "name": "Computer Organization & Architecture",
+    "shortName": "COA",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Computer Fundamentals",
+        "topics": [
+          "Number Systems: Binary. Octal and Hexadecimals.",
+          "Binary Number representation: Sign Magnitude, 1’s and 2’s Compliment representation.",
+          "Logic Gates: AND, OR, NOT, NAND, NOR, EX-OR. Basic Organization of Computer, Von Neumann model."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "ALU Operations",
+        "topics": [
+          "ALU Operation: Addition and Subtraction on Binary, Octal, Hexadecimal number.",
+          "Booth’s Algorithms, Restoring and Non restoring division algorithm.",
+          "IEEE 754 Floating point representation and conversation."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Processor Organization and Control Unit Design",
+        "topics": [
+          "8086 Processor: Architecture of 8086 processor, Register Organization, Instruction formats, instruction cycle, addressing modes.",
+          "Control Unit: Instruction interpretation and sequencing, Micro-programmed and hardwired control unit design methods. Microinstruction sequencing and execution, Micro programs.",
+          "RISC and CISC: Introduction to RISC and CISC architectures and design issues."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Memory Systems Organization",
+        "topics": [
+          "Introduction to Memory and Memory parameters.",
+          "Classifications of primary and secondary memories.",
+          "Types of RAM and ROM, Memory hierarchy and characteristics, Virtual Memory: Segmentation and Paging",
+          "Cache memory: Concept, hierarchy (L1, L2, L3), mapping techniques. Cache Coherency and technique to resolve it. Interleaved and Associative memory.",
+          "Self-Study : Case study of Pentium Processor Cache Memory Model (MESI Protocol)"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "I/O Organization",
+        "topics": [
+          "Buses: Types of Buses, Bus Arbitration, Bus standards and its comparative study",
+          "I/O Interface, I/O channels, I/O modules and IO processor, Types of data transfer techniques: Programmed I/O, Interrupt driven I/O and DMA."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Parallel Processing",
+        "topics": [
+          "Advanced Processor Models(80386DX): Real Model, Protected Model, Virtual Model",
+          "Pipelined Architecture: Pipeline Stages, Superscalar architecture Pipeline Hazards, Mitigation of Hazards with branch prediction and data forwarding techniques, Amdahl’s Law",
+          "Introduction to parallel processing concepts, Flynn’s classifications.",
+          "Self-Study: Superscalar Architecture: Case study of Pentium processor and GPGPU architecture."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2164111",
+    "name": "Computational Theory",
+    "shortName": "CT",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Basics Concepts and Regular Languages",
+        "topics": [
+          "Importance of TCS, Alphabets, Strings, Languages",
+          "Regular operations, Regular Expression, Arden's theorem, RE Applications, Regular Language, Closure properties.",
+          "Decision properties of RLs, Pumping lemma for RLs.",
+          "Self-learning Topics: RE in text search and replace, Application of Regular Languages in Compiler Design, Text Processing, and Natural Language Processing (NLP)."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Finite Automata",
+        "topics": [
+          "Finite Automata (FA) & Finite State machine (FSM).",
+          "Deterministic Finite Automata (DFA) and Nondeterministic Finite Automata (NFA): Definitions, transition diagrams and Language recognizers, Equivalence between NFA with and ϵ- transitions, NFA to DFA Conversion, Minimization of DFA, FSM with output: Moore and Mealy machines, Applications and limitations of FA.",
+          "Self-learning Topics: State Elimination Method for converting FA to RE, Minimization of DFA using Equivalence Theorem, Conversion of Moore to Mealy & Mealy to Moore machine."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Regular and Context Free Grammars",
+        "topics": [
+          "Grammars and Chomsky Hierarchy",
+          "Regular Grammar (RG), Equivalence of Left and Right linear grammar, Equivalence of RG and FA.",
+          "Context Free Grammars (CFG): Definition, Sentential forms, Leftmost and Rightmost derivations, Parse tree, Ambiguity, Simplification of CFG: Eliminating unit productions, useless production, useless symbols, and Є-productions, Normal Forms: Chomsky Normal Form (CNF) and Greibach Normal Form (GNF), Context Free language (CFL) - Application: Parser, Markup languages; Pumping lemma, Closure properties.",
+          "Self-learning Topics: Left Recursion and Its Elimination, Applications of CFGs in XML Parsing, and Natural Language Processing (NLP)."
+        ],
+        "hours": 9,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Pushdown Automata (PDA)",
+        "topics": [
+          "Definition, Language of PDA, PDA as generator, decider and acceptor of CFG, Deterministic PDA , Non-Deterministic PDA, Equivalence of PDA and CFG, Application of PDA.",
+          "Self-learning Topics: Parsing & PDA: Top-Down Parsing, Bottom-up Parsing, Closure properties and Deterministic PDA."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Turing Machine (TM)",
+        "topics": [
+          "Definition, Design of TM as generator, decider and acceptor, Variants of TM: Multitrack, Multitape, Universal TM, Applications, Power and Limitations of TMs.",
+          "Self-learning Topics: Algorithms using Turing Machine, The Model of Linear Bounded Automata"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Decidability and Computability",
+        "topics": [
+          "Decidability and Undecidability, Recursive and Recursively Enumerable Language, Halting Problem, Rice’s Theorem, Post Correspondence Problem.",
+          "Self-learning Topics: NP Completeness of the SAT Problem, A Restricted Satisfiability Problem"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2164112",
+    "name": "Database Management System",
+    "shortName": "DBMS",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Database and Data Modeling",
+        "topics": [
+          "Introduction: Definitions and application, Characteristics of databases, DBMS architecture, ACID Properties",
+          "The Entity-Relationship (ER) Model: Entity types: Weak and strong entity sets, Entity sets, Types of Attributes, Keys, Relationship constraints: Cardinality and Participation, Extended Entity-Relationship (EER) Model: Generalization, Specialization and Aggregation",
+          "Self-learning Topics: Design an ER model for any real time case study."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Relational Model and Relational Algebra",
+        "topics": [
+          "Introduction to the Relational Model, relational schema and concept of keys. Mapping the ER and EER Model to the Relational Model, Relational Algebra- operators (Selection(σ),Projection(π),Union(∪),Difference(−),CartesianProduct(×),Join(⨝), Intersection (∩),Rename (ρ)), Relational Algebra Queries",
+          "Self-learning Topics: Practice writing queries to perform common database tasks (e.g., selecting data, joining tables)"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Structured Query Language (SQL)",
+        "topics": [
+          "Overview of SQL, Data Definition Commands, Integrity constraints: key constraints, Domain Constraints, Referential integrity, check constraints, Data Manipulation commands, Data Control commands, Transaction Control Commands. aggregate function-group by, having, order by, joins, Nested and complex queries, Views in SQL, Set and string operations, Triggers, Introduction to Pl/SQL Block Structure",
+          "Self-learning Topics: LeetCode (SQL practice problems), HackerRank (SQL challenges)"
+        ],
+        "hours": 10,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Database Normalization",
+        "topics": [
+          "Pitfalls in relational database designs, Concept of normalization, Function Dependencies, FD closure, First Normal Form, 2NF, 3NF, BCNF, 4NF.",
+          "Self-learning Topics: Consider any real time application and normalization upto 3NF/BCNF"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Transaction Management and Concurrency Control",
+        "topics": [
+          "Transaction concept, Transaction states, Concurrent Executions, Serializability-Conflict and View, Concurrency Control: Lock-based, Timestamp-based protocols, Recovery System: log-based recovery, Introduction to Deadlock handling",
+          "Self-learning Topics: SQL challenges related to transactions and concurrency"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Introduction to Modern databases",
+        "topics": [
+          "Recent trends in the industry, Introduction of Cloud Database, Introduction of Distributed Database, Introduction to NOSQL Database and Object-Oriented Databases",
+          "Self-learning Topics: Learn about emerging database technologies. Explore different NoSQL types. Learn how object-oriented programming concepts like objects and inheritance are applied to database management systems."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2164113",
+    "name": "Operating System",
+    "shortName": "OS",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Fundamentals of Operating System",
+        "topics": [
+          "Introduction of Operating Systems: System Boot, Objectives of Operating System",
+          "Functions of Operating System, Operating System Structure and Operations, Operating System Services, Multiprogramming, Multitasking, Multithreading, Types of Operating System, Types of System Calls.",
+          "Self-learning Topics: Study of various Operating System Architecture like IoT, Android."
+        ],
+        "hours": 3,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Process Management",
+        "topics": [
+          "Basic Concepts of Process: Process State Transition Model, Operations, Process Control Block, Context Switching; Introduction to Threads, Types of Threads, Thread Models, Basic Concepts of Scheduling, Types of Schedulers, Type of scheduling algorithms: Preemptive and non preemptive (FCFS, SJF, Priority and Round Robin)",
+          "Self-learning Topics: Real-time Scheduling algorithms and applications."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Process Synchronization and Deadlock Management",
+        "topics": [
+          "Basic Concepts of Inter-process Communication and Synchronization, Race Condition, Critical Section Problem ,Peterson’s Solution, Process Synchronization, Hardware and Semaphores, Producer Consumer Problem.",
+          "Deadlocks Management: System Model, Deadlock Characterization, Deadlock Prevention, Deadlock Avoidance: Bankers algorithm, Deadlock Detection and Recovery.",
+          "Self-learning Topics: Study a real time case study for Deadlock detection and recovery. Overview of security mechanism in OS."
+        ],
+        "hours": 10,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Memory Management",
+        "topics": [
+          "Basic Concepts of Memory Management: Swapping, Memory Allocation strategy, Paging, Structure of Page Table, Segmentation, TLB.",
+          "Basic Concepts of Virtual Memory, Demand Paging, Copy-on Write, Page Replacement Algorithms, Thrashing.",
+          "Self-learning Topics: Memory Management of IoT, Android Operating System."
+        ],
+        "hours": 9,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "File and IO Management",
+        "topics": [
+          "File Management: Basic Concepts of File System, File Access Methods, Directory Structure, File-System implementation, Allocation Methods, Overview of Mass-Storage Structure, I/O devices, Organization of the I/O Function, Disk Organization, I/O Management and Disk Scheduling: FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK.",
+          "Self-learning Topics: File System for Linux and Windows, Features of I/O facility for different OS."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Special-purpose Operating Systems",
+        "topics": [
+          "Open-source and Proprietary Operating System, Fundamentals of Distributed Operating System, Network Operating System, Architecture and functions: Cloud Operating System, Real-Time Operating System, Mobile Operating System.",
+          "Self-learning Topics: Case Study on any one Special-purpose Operating Systems."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  }
+]

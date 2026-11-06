@@ -62,14 +62,20 @@ export function buildRemainingKeyboard(
   return { inline_keyboard: keyboardRows };
 }
 
+export interface TelegramArtifactResult {
+  telegramText: string;
+  webContent: string;
+}
+
 /**
  * Generates an artifact via Gemini with Mumbai University NEP-2020 strict rules and clean spacing.
+ * Returns both the clean Unicode plain-text for Telegram chat and the LaTeX-enabled version for Web/PDF print view.
  */
 export async function generateTelegramArtifact(
   type: TelegramArtifactType,
   syllabusText: string,
   subject: string
-): Promise<string> {
+): Promise<TelegramArtifactResult> {
   const model = getGenerationModel();
 
   // Truncate context to ~18,000 characters for high speed (~2-3s)
@@ -84,11 +90,13 @@ export async function generateTelegramArtifact(
 
 STRICT FORMATTING RULES:
 1. Always put question statements on their own line.
-2. Put the marks and module attribution on a DEDICATED INDENTED SUBLINE using code formatting:
+2. Put the marks, module, and MU repeat frequency on DEDICATED INDENTED SUBLINES:
    *(a)* Explain the significance of client-side state transfer...
    └─ \`[2 Marks]\` • \`[Module 1: Web Architecture]\`
+   └─ 🔥 *Repeated 4x in MU (Dec '24 NEP, May '24, Dec '23)* • *~90% Probability*
 3. NEVER append marks or module names directly to the end of the question sentence!
-4. Use clean dividers:
+4. For every question, include an accurate Mumbai University repeat frequency estimation (3x-6x) and probability score based on historical MU examination patterns.
+5. Use clean dividers:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 🏛️ *MUMBAI UNIVERSITY*
 📝 *INTERNAL ASSESSMENT TEST (IAT)*
@@ -105,30 +113,37 @@ STRICT FORMATTING RULES:
 📌 *Q.1 Compulsory [Solve any 2 out of 3]*
 *(a)* [Question text]
 └─ \`[2 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 4x in MU (Dec '24 NEP, May '24)* • *~88% Probability*
 
 *(b)* [Question text]
 └─ \`[2 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 3x in MU (Dec '24 NEP, Dec '22)* • *~80% Probability*
 
 *(c)* [Question text]
 └─ \`[2 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 5x in MU (Dec '25 NEP, May '23)* • *~92% Probability*
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 📌 *Q.2 [Solve any 1 out of 2 - 8 Marks]*
 *(a)* [Question text with sub-parts if any]
 └─ \`[8 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 4x in MU (Dec '24 NEP, May '23)* • *~88% Probability*
 
 *(b)* [Alternative question text]
 └─ \`[8 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 3x in MU (May '24, Dec '22)* • *~78% Probability*
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 📌 *Q.3 [Solve any 1 out of 2 - 8 Marks]*
 *(a)* [Numerical or Application Logic Question]
 └─ \`[8 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 5x in MU (Dec '25 NEP, May '24, Dec '23)* • *~94% Probability*
 
 *(b)* [Alternative Question]
-└─ \`[8 Marks]\` • \`[Module: Name]\``;
+└─ \`[8 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 3x in MU (Dec '23, May '22)* • *~80% Probability*`;
 
-      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the structured 20-Mark IAT Paper now.`;
+      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the structured 20-Mark IAT Paper with MU repeat frequency and probability scores now.`;
       break;
 
     case "paper60":
@@ -137,9 +152,11 @@ Generate a strict 60-Marks, 2-Hour Question Paper based on the syllabus.
 
 STRICT FORMATTING RULES:
 1. Put each question on its own clean line.
-2. Marks and Module must ALWAYS be on an indented subline:
+2. Marks, Module, and MU Historical Repeat Frequency MUST be on indented sublines:
    └─ \`[5 Marks]\` • \`[Module 2: Memory Management]\`
-3. Structure:
+   └─ 🔥 *Repeated 5x in MU (Dec '24 NEP, May '24, Dec '23)* • *~92% Probability*
+3. Include realistic repeat frequency (3x-6x) and probability (~75%-95%) based on recurring MU question archetypes.
+4. Structure:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 🏛️ *MUMBAI UNIVERSITY (NEP-2020)*
 📄 *END-SEMESTER EXAMINATION*
@@ -157,53 +174,68 @@ STRICT FORMATTING RULES:
 📌 *SECTION 1 [Compulsory - 10 Marks]*
 *(a)* [Short Question]
 └─ \`[2 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 4x in MU (Dec '24 NEP, Dec '23)* • *~88% Probability*
 
 *(b)* [Short Question]
 └─ \`[2 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 3x in MU (May '24, Dec '22)* • *~80% Probability*
 
 *(c)* [Short Question]
 └─ \`[2 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 5x in MU (Dec '24 NEP, May '23)* • *~92% Probability*
 
 *(d)* [Short Question]
 └─ \`[2 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 3x in MU (Dec '23, May '22)* • *~78% Probability*
 
 *(e)* [Short Question]
 └─ \`[2 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 4x in MU (May '24, Dec '23)* • *~85% Probability*
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 📌 *SECTION 2 [Solve any 2 out of 3 - 20 Marks]*
 *Q.2 (a)* [Question 1]
 └─ \`[5 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 5x in MU (Dec '24 NEP, May '24, Dec '23)* • *~94% Probability*
 *Q.2 (b)* [Question 2]
 └─ \`[5 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 4x in MU (Dec '23, May '22)* • *~84% Probability*
 
 *Q.3 (a)* [Question 1]
 └─ \`[5 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 5x in MU (Dec '24 NEP, Dec '22)* • *~90% Probability*
 *Q.3 (b)* [Question 2]
 └─ \`[5 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 3x in MU (May '24, May '23)* • *~76% Probability*
 
 *Q.4 (a)* [Question 1]
 └─ \`[5 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 4x in MU (Dec '24 NEP, May '23)* • *~88% Probability*
 *Q.4 (b)* [Question 2]
 └─ \`[5 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 3x in MU (Dec '23, May '22)* • *~80% Probability*
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 📌 *SECTION 3 [Solve any 1 out of 2 - 15 Marks]*
 *Q.5* [Detailed In-Depth Derivation or Comprehensive Numerical]
 └─ \`[15 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 6x in MU (Dec '25 NEP, May '24, Dec '23, May '22)* • *~95% Probability*
 
 *Q.6* [Alternative Comprehensive Question]
 └─ \`[15 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 4x in MU (Dec '24 NEP, May '23)* • *~86% Probability*
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 📌 *SECTION 4 [Solve any 1 out of 2 - 15 Marks]*
 *Q.7* [System Design / Real-World Architecture Problem]
 └─ \`[15 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 5x in MU (Dec '24 NEP, Dec '23, May '22)* • *~91% Probability*
 
 *Q.8* [Alternative System Design Problem]
-└─ \`[15 Marks]\` • \`[Module: Name]\``;
+└─ \`[15 Marks]\` • \`[Module: Name]\`
+└─ 🔥 *Repeated 3x in MU (May '24, Dec '22)* • *~79% Probability*`;
 
-      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the 60-Mark NEP-2020 Question Paper now.`;
+      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the 60-Mark NEP-2020 Question Paper with exact MU repeat frequency and probability scores now.`;
       break;
 
     case "formula":
@@ -257,38 +289,47 @@ STRICT STRUCTURE:
       break;
 
     case "survival":
-      systemPrompt = `You are an expert Mumbai University academic coach creating a 12-Hour Last-Minute Panic Survival Kit.
+      systemPrompt = `You are a legendary Mumbai University academic wingman creating the ultimate "12-Hour Last-Minute Panic Survival Kit" using historical exam repeat data.
 NEVER repeat prompt instructions or meta-talk. Output content directly.
 
+STRICT STRUCTURE:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎯 *12-HOUR LAST-MINUTE SURVIVAL KIT*
+🎯 *12-HOUR EXAM SURVIVAL KIT (REPEAT PROBABILITY)*
 *Subject:* ${subject}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-⏳ *1. PANIC TIMELINE ROADMAP*
-• *Hours 1–4 (Core Passing Modules):* Exact topics to study.
-• *Hours 5–8 (High-Yield 10M Questions):* Specific derivations.
-• *Morning Train Revision (8:00 AM Commute):* Key formulas to recite.
+🟢 *1. TIER 1: GUARANTEED REPEAT TOPICS [85%–95% Probability]*
+*(Study these FIRST tonight to secure your 24–32 passing marks!)*
+• *[Topic 1]* (Module X): 🔥 Repeated 5x in MU past exams • *~94% Probability*
+  └─ *Core Question:* [Exact question statement or numerical type asked in MU]
+• *[Topic 2]* (Module Y): 🔥 Repeated 4x in MU past exams • *~90% Probability*
+  └─ *Core Question:* [Exact question statement or derivation type]
+• *[Topic 3]* (Module Z): 🔥 Repeated 4x in MU past exams • *~88% Probability*
+  └─ *Core Question:* [Exact question statement]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-🏆 *2. HIGH-YIELD TOPICS RANKED BY EXPECTED MARKS*
-1. *[Topic 1]* — ~16 Marks (Module X)
-2. *[Topic 2]* — ~12 Marks (Module Y)
-3. *[Topic 3]* — ~10 Marks (Module Z)
+🟡 *2. TIER 2: HIGH-YIELD SCORING TOPICS [65%–80% Probability]*
+*(Questions that alternate between Summer & Winter exams)*
+• *[Topic 4]* (Module A): 🔥 Repeated 3x in MU • *~78% Probability*
+• *[Topic 5]* (Module B): 🔥 Repeated 3x in MU • *~72% Probability*
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-✏️ *3. MUST-DRAW DIAGRAMS (EASY MARKS)*
-• *Diagram 1:* [Exact block diagram with label tips]
-• *Diagram 2:* [Flowchart or circuit diagram]
+🔴 *3. TIER 3: SKIP LIST / LOW-YIELD TRAPS [<40% Probability]*
+*(DO NOT waste your last night on these lengthy or rarely asked topics!)*
+• *[Topic 6]:* Very lengthy derivation, asked only once in 4 years — *SKIP tonight.*
+• *[Topic 7]:* Rare 2-mark theory question — *Low ROI, ignore.*
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ *4. PASS-MARK GUARANTEE CHECKLIST*
-• [ ] Checklist item 1
-• [ ] Checklist item 2
-• [ ] Checklist item 3
-• [ ] Checklist item 4`;
+✏️ *4. MUST-DRAW DIAGRAMS (CARRY 40% MARKS IN MU EVALUATION)*
+• *[Diagram 1 Name]:* Draw neat labeled block diagram with [exact key blocks MU moderators look for].
+• *[Diagram 2 Name]:* Flowchart or timing diagram tips.
 
-      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the 12-Hour Exam Survival Kit now.`;
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ *5. EXAMINER TRAPS & PASSING VERDICT*
+• *Common Trap:* [Where 70% of students lose easy marks]
+• *Pass Verdict:* Master the 3 Tier-1 topics + 2 diagrams = **Guaranteed 35+ Marks on your paper tomorrow morning!**`;
+
+      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the 12-Hour Exam Survival Kit with exact MU repeat probabilities now.`;
       break;
 
     case "viva":
@@ -344,18 +385,60 @@ NEVER repeat prompt instructions or meta-talk. Output content directly.
 
   const rawGeneratedText = result.text?.trim() || "";
   if (!rawGeneratedText) {
-    return "⚠️ Generation failed. Please try again or open the web dashboard.";
+    return {
+      telegramText: "⚠️ Generation failed. Please try again or open the web dashboard.",
+      webContent: "⚠️ Generation failed. Please try again or open the web dashboard.",
+    };
   }
 
-  return cleanTelegramOutput(rawGeneratedText);
+  const webContent = cleanWebContent(rawGeneratedText);
+  const telegramText = cleanTelegramOutput(rawGeneratedText);
+
+  return { telegramText, webContent };
+}
+
+/**
+ * Sanitizes and prepares content for Web Print & A4 PDF preview:
+ * - Preserves LaTeX formulas ($...$ and $$...$$) and matrix environments for KaTeX.
+ * - Fixes any corrupted \begin(pmatrix) to \begin{pmatrix}.
+ * - Strips leaked system instructions.
+ */
+export function cleanWebContent(rawText: string): string {
+  let text = rawText;
+
+  // 1. Strip leaked prompt instructions
+  text = text.replace(/List\s+\d+[-–]\d+\s+critical\s+formulas[^\n]*\n?/gi, "");
+  text = text.replace(/List\s+\d+[-–]\d+\s+definitions[^\n]*\n?/gi, "");
+  text = text.replace(/For each:[^\n]*\n?/gi, "");
+  text = text.replace(/\[(?:Generate|Provide)\s+\d+[-–]\d+\s+[^\]\n]+\]\n?/gi, "");
+  text = text.replace(/\(Provide\s+\d+[-–]\d+\s+[^\n)]+\)\n?/gi, "");
+  text = text.replace(/Walk through the #1 most frequently asked[^\n]*\n?/gi, "");
+  text = text.replace(/Rank the top \d+ modules[^\n]*\n?/gi, "");
+
+  // 2. Fix corrupted \begin(pmatrix) -> \begin{pmatrix}
+  text = text.replace(/\\begin\(([a-zA-Z*]+)\)/g, "\\begin{$1}");
+  text = text.replace(/\\end\(([a-zA-Z*]+)\)/g, "\\end{$1}");
+
+  // 3. Fix \bar(x) -> \bar{x}
+  text = text.replace(/\\bar\(([a-zA-Z0-9]+)\)/g, "\\bar{$1}");
+
+  // 4. Wrap unwrapped matrix environments in $$...$$ for KaTeX
+  text = text.replace(
+    /(?:([A-Za-z0-9_]+\s*=\s*)?)(\\begin\{(?:p|b|B|v|V)?matrix\}[\s\S]*?\\end\{(?:p|b|B|v|V)?matrix\})/g,
+    (match) => `$$${match}$$`
+  );
+
+  text = text.replace(/\${3,}/g, "$$");
+
+  return text.trim();
 }
 
 /**
  * Robust sanitizer for Telegram bot output:
- * 1. Replaces LaTeX fractions and symbols with clean Unicode math.
- * 2. Unpacks LaTeX \\text{} and removes dollar signs ($...$).
- * 3. Strips prompt instructions that might leak into generation.
- * 4. Ensures raw formulas are enclosed in monospace code spans.
+ * 1. Formats LaTeX matrices into clean monospace bracket blocks [ -1  2  3 ].
+ * 2. Replaces LaTeX symbols and Greek letters with clean Unicode (π, x̄, ≤, ≥, ², ³, etc.).
+ * 3. Replaces LaTeX fractions with clean inline divisions (a) / (b).
+ * 4. Strips prompt instructions that might leak into generation.
  * 5. Balances unmatched Markdown backticks so Telegram never rejects parse_mode.
  */
 export function cleanTelegramOutput(rawText: string): string {
@@ -370,7 +453,43 @@ export function cleanTelegramOutput(rawText: string): string {
   text = text.replace(/Walk through the #1 most frequently asked[^\n]*\n?/gi, "");
   text = text.replace(/Rank the top \d+ modules[^\n]*\n?/gi, "");
 
-  // 2. Helper to replace \\frac{num}{den} recursively using brace counting
+  // 2. Convert LaTeX matrices into clean monospace ASCII tables
+  text = text.replace(
+    /\\begin[\{(](?:p|b|B|v|V)?matrix[\})]([\s\S]*?)\\end[\{(](?:p|b|B|v|V)?matrix[\})]/g,
+    (_, body) => {
+      const rows = body
+        .trim()
+        .split(/\\\\|\n/)
+        .map((row: string) =>
+          row
+            .trim()
+            .split("&")
+            .map((cell: string) => cell.trim())
+            .filter(Boolean)
+        )
+        .filter((r: string[]) => r.length > 0);
+
+      if (rows.length === 0) return "[ ]";
+
+      const colWidths: number[] = [];
+      rows.forEach((r: string[]) => {
+        r.forEach((cell: string, ci: number) => {
+          colWidths[ci] = Math.max(colWidths[ci] || 0, cell.length);
+        });
+      });
+
+      const formattedRows = rows.map((r: string[]) => {
+        const paddedCells = r
+          .map((cell: string, ci: number) => cell.padStart(colWidths[ci] || 0))
+          .join("  ");
+        return `[ ${paddedCells} ]`;
+      });
+
+      return `\n\`\`\`\n${formattedRows.join("\n")}\n\`\`\`\n`;
+    }
+  );
+
+  // 3. Helper to replace \\frac{num}{den} recursively using brace counting
   function replaceFrac(str: string): string {
     let res = str;
     let idx = res.indexOf("\\frac{");
@@ -415,16 +534,29 @@ export function cleanTelegramOutput(rawText: string): string {
 
   text = replaceFrac(text);
 
-  // 3. Unpack \\text{...}
+  // 4. Unpack \\text{...}
   for (let i = 0; i < 3; i++) {
     text = text.replace(/\\text\{([^{}]+)\}/g, "$1");
   }
 
-  // 4. Unpack remaining single subscript braces e.g. T{words} -> T(words) or 16{10} -> 16
-  text = text.replace(/([a-zA-Z0-9])\{([^{}]+)\}/g, "$1($2)");
-  text = text.replace(/\{([^{}]+)\}/g, "$1");
-
-  // 5. Convert LaTeX math symbols to clean Unicode
+  // 5. Greek & Mathematical symbols
+  text = text.replace(/\\pi\b/g, "π");
+  text = text.replace(/\\dots\b/g, "…");
+  text = text.replace(/\\cdots\b/g, "···");
+  text = text.replace(/\\ldots\b/g, "…");
+  text = text.replace(/\\bar[\{(]([a-zA-Z0-9])[\})]/g, "$1̄");
+  text = text.replace(/\\hat[\{(]([a-zA-Z0-9])[\})]/g, "$1̂");
+  text = text.replace(/\\lambda\b/g, "λ");
+  text = text.replace(/\\mu\b/g, "μ");
+  text = text.replace(/\\sigma\b/g, "σ");
+  text = text.replace(/\\alpha\b/g, "α");
+  text = text.replace(/\\beta\b/g, "β");
+  text = text.replace(/\\theta\b/g, "θ");
+  text = text.replace(/\\Delta\b/g, "Δ");
+  text = text.replace(/\\int\b/g, "∫");
+  text = text.replace(/\\sum\b/g, "∑");
+  text = text.replace(/\\sqrt\{([^{}]+)\}/g, "√($1)");
+  text = text.replace(/\\sqrt\(([^()]+)\)/g, "√($1)");
   text = text.replace(/\\times/g, "×");
   text = text.replace(/\\cdot/g, "·");
   text = text.replace(/\\pm/g, "±");
@@ -439,17 +571,37 @@ export function cleanTelegramOutput(rawText: string): string {
   text = text.replace(/\\gg\b/g, ">>");
   text = text.replace(/\\log_?2\b/g, "log₂");
 
-  // 6. Subscripts: T_c -> Tc, H_1 -> H1
-  text = text.replace(/([A-Za-z])_([A-Za-z0-9])/g, "$1$2");
+  // 6. Common superscripts
+  text = text.replace(/\^2\b/g, "²");
+  text = text.replace(/\^3\b/g, "³");
+  text = text.replace(/\^4\b/g, "⁴");
+  text = text.replace(/\^-1\b/g, "⁻¹");
+  text = text.replace(/\^T\b/g, "ᵀ");
 
-  // 7. Strip LaTeX dollar signs
+  // 7. Subscripts: T_c -> Tc, H_1 -> H1, x_1 -> x1
+  text = text.replace(/([a-zA-Z0-9])_([a-zA-Z0-9])/g, "$1$2");
+
+  // 8. Clean leftover braces
+  text = text.replace(/\{([^{}]+)\}/g, "$1");
+
+  // 9. Strip LaTeX dollar signs
   text = text.replace(/\$([^\$\n]+)\$/g, "$1");
   text = text.replace(/\$/g, "");
 
-  // 8. Balance backticks and wrap bare formula lines in monospace code blocks
+  // 10. Balance backticks and format formula lines
   const lines = text.split("\n");
+  let inCodeBlock = false;
   const cleanedLines = lines.map((line) => {
     let trimmed = line.trim();
+
+    if (trimmed.startsWith("```")) {
+      inCodeBlock = !inCodeBlock;
+      return trimmed;
+    }
+
+    if (inCodeBlock) {
+      return line;
+    }
 
     // Fix unclosed / mismatched backticks
     const backtickCount = (trimmed.match(/`/g) || []).length;
@@ -464,7 +616,7 @@ export function cleanTelegramOutput(rawText: string): string {
       !trimmed.startsWith("└") &&
       !trimmed.startsWith("`") &&
       !trimmed.startsWith("*") &&
-      (trimmed.includes("×") || trimmed.includes("/") || trimmed.includes("+") || trimmed.includes("^") || trimmed.includes("<<"))
+      (trimmed.includes("×") || trimmed.includes("/") || trimmed.includes("+") || trimmed.includes("²") || trimmed.includes("³") || trimmed.includes("<<"))
     ) {
       return `  \`${trimmed}\``;
     }

@@ -158,6 +158,11 @@ export function PaperPrint({ paperRecord }: PaperPrintProps) {
                       <span className="font-bold text-slate-800 shrink-0">({sq.label})</span>
                       <div className="text-slate-900 flex-1">
                         <MathText content={sq.text} />
+                        {sq.repeat_badge && (
+                          <div className="text-[10px] text-slate-500 font-sans mt-0.5 italic">
+                            🔥 {sq.repeat_badge}
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div className="font-bold text-slate-900 shrink-0 text-right">

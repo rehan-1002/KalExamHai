@@ -1,0 +1,503 @@
+[
+  {
+    "code": "CEC301",
+    "name": "Engineering Mathematics-III",
+    "shortName": "EM-III",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 4,
+    "endSemMarks": 80,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Laplace Transform",
+        "topics": [
+          "Definition of Laplace transform",
+          "Condition of Existence of Laplace transform",
+          "Laplace Transform (L) of Standard Functions (e^at, sin(at), cos(at), sinh(at), cosh(at), t^n)",
+          "Properties of Laplace Transform: Linearity, First Shifting theorem, Second Shifting Theorem, change of scale Property, multiplication by t, Division by t, Laplace Transform of derivatives and integrals (without proof)",
+          "Evaluation of integrals by using Laplace Transformation",
+          "Self-learning topics: Heaviside’s Unit Step function, Laplace Transform of Periodic functions, Dirac Delta Function"
+        ],
+        "hours": 7,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 2,
+        "title": "Inverse Laplace Transform",
+        "topics": [
+          "Inverse Laplace Transform, Linearity property, use of standard formulae",
+          "Finding Inverse Laplace transform using derivative",
+          "Partial fractions method & first shift property to find inverse Laplace transform",
+          "Inverse Laplace transform using Convolution theorem (without proof)",
+          "Self-learning Topics: Applications to solve initial and boundary value problems involving ordinary differential equations"
+        ],
+        "hours": 6,
+        "weightageMarks": 12
+      },
+      {
+        "moduleNo": 3,
+        "title": "Fourier Series",
+        "topics": [
+          "Dirichlet’s conditions, Definition of Fourier series and Parseval’s Identity (without proof)",
+          "Fourier series of periodic function with period 2π and 2l",
+          "Fourier series of even and odd functions",
+          "Half range Sine and Cosine Series",
+          "Self-learning Topics: Complex form of Fourier Series, orthogonal and orthonormal set of functions, Fourier Transform"
+        ],
+        "hours": 7,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 4,
+        "title": "Complex Variables",
+        "topics": [
+          "Function f(z) of complex variable, limit, continuity and differentiability of f(z)",
+          "Analytic function, necessary and sufficient conditions for f(z) to be analytic (without proof)",
+          "Cauchy-Riemann equations in cartesian coordinates (without proof)",
+          "Milne-Thomson method to determine analytic function f(z) when real part (u) or Imaginary part (v) or its combination (u+v or u-v) is given",
+          "Harmonic function, Harmonic conjugate and orthogonal trajectories",
+          "Self-learning Topics: Conformal mapping, linear, bilinear mapping, cross ratio, fixed points and standard transformations"
+        ],
+        "hours": 7,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 5,
+        "title": "Matrices",
+        "topics": [
+          "Characteristic equation, Eigen values and Eigen vectors, Properties of Eigen values and Eigen vectors (No theorems/ proof)",
+          "Cayley-Hamilton theorem (without proof): Application to find the inverse of the given square matrix and to determine the given higher degree polynomial matrix",
+          "Functions of square matrix",
+          "Similarity of matrices, Diagonalization of matrices",
+          "Self-learning Topics: Verification of Cayley Hamilton theorem, Minimal polynomial and Derogatory matrix & Quadratic Forms (Congruent transformation & Orthogonal Reduction)"
+        ],
+        "hours": 6,
+        "weightageMarks": 12
+      },
+      {
+        "moduleNo": 6,
+        "title": "Numerical methods for PDE",
+        "topics": [
+          "Introduction of Partial Differential equations, method of separation of variables",
+          "Vibrations of string, Analytical method for one dimensional heat and wave equations (only problems)",
+          "Crank Nicholson method",
+          "Bender Schmidt method",
+          "Self-learning Topics: Analytical methods of solving two and three dimensional problems"
+        ],
+        "hours": 6,
+        "weightageMarks": 14
+      }
+    ]
+  },
+  {
+    "code": "CEC302",
+    "name": "Mechanics of Solids",
+    "shortName": "MOS",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 4,
+    "endSemMarks": 80,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Stresses and Strains in Elastic members, Spherical and Cylindrical shells",
+        "topics": [
+          "Types of Stresses and Strains, stress-strain curve, different types of Elastic moduli and relationships between them, Poisson’s ratio, factor of safety",
+          "Bars of varying sections, composite sections, temperature stresses",
+          "Thin cylindrical and spherical shells under Internal pressure: Determination of Hoop stress, Longitudinal stress, Shear stress and volumetric strain"
+        ],
+        "hours": 9,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 2,
+        "title": "Axial force, shear force and bending moment diagrams for beams and portal frames",
+        "topics": [
+          "Concept of Axial Force, Shear Force and Bending Moment",
+          "A.F. S.F. and B M Diagrams for statically determinate S S and Cantilever beams without internal hinges and for single loading like point load, UDL, UVL or Couple moment",
+          "A.F. S.F. and B.M. Diagrams for statically determinate beams with internal hinges and combination of loading",
+          "A.F. S.F. and B.M Diagrams for statically determinate 3-member Portal Frames with or without internal hinges"
+        ],
+        "hours": 9,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 3,
+        "title": "Area Moment of Inertia, Shear stresses and Bending stresses in beams",
+        "topics": [
+          "Area Moment of inertia, Parallel and Perpendicular axis theorem, polar moment of inertia. Radius of gyration (Rectangular, Triangular, Circular, Semicircular section and their combination)",
+          "Distribution of shear stress across plane sections Commonly used for structural purposes",
+          "Theory of pure bending, Flexure formula for straight beam, simple problems involving application of Flexure formula, section modulus, moment of resistance, flitch beams"
+        ],
+        "hours": 9,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 4,
+        "title": "Torsion in Shafts, Columns",
+        "topics": [
+          "Torsion in solid and hollow circular shafts, shafts with varying cross sections, Shafts transmitting and receiving power at different points",
+          "Stresses in Shafts while transmitting power",
+          "Direct and bending stresses in Columns, Core of section",
+          "Buckling of Columns, Members subjected to axial loading, concept of buckling, effective length, different support conditions, Euler’s and Rankine’s formula",
+          "Concept of Eccentrically loaded columns"
+        ],
+        "hours": 10,
+        "weightageMarks": 15
+      },
+      {
+        "moduleNo": 5,
+        "title": "Principal planes and stresses, Strain Energy",
+        "topics": [
+          "General equation for transformation of stress, Principal planes and principal stresses, maximum Shear stress, stress determination by analytical and Graphical method (using Mohr’s circle)",
+          "Strain energy due to axial force and impact loads in columns, due to bending in beams, due to torsion of shaft"
+        ],
+        "hours": 8,
+        "weightageMarks": 12
+      },
+      {
+        "moduleNo": 6,
+        "title": "Slope and Deflection in Beams, General Theorems",
+        "topics": [
+          "Concept of Slope and Deflection in Beams, Macaulay’s Method for slope and deflection in S S and Cantilever beams subjected to point loads, UDL and couple moments",
+          "General Theorems: Betti and Maxwell’s reciprocal Theorem, Principle of Superposition, Principle of Virtual work, Castigliano’s theorems"
+        ],
+        "hours": 7,
+        "weightageMarks": 11
+      }
+    ]
+  },
+  {
+    "code": "CEC303",
+    "name": "Engineering Geology",
+    "shortName": "EG",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 80,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction & Physical Geology",
+        "topics": [
+          "Branches of geology useful to civil engineering, Importance of geological studies in various civil engineering Projects. Departments dealing with this subject in India and their scope of work- GSI, Granite Dimension Stone Cell, NIRM",
+          "Internal structure of the Earth and use of seismic waves in understanding the interior of the earth. Theory of Plate Tectonics",
+          "Weathering types, Erosion and Denudation. Factors affecting weathering and product of weathering (engineering consideration)",
+          "Superficial deposits and its geological Importance",
+          "Brief study of geological action of wind, glacier and river"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Mineralogy and Petrology",
+        "topics": [
+          "Identification of minerals with the help of physical properties, rock forming minerals, megascopic identification of primary and secondary minerals, study of common ore minerals",
+          "Igneous Petrology - Mode of formation, Texture and structure, form of Igneous rocks, Classification of Igneous rocks, study of commonly occurring igneous rocks, Engineering aspect of Granite and Basalt",
+          "Sedimentary Petrology - Mode of formation, Textures, characteristics of shallow water deposits like lamination, bedding, current bedding etc., classification, study of commonly occurring sedimentary rocks and their engineering application",
+          "Metamorphic Petrology - Mode of formation, agents and types of metamorphism, structures and textures of metamorphic rocks, classification and study of commonly occurring metamorphic rocks and their engineering application"
+        ],
+        "hours": 7,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 3,
+        "title": "Structural Geology and Stratigraphy",
+        "topics": [
+          "Dip and Strike. Outcrop and width of outcrop. Inliers and Outliers. Type of discontinuities in the rocks",
+          "Fold: Terminology, Classification on the basis of position of axial plane, Criteria for their recognition in field and engineering consideration",
+          "Fault: Terminology, Classification on the basis of movement of faulted block, Criteria for recognition in field, effects on outcrops and Engineering consideration",
+          "Joints & Unconformity: Types and geological importance",
+          "Three point problems to determine attitude of the strata",
+          "Determination of thickness of the strata with the help of given data",
+          "Geological Maps and their application for civil engineering works, Identification of symbols in maps",
+          "General principles of Stratigraphy, geological time scale, Physiographic divisions of India and their characteristics. Stratigraphy of Deccan Volcanic Province"
+        ],
+        "hours": 12,
+        "weightageMarks": 25
+      },
+      {
+        "moduleNo": 4,
+        "title": "Geological Investigation, study of dam and reservoir site",
+        "topics": [
+          "Required geological consideration for selecting dam and reservoir site. Favorable & unfavorable conditions in different types of rocks in presence of various structural features, precautions to be taken to counteract unsuitable conditions",
+          "Electrical resistivity and Seismic method of geological investigation",
+          "Rock Quality Designation and its importance to achieve safety and economy of the projects like dams and tunnels",
+          "Borehole problems and their significance in determining subsurface geology of the area"
+        ],
+        "hours": 7,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 5,
+        "title": "Tunnel Investigation and Ground Water Control",
+        "topics": [
+          "Importance of geological considerations while choosing tunnel sites and alignments of the tunnel, safe and unsafe geological and structural conditions",
+          "Geo-mechanics classification (RMR) and its application",
+          "Sources, zones, water table, unconfined, confined and Perched water tables. Factors controlling water bearing capacity of rocks, Pervious and Impervious rocks, Different types of rocks as source of ground water. Artesian well (flowing and non-flowing). Cone of Depression and its use in Civil engineering"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Geological Disasters and Control Measures",
+        "topics": [
+          "Landslides-Types, causes and preventive measures for landslides, Landslides in Deccan region",
+          "Volcano- Central type and fissure type, products of volcano",
+          "Earthquake- Terminology, Earthquake waves, construction and working of seismograph, Earthquake zones of India, elastic rebound theory, Preventive measures for structures constructed in Earthquake prone area"
+        ],
+        "hours": 3,
+        "weightageMarks": 7
+      }
+    ]
+  },
+  {
+    "code": "CEC304",
+    "name": "Architectural Planning & Design of Buildings",
+    "shortName": "APDB",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 2,
+    "endSemMarks": 80,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Principles and Codes of Practices for Planning and Designing of Buildings (Residential and Public buildings)",
+        "topics": [
+          "Study of IS 962: 1989 – Code of Practice for Architectural and Building Drawings; How to develop Line plan into actual PLAN, ELEVATION, Section etc. including all the constructional details of various components in a BUILDING",
+          "Principles of planning for Residential buildings",
+          "Classification of buildings: Residential –Individual Bungalows & Apartments/Flats. Public – Education (Schools, Colleges etc.) & Health (Primary Health Center, Hospital) related buildings",
+          "Study & drawing of SITE PLAN, FOUNDATION PLAN, ROOF PLAN of building",
+          "Study of building Bye – laws, Zoning Regulations and permissions required from commencement to completion of the building according to National Building Code (N.B.C.) of India and local Development Control (D.C.) rules",
+          "Study of sun path diagram, wind rose diagram and sun shading devices",
+          "Calculation of setback distances, carpet area, built-up area and floor space index (FSI)",
+          "Study of Principles of planning for public buildings: i) Building for education: schools, colleges, institutions etc. ii) Buildings for health: hospitals, primary health centers etc."
+        ],
+        "hours": 8,
+        "weightageMarks": 25
+      },
+      {
+        "moduleNo": 2,
+        "title": "Components and Services of a Building",
+        "topics": [
+          "Staircase (dog -legged) planning, designing & drawing in details",
+          "Foundations: stepped footing, isolated sloped footing and combined footing",
+          "Openings: doors and windows",
+          "Types of pitched roof and their suitability (plan and section)",
+          "Building services: Water supply, sanitary and electrical layouts"
+        ],
+        "hours": 3,
+        "weightageMarks": 9
+      },
+      {
+        "moduleNo": 3,
+        "title": "Perspective Drawings",
+        "topics": [
+          "One-point perspective drawing",
+          "Two-point perspective drawing"
+        ],
+        "hours": 4,
+        "weightageMarks": 12
+      },
+      {
+        "moduleNo": 4,
+        "title": "Town Planning, Architectural Planning & Built Environment",
+        "topics": [
+          "Objectives and planning of TOWN PLANNING",
+          "Master plan, Re-Development of buildings, Slum rehabilitation",
+          "Architectural Planning: introduction and principles",
+          "Built Environment: introduction and principles"
+        ],
+        "hours": 3,
+        "weightageMarks": 9
+      },
+      {
+        "moduleNo": 5,
+        "title": "Green Buildings",
+        "topics": [
+          "Introduction, uses, objectives of Green Buildings and overview",
+          "Study of Certification methods such as LEED, TERI, GRIHA, IGBC"
+        ],
+        "hours": 2,
+        "weightageMarks": 6
+      },
+      {
+        "moduleNo": 6,
+        "title": "Computer Aided Drawing (CAD)",
+        "topics": [
+          "Details and learning methods of CAD in Civil Engineering structures",
+          "Study and demonstration of any one of the professional CAD software’s"
+        ],
+        "hours": 6,
+        "weightageMarks": 19
+      }
+    ]
+  },
+  {
+    "code": "CEC305",
+    "name": "Fluid Mechanics- I",
+    "shortName": "FM-I",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 80,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Properties of Fluids",
+        "topics": [
+          "Mass density, weight density, specific gravity, specific volume, viscosity, compressibility and elasticity, surface tension, capillarity, vapour pressure, types of fluids, and introduction to real life applications"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Fluid Statics",
+        "topics": [
+          "Pressure Measurement: Pascal’s law, hydrostatic law, pressure variation in fluids at rest. Pressure scale, Absolute, atmospheric, gauge pressure, measurement of pressure using manometers",
+          "Hydrostatic force on surfaces: Total pressure and centre of pressure, total pressure on horizontal plane surface, vertical plane surface, Inclined plane surface, centre of pressure for vertical plane surface and for inclined plane surface, practical applications of total pressure and centre of pressure on dams, gates, and tanks",
+          "Buoyancy and floatation: Archimedes principle, Meta-Centre, metacentric height, Stability of floating and submerged bodies, determination of metacentric height, Experimental and analytical methods, metacentric height for floating bodies containing liquid, Time period of Transverse oscillations of floating bodies"
+        ],
+        "hours": 11,
+        "weightageMarks": 23
+      },
+      {
+        "moduleNo": 3,
+        "title": "Fluid Kinematics",
+        "topics": [
+          "Types of fluid flow, description of flow pattern, Lagrangian methods, Eulerian method, continuity equation, velocity and acceleration of fluid particles, streamline, streak line, path line, velocity potential and stream function, equipotential lines and flow net, uses of flow net, rotational and irrotational motions, circulation and vorticity"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Fluid Dynamics",
+        "topics": [
+          "Control volume and control surface, Forces acting on fluid in motion, Navier Stokes Equation, Euler’s Equation of motion, Integration of Euler’s equations of motion, Bernoulli’s Theorem and its derivation, Bernoulli’s equation for compressible fluid and real fluid",
+          "Practical applications of Bernoulli’s Equation - Venturimeter, Orifice meter, nozzle meter, pitot tube, Rota meter"
+        ],
+        "hours": 6,
+        "weightageMarks": 12
+      },
+      {
+        "moduleNo": 5,
+        "title": "Flow measurement",
+        "topics": [
+          "Orifices and mouthpieces: Classification of orifices, flow through orifices, determination of hydraulic coefficients, flow through large rectangular orifice, flow through fully submerged and partially submerged orifice, time of emptying a tank through an orifice at its bottom. Classification of Mouthpieces, Flow through external cylindrical mouthpiece, convergent-divergent mouthpiece, Borda’s mouthpieces",
+          "Notches and weirs: Classification of notches and weirs, discharge over a rectangular, triangular, trapezoidal notch/weir, velocity of approach, stepped notch, Cipolleti weir, broad crested weir, ogee weir, discharge over a submerged weir, ventilation of weirs"
+        ],
+        "hours": 8,
+        "weightageMarks": 16
+      },
+      {
+        "moduleNo": 6,
+        "title": "Compressible flow",
+        "topics": [
+          "Basic equation of flow (elementary study), velocity of sound or pressure wave in a fluid, Mach number, propagation of pressure waves, area-velocity relationship, Stagnation properties"
+        ],
+        "hours": 4,
+        "weightageMarks": 9
+      }
+    ]
+  },
+  {
+    "code": "CEC401",
+    "name": "Engineering Mathematics-IV",
+    "shortName": "EM-IV",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 4,
+    "endSemMarks": 80,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Vector Calculus",
+        "topics": [
+          "Solenoidal and irrotational (conservative) vector fields",
+          "Line integrals – definition and problems",
+          "Green’s theorem (without proof) in a plane, Stokes’ theorem (without Proof), Gauss’ Divergence theorem (without proof) and problems (only evaluation)",
+          "Self Learning Topics: Identities connecting Gradient, Divergence and Curl, Angle between surfaces. Verifications of Green’s theorem, Stoke’s theorem & Gauss-Divergence theorem, related identities & deductions"
+        ],
+        "hours": 7,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 2,
+        "title": "Complex Integration",
+        "topics": [
+          "Line Integral, Cauchy’s Integral theorem for simple connected and multiply connected regions (without proof), Cauchy’s Integral formula (without proof)",
+          "Taylor’s and Laurent’s series (without proof)",
+          "Definition of Singularity, Zeroes, poles of f(z), Residues, Cauchy’s Residue Theorem (without proof)",
+          "Self-learning Topics: Application of Residue Theorem to evaluate real integrations"
+        ],
+        "hours": 7,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 3,
+        "title": "Statistical Techniques",
+        "topics": [
+          "Karl Pearson’s Coefficient of correlation (r) and related concepts with problems",
+          "Spearman’s Rank correlation coefficient (R) ( Repeated & non repeated ranks problems)",
+          "Lines of regression",
+          "Fitting of first and second degree curves",
+          "Self-learning Topics: Covariance, fitting of exponential curve"
+        ],
+        "hours": 6,
+        "weightageMarks": 12
+      },
+      {
+        "moduleNo": 4,
+        "title": "Probability Theory",
+        "topics": [
+          "Conditional probability, Total Probability and Baye’s Theorem",
+          "Discrete and Continuous random variables, Probability mass and density function, Probability distribution for random variables",
+          "Expectation, Variance, Co-variance, moments, Moment generating functions (Four moments about the origin & about the mean)",
+          "Self- learning Topics: Properties variance and covariance"
+        ],
+        "hours": 6,
+        "weightageMarks": 12
+      },
+      {
+        "moduleNo": 5,
+        "title": "Probability Distribution and Sampling Theory-I",
+        "topics": [
+          "Probability Distribution: Poisson and Normal distribution",
+          "Sampling distribution, Test of Hypothesis, Level of Significance, Critical region, One-tailed, and two-tailed test, Degree of freedom",
+          "Students’ t-distribution (Small sample). Test the significance of single sample mean and two independent sample means and paired t- test",
+          "Self -learning Topics: Test of significance of large samples, Proportion test, Survey based project"
+        ],
+        "hours": 7,
+        "weightageMarks": 14
+      },
+      {
+        "moduleNo": 6,
+        "title": "Sampling theory-II",
+        "topics": [
+          "Chi-square test: Test of goodness of fit and independence of attributes (Contingency table) including Yate’s Correction",
+          "Analysis of variance: F-test (significant difference between variances of two samples)",
+          "Self- learning Topics: ANOVA: One way classification, Two-way classification (short-cut method)"
+        ],
+        "hours": 6,
+        "weightageMarks": 14
+      }
+    ]
+  }
+]

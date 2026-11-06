@@ -40,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scratch and local artifacts
+scratch/
+syllabus_docs/
+docs/edge_cases.md
+

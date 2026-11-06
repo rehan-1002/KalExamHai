@@ -151,20 +151,39 @@ export function TelegramPrintView({ exportData }: TelegramPrintViewProps) {
                 );
               }
 
-              // Sub-question line with marks badge
+              // Sub-question line with marks & repeat probability badges
               if (trimmed.includes("└─")) {
                 const parts = trimmed.split("└─");
                 const questionPart = parts[0]?.trim() || "";
-                const metaPart = parts[1]?.trim() || "";
+                const metaBadges = parts.slice(1).map((p) => p.trim()).filter(Boolean);
 
                 return (
                   <div key={idx} className="my-2.5 break-inside-avoid">
-                    <div className="text-slate-900 font-normal">
-                      <MathText content={questionPart} />
-                    </div>
-                    {metaPart && (
-                      <div className="mt-1 text-xs text-slate-600 font-mono bg-slate-100 print:bg-transparent px-2 py-0.5 rounded inline-block border border-slate-200 print:border-none">
-                        <MathText content={metaPart} />
+                    {questionPart && (
+                      <div className="text-slate-900 font-normal">
+                        <MathText content={questionPart} />
+                      </div>
+                    )}
+                    {metaBadges.length > 0 && (
+                      <div className="mt-1 flex flex-wrap gap-1.5 items-center">
+                        {metaBadges.map((badge, bi) => {
+                          const isRepeatBadge =
+                            badge.includes("🔥") ||
+                            badge.includes("Repeat") ||
+                            badge.includes("Probability");
+                          return (
+                            <div
+                              key={bi}
+                              className={`text-[11px] font-mono px-2 py-0.5 rounded-[4px] border ${
+                                isRepeatBadge
+                                  ? "bg-amber-50 text-amber-900 border-amber-200 font-semibold"
+                                  : "bg-slate-100 text-slate-700 border-slate-200"
+                              } print:border-none print:bg-transparent print:p-0`}
+                            >
+                              <MathText content={badge} />
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

@@ -59,6 +59,7 @@ export const SubQuestionSchema = z.object({
   unit_label: nullableOptionalString,
   bloom_level: BloomLevelSchema,
   coverage_warning: nullableOptionalString,
+  repeat_badge: nullableOptionalString,
 });
 
 export const QuestionSchema = z.object({

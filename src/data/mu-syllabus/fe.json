@@ -1,0 +1,875 @@
+[
+  {
+    "code": "BSC101",
+    "name": "Applied Mathematics -I",
+    "shortName": "AM-I",
+    "semester": 1,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Complex Numbers",
+        "topics": [
+          "Review of Complex Numbers – Algebra, Cartesian, polar and exponential form, D’Moivre’s Theorem",
+          "Expansion of sinnθ, cosnθ in terms of sines and cosines of multiples of θ",
+          "Expansion of sinnθ, cosnθ in powers of sinθ, cosθ",
+          "Powers and Roots of a complex number",
+          "Self-learning topic: Basic of Complex Number"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Hyperbolic Functions & Logarithms of Complex Numbers",
+        "topics": [
+          "Circular functions of complex number and Hyperbolic functions",
+          "Inverse Circular and Inverse Hyperbolic Functions",
+          "Separation of real and imaginary parts of all types of Functions",
+          "Logarithm of Complex Number",
+          "Self-learning topic: Applications of complex numbers in Electrical circuits"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Partial Differentiation",
+        "topics": [
+          "Function of two and three variables",
+          "Partial derivatives of first and higher order",
+          "Differentiation of composite function",
+          "Euler’s Theorem on Homogeneous functions with two independent variables (with proof)",
+          "Deductions from Euler’s Theorem (without proof)",
+          "Self-learning topics: Total differentials, implicit functions, Euler’s Theorem on Homogeneous functions with three independent variables"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Applications of Partial Differentiation and Successive Differentiation",
+        "topics": [
+          "Maxima and Minima of a function of two independent variables",
+          "Successive differentiation: nth derivative of standard functions",
+          "Leibnitz’s Theorem (without proof) and simple examples",
+          "Self-learning topics: Jacobian’s of two and three independent variables (simple problems) Lagrange’s Multiplier method"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Matrices",
+        "topics": [
+          "Pre-requisite: Inverse of a matrix, addition, multiplication, transpose, symmetric, skew-symmetric Matrix (Definition)",
+          "Types of Matrices (Hermitian, Skew Hermitian, Unitary, Orthogonal Matrices and properties (without proof))",
+          "Rank of a Matrix using Echelon form, reduction to normal form, and PAQ form (Only 3X3 Matrix)",
+          "System of homogeneous and non –non-homogeneous equations, their consistency, and solutions",
+          "Self-learning topics: Application of inverse of a matrix to coding theory, Reduction to normal form and PAQ form (m x n Matrix)"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Numerical Solutions of Transcendental Equations and System of Linear Equations and Expansion of Function",
+        "topics": [
+          "Solution of Transcendental Equations: Newton Raphson method and Regula –Falsi method",
+          "Solution of a system of linear algebraic equations: Gauss Jacobi Iteration Method, Gauss Seidel Iteration Method",
+          "Self-learning topics: Indeterminate forms, L‐ Hospital Rule, Gauss Elimination Method, Gauss Jordan Method"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "BSC102",
+    "name": "Applied Physics",
+    "shortName": "AP",
+    "semester": 1,
+    "scheme": "NEP-2020",
+    "credits": 2,
+    "endSemMarks": 45,
+    "iatMarks": 30,
+    "totalMarks": 75,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Lasers",
+        "topics": [
+          "Spontaneous and stimulated emission",
+          "Population inversion, pumping, active medium & active center, resonant cavity",
+          "Coherence length and coherence time",
+          "Characteristics of lasers",
+          "He-Ne laser: construction and working",
+          "Fiber laser Construction and working",
+          "Application: Elementary knowledge of LiDAR, Barcode reader, Application of laser in metal work"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Fibre Optics",
+        "topics": [
+          "Critical angle, acceptance angle, acceptance cone, numerical aperture, total internal reflection and propagation of light",
+          "Types of optical fibers: Single mode & multimode, step index & graded index",
+          "Attenuation, attenuation coefficient, factors affecting attenuation",
+          "Fibre Optic Communication System",
+          "Advantages of optical fiber communication",
+          "Numerical problems"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Interference In Thin Films",
+        "topics": [
+          "Interference in thin film of uniform thickness, conditions of maxima and minima for reflected system",
+          "Conditions for maxima and minima for wedge shaped film (qualitative)",
+          "Engineering applications: Newton’s rings for determination of unknown monochromatic wavelength and refractive Index of transparent liquid",
+          "Anti-Reflecting Coating"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Electrodynamics",
+        "topics": [
+          "Vector Calculus: Gradient, Divergence, Curl",
+          "Gauss’s law, Amperes’ circuital Law, Faraday’s law",
+          "Divergence theorem, Stokes theorem",
+          "Maxwell’s equations in point form, Integral form and their significance (Cartesian coordinate only)"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Quantum Physics",
+        "topics": [
+          "de Broglie hypothesis of matter waves, de Broglie wavelength for electron",
+          "Properties of matter waves",
+          "Wave function and probability density, mathematical conditions for wave function",
+          "Problems on de Broglie wavelength",
+          "Need and significance of Schrödinger’s equations",
+          "Schrödinger’s time independent and time dependent equations",
+          "Energy of a particle enclosed in a rigid box and related numerical problems",
+          "Quantum mechanical tunneling",
+          "Principles of quantum computing: concept of Qubit"
+        ],
+        "hours": 6,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Basics Of Semiconductor Physics",
+        "topics": [
+          "Direct and Indirect Band Gap Semiconductors",
+          "Electrical Conductivity of Semiconductors",
+          "Drift Velocity, Mobility and Conductivity in Conductors",
+          "Fermi- Dirac distribution function",
+          "Position of Fermi Level in Intrinsic and Extrinsic Semiconductors"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      }
+    ]
+  },
+  {
+    "code": "BSC103",
+    "name": "Applied Chemistry",
+    "shortName": "AC",
+    "semester": 1,
+    "scheme": "NEP-2020",
+    "credits": 2,
+    "endSemMarks": 45,
+    "iatMarks": 30,
+    "totalMarks": 75,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Fuels and Combustion",
+        "topics": [
+          "Definition, Characteristics of good fuel",
+          "Calorific value (Definition, Types, Determination, Dulong’s formula, Numerical)",
+          "Coal: Analysis of coal – Proximate analysis, Ultimate analysis, Numerical",
+          "Combustion of coal – Numerical"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Corrosion",
+        "topics": [
+          "Introduction: Definition, Types of Corrosion – Dry or Atmospheric Corrosion, Wet or Electrochemical corrosion (In Acidic medium, In Neutral medium)",
+          "Factors affecting rate of corrosion: Position of metal in galvanic series, Purity of Metal, Nature of Corrosion product, Temperature, pH of medium, concentration of medium, moisture, Relative Cathodic and Anodic area, overvoltage",
+          "Methods to control corrosion: Selection of metal, Proper Designing, Cathodic protection, Use of Corrosion Inhibitors, Metallic Coating",
+          "Corrosion in Electronic devices"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Alloys",
+        "topics": [
+          "Purpose of making alloys",
+          "Gibbs Phase rule – Statement, Terms involved with examples",
+          "Reduced phase rule, Two-component system (Pb-Ag) & Numerical",
+          "Merits and Limitations of Phase rule"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Introduction to Polymers",
+        "topics": [
+          "Macro-molecular science, basic concept of polymers, Chemical bonding in polymers, Classification of Polymers",
+          "Properties of Polymers: Molecular weight - Number average molecular weight, Weight average molecular weight, Numerical",
+          "Crystallinity - Crystalline and amorphous polymers – Glass transition temperature",
+          "Mechanical Properties: Hardness, tensile strength, creep, fatigue, impact resistance (introduction)",
+          "Electrical properties: dielectric strength, insulation resistance, surface resistivity (Introduction)",
+          "Optical properties: refractive index, transmittance, photoelectric property, colour"
+        ],
+        "hours": 5,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Introduction to Composites",
+        "topics": [
+          "Definition, Characteristics of Composites",
+          "Constituents of Composites – Matrix Phase and Dispersed Phase (Definition and Functions)",
+          "Classification of Composites"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Green Chemistry for sustainable development",
+        "topics": [
+          "Comparative study of synthesis of following industrially important molecules by conventional and green route: Indigo dye, Adipic acid, Carbaryl",
+          "Green Solvents: characteristics and applications of Supercritical solvents and ionic liquids",
+          "Green Fuels: Synthesis and Advantages of Biodiesel, Ethanol"
+        ],
+        "hours": 5,
+        "weightageMarks": 7.5
+      }
+    ]
+  },
+  {
+    "code": "ESC101",
+    "name": "Engineering Mechanics",
+    "shortName": "EM",
+    "semester": 1,
+    "scheme": "NEP-2020",
+    "credits": 2,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "System of Forces",
+        "topics": [
+          "Classification of force systems",
+          "Principle of transmissibility",
+          "Composition and resolution of forces",
+          "Resultant of coplanar force system (Concurrent forces, parallel forces and general system of forces)",
+          "Moment of force about a point, Couples, Varignon’s Theorem",
+          "Resultant of Non-Coplanar (Space Force): Concurrent force system"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Centroid",
+        "topics": [
+          "Centroids of plane laminas: Plane lamina consisting of primitive geometrical shapes"
+        ],
+        "hours": 3,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Equilibrium of Force system and Friction",
+        "topics": [
+          "Equilibrium: Conditions of equilibrium for concurrent forces, parallel forces and general forces, Couples",
+          "Equilibrium of rigid bodies, free body diagrams",
+          "Equilibrium of Beams: Types of beams, simple and compound beams, type of supports and reaction: Determination of reactions at supports for various types of loads on beams (Excluding problems on internal hinges)",
+          "Friction: Laws of friction, Cone of friction, angle of repose, angle of friction, equilibrium of bodies on a horizontal and inclined plane"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Kinematics of particle and rigid bodies",
+        "topics": [
+          "Motion of particle with variable acceleration",
+          "Motion along plane curved path",
+          "Velocity and acceleration in terms of rectangular components, tangential and normal component of acceleration",
+          "Introduction to general plane motion, problem based on Instantaneous center (ICR) method for general plane motion (up to 2 linkage mechanism and no relative velocity method)"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Kinetics of particle",
+        "topics": [
+          "Force and Acceleration: Introduction to basic concepts, D’Alembert’s Principle, concept of Inertia force, Equations of dynamic equilibrium",
+          "Principle of linear impulse and momentum",
+          "Impact and collision: Law of conservation of momentum, Coefficient of Restitution",
+          "Direct Central Impact and Oblique Central Impact",
+          "Loss of Kinetic Energy in collision of inelastic bodies"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Introduction to Robot Kinematics",
+        "topics": [
+          "Fundamental of Robot Mechanics",
+          "Degree of Freedom",
+          "D-H Parameters",
+          "Robot kinematics (Forward)",
+          "Homogeneous transformation (limited to 2 DOF Serial robot)"
+        ],
+        "hours": 2,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "ESC102",
+    "name": "Basic Electrical and Electronics Engineering",
+    "shortName": "BEEE",
+    "semester": 1,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "DC Circuits",
+        "topics": [
+          "Kirchhoff’s Laws",
+          "Ideal and Practical Voltage and Current Sources",
+          "Source Transformation",
+          "Mesh and Nodal Analysis (no super node and super mesh)",
+          "Star-Delta / Delta-Star Transformations",
+          "Superposition Theorem",
+          "Thevenin’s Theorem",
+          "Norton’s Theorem and Maximum Power Transfer Theorem"
+        ],
+        "hours": 10,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "AC Circuits",
+        "topics": [
+          "Generation of alternating voltage, basic definitions, average and RMS values, phasor and phase difference, sums on phasors",
+          "Single-phase ac series and parallel circuits consisting of R, L, C, RL, RC, RLC combinations",
+          "Definitions - real, reactive and apparent power, admittance (Y)",
+          "Series and parallel resonance (only theory)",
+          "Generation of Three-Phase Voltages, voltage & current relationships in Star and Delta Connections"
+        ],
+        "hours": 12,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Single Phase Transformer",
+        "topics": [
+          "Working principle of single-phase transformer",
+          "Types of single-phase transformer",
+          "Transformation ratio",
+          "Actual (practical) and ideal transformer",
+          "Transformer losses, efficiency, applications of transformer (Numerical are not expected)"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Electrical Machines",
+        "topics": [
+          "Principle of operation, constructional details, classification and applications of DC Motor",
+          "Three-phase induction motor",
+          "Single-Phase induction motors and BLDC motor (Numerical are not expected)"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Special Purpose Diodes",
+        "topics": [
+          "Characteristics and operation of Zener Diode and application as a voltage regulator",
+          "Basic and structure of LED",
+          "Application of LED in indicative and lighting displays (Numerical are not expected)"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Introduction to Transistors",
+        "topics": [
+          "Structure and operation of BJT",
+          "BJT configurations (only common emitter)",
+          "FET structure and operation",
+          "Application of BJT and FET in amplification, switching and oscillators (Numerical are not expected)"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "AEC101",
+    "name": "Professional Communication and Ethics",
+    "shortName": "PCE",
+    "semester": 1,
+    "scheme": "NEP-2020",
+    "credits": 2,
+    "endSemMarks": 45,
+    "iatMarks": 30,
+    "totalMarks": 75,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Fundamentals of Communication",
+        "topics": [
+          "Basic Concepts of Communication (Definition, Objectives, Postulates)",
+          "Process of Communication (Stimulus, Sender, Encoding, Message, Medium, Channel, Receiver, Decoding, Feedback)",
+          "Methods of Communication (Verbal - Written & Spoken; Non-verbal cues perceived through five senses & transmitted through body, voice, space, time, silence)",
+          "Barriers to Communication (Mechanical, Physical, Semantic & Linguistic, Psychological, Socio-cultural)",
+          "Organisational Communication (Formal - Upward, Downward, Horizontal; Informal - Grapevine)"
+        ],
+        "hours": 8,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Developing Basic Listening Skills",
+        "topics": [
+          "Concepts of Active Listening (Listening for Details, Listening for Gist, Listening for Inference)",
+          "Enhancing Listening Proficiency Using Language Labs or on Open Source Platforms"
+        ],
+        "hours": 2,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Developing Basic Speaking Skills",
+        "topics": [
+          "Conversational Activities - Monologues (Introducing yourself, Introducing others, One-minute impromptu speeches, Scaffolded story telling)",
+          "Conversational Activities - Dialogues (Role plays on everyday interactions, Interviews, Information Gap Activities, Picture descriptions and feedback, Situational conversations)",
+          "Conversational Activities - Pronunciation, Stress & Rhythm, Intonation (Neutralisation of accent, Word stress, Rhythm & Pauses, Tonal variations/inflections)"
+        ],
+        "hours": 2,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Developing Basic Reading Skills",
+        "topics": [
+          "Verbal Aptitude (Root Words, Meanings, Word Forms, Synonyms, Antonyms, Collocations, Prefixes, Suffixes at difficulty level of CAT/GRE/GMAT & TOEFL/IELTS)",
+          "Grammar (Identifying Common Errors - Subject-verb agreement, Articles, Prepositions, Misplaced modifiers and Punctuations, Redundancies, Idioms, Cliches at difficulty level of CAT/GRE/GMAT & TOEFL/IELTS)",
+          "Techniques to Improve Reading Fluency and Comprehension (Intensive Reading, Extensive Reading, Skimming, Scanning, SQ5R Method)",
+          "Reading & Summarisation Skills (Summarising text to Graphic Organisers and visa-versa, Summarising text in point form, Summarising text in one-sentence central idea)"
+        ],
+        "hours": 2,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Developing Basic Writing Skills",
+        "topics": [
+          "Coherence & Cohesion in Writing (Basic Units of Writing, Coherence, Cohesive Devices, Structure of a Paragraph)",
+          "Seven Cs of Business Writing (Completeness, Conciseness, Consideration, Concreteness, Clarity, Courtesy, Correctness)",
+          "Format & Types of Formal Letters (Parts of a Formal Letter in Complete Block Style, Request/Permission Letter, Claim and Adjustment Letter, Sales Letter, E-mails)",
+          "Writing User Instructions (Styles of Instruction Presentation, Describing general function/purpose, Drawing labelled diagrams, Describing labelled parts, Writing Special Notices)",
+          "Content Creation for Social Media and e-Commerce Platforms (Blogs, Poetry, Keynote speeches, Podcast titles, Landing pages, Social media posts, YouTube video description, Screenwriting/Script Writing)"
+        ],
+        "hours": 9,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Ethical and Managerial Skills for Engineers",
+        "topics": [
+          "Team building (Five stages of Team)",
+          "Goal setting (SMART goals – short term and long-term goals)",
+          "Ethical Considerations for Professional Integrity (Fairness and Honesty, Difference between Values and Ethics, Ethical principles, Ethical use of AI Tools, Plagiarism and copyright infringement, Ethical-dilemma case studies)"
+        ],
+        "hours": 3,
+        "weightageMarks": 7.5
+      }
+    ]
+  },
+  {
+    "code": "BSC201",
+    "name": "Applied Mathematics – II",
+    "shortName": "AM-II",
+    "semester": 2,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Differential Equations of First Order and First Degree",
+        "topics": [
+          "Exact differential Equations",
+          "Equations reducible to exact form by using integrating factors",
+          "Linear differential equations (Review)",
+          "Equation reducible to linear form, Bernoulli’s equation",
+          "Self learning topics: Simple application of differential equation of first order and first degree to electrical and Mechanical Engineering problem"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Linear Differential Equations With Constant Coefficients of Higher Order",
+        "topics": [
+          "Linear Differential Equation with constant coefficient – complementary function, particular integrals of differential equation of the type f(D)y = X where X is 𝑒𝑎𝑥, sin(ax + b) , cos (ax +b), 𝑥𝑚, 𝑒𝑎𝑥𝑉",
+          "Method of variation of parameters",
+          "Self learning topics: Cauchy’s homogeneous linear differential equation and Legendre’s differential equation, Applications of Higher order differential equation"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Beta and Gamma Function, Differentiation under Integral sign",
+        "topics": [
+          "Beta and Gamma functions and its properties",
+          "Differentiation under integral sign with constant limits of integration",
+          "Self learning topics: Rectification of curves (Cartesian, Polar and Parametric)"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Multiple Integration- I",
+        "topics": [
+          "Pre-requisite: Tracing of curves",
+          "Double integration – definition, Evaluation of Double Integrals (Cartesian & Polar)",
+          "Change the order of integration (No Evaluation)",
+          "Evaluation of double integrals by changing to polar coordinates"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Multiple Integration- II",
+        "topics": [
+          "Triple integration definition and evaluation (Cartesian, cylindrical and spherical polar coordinates)",
+          "Application of double integrals to compute Area, Mass",
+          "Self learning topics: Application of triple integrals to compute Volume"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Numerical solution of ordinary differential equations of first order and first degree, and , Numerical Integration",
+        "topics": [
+          "Numerical solution of ordinary differential equation using (a) Euler’s method (b) Modified Euler method, (c) Runge‐Kutta fourth order method",
+          "Numerical integration – by (a) Trapezoidal (b) Simpson’s 1/3rd (c) Simpson’s 3/8th rule (all without proof)"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "BSC2021",
+    "name": "Physics for Emerging Fields",
+    "shortName": "PEF",
+    "semester": 2,
+    "scheme": "NEP-2020",
+    "credits": 2,
+    "endSemMarks": 45,
+    "iatMarks": 30,
+    "totalMarks": 75,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Solar Energy",
+        "topics": [
+          "Conversion of solar Energy into Electricity",
+          "Photovoltaic Effect and Solar Cells working principle",
+          "Types of Solar Cells",
+          "Series & parallel solar cell connections",
+          "Applications of Solar system"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Optical Imaging",
+        "topics": [
+          "Imaging sensors CCD, CMOS construction and working",
+          "Image formation (Monochrome and Colour)",
+          "Chromaticity diagram, Chromaticity coordinates",
+          "Colour Measurement & colour matching"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Micro Electro - Mechanical Systems",
+        "topics": [
+          "Overview of MEMS",
+          "Intrinsic Characteristics of MEMS",
+          "Microsensors and microactuators",
+          "Materials for MEMS (Silicon, polymer, Metal)",
+          "Packaging and encapsulation of MEMS"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Fuel Cell",
+        "topics": [
+          "Introduction",
+          "Classification of Fuel cell",
+          "Construction & working of Alkaline Fuel cell, Molten carbonate fuel cell, Polymer electrolyte membrane Cell, Solid OXide fuel cell"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Energy harvesting",
+        "topics": [
+          "Piezoelectric Effect",
+          "Materials and models for Piezoelectric effect",
+          "Piezoelectric Electricity generator",
+          "Energy harvesting application",
+          "Human power"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Nanocomputing",
+        "topics": [
+          "Nanocomputer Introduction",
+          "Nano computer Building block",
+          "DNA Carbon nanotubes and nanowires",
+          "CHEMICALLY ASSEMBLED ELECTRONIC NANOTECHNOLOGY (CAEN)"
+        ],
+        "hours": 6,
+        "weightageMarks": 7.5
+      }
+    ]
+  },
+  {
+    "code": "BSC2022",
+    "name": "Semiconductor Physics",
+    "shortName": "SP",
+    "semester": 2,
+    "scheme": "NEP-2020",
+    "credits": 2,
+    "endSemMarks": 45,
+    "iatMarks": 30,
+    "totalMarks": 75,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Basics of Semiconductors",
+        "topics": [
+          "Types of semiconductors",
+          "Carrier Concentration in Intrinsic Semiconductors",
+          "Fermi level of Intrinsic Semiconductors",
+          "Variation of Fermi level of Intrinsic Semiconductors, wrt temperature",
+          "Extrinsic Semiconductors, Fermi level of Extrinsic Semiconductors",
+          "Variation of Fermi level of Extrinsic Semiconductors, wrt temperature and Impurity Concentration",
+          "Equation of conductivity with current flow",
+          "Hall Effect, Calculation of Hall Voltage"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Junction diode",
+        "topics": [
+          "Formation of p-n junction",
+          "Calculation of barrier potential",
+          "Diode equation",
+          "p-n junction in forward Bias",
+          "p-n junction in Reverse bias",
+          "Current- voltage curve for p-n junction diode",
+          "LED and its working"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Important Diodes",
+        "topics": [
+          "Working of: Photo diode, solar cell, Zenerdiode, Varactor diode, Gunn diode and their applications"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Bipolar Junction Transistors",
+        "topics": [
+          "BJT Structure and Operation - BJT structure, Modes of operation, CB, CE I-V characteristics",
+          "BJT Amplification and Switching - Current gain, BJT as a switch"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Field Effect Transistors",
+        "topics": [
+          "Field-Effect Transistors (FETs) - FET types: JFET, MOSFET, Structure and operation",
+          "MOSFETs in Detail - MOSFET structure, Enhancement and depletion modes, Threshold voltage",
+          "MOSFET Applications - MOSFET as a switch"
+        ],
+        "hours": 6,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 6,
+        "title": "NanoTechnology",
+        "topics": [
+          "Introduction to Nanotechnology",
+          "Properties (optical, Electrical, Structural, Mechanical)",
+          "Importance of surface to Volume ratio",
+          "Bonding in solids (Vander walls interactions)",
+          "Application: Lithography, Single Electron Transfer (SET), Spin Valves"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      }
+    ]
+  },
+  {
+    "code": "BSC2023",
+    "name": "Physics of Measurements and Sensors",
+    "shortName": "PMS",
+    "semester": 2,
+    "scheme": "NEP-2020",
+    "credits": 2,
+    "endSemMarks": 45,
+    "iatMarks": 30,
+    "totalMarks": 75,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction",
+        "topics": [
+          "Preliminary Idea of Physical Measurements: Principle of Measurement, Error of Measurement, Correction, Correctness of Measurement, Reliability of Measurements, Verification, Calibration",
+          "Measuring Instruments: Measuring range, Sensitivity, Scale Intervals, Response time, repeatability, Inaccuracy, Precision, Accuracy",
+          "Sources of error: Static error, Environmental error, Characteristic error, dynamic error",
+          "Statistical Treatment of errors: Sample mean, Sample Standard deviation, Population Mean, Population standard Deviation, Principles of least Squares"
+        ],
+        "hours": 6,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Measurements by light – Wave Interference",
+        "topics": [
+          "Significance of monochromatic light in interference",
+          "Interferometry applied to flatness testing",
+          "Surface contour test"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Transducers",
+        "topics": [
+          "Transducers: Classification by function, classification by performance, classification by output",
+          "Developments in transducer technology: Solid state transducer, Optical transducers, Piezoelectric Transducers",
+          "Resistive Transducers: Potentiometer, Strain Gauges, Resistive Temperature Transducers",
+          "Inductive Transducers: LVDT",
+          "Optical measurements system: Thermal photo detectors"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Solid state sensors",
+        "topics": [
+          "Hall Effect, Measurement of Hall voltage",
+          "Piezo electric effect and its use as source in Ultrasonic system",
+          "Its application in flow measurements",
+          "Ultrasonic distance meter"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Temperature and its measurements",
+        "topics": [
+          "Concept of Heat, Temperature and its measurements",
+          "Bimetallic thermometers, Platinum Resistance thermometers, Thermoelectric thermometers",
+          "Negative Temperature Coefficient (NTC) Thermistors",
+          "Factors for the selection of a thermometer for a particular use",
+          "Temperature Range and Comparison of various thermometers",
+          "Calibration of PT-100 for temperature measurement"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Nanotechnology",
+        "topics": [
+          "Introduction to Nanotechnology",
+          "Properties (optical, Electrical, Structural, Mechanical)",
+          "Importance of surface to Volume ratio",
+          "Bonding in solids (Vander walls interactions)",
+          "Scanning Electron Microscope (SEM), Transmission Electron Microscope (TEM), Atomic Force Microscope (AFM)",
+          "Applications in sensing toxic gases, gas sensing capacitors",
+          "Introduction to lithography, water purification"
+        ],
+        "hours": 4,
+        "weightageMarks": 7.5
+      }
+    ]
+  }
+]

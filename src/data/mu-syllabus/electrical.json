@@ -1,0 +1,555 @@
+[
+  {
+    "code": "2223111",
+    "name": "Engineering Mathematics for Electrical Circuits",
+    "shortName": "EM-EC",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Laplace Transform",
+        "topics": [
+          "Definition of Laplace transform and Laplace Transform (L) of Standard Functions like e^at, sin(at), cos(at), sinh(at), cosh(at) and t^n, n ≥ 0.",
+          "Properties of Laplace Transform: Linearity, First Shifting theorem, Second Shifting Theorem, change of scale Property, multiplication by t, Division by t, Laplace Transform of derivatives and integrals (Properties without proof).",
+          "Evaluation of integrals by using Laplace Transformation.",
+          "Inverse Laplace Transform, Linearity property, use of standard formulae to find inverse Laplace Transform, finding Inverse Laplace transform using derivatives.",
+          "Inverse Laplace transform by Partial fractions."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Function of Complex Variables",
+        "topics": [
+          "Analytic function, necessary and sufficient conditions for f(z) to be analytic (without proof).",
+          "Cauchy-Riemann equations in cartesian coordinates (without proof).",
+          "Milne-Thomson method to determine analytic function f(z) when real part (u) or Imaginary part (v)."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Application of Linear Algebra and Complex Variables to circuit analysis:",
+        "topics": [
+          "With DC Dependent Sources: Mesh analysis, Super mesh analysis, Nodal analysis, Super node analysis.",
+          "Superposition theorem, Thevenin’s theorems, Norton’s theorem, Maximum power transfer theorem;",
+          "With AC Sources: Magnetic coupling, Mesh analysis, Nodal analysis, Superposition theorem, Thevenin’s theorems, Norton’s theorem, Maximum power transfer theorem and Reciprocity theorem."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Analysis of Electric circuit behavior through matrix operations",
+        "topics": [
+          "Graph Theory and Network Topology: Introduction, Graph of network, Tree, Co-tree, Loop incidence matrix, Cut set matrix, Tie set matrix and Loop current matrix.",
+          "Number of possible tree of a graph, Analysis of network equilibrium equation and Principle of duality."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Application of Differential Equations for analyzing circuits with capacitors and inductors",
+        "topics": [
+          "Solution of first and second order differential equations for series and parallel R-L, R-C, R-L-C circuits.",
+          "Initial and final conditions in network elements, forced and free response, time constants, steady state and transient state response."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Electrical Circuit Analysis Using Laplace Transforms",
+        "topics": [
+          "The Laplace transform and its application in electrical circuit analysis.",
+          "Transient and steady state response to step, ramp and impulse signals."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2223112",
+    "name": "Electrical Machines - I",
+    "shortName": "EM-I",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "DC Machines",
+        "topics": [
+          "Review of working principles of DC machines, concept of back EMF and torque equations.",
+          "Commutation, Armature reaction, Types of DC machines.",
+          "Characteristics of DC machines (speed – torque and performance).",
+          "Necessity of starter, Speed control methods, Losses and efficiency, Swinburne’s, Hopkinson’s tests."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Single phase Transformer",
+        "topics": [
+          "Review of working principle, EMF equation and Equivalent Circuit, Phasor diagram (Resistive, Inductive and capacitive load), voltage regulation.",
+          "Losses and Efficiency, Condition for Maximum Efficiency.",
+          "Parallel Operation: No load Operation, On load Operation: - Equal and Unequal Voltage Operation.",
+          "OC and SC test, Sumpner’s Test."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Three Phase Transformer",
+        "topics": [
+          "Principle of operation, Connections and Phasor groups, Parallel operation.",
+          "Harmonics in three phase transformers, Suppression of harmonics, Oscillating neutral phenomenon.",
+          "Open delta or V -connection, Scott Connection."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Three Phase Induction Motor:",
+        "topics": [
+          "Review of Constructional details and Principle of operation, Slip, Rotor emf and frequency, current and power, Power stages.",
+          "Phasor diagram, Equivalent circuit, Torque-speed characteristics.",
+          "Losses and efficiency, No load and blocked rotor test, Circle diagram."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Starting and Speed control of Three Phase Induction Motor:",
+        "topics": [
+          "Need of starter, Types of starters: Direct On Line (DOL) starter, Rotor resistance starter, Autotransformer and Star delta starters.",
+          "Speed control: Voltage control, Frequency control, Pole changing method, V/f control."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Single phase Induction Motor:",
+        "topics": [
+          "Principle of operation, Double field revolving theory.",
+          "Equivalent circuit of single-phase induction motor, starting methods; Split phase starting- Resistance spilt phase, capacitor split phase, capacitor start and run, shaded pole starting."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2223113",
+    "name": "Electronics Engineering",
+    "shortName": "EE",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction To Digital Logic",
+        "topics": [
+          "Number Systems and Conversions: Binary, Hexadecimal, Octal, and Decimal conversions. Basic binary arithmetic (addition, subtraction).",
+          "Logic Gates and Boolean Algebra: AND, OR, NOT, NAND, NOR, XOR gates. Boolean algebra laws and simplification techniques (De Morgan's theorems).",
+          "Karnaugh Maps (K-maps): Simplification of Boolean expressions using K-maps (up to 4 variables)."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Combinational, Sequential Circuits & Memory Elements",
+        "topics": [
+          "Combinational Circuit Design: Adders (half, full), Subtractors, Multiplexers (as Universal Logic Modules - ULM), Demultiplexers.",
+          "Flip-Flops: SR, JK, D, and T flip-flops. Basics of Synchronous & Asynchronous counters.",
+          "Memory Basics: ROM (types: Mask ROM, PROM, EPROM, EEPROM) and RAM (types: SRAM, DRAM), their basic operation, and differences."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Semiconductor Devices",
+        "topics": [
+          "P-N junction diodes: characteristics and applications, Zener diodes: operation and voltage regulation, Light Emitting Diodes (LEDs): construction and characteristics, Opto isolators.",
+          "BJT structure and operation, BJT characteristics and regions of operation.",
+          "Junction Field Effect Transistors (JFETs): Construction, operation and device characteristics. V-I relationship and transconductance.",
+          "Metal-Oxide-Semiconductor FETs (MOSFETs): types, operation, and characteristics."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "OP-Amp & Voltage Regulators",
+        "topics": [
+          "Block diagram of Op-amp Ideal Op-Amp characteristics.",
+          "Inverting and non-inverting configurations.",
+          "Voltage regulators: Design of adjustable voltage regulators."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Fundamentals of Microcontroller",
+        "topics": [
+          "Introduction to 8-bit microcontrollers- Basic differences and similarities between Microprocessor and Microcontroller.",
+          "Types of various architectures; Harvard and Von-Neumann, RSIC and CSIC Concept of pipelining.",
+          "Selection of microcontrollers, variants of MCS-51 family and their features."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Architecture And Assembly Language Of 8051",
+        "topics": [
+          "8051 microcontroller hardware: Oscillator and Clock, Role of PC and DPTR, Flags and PSW, CPU registers, Internal RAM and RAM organization, Internal Memory, Special Function Registers, I/O pins, ports and circuits.",
+          "8051 Addressing modes, Instruction set: Classification, syntax and function of instructions, example programs."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2223114",
+    "name": "Measurements and Measuring Instruments",
+    "shortName": "MMI",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Philosophy of Measurement",
+        "topics": [
+          "Introduction to measurement, Methods of measurement, Classification of instruments.",
+          "Types of errors in measurement, standardization and calibration of instruments."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Analog Measurement of Electrical Quantities",
+        "topics": [
+          "Analog Instruments: Classifications of analog instruments, Introduction to operating, controlling and damping torque, Extension of range of ammeter and voltmeter, Electro-dynamometer type wattmeter, Electro-dynamometer type Power factor meter.",
+          "Instrument Transformer: Current Transformer (CT), Types of CT (measuring and protection), Potential Transformer (PT), Applications in the extension of instrument range, Clamp on ammeter, High voltage potential transformer."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "AC-DC Bridges and Potentiometer",
+        "topics": [
+          "AC, DC Bridges: Measurement of resistance: Wheatstone, Kelvins Double, and Megger, earth resistance measurement by earth tester.",
+          "Measurement of inductance and capacitance: Maxwell’s bridge, Schering bridge.",
+          "Potentiometer Applications: Calibration of ammeter, voltmeter and wattmeter using potentiometer."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Measurement of Non-electrical Quantities",
+        "topics": [
+          "Transducers: definition, Resistive, capacitive & inductive transducers, Optical and digital transducers.",
+          "Measurement of temperature: Thermocouple, Thermistor, Resistance Temperature Detector (RTD).",
+          "Measurement of displacement: Linear and angular displacement using potentiometer, LVDT.",
+          "Measurement of pressure: Piezoelectric, strain-gauge, capacitive and inductive type.",
+          "Measurement of speed: Inductive and Hall Effect sensor."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Digital Measurement of Electrical Quantities",
+        "topics": [
+          "Generalized Block diagram of digital instruments, comparison of digital over analog instruments, Resolution & sensitivity of digital meters.",
+          "Digital voltmeter (Ramp type), ammeter, multi-meter, Digital frequency meter, Digital Tachometer, Digital Megger, and Digital Storage Oscilloscope.",
+          "Current sensor (ACS712), Voltage sensor (B25)."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Signal Conditioning and Advanced Measuring Instruments",
+        "topics": [
+          "Basics of AC, DC signal conditioning circuits, Block diagram of Data Acquisition System.",
+          "Basics of Power analyzer, harmonic analyzer, Signal generator, Q-meter.",
+          "Introduction to Smart sensor, IoT Based Measuring Instrument, smart energy meter."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2224111",
+    "name": "Engineering Mathematics for Signals and Systems",
+    "shortName": "EM-SS",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Signals and Systems",
+        "topics": [
+          "Definition of basic signals such as impulse, unit step, unit ramp, Analog to digital conversion of signal, basic discrete time signals.",
+          "Sampling Theorem (Derivation is not Required).",
+          "Classification of signals, Signal operations.",
+          "Concept of a Continuous time (CT) and Discrete time (DT) system, properties and classification of systems.",
+          "Convolution in DT domain (Matrix Method only)."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Fourier Series and Fourier Transform",
+        "topics": [
+          "Introduction, Trigonometric and exponential Fourier Series, Parseval’s theorem for Fourier Series, Power Spectrum and Power Spectral Density of a Periodic Function.",
+          "Fourier Transform, Properties of Fourier Transform. Energy spectrum and Energy Spectral Density.",
+          "System analysis of CT system, frequency response of a CT system, Introduction to DTFS and DTFT."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Z-Transform",
+        "topics": [
+          "Introduction, Definition, one sided and two-sided z-transform, ROC, Properties of ROC, Properties of z-transform.",
+          "Inverse z- Transform using methods such as long division, partial fraction expansion and residue method."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Analysis of DT-LTI systems using z-Transform",
+        "topics": [
+          "Pole-zero plot in DT domain. Transfer Function of LTI System.",
+          "Solution of linear constant coefficient difference equation using method of z-Transform, transfer function, impulse response and step response."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Frequency domain analysis of DT -LTI systems.",
+        "topics": [
+          "Relation between Fourier Transform and Z-Transform.",
+          "Systems classification on pass band frequency, Low Pass, High Pass, Band Pass, Band reject, All Pass.",
+          "System classification based on phase response and location of zeros.",
+          "Introduction of IIR and FIR System."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Realization of Linear Systems",
+        "topics": [
+          "Basic realization block diagram of CT and DT system.",
+          "Basic structures of FIR Systems.",
+          "Basic structures for IIR Systems: Direct form – I, direct form – II, series, parallel."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2224112",
+    "name": "Electromagnetic Fields and Waves",
+    "shortName": "EMFW",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Vector Analysis",
+        "topics": [
+          "Vector analysis, Cartesian, Cylindrical and Spherical coordinate systems.",
+          "Relationship between the coordinate systems, Properties of coordinate system.",
+          "Introduction to Gradient, divergence, and curl of a coordinate system."
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Electrostatics",
+        "topics": [
+          "Coulomb’s law and its applications, Electric field intensity.",
+          "Electric flux densities for various charge distributions such as line, surface, and volume - Gauss’s law and its applications - Electrostatic potential, Divergence theorem.",
+          "Convection and Conduction current - Electric field in free space, conductors, and dielectrics.",
+          "Electrostatic boundary value problems: Poisson’s and Laplace’s equations and solutions."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Electrostatics Applications",
+        "topics": [
+          "Current and current density - continuity of current - conductor properties and boundary conditions.",
+          "The nature of dielectric materials - boundary conditions for perfect dielectric materials.",
+          "Capacitance - different types of capacitances – energy density in electric field."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Magnetostatic Fields",
+        "topics": [
+          "Magnetic field intensity - Bio Savart’s law - Ampere’s circuit law.",
+          "Magnetic flux and Magnetic flux density, Magnetic flux density in free space, conductor, and magnetic materials.",
+          "Magnetic force, Magnetic Vector potential - Stroke’s theorem."
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Maxwells Equations and Electromagnetic Waves",
+        "topics": [
+          "Faraday’s laws- Faraday’s law - Lenz’s law - Maxwell’s equations in differential and integral forms - displacement current.",
+          "Electromagnetic wave equations – wave parameters - velocity, intrinsic impedance, propagation constant.",
+          "Waves in free space, lossy and lossless dielectric, conductors-skin depth –Poynting Theorem."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Applications of Electromagnetic Waves",
+        "topics": [
+          "EMI / EMC, EMI Sources - Effects of EMI – Testing Methods for EMI/EMC, Methods to suppress EMI- Grounding and shielding.",
+          "EMC standards - Practical issues of EMI/EMC non compliances, biological effects of EMI / EMC – ESD – EMP."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2224113",
+    "name": "Power Electronics Devices and Circuits",
+    "shortName": "PEDC",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Thyristors (Silicon Controlled Rectifier)",
+        "topics": [
+          "Modes of operation of silicon-controlled rectifier, Static V-I characteristics, gate control.",
+          "Two transistor Analogy, Thyristors voltage & current rating.",
+          "Firing circuits (R, RC, Ramp triggering using UJT), Protection circuit of SCR."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Power Semiconductor Devices",
+        "topics": [
+          "Characteristics of Power diodes, Power BJTs, Power MOSFETs & IGBTs.",
+          "Safe Operation Area (SOA) for each device, Comparison of Power BJT, PMOSFET & IGBT.",
+          "Wide band gap devices (Silicon Carbide SiC and GaN), ON state (Conduction) and switching losses, numericals on losses, understanding of MOSFET & IGBT Data sheet."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Controlled Rectifiers (AC to DC Converter)",
+        "topics": [
+          "Single phase full wave-controlled rectifiers (mid-point and bridge configuration) for R and R-L load.",
+          "Numerical for Calculation of output voltage, Rectification and inversion mode of single phase fully controlled rectifier.",
+          "Single phase dual converter, three phase full converter with R load, Single phase PWM rectifier, basic working principle, Applications."
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "DC-DC switched Mode Converters",
+        "topics": [
+          "Basic principle of step-down operation & PWM control of DC-to-DC convertor.",
+          "Analysis of Buck, Boost, Buck-Boost, converters (All with resistive load and only CCM mode), Output voltage ripple.",
+          "Comparison of non-isolated converters, Bidirectional dc to dc converters Applications: Power Factor Correction Circuits, LED lamp driver, Numerical included."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "DC-AC Converter (Inverter)",
+        "topics": [
+          "Principle of operation of single-phase half and full bridge inverters, Voltage control in single phase inverters.",
+          "Pulse width modulated inverters, Multiple PWM, Sinusoidal PWM.",
+          "Three phase VSI (120° and 180° conduction mode), Single phase current source inverters (CSI), comparison of VSI and CSI. Application of inverters."
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Auxiliary Circuits",
+        "topics": [
+          "Need for Snubber circuit, Function and Types of Snubber Circuits, Turn-Off Snubber.",
+          "Requirement of gate driver circuits, Gate drivers for Power MOSFET & IGBT, level shifters, bootstrap drivers, isolated drivers.",
+          "Heat sinks & examples on heat sink calculation."
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      }
+    ]
+  }
+]

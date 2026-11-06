@@ -52,8 +52,8 @@ export async function saveTelegramSession(
     const jsonStr = JSON.stringify(session);
     await supabase.storage
       .from("documents")
-      .upload(`telegram_sessions/${sessionId}.json`, Buffer.from(jsonStr, "utf-8"), {
-        contentType: "application/json",
+      .upload(`telegram_sessions/${sessionId}.txt`, Buffer.from(jsonStr, "utf-8"), {
+        contentType: "text/plain",
         upsert: true,
       });
   } catch {
@@ -71,15 +71,21 @@ export async function getTelegramSession(sessionId: string): Promise<TelegramSes
     return cached;
   }
 
-  // 2. Fallback to Supabase storage
+  // 2. Fallback to Supabase storage (.txt first, .json fallback)
   try {
     const supabase = getAdminClient();
-    const { data, error } = await supabase.storage
+    let res = await supabase.storage
       .from("documents")
-      .download(`telegram_sessions/${sessionId}.json`);
+      .download(`telegram_sessions/${sessionId}.txt`);
 
-    if (!error && data) {
-      const text = await data.text();
+    if (res.error || !res.data) {
+      res = await supabase.storage
+        .from("documents")
+        .download(`telegram_sessions/${sessionId}.json`);
+    }
+
+    if (!res.error && res.data) {
+      const text = await res.data.text();
       const session = JSON.parse(text) as TelegramSession;
       memoryCache.set(sessionId, session);
       return session;
@@ -116,8 +122,8 @@ export async function saveTelegramExport(
     const jsonStr = JSON.stringify(item);
     await supabase.storage
       .from("documents")
-      .upload(`tg_exports/${exportId}.json`, Buffer.from(jsonStr, "utf-8"), {
-        contentType: "application/json",
+      .upload(`tg_exports/${exportId}.txt`, Buffer.from(jsonStr, "utf-8"), {
+        contentType: "text/plain",
         upsert: true,
       });
   } catch {
@@ -134,12 +140,18 @@ export async function getTelegramExport(exportId: string): Promise<TelegramExpor
 
   try {
     const supabase = getAdminClient();
-    const { data, error } = await supabase.storage
+    let res = await supabase.storage
       .from("documents")
-      .download(`tg_exports/${exportId}.json`);
+      .download(`tg_exports/${exportId}.txt`);
 
-    if (!error && data) {
-      const text = await data.text();
+    if (res.error || !res.data) {
+      res = await supabase.storage
+        .from("documents")
+        .download(`tg_exports/${exportId}.json`);
+    }
+
+    if (!res.error && res.data) {
+      const text = await res.data.text();
       const item = JSON.parse(text) as TelegramExport;
       exportMemoryCache.set(exportId, item);
       return item;

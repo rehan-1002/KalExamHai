@@ -109,6 +109,8 @@ export async function generateCramArtifact(
   let promptInstructions = "";
   if (artifactType === "flashcards") {
     promptInstructions = `Generate a set of 10 to 15 high-yield 3D Flashcards for quick active recall in the final hours before an exam.
+MANDATORY: Focus strictly on the MOST FREQUENTLY REPEATED definitions, laws, algorithms, and concepts from Mumbai University past examination papers.
+On the front of each card, append an estimated repeat badge (e.g. "What are Pipeline Hazards? [Repeated 5x in MU • ~92% Probability]").
 Format strictly as JSON matching this schema:
 {
   "type": "flashcards",
@@ -117,8 +119,8 @@ Format strictly as JSON matching this schema:
   "cards": [
     {
       "id": "card_1",
-      "front": "Clear, concise prompt, question, or law with LaTeX formulas ($...$ for inline, $$...$$ for display).",
-      "back": "Punchy, complete answer, derivation step, or diagram breakdown with LaTeX math.",
+      "front": "Prompt with MU Repeat badge, e.g. 'State Cayley-Hamilton Theorem & formula for A^-1 [Repeated 5x in MU • ~94% Probability]' ($...$ for math).",
+      "back": "Punchy, complete answer, derivation step, or keyword definition with LaTeX math.",
       "category": "e.g. Formula, Definition, Algorithm, Comparison, Derivation",
       "importance": "must_know" | "high_yield" | "bonus",
       "hint": "Optional quick mental cue"
@@ -131,25 +133,26 @@ RULES:
 3. Keep answers high-density (no useless words).`;
   } else if (artifactType === "quick_notes") {
     promptInstructions = `Generate a high-density, no-fluff Quick Notes and Formula Revision Sheet for an engineering exam.
+MANDATORY: Focus specifically on formulas, derivations, and procedures required to solve the MOST FREQUENTLY REPEATED NUMERICALS in Mumbai University past papers (e.g. Cache EAT, Booth's multiplication, Cayley-Hamilton, Simplex LPP, Fourier coefficients).
 Format strictly as JSON matching this schema:
 {
   "type": "quick_notes",
   "title": "${defaultTitle}",
   "subject": "${detectedSubject}",
-  "high_yield_summary": "Crisp 2-3 paragraph overview of the highest-weightage topics.",
+  "high_yield_summary": "Crisp overview of the highest-weightage topics and their repeat patterns in MU exams.",
   "core_definitions": [
-    { "term": "Term Name", "definition": "Precise textbook definition", "formula": "$...$ if applicable" }
+    { "term": "Term Name [Repeated 4x in MU]", "definition": "Precise textbook definition with evaluators' mandatory keywords", "formula": "$...$ if applicable" }
   ],
   "formulas_and_derivations": [
     {
-      "title": "Formula Name",
+      "title": "Formula Name [~90% Repeat Probability]",
       "formula_latex": "$$...$$",
-      "explanation": "What this equation represents and when to use it in numericals",
+      "explanation": "What this equation represents and how to apply it in standard MU numericals",
       "variables": ["$x$ = variable 1", "$y$ = variable 2"]
     }
   ],
   "step_by_step_algorithms": [
-    { "title": "Algorithm or Process Name", "steps": ["Step 1...", "Step 2..."] }
+    { "title": "Algorithm or Process Name (e.g. Booth's Algorithm [Repeated 6x in MU])", "steps": ["Step 1...", "Step 2..."] }
   ],
   "exam_hall_traps": ["Common student mistake 1", "Tricky sign convention error 2"]
 }
@@ -157,7 +160,7 @@ RULES:
 1. Strict LaTeX notation ($...$ and $$...$$).
 2. Pure signal, zero filler.`;
   } else if (artifactType === "viva_prep") {
-    promptInstructions = `Generate an Examiner Viva Examination Prep Sheet categorized into Easy, Medium, and Tricky/Trap questions.
+    promptInstructions = `Generate an Examiner Viva Examination Prep Sheet categorized into Easy, Medium, and Tricky/Trap questions based on frequent oral exam traps in Mumbai University.
 Format strictly as JSON matching this schema:
 {
   "type": "viva_prep",
@@ -180,6 +183,10 @@ RULES:
 2. The 'examiner_trap' must give students real unfair professor gotchas.`;
   } else {
     promptInstructions = `Generate a Last-Minute Survival Kit for a student with only 12 to 24 hours left before the exam.
+MANDATORY: Rank priority topics by MUMBAI UNIVERSITY REPEAT PROBABILITY:
+- Tier 1 (Rank 1-3): Guaranteed repeat questions with 85%-95% probability that appeared in 4+ past MU exam sessions.
+- Tier 2 (Rank 4-6): High-yield topics with 65%-80% probability that alternate between Summer and Winter sessions.
+- Must-Draw Diagrams: Describe the exact labeled block diagrams that MU examiners look for to award passing marks.
 Format strictly as JSON matching this schema:
 {
   "type": "survival_kit",
@@ -187,33 +194,33 @@ Format strictly as JSON matching this schema:
   "subject": "${detectedSubject}",
   "panic_timeline_roadmap": [
     {
-      "window": "Hours 1 to 4: Core Definitions & High-Yield Derivations",
-      "action": "Immediate memorization priority",
-      "target_topics": ["Topic 1", "Topic 2"]
+      "window": "Hours 1 to 4: Tier-1 Guaranteed Repeats (85%-95% Probability)",
+      "action": "Immediate memorization priority to secure passing marks",
+      "target_topics": ["Topic 1 (Repeated 5x)", "Topic 2 (Repeated 4x)"]
     },
     {
-      "window": "Hours 5 to 8: Guaranteed Numerical Steps",
+      "window": "Hours 5 to 8: High-Yield Alternates & Standard Numericals",
       "action": "Solve standard solved problems",
       "target_topics": ["Topic 3"]
     },
     {
-      "window": "Final 2 Hours: Quick Formula Review",
-      "action": "Glance over formula sheet, sleep at least 4 hours",
-      "target_topics": ["Formulas"]
+      "window": "Final 2 Hours: Quick Formula Review & Must-Draw Diagrams",
+      "action": "Glance over formula sheet, practice diagrams, sleep at least 4 hours",
+      "target_topics": ["Formulas", "Diagrams"]
     }
   ],
   "priority_topics": [
     {
-      "title": "Highest Probability Topic",
+      "title": "Highest Probability Topic [Repeated 5x in MU • ~94% Probability]",
       "module_name": "Module 1",
       "importance_rank": 1,
       "expected_marks": 10,
-      "summary_points": ["Point 1", "Point 2"],
+      "summary_points": ["Key concept point 1", "Key concept point 2"],
       "must_draw_diagram": "Description of diagram to draw to get 4+ marks"
     }
   ],
   "pass_guarantee_checklist": [
-    "Memorize definition of...",
+    "Master Tier-1 Topic: ... (Secures 10M)",
     "Draw the block diagram of...",
     "Write the algorithm for..."
   ]

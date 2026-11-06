@@ -1,0 +1,4106 @@
+{
+  "sem1": [
+    {
+      "subject": "Applied Mathematics I",
+      "slug": "applied-mathematics-i-nep-2020-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_applied-mathematics-i-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_applied-mathematics-i-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Mathematics I",
+      "slug": "applied-mathematics-i-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_applied-mathematics-i-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_applied-mathematics-i-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Mathematics I",
+      "slug": "applied-mathematics-i-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_applied-mathematics-i-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_applied-mathematics-i-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Mathematics I",
+      "slug": "applied-mathematics-i-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_applied-mathematics-i-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_applied-mathematics-i-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Physics",
+      "slug": "applied-physics-nep-2020-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_applied-physics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_applied-physics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Physics",
+      "slug": "applied-physics-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_applied-physics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_applied-physics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Physics",
+      "slug": "applied-physics-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_applied-physics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_applied-physics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Physics",
+      "slug": "applied-physics-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_applied-physics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_applied-physics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Chemistry",
+      "slug": "applied-chemistry-nep-2020-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_applied-chemistry-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_applied-chemistry-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Chemistry",
+      "slug": "applied-chemistry-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_applied-chemistry-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_applied-chemistry-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Chemistry",
+      "slug": "applied-chemistry-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_applied-chemistry-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_applied-chemistry-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Chemistry",
+      "slug": "applied-chemistry-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_applied-chemistry-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_applied-chemistry-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics",
+      "slug": "engineering-mechanics-nep-2020-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_engineering-mechanics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_engineering-mechanics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics",
+      "slug": "engineering-mechanics-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_engineering-mechanics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_engineering-mechanics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics",
+      "slug": "engineering-mechanics-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_engineering-mechanics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_engineering-mechanics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Electronics Engineering",
+      "slug": "basic-electrical-electronics-engineering-nep-2020-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_basic-electrical-electronics-engineering-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_basic-electrical-electronics-engineering-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Electronics Engineering",
+      "slug": "basic-electrical-electronics-engineering-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_basic-electrical-electronics-engineering-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_basic-electrical-electronics-engineering-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Electronics Engineering",
+      "slug": "basic-electrical-electronics-engineering-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_basic-electrical-electronics-engineering-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_basic-electrical-electronics-engineering-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Electronics Engineering",
+      "slug": "basic-electrical-electronics-engineering-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_basic-electrical-electronics-engineering-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_basic-electrical-electronics-engineering-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Professional And Communication Ethics",
+      "slug": "professional-and-communication-ethics-nep-2020-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_professional-and-communication-ethics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_professional-and-communication-ethics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Professional And Communication Ethics",
+      "slug": "professional-and-communication-ethics-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_professional-and-communication-ethics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_professional-and-communication-ethics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Professional And Communication Ethics",
+      "slug": "professional-and-communication-ethics-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_professional-and-communication-ethics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_professional-and-communication-ethics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Professional And Communication Ethics",
+      "slug": "professional-and-communication-ethics-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_professional-and-communication-ethics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_professional-and-communication-ethics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019&#039;C&#039; Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019&#039;c&#039;-scheme",
+      "year": "2019",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2019_december_engineering-mathematics-i-m1rev-2019&#039;c&#039;-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2019_december_engineering-mathematics-i-m1rev-2019&#039;c&#039;-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019c Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019c Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_december_engineering-mathematics-i-m1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_december_engineering-mathematics-i-m1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019c Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019c Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_december_engineering-mathematics-i-m1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_december_engineering-mathematics-i-m1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019c Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019c Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_engineering-mathematics-i-m1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_engineering-mathematics-i-m1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019c Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019c Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_engineering-mathematics-i-m1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_engineering-mathematics-i-m1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics I M1rev 2019c Scheme",
+      "slug": "engineering-mathematics-i-m1rev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_engineering-mathematics-i-m1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019&#039;C&#039; Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019&#039;c&#039;-scheme",
+      "year": "2019",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2019_december_engineering-physics-i-phy1rev-2019&#039;c&#039;-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2019_december_engineering-physics-i-phy1rev-2019&#039;c&#039;-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019c Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_may_engineering-physics-i-phy1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_may_engineering-physics-i-phy1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019c Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_december_engineering-physics-i-phy1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_december_engineering-physics-i-phy1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019c Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_may_engineering-physics-i-phy1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_may_engineering-physics-i-phy1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019c Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_december_engineering-physics-i-phy1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_december_engineering-physics-i-phy1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019c Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_may_engineering-physics-i-phy1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_may_engineering-physics-i-phy1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019c Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_engineering-physics-i-phy1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_engineering-physics-i-phy1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019c Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_engineering-physics-i-phy1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_engineering-physics-i-phy1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019c Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_engineering-physics-i-phy1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_engineering-physics-i-phy1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics I Phy1rev 2019c Scheme",
+      "slug": "engineering-physics-i-phy1rev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_engineering-physics-i-phy1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_engineering-physics-i-phy1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019&#039;C&#039; Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019&#039;c&#039;-scheme",
+      "year": "2019",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2019_december_engineering-chemistry-i-chem1rev-2019&#039;c&#039;-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2019_december_engineering-chemistry-i-chem1rev-2019&#039;c&#039;-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019c Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019c Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_december_engineering-chemistry-i-chem1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_december_engineering-chemistry-i-chem1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019c Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019c Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_december_engineering-chemistry-i-chem1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_december_engineering-chemistry-i-chem1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019c Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019c Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_engineering-chemistry-i-chem1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_engineering-chemistry-i-chem1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019c Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019c Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_engineering-chemistry-i-chem1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_engineering-chemistry-i-chem1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry I Chem1rev 2019c Scheme",
+      "slug": "engineering-chemistry-i-chem1rev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_engineering-chemistry-i-chem1rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics Emrev 2019&#039;C&#039; Scheme",
+      "slug": "engineering-mechanics-emrev-2019&#039;c&#039;-scheme",
+      "year": "2019",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2019_december_engineering-mechanics-emrev-2019&#039;c&#039;-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2019_december_engineering-mechanics-emrev-2019&#039;c&#039;-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics Emrev 2019c Scheme",
+      "slug": "engineering-mechanics-emrev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_may_engineering-mechanics-emrev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_may_engineering-mechanics-emrev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics Emrev 2019c Scheme",
+      "slug": "engineering-mechanics-emrev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_december_engineering-mechanics-emrev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_december_engineering-mechanics-emrev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics Emrev 2019c Scheme",
+      "slug": "engineering-mechanics-emrev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_may_engineering-mechanics-emrev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_may_engineering-mechanics-emrev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics Emrev 2019c Scheme",
+      "slug": "engineering-mechanics-emrev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_december_engineering-mechanics-emrev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_december_engineering-mechanics-emrev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics Emrev 2019c Scheme",
+      "slug": "engineering-mechanics-emrev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_may_engineering-mechanics-emrev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_may_engineering-mechanics-emrev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics Emrev 2019c Scheme",
+      "slug": "engineering-mechanics-emrev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_engineering-mechanics-emrev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_engineering-mechanics-emrev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics Emrev 2019c Scheme",
+      "slug": "engineering-mechanics-emrev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_engineering-mechanics-emrev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_engineering-mechanics-emrev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mechanics Emrev 2019c Scheme",
+      "slug": "engineering-mechanics-emrev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_engineering-mechanics-emrev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_engineering-mechanics-emrev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019&#039;C&#039; Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019&#039;c&#039;-scheme",
+      "year": "2019",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2019_december_basic-electrical-engineering-beerev-2019&#039;c&#039;-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2019_december_basic-electrical-engineering-beerev-2019&#039;c&#039;-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019c Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_may_basic-electrical-engineering-beerev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_may_basic-electrical-engineering-beerev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019c Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2022_december_basic-electrical-engineering-beerev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2022_december_basic-electrical-engineering-beerev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019c Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_may_basic-electrical-engineering-beerev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_may_basic-electrical-engineering-beerev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019c Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2023_december_basic-electrical-engineering-beerev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2023_december_basic-electrical-engineering-beerev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019c Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_may_basic-electrical-engineering-beerev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_may_basic-electrical-engineering-beerev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019c Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2024_december_basic-electrical-engineering-beerev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2024_december_basic-electrical-engineering-beerev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019c Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_may_basic-electrical-engineering-beerev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_may_basic-electrical-engineering-beerev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019c Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2025_december_basic-electrical-engineering-beerev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2025_december_basic-electrical-engineering-beerev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Basic Electrical Engineering Beerev 2019c Scheme",
+      "slug": "basic-electrical-engineering-beerev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-1_2026_may_basic-electrical-engineering-beerev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-1_2026_may_basic-electrical-engineering-beerev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1 CBCGS_DEC19",
+      "slug": "FE_SEM1_M1-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM1_M1-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1 CBCGS_MAY19",
+      "slug": "FE_SEM1_M1-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM1_M1-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1 CBCGS_DEC18",
+      "slug": "FE_SEM1_M1-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM1_M1-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1 CBCGS_MAY18",
+      "slug": "FE_SEM1_M1-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM1_M1-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1 CBCGS_DEC17",
+      "slug": "FE_SEM1_M1-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM1_M1-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1 CBCGS_MAY17",
+      "slug": "FE_SEM1_M1-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM1_M1-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1 CBCGS_DEC16",
+      "slug": "FE_SEM1_M1-CBCGS_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1-CBCGS_DEC16.pdf",
+      "filename": "FE_SEM1_M1-CBCGS_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1 CBCGS_DEC19",
+      "slug": "FE_SEM1_PHY1-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM1_PHY1-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1 CBCGS_MAY19",
+      "slug": "FE_SEM1_PHY1-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM1_PHY1-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1 CBCGS_DEC18",
+      "slug": "FE_SEM1_PHY1-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM1_PHY1-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1 CBCGS_MAY18",
+      "slug": "FE_SEM1_PHY1-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM1_PHY1-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1 CBCGS_DEC17",
+      "slug": "FE_SEM1_PHY1-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM1_PHY1-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1 CBCGS_MAY17",
+      "slug": "FE_SEM1_PHY1-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM1_PHY1-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1 CBCGS_DEC16",
+      "slug": "FE_SEM1_PHY1-CBCGS_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1-CBCGS_DEC16.pdf",
+      "filename": "FE_SEM1_PHY1-CBCGS_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1 CBCGS_DEC19",
+      "slug": "FE_SEM1_CHEM1-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM1_CHEM1-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1 CBCGS_MAY19",
+      "slug": "FE_SEM1_CHEM1-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM1_CHEM1-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1 CBCGS_DEC18",
+      "slug": "FE_SEM1_CHEM1-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM1_CHEM1-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1 CBCGS_MAY18",
+      "slug": "FE_SEM1_CHEM1-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM1_CHEM1-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1 CBCGS_DEC17",
+      "slug": "FE_SEM1_CHEM1-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM1_CHEM1-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1 CBCGS_MAY17",
+      "slug": "FE_SEM1_CHEM1-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM1_CHEM1-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1 CBCGS_DEC16",
+      "slug": "FE_SEM1_CHEM1-CBCGS_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1-CBCGS_DEC16.pdf",
+      "filename": "FE_SEM1_CHEM1-CBCGS_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH CBCGS_DEC19",
+      "slug": "FE_SEM1_MECH-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM1_MECH-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH CBCGS_MAY19",
+      "slug": "FE_SEM1_MECH-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM1_MECH-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH CBCGS_DEC18",
+      "slug": "FE_SEM1_MECH-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM1_MECH-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH CBCGS_MAY18",
+      "slug": "FE_SEM1_MECH-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM1_MECH-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH CBCGS_DEC17",
+      "slug": "FE_SEM1_MECH-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM1_MECH-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH CBCGS_MAY17",
+      "slug": "FE_SEM1_MECH-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM1_MECH-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH CBCGS_DEC16",
+      "slug": "FE_SEM1_MECH-CBCGS_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH-CBCGS_DEC16.pdf",
+      "filename": "FE_SEM1_MECH-CBCGS_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE CBCGS_DEC19",
+      "slug": "FE_SEM1_BEE-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM1_BEE-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE CBCGS_MAY19",
+      "slug": "FE_SEM1_BEE-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM1_BEE-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE CBCGS_DEC18",
+      "slug": "FE_SEM1_BEE-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM1_BEE-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE CBCGS_MAY18",
+      "slug": "FE_SEM1_BEE-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM1_BEE-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE CBCGS_DEC17",
+      "slug": "FE_SEM1_BEE-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM1_BEE-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE CBCGS_MAY17",
+      "slug": "FE_SEM1_BEE-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM1_BEE-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE CBCGS_DEC16",
+      "slug": "FE_SEM1_BEE-CBCGS_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE-CBCGS_DEC16.pdf",
+      "filename": "FE_SEM1_BEE-CBCGS_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS CBCGS_DEC19",
+      "slug": "FE_SEM1_EVS-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM1_EVS-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS CBCGS_MAY19",
+      "slug": "FE_SEM1_EVS-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM1_EVS-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS CBCGS_DEC18",
+      "slug": "FE_SEM1_EVS-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM1_EVS-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS CBCGS_MAY18",
+      "slug": "FE_SEM1_EVS-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM1_EVS-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS CBCGS_DEC17",
+      "slug": "FE_SEM1_EVS-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM1_EVS-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS CBCGS_MAY17",
+      "slug": "FE_SEM1_EVS-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM1_EVS-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS CBCGS_DEC16",
+      "slug": "FE_SEM1_EVS-CBCGS_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS-CBCGS_DEC16.pdf",
+      "filename": "FE_SEM1_EVS-CBCGS_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_DEC19",
+      "slug": "FE_SEM1_M1_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_DEC19.pdf",
+      "filename": "FE_SEM1_M1_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_MAY19",
+      "slug": "FE_SEM1_M1_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_MAY19.pdf",
+      "filename": "FE_SEM1_M1_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_DEC18",
+      "slug": "FE_SEM1_M1_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_DEC18.pdf",
+      "filename": "FE_SEM1_M1_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_MAY18",
+      "slug": "FE_SEM1_M1_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_MAY18.pdf",
+      "filename": "FE_SEM1_M1_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_DEC17",
+      "slug": "FE_SEM1_M1_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_DEC17.pdf",
+      "filename": "FE_SEM1_M1_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_MAY17",
+      "slug": "FE_SEM1_M1_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_MAY17.pdf",
+      "filename": "FE_SEM1_M1_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_DEC16",
+      "slug": "FE_SEM1_M1_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_DEC16.pdf",
+      "filename": "FE_SEM1_M1_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_MAY16",
+      "slug": "FE_SEM1_M1_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_MAY16.pdf",
+      "filename": "FE_SEM1_M1_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_DEC15",
+      "slug": "FE_SEM1_M1_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_DEC15.pdf",
+      "filename": "FE_SEM1_M1_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_MAY15",
+      "slug": "FE_SEM1_M1_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_MAY15.pdf",
+      "filename": "FE_SEM1_M1_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_DEC14",
+      "slug": "FE_SEM1_M1_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_DEC14.pdf",
+      "filename": "FE_SEM1_M1_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_MAY14",
+      "slug": "FE_SEM1_M1_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_MAY14.pdf",
+      "filename": "FE_SEM1_M1_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_DEC13",
+      "slug": "FE_SEM1_M1_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_DEC13.pdf",
+      "filename": "FE_SEM1_M1_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_MAY13",
+      "slug": "FE_SEM1_M1_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_MAY13.pdf",
+      "filename": "FE_SEM1_M1_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_M1_DEC12",
+      "slug": "FE_SEM1_M1_DEC12",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_M1_DEC12.pdf",
+      "filename": "FE_SEM1_M1_DEC12.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_DEC19",
+      "slug": "FE_SEM1_PHY1_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_DEC19.pdf",
+      "filename": "FE_SEM1_PHY1_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_MAY19",
+      "slug": "FE_SEM1_PHY1_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers//FE_SEM1_PHY1_MAY19.pdf",
+      "filename": "FE_SEM1_PHY1_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_DEC18",
+      "slug": "FE_SEM1_PHY1_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_DEC18.pdf",
+      "filename": "FE_SEM1_PHY1_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_MAY18",
+      "slug": "FE_SEM1_PHY1_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_MAY18.pdf",
+      "filename": "FE_SEM1_PHY1_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_DEC17",
+      "slug": "FE_SEM1_PHY1_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_DEC17.pdf",
+      "filename": "FE_SEM1_PHY1_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_MAY17",
+      "slug": "FE_SEM1_PHY1_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_MAY17.pdf",
+      "filename": "FE_SEM1_PHY1_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_DEC16",
+      "slug": "FE_SEM1_PHY1_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_DEC16.pdf",
+      "filename": "FE_SEM1_PHY1_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_MAY16",
+      "slug": "FE_SEM1_PHY1_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers//FE_SEM1_PHY1_MAY16.pdf",
+      "filename": "FE_SEM1_PHY1_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_DEC15",
+      "slug": "FE_SEM1_PHY1_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_DEC15.pdf",
+      "filename": "FE_SEM1_PHY1_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_MAY15",
+      "slug": "FE_SEM1_PHY1_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_MAY15.pdf",
+      "filename": "FE_SEM1_PHY1_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_DEC14",
+      "slug": "FE_SEM1_PHY1_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_DEC14.pdf",
+      "filename": "FE_SEM1_PHY1_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_MAY14",
+      "slug": "FE_SEM1_PHY1_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_MAY14.pdf",
+      "filename": "FE_SEM1_PHY1_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_DEC13",
+      "slug": "FE_SEM1_PHY1_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_DEC13.pdf",
+      "filename": "FE_SEM1_PHY1_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_MAY13",
+      "slug": "FE_SEM1_PHY1_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_MAY13.pdf",
+      "filename": "FE_SEM1_PHY1_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_PHY1_DEC12",
+      "slug": "FE_SEM1_PHY1_DEC12",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_PHY1_DEC12.pdf",
+      "filename": "FE_SEM1_PHY1_DEC12.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_DEC19",
+      "slug": "FE_SEM1_CHEM1_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_DEC19.pdf",
+      "filename": "FE_SEM1_CHEM1_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_MAY19",
+      "slug": "FE_SEM1_CHEM1_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_MAY19.pdf",
+      "filename": "FE_SEM1_CHEM1_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_DEC18",
+      "slug": "FE_SEM1_CHEM1_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_DEC18.pdf",
+      "filename": "FE_SEM1_CHEM1_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_MAY18",
+      "slug": "FE_SEM1_CHEM1_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_MAY18.pdf",
+      "filename": "FE_SEM1_CHEM1_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_DEC17",
+      "slug": "FE_SEM1_CHEM1_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_DEC17.pdf",
+      "filename": "FE_SEM1_CHEM1_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_MAY17",
+      "slug": "FE_SEM1_CHEM1_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_MAY17.pdf",
+      "filename": "FE_SEM1_CHEM1_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_DEC16",
+      "slug": "FE_SEM1_CHEM1_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_DEC16.pdf",
+      "filename": "FE_SEM1_CHEM1_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_MAY16",
+      "slug": "FE_SEM1_CHEM1_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_MAY16.pdf",
+      "filename": "FE_SEM1_CHEM1_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_DEC15",
+      "slug": "FE_SEM1_CHEM1_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_DEC15.pdf",
+      "filename": "FE_SEM1_CHEM1_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_MAY15",
+      "slug": "FE_SEM1_CHEM1_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_MAY15.pdf",
+      "filename": "FE_SEM1_CHEM1_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_DEC14",
+      "slug": "FE_SEM1_CHEM1_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_DEC14.pdf",
+      "filename": "FE_SEM1_CHEM1_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_MAY14",
+      "slug": "FE_SEM1_CHEM1_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_MAY14.pdf",
+      "filename": "FE_SEM1_CHEM1_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_DEC13",
+      "slug": "FE_SEM1_CHEM1_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_DEC13.pdf",
+      "filename": "FE_SEM1_CHEM1_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_MAY13",
+      "slug": "FE_SEM1_CHEM1_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_MAY13.pdf",
+      "filename": "FE_SEM1_CHEM1_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_CHEM1_DEC12",
+      "slug": "FE_SEM1_CHEM1_DEC12",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_CHEM1_DEC12.pdf",
+      "filename": "FE_SEM1_CHEM1_DEC12.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_DEC19",
+      "slug": "FE_SEM1_MECH_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_DEC19.pdf",
+      "filename": "FE_SEM1_MECH_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_MAY19",
+      "slug": "FE_SEM1_MECH_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_MAY19.pdf",
+      "filename": "FE_SEM1_MECH_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_DEC18",
+      "slug": "FE_SEM1_MECH_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_DEC18.pdf",
+      "filename": "FE_SEM1_MECH_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_MAY18",
+      "slug": "FE_SEM1_MECH_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_MAY18.pdf",
+      "filename": "FE_SEM1_MECH_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_DEC17",
+      "slug": "FE_SEM1_MECH_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_DEC17.pdf",
+      "filename": "FE_SEM1_MECH_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_MAY17",
+      "slug": "FE_SEM1_MECH_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_MAY17.pdf",
+      "filename": "FE_SEM1_MECH_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_DEC16",
+      "slug": "FE_SEM1_MECH_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_DEC16.pdf",
+      "filename": "FE_SEM1_MECH_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_MAY16",
+      "slug": "FE_SEM1_MECH_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_MAY16.pdf",
+      "filename": "FE_SEM1_MECH_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_DEC15",
+      "slug": "FE_SEM1_MECH_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_DEC15.pdf",
+      "filename": "FE_SEM1_MECH_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_MAY15",
+      "slug": "FE_SEM1_MECH_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_MAY15.pdf",
+      "filename": "FE_SEM1_MECH_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_DEC14",
+      "slug": "FE_SEM1_MECH_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_DEC14.pdf",
+      "filename": "FE_SEM1_MECH_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_MAY14",
+      "slug": "FE_SEM1_MECH_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_MAY14.pdf",
+      "filename": "FE_SEM1_MECH_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_DEC13",
+      "slug": "FE_SEM1_MECH_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_DEC13.pdf",
+      "filename": "FE_SEM1_MECH_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_MAY13",
+      "slug": "FE_SEM1_MECH_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_MAY13.pdf",
+      "filename": "FE_SEM1_MECH_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_MECH_DEC12",
+      "slug": "FE_SEM1_MECH_DEC12",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_MECH_DEC12.pdf",
+      "filename": "FE_SEM1_MECH_DEC12.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_DEC19",
+      "slug": "FE_SEM1_BEE_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_DEC19.pdf",
+      "filename": "FE_SEM1_BEE_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_MAY19",
+      "slug": "FE_SEM1_BEE_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_MAY19.pdf",
+      "filename": "FE_SEM1_BEE_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_DEC18",
+      "slug": "FE_SEM1_BEE_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_DEC18.pdf",
+      "filename": "FE_SEM1_BEE_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_MAY18",
+      "slug": "FE_SEM1_BEE_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_MAY18.pdf",
+      "filename": "FE_SEM1_BEE_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_DEC17",
+      "slug": "FE_SEM1_BEE_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_DEC17.pdf",
+      "filename": "FE_SEM1_BEE_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_MAY17",
+      "slug": "FE_SEM1_BEE_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_MAY17.pdf",
+      "filename": "FE_SEM1_BEE_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_DEC16",
+      "slug": "FE_SEM1_BEE_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_DEC16.pdf",
+      "filename": "FE_SEM1_BEE_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_MAY16",
+      "slug": "FE_SEM1_BEE_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_MAY16.pdf",
+      "filename": "FE_SEM1_BEE_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_DEC15",
+      "slug": "FE_SEM1_BEE_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_DEC15.pdf",
+      "filename": "FE_SEM1_BEE_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_MAY15",
+      "slug": "FE_SEM1_BEE_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_MAY15.pdf",
+      "filename": "FE_SEM1_BEE_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_DEC14",
+      "slug": "FE_SEM1_BEE_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_DEC14.pdf",
+      "filename": "FE_SEM1_BEE_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_MAY14",
+      "slug": "FE_SEM1_BEE_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_MAY14.pdf",
+      "filename": "FE_SEM1_BEE_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_DEC13",
+      "slug": "FE_SEM1_BEE_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_DEC13.pdf",
+      "filename": "FE_SEM1_BEE_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_MAY13",
+      "slug": "FE_SEM1_BEE_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_MAY13.pdf",
+      "filename": "FE_SEM1_BEE_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_BEE_DEC12",
+      "slug": "FE_SEM1_BEE_DEC12",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_BEE_DEC12.pdf",
+      "filename": "FE_SEM1_BEE_DEC12.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_DEC19",
+      "slug": "FE_SEM1_EVS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_DEC19.pdf",
+      "filename": "FE_SEM1_EVS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_MAY19",
+      "slug": "FE_SEM1_EVS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_MAY19.pdf",
+      "filename": "FE_SEM1_EVS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_DEC18",
+      "slug": "FE_SEM1_EVS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_DEC18.pdf",
+      "filename": "FE_SEM1_EVS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_MAY18",
+      "slug": "FE_SEM1_EVS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_MAY18.pdf",
+      "filename": "FE_SEM1_EVS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_DEC17",
+      "slug": "FE_SEM1_EVS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_DEC17.pdf",
+      "filename": "FE_SEM1_EVS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_MAY17",
+      "slug": "FE_SEM1_EVS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_MAY17.pdf",
+      "filename": "FE_SEM1_EVS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_DEC16",
+      "slug": "FE_SEM1_EVS_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_DEC16.pdf",
+      "filename": "FE_SEM1_EVS_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_MAY16",
+      "slug": "FE_SEM1_EVS_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_MAY16.pdf",
+      "filename": "FE_SEM1_EVS_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_DEC15",
+      "slug": "FE_SEM1_EVS_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_DEC15.pdf",
+      "filename": "FE_SEM1_EVS_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_MAY15",
+      "slug": "FE_SEM1_EVS_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_MAY15.pdf",
+      "filename": "FE_SEM1_EVS_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_DEC14",
+      "slug": "FE_SEM1_EVS_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_DEC14.pdf",
+      "filename": "FE_SEM1_EVS_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_MAY14",
+      "slug": "FE_SEM1_EVS_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_MAY14.pdf",
+      "filename": "FE_SEM1_EVS_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_DEC13",
+      "slug": "FE_SEM1_EVS_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_DEC13.pdf",
+      "filename": "FE_SEM1_EVS_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_MAY13",
+      "slug": "FE_SEM1_EVS_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_MAY13.pdf",
+      "filename": "FE_SEM1_EVS_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM1_EVS_DEC12",
+      "slug": "FE_SEM1_EVS_DEC12",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM1_EVS_DEC12.pdf",
+      "filename": "FE_SEM1_EVS_DEC12.pdf"
+    }
+  ],
+  "sem2": [
+    {
+      "subject": "Applied Mathematics Ii",
+      "slug": "applied-mathematics-ii-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_applied-mathematics-ii-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_applied-mathematics-ii-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Mathematics Ii",
+      "slug": "applied-mathematics-ii-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_applied-mathematics-ii-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_applied-mathematics-ii-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Applied Mathematics Ii",
+      "slug": "applied-mathematics-ii-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_applied-mathematics-ii-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_applied-mathematics-ii-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Semiconductor Physics",
+      "slug": "semiconductor-physics-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_semiconductor-physics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_semiconductor-physics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Semiconductor Physics",
+      "slug": "semiconductor-physics-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_semiconductor-physics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_semiconductor-physics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Semiconductor Physics",
+      "slug": "semiconductor-physics-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_semiconductor-physics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_semiconductor-physics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphics",
+      "slug": "engineering-graphics-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_engineering-graphics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_engineering-graphics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphics",
+      "slug": "engineering-graphics-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_engineering-graphics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_engineering-graphics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphics",
+      "slug": "engineering-graphics-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_engineering-graphics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_engineering-graphics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Physics Of Measurements Sensors",
+      "slug": "physics-of-measurements-sensors-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_physics-of-measurements-sensors-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_physics-of-measurements-sensors-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Physics Of Measurements Sensors",
+      "slug": "physics-of-measurements-sensors-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_physics-of-measurements-sensors-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_physics-of-measurements-sensors-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Physics Of Measurements Sensors",
+      "slug": "physics-of-measurements-sensors-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_physics-of-measurements-sensors-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_physics-of-measurements-sensors-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Materials",
+      "slug": "engineering-materials-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_engineering-materials-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_engineering-materials-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Materials",
+      "slug": "engineering-materials-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_engineering-materials-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_engineering-materials-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Materials",
+      "slug": "engineering-materials-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_engineering-materials-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_engineering-materials-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Environmental Chemistry Non Conventional Energy Sources",
+      "slug": "environmental-chemistry-non-conventional-energy-sources-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_environmental-chemistry-non-conventional-energy-sources-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_environmental-chemistry-non-conventional-energy-sources-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Environmental Chemistry Non Conventional Energy Sources",
+      "slug": "environmental-chemistry-non-conventional-energy-sources-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_environmental-chemistry-non-conventional-energy-sources-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_environmental-chemistry-non-conventional-energy-sources-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Environmental Chemistry Non Conventional Energy Sources",
+      "slug": "environmental-chemistry-non-conventional-energy-sources-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_environmental-chemistry-non-conventional-energy-sources-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_environmental-chemistry-non-conventional-energy-sources-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Civil Engineering",
+      "slug": "elements-of-civil-engineering-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_elements-of-civil-engineering-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_elements-of-civil-engineering-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Data Structure",
+      "slug": "data-structure-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_data-structure-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_data-structure-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Data Structure",
+      "slug": "data-structure-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_data-structure-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_data-structure-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Data Structure",
+      "slug": "data-structure-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_data-structure-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_data-structure-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Digital Electronics",
+      "slug": "digital-electronics-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_digital-electronics-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_digital-electronics-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Introduction To Chemical Engineering",
+      "slug": "introduction-to-chemical-engineering-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_introduction-to-chemical-engineering-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_introduction-to-chemical-engineering-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Introduction To Chemical Engineering",
+      "slug": "introduction-to-chemical-engineering-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_introduction-to-chemical-engineering-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_introduction-to-chemical-engineering-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Telecommunication",
+      "slug": "elements-of-telecommunication-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_elements-of-telecommunication-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_elements-of-telecommunication-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Telecommunication",
+      "slug": "elements-of-telecommunication-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_elements-of-telecommunication-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_elements-of-telecommunication-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Telecommunication",
+      "slug": "elements-of-telecommunication-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_elements-of-telecommunication-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_elements-of-telecommunication-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Electrical Systems",
+      "slug": "elements-of-electrical-systems-nep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_elements-of-electrical-systems-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_elements-of-electrical-systems-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Electrical Systems",
+      "slug": "elements-of-electrical-systems-nep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_elements-of-electrical-systems-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_elements-of-electrical-systems-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Electrical Systems",
+      "slug": "elements-of-electrical-systems-nep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_elements-of-electrical-systems-nep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_elements-of-electrical-systems-nep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Mechanical Engineeringnep 2020 Scheme",
+      "slug": "elements-of-mechanical-engineeringnep-2020-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_elements-of-mechanical-engineeringnep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_elements-of-mechanical-engineeringnep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Mechanical Engineeringnep 2020 Scheme",
+      "slug": "elements-of-mechanical-engineeringnep-2020-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_elements-of-mechanical-engineeringnep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_elements-of-mechanical-engineeringnep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Elements Of Mechanical Engineeringnep 2020 Scheme",
+      "slug": "elements-of-mechanical-engineeringnep-2020-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_elements-of-mechanical-engineeringnep-2020-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_elements-of-mechanical-engineeringnep-2020-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics Ii M2rev 2019c Scheme",
+      "slug": "engineering-mathematics-ii-m2rev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics Ii M2rev 2019c Scheme",
+      "slug": "engineering-mathematics-ii-m2rev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_december_engineering-mathematics-ii-m2rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_december_engineering-mathematics-ii-m2rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics Ii M2rev 2019c Scheme",
+      "slug": "engineering-mathematics-ii-m2rev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics Ii M2rev 2019c Scheme",
+      "slug": "engineering-mathematics-ii-m2rev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_december_engineering-mathematics-ii-m2rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_december_engineering-mathematics-ii-m2rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics Ii M2rev 2019c Scheme",
+      "slug": "engineering-mathematics-ii-m2rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics Ii M2rev 2019c Scheme",
+      "slug": "engineering-mathematics-ii-m2rev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_december_engineering-mathematics-ii-m2rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_december_engineering-mathematics-ii-m2rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics Ii M2rev 2019c Scheme",
+      "slug": "engineering-mathematics-ii-m2rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Mathematics Ii M2rev 2019c Scheme",
+      "slug": "engineering-mathematics-ii-m2rev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_engineering-mathematics-ii-m2rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics Iirev 2019c Scheme",
+      "slug": "engineering-physics-iirev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_may_engineering-physics-iirev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_may_engineering-physics-iirev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics Iirev 2019c Scheme",
+      "slug": "engineering-physics-iirev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_december_engineering-physics-iirev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_december_engineering-physics-iirev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics Iirev 2019c Scheme",
+      "slug": "engineering-physics-iirev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_may_engineering-physics-iirev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_may_engineering-physics-iirev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics Iirev 2019c Scheme",
+      "slug": "engineering-physics-iirev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_december_engineering-physics-iirev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_december_engineering-physics-iirev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics Iirev 2019c Scheme",
+      "slug": "engineering-physics-iirev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_may_engineering-physics-iirev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_may_engineering-physics-iirev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics Iirev 2019c Scheme",
+      "slug": "engineering-physics-iirev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_december_engineering-physics-iirev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_december_engineering-physics-iirev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics Iirev 2019c Scheme",
+      "slug": "engineering-physics-iirev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_engineering-physics-iirev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_engineering-physics-iirev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics Iirev 2019c Scheme",
+      "slug": "engineering-physics-iirev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_engineering-physics-iirev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_engineering-physics-iirev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Physics Iirev 2019c Scheme",
+      "slug": "engineering-physics-iirev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_engineering-physics-iirev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_engineering-physics-iirev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry Iic Scheme",
+      "slug": "engineering-chemistry-ii-rev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_may_engineering-chemistry-ii-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_may_engineering-chemistry-ii-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry Iic Scheme",
+      "slug": "engineering-chemistry-ii-rev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_december_engineering-chemistry-ii-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_december_engineering-chemistry-ii-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry Iic Scheme",
+      "slug": "engineering-chemistry-ii-rev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_may_engineering-chemistry-ii-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_may_engineering-chemistry-ii-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry Iic Scheme",
+      "slug": "engineering-chemistry-ii-rev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_december_engineering-chemistry-ii-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_december_engineering-chemistry-ii-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry Iic Scheme",
+      "slug": "engineering-chemistry-ii-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_may_engineering-chemistry-ii-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_may_engineering-chemistry-ii-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry Iic Scheme",
+      "slug": "engineering-chemistry-ii-rev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_december_engineering-chemistry-ii-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_december_engineering-chemistry-ii-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry Iic Scheme",
+      "slug": "engineering-chemistry-ii-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_engineering-chemistry-ii-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_engineering-chemistry-ii-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry Iic Scheme",
+      "slug": "engineering-chemistry-ii-rev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_engineering-chemistry-ii-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_engineering-chemistry-ii-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Chemistry Iic Scheme",
+      "slug": "engineering-chemistry-ii-rev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_engineering-chemistry-ii-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_engineering-chemistry-ii-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphicsc Scheme",
+      "slug": "engineering-graphics-rev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_may_engineering-graphics-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_may_engineering-graphics-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphicsc Scheme",
+      "slug": "engineering-graphics-rev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_december_engineering-graphics-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_december_engineering-graphics-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphicsc Scheme",
+      "slug": "engineering-graphics-rev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_may_engineering-graphics-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_may_engineering-graphics-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphicsc Scheme",
+      "slug": "engineering-graphics-rev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_december_engineering-graphics-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_december_engineering-graphics-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphicsc Scheme",
+      "slug": "engineering-graphics-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_may_engineering-graphics-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_may_engineering-graphics-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphicsc Scheme",
+      "slug": "engineering-graphics-rev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_december_engineering-graphics-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_december_engineering-graphics-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphicsc Scheme",
+      "slug": "engineering-graphics-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_engineering-graphics-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_engineering-graphics-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphicsc Scheme",
+      "slug": "engineering-graphics-rev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_engineering-graphics-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_engineering-graphics-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Engineering Graphicsc Scheme",
+      "slug": "engineering-graphics-rev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_engineering-graphics-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_engineering-graphics-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "C Programmingc Scheme",
+      "slug": "c-programming-rev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_may_c-programming-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_may_c-programming-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "C Programmingc Scheme",
+      "slug": "c-programming-rev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_december_c-programming-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_december_c-programming-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "C Programmingc Scheme",
+      "slug": "c-programming-rev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_may_c-programming-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_may_c-programming-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "C Programmingc Scheme",
+      "slug": "c-programming-rev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_december_c-programming-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_december_c-programming-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "C Programmingc Scheme",
+      "slug": "c-programming-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_may_c-programming-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_may_c-programming-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "C Programmingc Scheme",
+      "slug": "c-programming-rev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_december_c-programming-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_december_c-programming-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "C Programmingc Scheme",
+      "slug": "c-programming-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_c-programming-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_c-programming-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "C Programmingc Scheme",
+      "slug": "c-programming-rev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_december_c-programming-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_december_c-programming-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "C Programmingc Scheme",
+      "slug": "c-programming-rev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_c-programming-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_c-programming-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Professional Communication And Ethics Ic Scheme",
+      "slug": "professional-communication-and-ethics-i-rev-2019c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Professional Communication And Ethics Ic Scheme",
+      "slug": "professional-communication-and-ethics-i-rev-2019c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2022_december_professional-communication-and-ethics-i-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2022_december_professional-communication-and-ethics-i-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Professional Communication And Ethics Ic Scheme",
+      "slug": "professional-communication-and-ethics-i-rev-2019c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Professional Communication And Ethics Ic Scheme",
+      "slug": "professional-communication-and-ethics-i-rev-2019c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2023_december_professional-communication-and-ethics-i-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2023_december_professional-communication-and-ethics-i-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Professional Communication And Ethics Ic Scheme",
+      "slug": "professional-communication-and-ethics-i-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Professional Communication And Ethics Ic Scheme",
+      "slug": "professional-communication-and-ethics-i-rev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2024_december_professional-communication-and-ethics-i-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2024_december_professional-communication-and-ethics-i-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Professional Communication And Ethics Ic Scheme",
+      "slug": "professional-communication-and-ethics-i-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2025_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2025_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Professional Communication And Ethics Ic Scheme",
+      "slug": "professional-communication-and-ethics-i-rev-2019c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2026_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf",
+      "filename": "be_first-year-engineering_semester-2_2026_may_professional-communication-and-ethics-i-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2 CBCGS_DEC19",
+      "slug": "FE_SEM2_M2-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM2_M2-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2 CBCGS_MAY19",
+      "slug": "FE_SEM2_M2-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM2_M2-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2 CBCGS_DEC18",
+      "slug": "FE_SEM2_M2-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM2_M2-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2 CBCGS_MAY18",
+      "slug": "FE_SEM2_M2-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM2_M2-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2 CBCGS_DEC17",
+      "slug": "FE_SEM2_M2-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM2_M2-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2 CBCGS_MAY17",
+      "slug": "FE_SEM2_M2-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM2_M2-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2 CBCGS_DEC19",
+      "slug": "FE_SEM2_PHY2-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM2_PHY2-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2 CBCGS_MAY19",
+      "slug": "FE_SEM2_PHY2-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM2_PHY2-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2 CBCGS_DEC18",
+      "slug": "FE_SEM2_PHY2-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM2_PHY2-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2 CBCGS_MAY18",
+      "slug": "FE_SEM2_PHY2-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM2_PHY2-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2 CBCGS_DEC17",
+      "slug": "FE_SEM2_PHY2-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM2_PHY2-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2 CBCGS_MAY17",
+      "slug": "FE_SEM2_PHY2-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM2_PHY2-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2 CBCGS_DEC19",
+      "slug": "FE_SEM2_CHEM2-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM2_CHEM2-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2 CBCGS_MAY19",
+      "slug": "FE_SEM2_CHEM2-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM2_CHEM2-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2 CBCGS_DEC18",
+      "slug": "FE_SEM2_CHEM2-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM2_CHEM2-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2 CBCGS_MAY18",
+      "slug": "FE_SEM2_CHEM2-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM2_CHEM2-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2 CBCGS_DEC17",
+      "slug": "FE_SEM2_CHEM2-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM2_CHEM2-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "Applied Chemistry Ii Cbcgs",
+      "slug": "applied-chemistry-ii-cbcgs",
+      "year": "2017",
+      "session": "MAY",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_first-year-engineering_semester-2_2017_may_applied-chemistry-ii-cbcgs.pdf",
+      "filename": "be_first-year-engineering_semester-2_2017_may_applied-chemistry-ii-cbcgs.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED CBCGS_DEC19",
+      "slug": "FE_SEM2_ED-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM2_ED-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED CBCGS_MAY19",
+      "slug": "FE_SEM2_ED-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM2_ED-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED CBCGS_DEC18",
+      "slug": "FE_SEM2_ED-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM2_ED-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED CBCGS_MAY18",
+      "slug": "FE_SEM2_ED-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM2_ED-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED CBCGS_DEC17",
+      "slug": "FE_SEM2_ED-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM2_ED-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED CBCGS_MAY17",
+      "slug": "FE_SEM2_ED-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM2_ED-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA CBCGS_DEC19",
+      "slug": "FE_SEM2_SPA-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM2_SPA-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA CBCGS_MAY19",
+      "slug": "FE_SEM2_SPA-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM2_SPA-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA CBCGS_DEC18",
+      "slug": "FE_SEM2_SPA-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM2_SPA-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA CBCGS_MAY18",
+      "slug": "FE_SEM2_SPA-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM2_SPA-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA CBCGS_DEC17",
+      "slug": "FE_SEM2_SPA-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM2_SPA-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA CBCGS_MAY17",
+      "slug": "FE_SEM2_SPA-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM2_SPA-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS CBCGS_DEC19",
+      "slug": "FE_SEM2_CS-CBCGS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS-CBCGS_DEC19.pdf",
+      "filename": "FE_SEM2_CS-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS CBCGS_MAY19",
+      "slug": "FE_SEM2_CS-CBCGS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS-CBCGS_MAY19.pdf",
+      "filename": "FE_SEM2_CS-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS CBCGS_DEC18",
+      "slug": "FE_SEM2_CS-CBCGS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS-CBCGS_DEC18.pdf",
+      "filename": "FE_SEM2_CS-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS CBCGS_MAY18",
+      "slug": "FE_SEM2_CS-CBCGS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS-CBCGS_MAY18.pdf",
+      "filename": "FE_SEM2_CS-CBCGS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS CBCGS_DEC17",
+      "slug": "FE_SEM2_CS-CBCGS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS-CBCGS_DEC17.pdf",
+      "filename": "FE_SEM2_CS-CBCGS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS CBCGS_MAY17",
+      "slug": "FE_SEM2_CS-CBCGS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS-CBCGS_MAY17.pdf",
+      "filename": "FE_SEM2_CS-CBCGS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_DEC19",
+      "slug": "FE_SEM2_M2_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_DEC19.pdf",
+      "filename": "FE_SEM2_M2_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_MAY19",
+      "slug": "FE_SEM2_M2_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_MAY19.pdf",
+      "filename": "FE_SEM2_M2_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_DEC18",
+      "slug": "FE_SEM2_M2_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_DEC18.pdf",
+      "filename": "FE_SEM2_M2_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_MAY18",
+      "slug": "FE_SEM2_M2_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_MAY18.pdf",
+      "filename": "FE_SEM2_M2_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_DEC17",
+      "slug": "FE_SEM2_M2_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_DEC17.pdf",
+      "filename": "FE_SEM2_M2_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_MAY17",
+      "slug": "FE_SEM2_M2_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_MAY17.pdf",
+      "filename": "FE_SEM2_M2_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_DEC16",
+      "slug": "FE_SEM2_M2_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_DEC16.pdf",
+      "filename": "FE_SEM2_M2_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_MAY16",
+      "slug": "FE_SEM2_M2_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_MAY16.pdf",
+      "filename": "FE_SEM2_M2_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_DEC15",
+      "slug": "FE_SEM2_M2_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_DEC15.pdf",
+      "filename": "FE_SEM2_M2_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_MAY15",
+      "slug": "FE_SEM2_M2_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_MAY15.pdf",
+      "filename": "FE_SEM2_M2_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_DEC14",
+      "slug": "FE_SEM2_M2_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_DEC14.pdf",
+      "filename": "FE_SEM2_M2_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_MAY14",
+      "slug": "FE_SEM2_M2_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_MAY14.pdf",
+      "filename": "FE_SEM2_M2_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_DEC13",
+      "slug": "FE_SEM2_M2_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_DEC13.pdf",
+      "filename": "FE_SEM2_M2_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_M2_MAY13",
+      "slug": "FE_SEM2_M2_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_M2_MAY13.pdf",
+      "filename": "FE_SEM2_M2_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_DEC19",
+      "slug": "FE_SEM2_PHY2_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_DEC19.pdf",
+      "filename": "FE_SEM2_PHY2_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_MAY19",
+      "slug": "FE_SEM2_PHY2_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_MAY19.pdf",
+      "filename": "FE_SEM2_PHY2_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_DEC18",
+      "slug": "FE_SEM2_PHY2_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_DEC18.pdf",
+      "filename": "FE_SEM2_PHY2_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_MAY18",
+      "slug": "FE_SEM2_PHY2_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_MAY18.pdf",
+      "filename": "FE_SEM2_PHY2_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_DEC17",
+      "slug": "FE_SEM2_PHY2_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_DEC17.pdf",
+      "filename": "FE_SEM2_PHY2_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_MAY17",
+      "slug": "FE_SEM2_PHY2_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_MAY17.pdf",
+      "filename": "FE_SEM2_PHY2_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_DEC16",
+      "slug": "FE_SEM2_PHY2_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_DEC16.pdf",
+      "filename": "FE_SEM2_PHY2_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_MAY16",
+      "slug": "FE_SEM2_PHY2_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_MAY16.pdf",
+      "filename": "FE_SEM2_PHY2_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_DEC15",
+      "slug": "FE_SEM2_PHY2_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_DEC15.pdf",
+      "filename": "FE_SEM2_PHY2_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_MAY15",
+      "slug": "FE_SEM2_PHY2_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_MAY15.pdf",
+      "filename": "FE_SEM2_PHY2_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_DEC14",
+      "slug": "FE_SEM2_PHY2_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_DEC14.pdf",
+      "filename": "FE_SEM2_PHY2_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_MAY14",
+      "slug": "FE_SEM2_PHY2_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_MAY14.pdf",
+      "filename": "FE_SEM2_PHY2_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_DEC13",
+      "slug": "FE_SEM2_PHY2_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_DEC13.pdf",
+      "filename": "FE_SEM2_PHY2_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_PHY2_MAY13",
+      "slug": "FE_SEM2_PHY2_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_PHY2_MAY13.pdf",
+      "filename": "FE_SEM2_PHY2_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_DEC19",
+      "slug": "FE_SEM2_CHEM2_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_DEC19.pdf",
+      "filename": "FE_SEM2_CHEM2_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_MAY19",
+      "slug": "FE_SEM2_CHEM2_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_MAY19.pdf",
+      "filename": "FE_SEM2_CHEM2_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_DEC18",
+      "slug": "FE_SEM2_CHEM2_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_DEC18.pdf",
+      "filename": "FE_SEM2_CHEM2_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_MAY18",
+      "slug": "FE_SEM2_CHEM2_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_MAY18.pdf",
+      "filename": "FE_SEM2_CHEM2_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_DEC17",
+      "slug": "FE_SEM2_CHEM2_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_DEC17.pdf",
+      "filename": "FE_SEM2_CHEM2_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_MAY17",
+      "slug": "FE_SEM2_CHEM2_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_MAY17.pdf",
+      "filename": "FE_SEM2_CHEM2_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_DEC16",
+      "slug": "FE_SEM2_CHEM2_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_DEC16.pdf",
+      "filename": "FE_SEM2_CHEM2_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_MAY16",
+      "slug": "FE_SEM2_CHEM2_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_MAY16.pdf",
+      "filename": "FE_SEM2_CHEM2_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_DEC15",
+      "slug": "FE_SEM2_CHEM2_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_DEC15.pdf",
+      "filename": "FE_SEM2_CHEM2_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_MAY15",
+      "slug": "FE_SEM2_CHEM2_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_MAY15.pdf",
+      "filename": "FE_SEM2_CHEM2_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_DEC14",
+      "slug": "FE_SEM2_CHEM2_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_DEC14.pdf",
+      "filename": "FE_SEM2_CHEM2_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_MAY14",
+      "slug": "FE_SEM2_CHEM2_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_MAY14.pdf",
+      "filename": "FE_SEM2_CHEM2_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_DEC13",
+      "slug": "FE_SEM2_CHEM2_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_DEC13.pdf",
+      "filename": "FE_SEM2_CHEM2_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CHEM2_MAY13",
+      "slug": "FE_SEM2_CHEM2_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CHEM2_MAY13.pdf",
+      "filename": "FE_SEM2_CHEM2_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_DEC19",
+      "slug": "FE_SEM2_ED_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_DEC19.pdf",
+      "filename": "FE_SEM2_ED_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_MAY19",
+      "slug": "FE_SEM2_ED_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_MAY19.pdf",
+      "filename": "FE_SEM2_ED_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_DEC18",
+      "slug": "FE_SEM2_ED_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_DEC18.pdf",
+      "filename": "FE_SEM2_ED_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_MAY18",
+      "slug": "FE_SEM2_ED_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_MAY18.pdf",
+      "filename": "FE_SEM2_ED_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_DEC17",
+      "slug": "FE_SEM2_ED_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_DEC17.pdf",
+      "filename": "FE_SEM2_ED_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_MAY17",
+      "slug": "FE_SEM2_ED_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_MAY17.pdf",
+      "filename": "FE_SEM2_ED_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_DEC16",
+      "slug": "FE_SEM2_ED_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_DEC16.pdf",
+      "filename": "FE_SEM2_ED_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_MAY16",
+      "slug": "FE_SEM2_ED_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_MAY16.pdf",
+      "filename": "FE_SEM2_ED_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_DEC15",
+      "slug": "FE_SEM2_ED_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_DEC15.pdf",
+      "filename": "FE_SEM2_ED_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_MAY15",
+      "slug": "FE_SEM2_ED_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_MAY15.pdf",
+      "filename": "FE_SEM2_ED_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_DEC14",
+      "slug": "FE_SEM2_ED_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_DEC14.pdf",
+      "filename": "FE_SEM2_ED_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_MAY14",
+      "slug": "FE_SEM2_ED_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_MAY14.pdf",
+      "filename": "FE_SEM2_ED_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_DEC13",
+      "slug": "FE_SEM2_ED_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_DEC13.pdf",
+      "filename": "FE_SEM2_ED_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_ED_MAY13",
+      "slug": "FE_SEM2_ED_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_ED_MAY13.pdf",
+      "filename": "FE_SEM2_ED_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_DEC19",
+      "slug": "FE_SEM2_SPA_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_DEC19.pdf",
+      "filename": "FE_SEM2_SPA_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_MAY19",
+      "slug": "FE_SEM2_SPA_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_MAY19.pdf",
+      "filename": "FE_SEM2_SPA_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_DEC18",
+      "slug": "FE_SEM2_SPA_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers//FE_SEM2_SPA_DEC18.pdf",
+      "filename": "FE_SEM2_SPA_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_MAY18",
+      "slug": "FE_SEM2_SPA_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_MAY18.pdf",
+      "filename": "FE_SEM2_SPA_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_DEC17",
+      "slug": "FE_SEM2_SPA_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_DEC17.pdf",
+      "filename": "FE_SEM2_SPA_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_MAY17",
+      "slug": "FE_SEM2_SPA_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_MAY17.pdf",
+      "filename": "FE_SEM2_SPA_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_DEC16",
+      "slug": "FE_SEM2_SPA_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_DEC16.pdf",
+      "filename": "FE_SEM2_SPA_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_MAY16",
+      "slug": "FE_SEM2_SPA_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_MAY16.pdf",
+      "filename": "FE_SEM2_SPA_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_DEC15",
+      "slug": "FE_SEM2_SPA_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_DEC15.pdf",
+      "filename": "FE_SEM2_SPA_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_MAY15",
+      "slug": "FE_SEM2_SPA_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_MAY15.pdf",
+      "filename": "FE_SEM2_SPA_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_DEC14",
+      "slug": "FE_SEM2_SPA_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_DEC14.pdf",
+      "filename": "FE_SEM2_SPA_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_MAY14",
+      "slug": "FE_SEM2_SPA_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_MAY14.pdf",
+      "filename": "FE_SEM2_SPA_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_DEC13",
+      "slug": "FE_SEM2_SPA_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_DEC13.pdf",
+      "filename": "FE_SEM2_SPA_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_SPA_MAY13",
+      "slug": "FE_SEM2_SPA_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_SPA_MAY13.pdf",
+      "filename": "FE_SEM2_SPA_MAY13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_DEC19",
+      "slug": "FE_SEM2_CS_DEC19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_DEC19.pdf",
+      "filename": "FE_SEM2_CS_DEC19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_MAY19",
+      "slug": "FE_SEM2_CS_MAY19",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_MAY19.pdf",
+      "filename": "FE_SEM2_CS_MAY19.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_DEC18",
+      "slug": "FE_SEM2_CS_DEC18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_DEC18.pdf",
+      "filename": "FE_SEM2_CS_DEC18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_MAY18",
+      "slug": "FE_SEM2_CS_MAY18",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_MAY18.pdf",
+      "filename": "FE_SEM2_CS_MAY18.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_DEC17",
+      "slug": "FE_SEM2_CS_DEC17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_DEC17.pdf",
+      "filename": "FE_SEM2_CS_DEC17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_MAY17",
+      "slug": "FE_SEM2_CS_MAY17",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_MAY17.pdf",
+      "filename": "FE_SEM2_CS_MAY17.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_DEC16",
+      "slug": "FE_SEM2_CS_DEC16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_DEC16.pdf",
+      "filename": "FE_SEM2_CS_DEC16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_MAY16",
+      "slug": "FE_SEM2_CS_MAY16",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_MAY16.pdf",
+      "filename": "FE_SEM2_CS_MAY16.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_DEC15",
+      "slug": "FE_SEM2_CS_DEC15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_DEC15.pdf",
+      "filename": "FE_SEM2_CS_DEC15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_MAY15",
+      "slug": "FE_SEM2_CS_MAY15",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_MAY15.pdf",
+      "filename": "FE_SEM2_CS_MAY15.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_DEC14",
+      "slug": "FE_SEM2_CS_DEC14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_DEC14.pdf",
+      "filename": "FE_SEM2_CS_DEC14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_MAY14",
+      "slug": "FE_SEM2_CS_MAY14",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_MAY14.pdf",
+      "filename": "FE_SEM2_CS_MAY14.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_DEC13",
+      "slug": "FE_SEM2_CS_DEC13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_DEC13.pdf",
+      "filename": "FE_SEM2_CS_DEC13.pdf"
+    },
+    {
+      "subject": "FE_SEM2_CS_MAY13",
+      "slug": "FE_SEM2_CS_MAY13",
+      "year": "Unknown",
+      "session": "EXAM",
+      "scheme": "Other",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/FE_SEM2_CS_MAY13.pdf",
+      "filename": "FE_SEM2_CS_MAY13.pdf"
+    }
+  ]
+}

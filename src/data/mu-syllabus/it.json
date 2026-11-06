@@ -1,0 +1,571 @@
+[
+  {
+    "code": "2343111",
+    "name": "Applied Mathematics Thinking-I",
+    "shortName": "AM-I",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Laplace Transform",
+        "topics": [
+          "Definition of Laplace transform",
+          "Condition of Existence of Laplace transform",
+          "Laplace Transform of Standard Functions like e^at, sin(at), cos(at), sinh(at), cosh(at) and t^n, n≥0",
+          "Properties of Laplace Transform: Linearity, First Shifting Theorem, Change of scale Property, multiplication by t, Division by t",
+          "Evaluation of real integrals by using Laplace Transformation"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Inverse Laplace Transform",
+        "topics": [
+          "Inverse Laplace Transform, Linearity property, use of standard formulae",
+          "Finding Inverse Laplace transform using derivatives",
+          "Partial fractions method to find inverse Laplace transform (only up to s^3 in denominator)",
+          "Inverse Laplace transform using Convolution theorem",
+          "Applications to solve initial and boundary value problems involving ordinary differential equations (up to 2nd order differential equation)"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Fourier Series",
+        "topics": [
+          "Dirichlet’s conditions",
+          "Definition of Fourier series and Parseval’s Identity",
+          "Fourier series of periodic function with period 2π and 2l",
+          "Fourier series of even and odd functions (simple functions only, piecewise continuous function not to be included)",
+          "Half Range Sine and Cosine Series"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Complex Variables",
+        "topics": [
+          "Analytic function, necessary and sufficient conditions for f(z) to be analytic",
+          "Cauchy-Riemann equations in cartesian coordinates",
+          "Milne-Thomson method to determine analytic function f(z) when real (u) or imaginary part (v) is given",
+          "Harmonic function, Harmonic conjugate, and orthogonal trajectories"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Statistical Techniques",
+        "topics": [
+          "Karl Pearson’s Coefficient of correlation(r)",
+          "Spearman’s Rank correlation coefficient (R) (with repeated and non-repeated ranks)",
+          "Lines of regression",
+          "Fitting of first- and second-degree curves"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Probability",
+        "topics": [
+          "Discrete and continuous random variable with probability distribution and probability density function",
+          "Expectation of random variable with mean, variance and standard deviation",
+          "Moment generating function up to two moments"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2343112",
+    "name": "Advance Data Structure & Analysis",
+    "shortName": "ADSA",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Analysis of Algorithms",
+        "topics": [
+          "Fundamentals of the analysis of algorithms: Time and Space complexity, Asymptotic notation",
+          "Recurrence Relations: Methods to solve recurrence relations in algorithms (Substitution, Recursion tree, Master theorem)"
+        ],
+        "hours": 3,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Advanced Data Structures",
+        "topics": [
+          "Introduction. AVL trees, B tree, B tree operations, B+ tree, Red-Black Trees, tries data structures",
+          "Time complexity analysis of all problems",
+          "Graphs, Representation, Graph Traversals: Breadth First Search, Depth First Search"
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Greedy algorithms and Applications",
+        "topics": [
+          "Introduction and properties of greedy algorithms",
+          "Fractional Knapsack problem",
+          "Minimum Spanning Trees (Prim’s and Kruskal’s algorithms)",
+          "Job sequencing with deadlines, Optimal storage on tapes",
+          "Analysis of All problems"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Backtracking and Maximum flow Networks",
+        "topics": [
+          "Backtracking Techniques: Introduction, N-Queens problem, sum of subsets problem, graph coloring, Hamiltonian cycles",
+          "Introduction to flow networks, Augmenting Paths Residual Network, Ford Fulkerson method",
+          "Applications of Flow Networks in real-world problems"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Dynamic Algorithms",
+        "topics": [
+          "Introduction Dynamic algorithms, Greedy vs. Dynamic algorithms",
+          "Single source shortest path- Dijkstra's Algorithm, Bellman Ford Algorithm",
+          "All pair shortest path- Floyd Warshall Algorithm",
+          "0/1 knapsack problem, Travelling salesman problem",
+          "Analysis of All problems"
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "String Matching Algorithms",
+        "topics": [
+          "Introduction. Naïve string matching algorithm, Rabin-Karp algorithm, Knuth-Morris-Pratt(KMP) algorithm",
+          "Longest common subsequence(LCS)",
+          "Analysis of All problems",
+          "Applications: Text searching, DNA sequencing, and data compression"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2343113",
+    "name": "Database Management System & Application",
+    "shortName": "DBMS",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Database System Concepts, Architecture, and Applications",
+        "topics": [
+          "Introduction, Characteristics of Databases, File system v/s Database system",
+          "Data abstraction and Data Independence, DBMS system architecture, Database Administrator (DBA), Role of DBA",
+          "Applications: Banking Systems, E-Commerce, Telecommunications, Healthcare Systems, Social Media Platforms, Education Systems, Airline Reservation Systems, Government Applications"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "The Entity-Relationship Model",
+        "topics": [
+          "Conceptual Modeling of a database, The Entity-Relationship (ER) Model",
+          "Entity Type, Entity Sets, Attributes and Keys, Relationship Types, Relationship Sets, Weak entity Types",
+          "Generalization, Specialization and Aggregation, Extended Entity-Relationship (EER) Model"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Relational Model & Relational Algebra",
+        "topics": [
+          "Introduction to Relational Model, Relational Model Constraints and Relational Database Schemas",
+          "Concept of Keys: Primary Key, Secondary key, Foreign Key",
+          "Mapping the ER and EER Model to the Relational Model",
+          "Introduction to Relational Algebra, Relational Algebra expressions for Unary Relational Operations, Set Theory operations, Binary Relational operation",
+          "Relational Algebra Queries"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Structured Query Language (SQL) & Indexing",
+        "topics": [
+          "Overview of SQL, Data Definition Commands, Set Operations, Aggregate Function, null values, Data Manipulation commands, Data Control commands",
+          "Complex Retrieval Queries using Group By, Recursive Queries, nested Queries, Integrity constraints in SQL",
+          "Database Programming with JDBC, Security and authorization: Grant & Revoke in SQL Functions and Procedures in SQL and cursors",
+          "Indexing: Basic Concepts, Ordered Indices, Index Definition in SQL"
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Relational Database Design",
+        "topics": [
+          "Design guidelines for relational Schema, Functional Dependencies",
+          "Database tables and normalization, The need for normalization, The normalization process, Improving the design",
+          "Definition of Normal Forms- 1NF, 2NF, 3NF & The Boyce-Codd Normal Form (BCNF)"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Transactions Management and Concurrency and Recovery",
+        "topics": [
+          "Transaction: Transaction concept, State Diagram, ACID Properties, Transaction Control Commands, Concurrent Executions",
+          "Serializability – Conflict and View",
+          "Concurrency Control: Lock-based-protocols, Deadlock handling Timestamp-based protocols",
+          "Recovery System: Recovery Concepts, Log based recovery"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2343114",
+    "name": "Automata Theory",
+    "shortName": "AT",
+    "semester": 3,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction and Regular Languages",
+        "topics": [
+          "Languages: Alphabets and Strings",
+          "Regular Languages: Regular Expressions, Regular Languages, Regular Grammars, RL and LL grammars, Closure properties"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Finite Automata",
+        "topics": [
+          "Finite Automata: FA as language acceptor or verifier, NFA ( with and without ε) , DFA",
+          "RE to NFA, NFA to DFA, Reduced DFA , NFA-DFA equivalence, FA to RE",
+          "Finite State Machines with output : Moore and Mealy machines. Moore and Mealy M/C conversion",
+          "Limitations of FA"
+        ],
+        "hours": 9,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Context Free Grammars",
+        "topics": [
+          "Context Free Languages: CFG, Leftmost and Rightmost derivations, Ambiguity",
+          "Simplification and Normalization (CNF & GNF) and Chomsky Hierarchy ( Types 0 to 3)"
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Push Down Automata",
+        "topics": [
+          "Push Down Automata: Deterministic (single stack) PDA",
+          "Equivalence between PDA and CFG",
+          "Power and Limitations of PDA"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Turing Machine",
+        "topics": [
+          "Turing Machine: Deterministic TM, Variants of TM",
+          "Halting problem, Power of TM"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Applications of Automata",
+        "topics": [
+          "Applications of FA, CFG, PDA & TM",
+          "Introduction to Compiler & Its phases"
+        ],
+        "hours": 3,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2344111",
+    "name": "Applied Mathematics Thinking-II",
+    "shortName": "AM-II",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Linear Algebra (Theory of Matrices)",
+        "topics": [
+          "Characteristic Equation, Eigenvalues and Eigenvectors and properties",
+          "Cayley-Hamilton Theorem (without proof), Reduction of higher degree polynomials",
+          "Similarity of matrices, diagonalizable and non-diagonalizable matrices"
+        ],
+        "hours": 5,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Complex Integration",
+        "topics": [
+          "Cauchy’s theorem, Cauchy’s integral formula (without proof)",
+          "Taylor’s and Laurent’s series (without proof) (upto degree 2 in denominator)",
+          "Definition of Singularity, Zeroes, poles of f(z), Residues, Cauchy’s Residue Theorem (without proof)"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Z Transform",
+        "topics": [
+          "Definition and Region of convergence. Transform of standard functions: {k^n a^k}, {a^|k|}, {k+n C n a^k}, {c^k sin(αk + β)}, {c^k sinh αk}, {c^k cosh αk}",
+          "Properties of Z Transform: Change of Scale, Shifting Property, Multiplication, and Division by k, Convolution theorem (without proof)",
+          "Inverse Z transform: Partial Fraction Method, Convolution Method"
+        ],
+        "hours": 7,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Probability Distribution and Sampling Theory",
+        "topics": [
+          "Probability Distribution: Binomial, Poisson and Normal distribution (simple problems in finding probability only to be included)",
+          "Sampling distribution, Test of Hypothesis, Level of Significance, Critical region, One-tailed, and two-tailed test, Degree of freedom",
+          "Test significance for Large samples. Test the significance of mean and Difference between the means of two large samples",
+          "Students’ t-distribution (Small sample). Test the significance of mean and Difference between the means of two samples"
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Linear Programming Problems",
+        "topics": [
+          "Types of solutions, Standard and Canonical of LPP, Basic and Feasible solutions, slack variables, surplus variables",
+          "Simplex method",
+          "Duality, Dual of LPP and Dual Simplex Method"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Nonlinear Programming Problems",
+        "topics": [
+          "NLPP with one equality constraint (two or three variables) using the method of Lagrange’s multipliers",
+          "NLPP with one inequality constraint (two variables): Kuhn-Tucker conditions"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2344112",
+    "name": "Operating System",
+    "shortName": "OS",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Operating Systems",
+        "topics": [
+          "Basics of Operating System: Definition, Types of Operating Systems, OS Structure and operations, Process management, Memory management, storage management",
+          "System Structure: Operating system services and interface, System calls and types, System boot, Operating System Design and implementation, OS structure, Virtual machines"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Process Management",
+        "topics": [
+          "Processes: Definition, Process states, Process State transitions, Process Control Block, Context switching, Threads, Multithreading, Thread models, Benefits of threads",
+          "Process Scheduling: Definition, Scheduling objectives, Types of Schedulers, Scheduling criteria: CPU utilization, Throughput, Turnaround Time, Waiting Time, Response Time",
+          "Scheduling algorithms: Preemptive and Non-preemptive, Thread Scheduling and Multiple Processor Scheduling"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Process Synchronization",
+        "topics": [
+          "Synchronization: Inter-process Communication and Synchronization; Race Condition; The Critical Section Problem, Peterson’s Solution, synchronization Hardware and semaphores, Producer Consumer Problem; Message passing",
+          "Deadlocks: System Model, Deadlock Characterization, Methods for Handling Deadlocks, Deadlock Prevention, Deadlock Avoidance, Deadlock Detection, Recovery from Deadlock"
+        ],
+        "hours": 9,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Memory Management",
+        "topics": [
+          "Memory Management strategies: Background, Logical and Physical address map, Memory allocation: Contiguous Memory allocation, Fixed and variable partition, Internal and External fragmentation and Compaction, Swapping, Contiguous Memory Allocation, Paging, Structure of the Page Table, Segmentation",
+          "Virtual Memory basics, Hardware and control structures, Locality of reference, Demand Paging, Page replacement Algorithms, Thrashing"
+        ],
+        "hours": 8,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "File Management",
+        "topics": [
+          "File system: File Concept, Access Methods, Directory and Disk Structure, File-System Mounting, File Sharing, Protection",
+          "Implementing file System: File-System Structure, File-System Implementation, Directory Implementation, Allocation Methods, Free-Space Management, Efficiency and Performance, Recovery",
+          "Overview of Mass Storage Structure; Disk Structure; Disk Scheduling; RAID Structure; Introduction to I/O Systems"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Special-purpose Operating Systems",
+        "topics": [
+          "Open-source and Proprietary Operating System",
+          "Fundamentals of Distributed Operating System; Network Operating System; Embedded Operating Systems; Cloud and IoT Operating Systems; Real-Time Operating System; Mobile Operating System; Multimedia Operating System",
+          "Comparison between Functions of various Special-purpose Operating Systems"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      }
+    ]
+  },
+  {
+    "code": "2344113",
+    "name": "Computer Network & Network Design",
+    "shortName": "CNND",
+    "semester": 4,
+    "scheme": "NEP-2020",
+    "credits": 3,
+    "endSemMarks": 60,
+    "iatMarks": 40,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Computer Networks",
+        "topics": [
+          "Communication Model",
+          "Goals of Computer Communication Networks",
+          "Types of Computer Communication Networks",
+          "Network Topology",
+          "Layered Architecture of Data Network",
+          "OSI Reference Model",
+          "TCP/IP Reference Model",
+          "Internetworking and Network Devices"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 2,
+        "title": "Physical Layer",
+        "topics": [
+          "Guided and Unguided Transmission Media",
+          "Switching: Circuit Switching, Message Switching, Datagram Packet Switching, Virtual-Circuit Packet Switching",
+          "Structure of a switch, Space Division Switching, Time Division Switching, Packet Switch"
+        ],
+        "hours": 4,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 3,
+        "title": "Data Link Layer",
+        "topics": [
+          "Data Link Control: Framing, Error Detection & Correction (basic concept, Linear Block Code, CRC code, Checksum), Flow Control (Stop-and-Wait Flow Control, Sliding Window Flow Control), Error Control (Stop-and-Wait ARQ, Go-Back-N ARQ, Selective Reject ARQ)",
+          "Medium Access Control: Scheduled Access (Reservation, Polling, Token Passing), Random Access (ALOHA, CSMA, CSMA/CD, CSMA/CA)",
+          "Link Layer Addressing: MAC address and its types, ARP",
+          "Ethernet Protocol: Standard Ethernet, Fast Ethernet (100 Mbps), Gigabit Ethernet, 10-Gigabit Ethernet"
+        ],
+        "hours": 9,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 4,
+        "title": "Network Layer",
+        "topics": [
+          "Data Transfer: Network Layer Services, IPv4 Addressing (Classful/Classless), Subnetting & Supernetting, IPv4 Protocol, ICMP Protocol, IPv6 Addressing & Protocol, Transition from IPv4 to IPv6",
+          "Routing of Packets: Routing Algorithms (Distance Vector Routing, Link State Routing, Path Vector Routing), Routing Protocols (RIP, OSPF, BGP)",
+          "Network Design: Concept of VLAN, VPN, Case study on designing a network for an organization/ college"
+        ],
+        "hours": 10,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 5,
+        "title": "Transport Layer & Session Layer",
+        "topics": [
+          "Transport Layer: Transport Layer Services, Port Number, Socket Address, Flow & Congestion Control at Transport Layer, Connectionless and Connection-Oriented Services",
+          "User Datagram Protocol (UDP): User Datagram, UDP Services, UDP Applications",
+          "Transmission Control Protocol (TCP): TCP Services, TCP Segment Format, TCP Timers",
+          "Session Layer: Session Layer Design Issues, Remote Procedure Call (RPC) Protocol (Handshaking)"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      },
+      {
+        "moduleNo": 6,
+        "title": "Presentation Layer & Application Layer",
+        "topics": [
+          "Presentation Layer: Compression (Basics of compression, Lossless and Lossy Compression), Compression Techniques (Huffman Code, LZW Code, Run Length Code), Image Compression (GIF, JPEG)",
+          "Application Layer: Client/Server Paradigm, Standard Applications (WWW, HTTP, FTP, Email, DNS)"
+        ],
+        "hours": 6,
+        "weightageMarks": 10
+      }
+    ]
+  }
+]

@@ -21,6 +21,12 @@ import {
   type TelegramArtifactType,
 } from "@/server/telegram/generator";
 import { extractDocumentText } from "@/server/ingestion/extract-text";
+import {
+  BRANCHES,
+  getBranchSubjects,
+  formatSubjectSyllabusText,
+} from "@/data/mu-syllabus";
+import { findMuQuestionPapers } from "@/data/mu-pyqs";
 
 export const maxDuration = 60; // Allow sufficient time for Gemini LLM generation on Vercel
 
@@ -46,7 +52,250 @@ export async function POST(req: NextRequest) {
       const data = (cb.data as string) || "";
       const chatId = cb.message?.chat?.id;
 
-      if (!chatId || !data.startsWith("act:")) {
+      if (!chatId) {
+        if (cb.id) await answerCallbackQuery(cb.id);
+        return NextResponse.json({ ok: true });
+      }
+
+      // Handle Subject Catalog Browsing Callbacks
+      if (data.startsWith("br:")) {
+        if (cb.id) await answerCallbackQuery(cb.id);
+
+        if (data === "br:branches") {
+          const inline_keyboard = [
+            [
+              { text: "💻 Comps", callback_data: "br:b:comps" },
+              { text: "🌐 IT", callback_data: "br:b:it" },
+            ],
+            [
+              { text: "📊 AIDS", callback_data: "br:b:aids" },
+              { text: "🤖 AIML", callback_data: "br:b:aiml" },
+            ],
+            [
+              { text: "⚙️ Mech", callback_data: "br:b:mech" },
+              { text: "⚡ Electrical", callback_data: "br:b:electrical" },
+            ],
+            [
+              { text: "🏗️ Civil", callback_data: "br:b:civil" },
+              { text: "📐 FE (All Branches)", callback_data: "br:b:fe" },
+            ],
+          ];
+          await sendTelegramMessage(
+            chatId,
+            "🏛️ *Mumbai University (NEP-2020) Directory*\n\nSelect your engineering branch to pick subjects with verified 6-module syllabus without uploading any PDF:",
+            { reply_markup: { inline_keyboard } }
+          );
+          return NextResponse.json({ ok: true });
+        }
+
+        if (data.startsWith("br:b:")) {
+          const branchId = data.split(":")[2] || "";
+          const branch = BRANCHES.find((b) => b.id === branchId);
+          if (!branch) return NextResponse.json({ ok: true });
+
+          const semButtons = branch.semesters.map((s) => ({
+            text: `Semester ${s}`,
+            callback_data: `br:s:${branchId}:${s}`,
+          }));
+
+          const inline_keyboard: { text: string; callback_data: string }[][] = [];
+          for (let i = 0; i < semButtons.length; i += 2) {
+            inline_keyboard.push(semButtons.slice(i, i + 2));
+          }
+          inline_keyboard.push([{ text: "« Back to Branches", callback_data: "br:branches" }]);
+
+          await sendTelegramMessage(
+            chatId,
+            `${branch.icon} *${branch.name}*\nSelect your semester:`,
+            { reply_markup: { inline_keyboard } }
+          );
+          return NextResponse.json({ ok: true });
+        }
+
+        if (data.startsWith("br:s:")) {
+          const [, , branchId, semStr] = data.split(":");
+          const sem = parseInt(semStr || "1", 10);
+          const branch = BRANCHES.find((b) => b.id === branchId);
+          const subjects = await getBranchSubjects(branchId || "", sem);
+
+          const inline_keyboard: { text: string; callback_data: string }[][] = [];
+          for (let i = 0; i < subjects.length; i += 2) {
+            const row = [
+              {
+                text: subjects[i]!.shortName || subjects[i]!.name.slice(0, 16),
+                callback_data: `br:sub:${branchId}:${subjects[i]!.code}`,
+              },
+            ];
+            if (subjects[i + 1]) {
+              row.push({
+                text: subjects[i + 1]!.shortName || subjects[i + 1]!.name.slice(0, 16),
+                callback_data: `br:sub:${branchId}:${subjects[i + 1]!.code}`,
+              });
+            }
+            inline_keyboard.push(row);
+          }
+          inline_keyboard.push([
+            { text: `« Back to ${branch?.shortName || "Branch"}`, callback_data: `br:b:${branchId}` },
+          ]);
+
+          await sendTelegramMessage(
+            chatId,
+            `📚 *${branch?.name} — Semester ${sem}*\nSelect a core theory subject:`,
+            { reply_markup: { inline_keyboard } }
+          );
+          return NextResponse.json({ ok: true });
+        }
+
+        if (data.startsWith("br:sub:")) {
+          const [, , branchId, code] = data.split(":");
+          const subjects = await getBranchSubjects(branchId || "");
+          const sub = subjects.find((s) => s.code === code);
+          if (!sub) return NextResponse.json({ ok: true });
+
+          const sessionId = `${chatId}_${Date.now()}`;
+          const syllabusText = formatSubjectSyllabusText(sub);
+
+          await saveTelegramSession(sessionId, {
+            chatId,
+            fileName: `${sub.shortName} (${sub.code}) Official NEP-2020`,
+            subject: sub.name,
+            text: syllabusText,
+          });
+
+          const keyboard = buildRemainingKeyboard(ALL_ARTIFACT_KEYS, sessionId);
+
+          await sendTelegramMessage(
+            chatId,
+            `✅ *Loaded: ${sub.name} (${sub.code})*\nSemester ${sub.semester} • NEP-2020 Scheme\n\nAll 6 official modules loaded! What would you like me to generate for tomorrow's exam?`,
+            { reply_markup: keyboard }
+          );
+          return NextResponse.json({ ok: true });
+        }
+
+        return NextResponse.json({ ok: true });
+      }
+
+      // Handle Past Question Paper (PYQ) Callbacks
+      if (data.startsWith("pyq:")) {
+        if (cb.id) await answerCallbackQuery(cb.id);
+
+        if (data === "pyq:branches") {
+          const inline_keyboard = [
+            [
+              { text: "💻 Comps", callback_data: "pyq:b:comps" },
+              { text: "🌐 IT", callback_data: "pyq:b:it" },
+            ],
+            [
+              { text: "📊 AIDS", callback_data: "pyq:b:aids" },
+              { text: "🤖 AIML", callback_data: "pyq:b:aiml" },
+            ],
+            [
+              { text: "⚙️ Mech", callback_data: "pyq:b:mech" },
+              { text: "⚡ Electrical", callback_data: "pyq:b:electrical" },
+            ],
+            [
+              { text: "🏗️ Civil", callback_data: "pyq:b:civil" },
+              { text: "📐 FE (All Branches)", callback_data: "pyq:b:fe" },
+            ],
+          ];
+          await sendTelegramMessage(
+            chatId,
+            "📚 *Mumbai University Past Exam Question Papers (PYQs)*\n\nOfficial MU semester question papers (NEP-2020 & C-Scheme):\nSelect your branch:",
+            { reply_markup: { inline_keyboard } }
+          );
+          return NextResponse.json({ ok: true });
+        }
+
+        if (data.startsWith("pyq:b:")) {
+          const branchId = data.split(":")[2] || "";
+          const branch = BRANCHES.find((b) => b.id === branchId);
+          if (!branch) return NextResponse.json({ ok: true });
+
+          const semButtons = branch.semesters.map((s) => ({
+            text: `Semester ${s}`,
+            callback_data: `pyq:s:${branchId}:${s}`,
+          }));
+
+          const inline_keyboard: { text: string; callback_data: string }[][] = [];
+          for (let i = 0; i < semButtons.length; i += 2) {
+            inline_keyboard.push(semButtons.slice(i, i + 2));
+          }
+          inline_keyboard.push([{ text: "« Back to Branches", callback_data: "pyq:branches" }]);
+
+          await sendTelegramMessage(
+            chatId,
+            `${branch.icon} *${branch.name} — PYQs*\nSelect your semester to get official PDF question papers:`,
+            { reply_markup: { inline_keyboard } }
+          );
+          return NextResponse.json({ ok: true });
+        }
+
+        if (data.startsWith("pyq:s:")) {
+          const [, , branchId, semStr] = data.split(":");
+          const sem = parseInt(semStr || "1", 10);
+          const branch = BRANCHES.find((b) => b.id === branchId);
+          const papers = await findMuQuestionPapers(branchId || "", sem);
+
+          if (!papers || papers.length === 0) {
+            await sendTelegramMessage(
+              chatId,
+              `⚠️ No past question papers found for ${branch?.name || branchId} Semester ${sem}.`,
+              {
+                reply_markup: {
+                  inline_keyboard: [[{ text: "« Back to Semesters", callback_data: `pyq:b:${branchId}` }]],
+                },
+              }
+            );
+            return NextResponse.json({ ok: true });
+          }
+
+          // Group papers by subject
+          const grouped: Record<string, typeof papers> = {};
+          papers.forEach((p) => {
+            if (!grouped[p.subject]) grouped[p.subject] = [];
+            grouped[p.subject]!.push(p);
+          });
+
+          // Build nice message with NEP papers highlighted first
+          let responseText = `📚 *${branch?.name} — Semester ${sem} Official PYQs*\n`;
+          responseText += `Official Mumbai University examination question papers:\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+
+          const subjectKeys = Object.keys(grouped).slice(0, 8); // Top subjects
+          for (const subName of subjectKeys) {
+            const list = grouped[subName]!;
+            const nepList = list.filter((p) => p.isNep);
+            const otherList = list.filter((p) => !p.isNep).slice(0, 3);
+            const displayList = nepList.length > 0 ? nepList : otherList;
+
+            responseText += `📖 *${subName}*\n`;
+            for (const item of displayList) {
+              const tag = item.isNep ? "⭐ [NEP-2020]" : `[${item.scheme || "C-Scheme"}]`;
+              responseText += `• ${item.session} ${item.year} ${tag}: [📥 Download PDF](${item.pdfUrl})\n`;
+            }
+            responseText += `\n`;
+          }
+
+          responseText += `💡 *Tip:* Save these PDFs or drop one here to generate practice papers & formula sheets!`;
+
+          await sendTelegramMessage(
+            chatId,
+            responseText,
+            {
+              reply_markup: {
+                inline_keyboard: [
+                  [{ text: `« Back to ${branch?.shortName || "Branch"} Semesters`, callback_data: `pyq:b:${branchId}` }],
+                  [{ text: "« All Branches", callback_data: "pyq:branches" }],
+                ],
+              },
+            }
+          );
+          return NextResponse.json({ ok: true });
+        }
+
+        return NextResponse.json({ ok: true });
+      }
+
+      if (!data.startsWith("act:")) {
         if (cb.id) await answerCallbackQuery(cb.id);
         return NextResponse.json({ ok: true });
       }
@@ -63,11 +312,13 @@ export async function POST(req: NextRequest) {
       if (!session) {
         await sendTelegramMessage(
           chatId,
-          "⚠️ Your previous session expired or was not found.\n\nPlease drop your syllabus PDF or notes again to generate!",
+          "⚠️ *Session Timed Out*\n\nDon't worry, you don't have to re-upload! Tap below to pick your subject from our verified MU directory or start fresh in 1 tap:",
           {
             reply_markup: {
               inline_keyboard: [
-                [{ text: "🌐 Open KalExamHai Web", url: "https://kalexamhai-one.vercel.app" }],
+                [{ text: "🏛️ Pick Subject from MU Directory (Zero-Upload)", callback_data: "br:branches" }],
+                [{ text: "📚 Download Official MU PYQs", callback_data: "pyq:branches" }],
+                [{ text: "🌐 Open KalExamHai Web Portal", url: "https://kalexamhai-one.vercel.app" }],
               ],
             },
           }
@@ -108,7 +359,7 @@ export async function POST(req: NextRequest) {
       );
 
       // Generate the requested artifact via Gemini
-      const generatedContent = await generateTelegramArtifact(
+      const { telegramText, webContent } = await generateTelegramArtifact(
         chosenType,
         session.text,
         session.subject
@@ -123,11 +374,11 @@ export async function POST(req: NextRequest) {
         type: chosenType,
         subject: session.subject,
         title: meta.short,
-        content: generatedContent,
+        content: webContent,
       });
 
-      // Send the generated content to chat
-      await sendTelegramMessage(chatId, generatedContent);
+      // Send the clean Unicode content to Telegram chat
+      await sendTelegramMessage(chatId, telegramText);
 
       // Parse remaining options (excluding the chosen one)
       const remainingKeys = remainingStr
@@ -184,6 +435,72 @@ export async function POST(req: NextRequest) {
 
     const text = (msg.text || "").trim();
 
+    // Case A0: User sent /pyqs or /pyq
+    if (
+      text.startsWith("/pyq") ||
+      text.startsWith("/papers") ||
+      text.toLowerCase() === "pyq" ||
+      text.toLowerCase() === "pyqs" ||
+      text.toLowerCase() === "papers"
+    ) {
+      const inline_keyboard = [
+        [
+          { text: "💻 Comps", callback_data: "pyq:b:comps" },
+          { text: "🌐 IT", callback_data: "pyq:b:it" },
+        ],
+        [
+          { text: "📊 AIDS", callback_data: "pyq:b:aids" },
+          { text: "🤖 AIML", callback_data: "pyq:b:aiml" },
+        ],
+        [
+          { text: "⚙️ Mech", callback_data: "pyq:b:mech" },
+          { text: "⚡ Electrical", callback_data: "pyq:b:electrical" },
+        ],
+        [
+          { text: "🏗️ Civil", callback_data: "pyq:b:civil" },
+          { text: "📐 FE (All Branches)", callback_data: "pyq:b:fe" },
+        ],
+      ];
+      await sendTelegramMessage(
+        chatId,
+        "📚 *Mumbai University Past Exam Question Papers (PYQs)*\n\nOfficial MU semester question papers (NEP-2020 & C-Scheme):\nSelect your branch:",
+        { reply_markup: { inline_keyboard } }
+      );
+      return NextResponse.json({ ok: true });
+    }
+
+    // Case A1: User sent /subjects or /browse
+    if (
+      text.startsWith("/subjects") ||
+      text.startsWith("/browse") ||
+      text.startsWith("/syllabus")
+    ) {
+      const inline_keyboard = [
+        [
+          { text: "💻 Comps", callback_data: "br:b:comps" },
+          { text: "🌐 IT", callback_data: "br:b:it" },
+        ],
+        [
+          { text: "📊 AIDS", callback_data: "br:b:aids" },
+          { text: "🤖 AIML", callback_data: "br:b:aiml" },
+        ],
+        [
+          { text: "⚙️ Mech", callback_data: "br:b:mech" },
+          { text: "⚡ Electrical", callback_data: "br:b:electrical" },
+        ],
+        [
+          { text: "🏗️ Civil", callback_data: "br:b:civil" },
+          { text: "📐 FE (All Branches)", callback_data: "br:b:fe" },
+        ],
+      ];
+      await sendTelegramMessage(
+        chatId,
+        "🏛️ *Mumbai University (NEP-2020) Directory*\n\nSelect your engineering branch to pick subjects with verified 6-module syllabus without uploading any PDF:",
+        { reply_markup: { inline_keyboard } }
+      );
+      return NextResponse.json({ ok: true });
+    }
+
     // Case A: User sent /start or Greeting
     if (
       text.startsWith("/start") ||
@@ -195,19 +512,24 @@ export async function POST(req: NextRequest) {
 
 Stressed about tomorrow's paper? Don't worry, we've got you covered.
 
-📎 *Just send me your Syllabus PDF, Lecture Notes, or a Question Photo*, and I will generate:
+Choose one of two ways to generate your exam prep:
+1️⃣ *Tap "Browse Official MU Subjects"* below to choose from verified NEP-2020 syllabi (Zero-Upload!)
+2️⃣ *Or drop your own Syllabus PDF, notes, or question photo* right here in the chat.
 
+I can generate:
 • 📝 *60-Mark NEP-2020 Question Paper* (with step-by-step marking schemes)
 • ⚡ *20-Mark IAT Internal Paper*
 • 📑 *High-Yield Formula Cheat Sheet*
 • 🎯 *12-Hour Panic Survival Kit* (expected marks & must-draw diagrams)
 • 🎤 *Examiner Viva Questions & Traps*
 
-👇 *Drop your PDF or photo below to get started!*`;
+👇 *Choose an option or drop your notes below:*`;
 
       await sendTelegramMessage(chatId, welcomeText, {
         reply_markup: {
           inline_keyboard: [
+            [{ text: "🏛️ Browse MU Subjects (NEP-2020)", callback_data: "br:branches" }],
+            [{ text: "📥 Download Official MU PYQs", callback_data: "pyq:branches" }],
             [{ text: "🌐 Open KalExamHai Web Portal", url: "https://kalexamhai-one.vercel.app" }],
           ],
         },
@@ -327,11 +649,13 @@ Stressed about tomorrow's paper? Don't worry, we've got you covered.
     // Fallback: short unrecognized text
     await sendTelegramMessage(
       chatId,
-      "📎 *Send me your Syllabus PDF, Notes, or take a photo of a question*, and I will generate your 60-mark paper, formula sheet, and viva prep!",
+      "⚡ *What would you like to prepare for tomorrow?*\n\nChoose an option below or send your notes/syllabus:",
       {
         reply_markup: {
           inline_keyboard: [
-            [{ text: "🌐 Open KalExamHai Web", url: "https://kalexamhai-one.vercel.app" }],
+            [{ text: "🏛️ Pick Subject from MU Directory (Zero-Upload)", callback_data: "br:branches" }],
+            [{ text: "📚 Download Official MU PYQs", callback_data: "pyq:branches" }],
+            [{ text: "🌐 Open KalExamHai Web Portal", url: "https://kalexamhai-one.vercel.app" }],
           ],
         },
       }
