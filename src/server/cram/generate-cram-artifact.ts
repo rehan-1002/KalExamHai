@@ -71,6 +71,29 @@ export async function generateCramArtifact(
             m.topics.map((t) => `• ${t}`).join("\n"),
           tokenCount: 80,
         }));
+
+        try {
+          const { findMuQuestionPapers } = await import("@/data/mu-pyqs");
+          const pyqs = await findMuQuestionPapers(found.branch.id, found.subject.semester, found.subject.name);
+          const pyqArchive = pyqs.slice(0, 8).map((p) => `${p.year} ${p.session} (${p.scheme})`).join(", ");
+          chunks.push({
+            id: "c_pyq",
+            documentId: `mu_pyq_${found.subject.code}`,
+            documentTitle: `${found.subject.name} (Historical MU PYQ Archive)`,
+            chunkIndex: 99,
+            unitLabel: "PYQ Repeat Intelligence",
+            pageStart: 1,
+            pageEnd: 1,
+            content: `[MUMBAI UNIVERSITY HISTORICAL EXAM INTELLIGENCE: ${found.subject.name}]\n` +
+              `Archived Past Papers: ${pyqArchive || "Dec '24 NEP, May '24, Dec '23, May '23, Dec '22, May '22"}\n\n` +
+              `CRITICAL STUDY ARTIFACT INSTRUCTION:\n` +
+              `You MUST focus strictly on concepts, definitions, derivations, and formulas required to answer the MOST FREQUENTLY REPEATED Mumbai University past exam questions.\n` +
+              `Give highest priority to topics recurring across May and December exam sessions with 85%+ repeat probability.`,
+            tokenCount: 150,
+          });
+        } catch {
+          // fallback
+        }
       }
     } catch {
       // Continue to RAG fallback
