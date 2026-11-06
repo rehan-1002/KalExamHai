@@ -8,6 +8,7 @@ import {
 import {
   saveTelegramSession,
   getTelegramSession,
+  saveTelegramExport,
 } from "@/server/telegram/session";
 import {
   generateTelegramArtifact,
@@ -86,7 +87,16 @@ export async function POST(req: NextRequest) {
         session.subject
       );
 
-      // Send the generated content
+      // Save export for 1-tap A4 Print and Web PDF preview
+      const exportId = `${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+      await saveTelegramExport(exportId, {
+        type: chosenType,
+        subject: session.subject,
+        title: meta.short,
+        content: generatedContent,
+      });
+
+      // Send the generated content to chat
       await sendTelegramMessage(chatId, generatedContent);
 
       // Parse remaining options (excluding the chosen one)
@@ -96,19 +106,25 @@ export async function POST(req: NextRequest) {
         .filter((k): k is TelegramArtifactType => k in ARTIFACT_NAMES && k !== chosenType);
 
       if (remainingKeys.length > 0) {
-        const keyboard = buildRemainingKeyboard(remainingKeys, sessionId);
+        const keyboard = buildRemainingKeyboard(remainingKeys, sessionId, exportId);
         await sendTelegramMessage(
           chatId,
-          `✅ *${meta.short} ready above!*\n\nWhat else do you want to generate from *${session.fileName}*?`,
+          `✅ *${meta.short} ready above!*\n\nTap below to print or choose your next prep tool:`,
           { reply_markup: keyboard }
         );
       } else {
         await sendTelegramMessage(
           chatId,
-          `🎉 *You've unlocked all study kits for ${session.subject}!*\n\nWant to solve interactive 3D flashcards or view the official printable layout? Open your workspace:`,
+          `🎉 *You've unlocked all study kits for ${session.subject}!*\n\nTap below to print or open your 3D student workspace:`,
           {
             reply_markup: {
               inline_keyboard: [
+                [
+                  {
+                    text: "🖨️ Open & Print Official A4 PDF",
+                    url: `https://kalexamhai-one.vercel.app/view/${exportId}`,
+                  },
+                ],
                 [{ text: "🌐 Open Full 3D Workspace on Web (Free)", url: "https://kalexamhai-one.vercel.app" }],
                 [
                   {
@@ -297,3 +313,4 @@ Stressed about tomorrow's paper? Don't worry, we've got you covered.
     return NextResponse.json({ ok: true }); // Always return 200 OK so Telegram doesn't retry spam
   }
 }
+

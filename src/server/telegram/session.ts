@@ -1,5 +1,6 @@
 import "server-only";
 import { getAdminClient } from "@/server/supabase/admin";
+import type { TelegramArtifactType } from "./generator";
 
 export interface TelegramSession {
   sessionId: string;
@@ -10,8 +11,18 @@ export interface TelegramSession {
   created: number;
 }
 
+export interface TelegramExport {
+  exportId: string;
+  type: TelegramArtifactType;
+  subject: string;
+  title: string;
+  content: string;
+  created: number;
+}
+
 // In-memory cache for fast sub-second access across warm invocations
 const memoryCache = new Map<string, TelegramSession>();
+const exportMemoryCache = new Map<string, TelegramExport>();
 
 /**
  * Saves a Telegram study session (syllabus text + metadata).
@@ -75,6 +86,66 @@ export async function getTelegramSession(sessionId: string): Promise<TelegramSes
     }
   } catch {
     // Fall through if not found
+  }
+
+  return null;
+}
+
+/**
+ * Saves a generated artifact for public web view and instant A4 printing.
+ */
+export async function saveTelegramExport(
+  exportId: string,
+  data: Omit<TelegramExport, "exportId" | "created">
+): Promise<void> {
+  const item: TelegramExport = {
+    ...data,
+    exportId,
+    created: Date.now(),
+  };
+
+  exportMemoryCache.set(exportId, item);
+
+  if (exportMemoryCache.size > 200) {
+    const oldestKey = exportMemoryCache.keys().next().value;
+    if (oldestKey) exportMemoryCache.delete(oldestKey);
+  }
+
+  try {
+    const supabase = getAdminClient();
+    const jsonStr = JSON.stringify(item);
+    await supabase.storage
+      .from("documents")
+      .upload(`tg_exports/${exportId}.json`, Buffer.from(jsonStr, "utf-8"), {
+        contentType: "application/json",
+        upsert: true,
+      });
+  } catch {
+    // Ignore storage upload errors
+  }
+}
+
+/**
+ * Retrieves a public Telegram export by ID for web preview and printing.
+ */
+export async function getTelegramExport(exportId: string): Promise<TelegramExport | null> {
+  const cached = exportMemoryCache.get(exportId);
+  if (cached) return cached;
+
+  try {
+    const supabase = getAdminClient();
+    const { data, error } = await supabase.storage
+      .from("documents")
+      .download(`tg_exports/${exportId}.json`);
+
+    if (!error && data) {
+      const text = await data.text();
+      const item = JSON.parse(text) as TelegramExport;
+      exportMemoryCache.set(exportId, item);
+      return item;
+    }
+  } catch {
+    // Fall through
   }
 
   return null;
