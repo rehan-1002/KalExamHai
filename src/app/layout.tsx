@@ -61,6 +61,42 @@ export const metadata: Metadata = {
     description:
       "Turn your college notes and syllabus into strict NEP-2020 format question papers, 3D memory flashcards, and viva prep in 60 seconds.",
   },
+  verification: {
+    google: "nzH6weSRvKqaw67qRPwc6Tq_QlEmMR0fGxxYQujcVbg",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": `${APP_URL}/#app`,
+      "name": "KalExamHai",
+      "url": APP_URL,
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR",
+      },
+      "description":
+        "AI-powered exam preparation platform for Mumbai University (NEP-2020). Generate 60-mark papers, 20-mark IAT tests, 3D holographic flashcards, and last-minute survival kits.",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student",
+      },
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": `${APP_URL}/#org`,
+      "name": "KalExamHai",
+      "url": APP_URL,
+      "logo": `${APP_URL}/keh-logo.svg`,
+      "description": "Mumbai University (NEP-2020) Engineering AI Exam Preparation System",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -71,6 +107,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} h-full antialiased`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `try{const p=window.location.pathname;const isPublic=p==='/'||p.startsWith('/login')||p.startsWith('/signup');if(!isPublic&&localStorage.getItem('keh_theme')==='dark'){document.documentElement.classList.add('dark');}else if(isPublic){document.documentElement.classList.remove('dark');}}catch(e){}`,
