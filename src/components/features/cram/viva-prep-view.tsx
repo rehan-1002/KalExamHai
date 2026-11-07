@@ -51,7 +51,7 @@ export function VivaPrepView({ payload }: VivaPrepViewProps) {
         </div>
 
         {/* Difficulty Filter Tabs */}
-        <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg border border-slate-200">
+        <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg border border-slate-200 overflow-x-auto max-w-full">
           {(["all", "easy", "medium", "tricky"] as const).map((tab) => (
             <button
               key={tab}

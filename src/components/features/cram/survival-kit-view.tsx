@@ -47,24 +47,24 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
       </div>
 
       {/* Panic Timeline Roadmap */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-4">
         <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-          <Clock className="w-4 h-4 text-red-600" />
+          <Clock className="w-4 h-4 text-red-600 shrink-0" />
           Prioritized Panic-Window Study Roadmap
         </h2>
 
         <div className="space-y-3">
           {payload.panic_timeline_roadmap.map((slot, i) => (
-            <div key={i} className="p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-1.5">
+            <div key={i} className="p-3.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-1.5">
               <div className="flex items-center justify-between gap-2">
                 <span className="text-xs font-bold text-slate-900">{slot.window}</span>
-                <span className="text-[10px] font-semibold px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded">
+                <span className="text-[10px] font-semibold px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 rounded shrink-0">
                   Action Item
                 </span>
               </div>
               <p className="text-xs text-slate-700 font-medium">{slot.action}</p>
               {slot.target_topics && slot.target_topics.length > 0 && (
-                <div className="pt-2 flex flex-wrap gap-1.5">
+                <div className="pt-1.5 flex flex-wrap gap-1.5">
                   {slot.target_topics.map((t, ti) => (
                     <span
                       key={ti}
@@ -81,32 +81,32 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
       </div>
 
       {/* Priority Topics Ranked by Expected Marks */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4">
+      <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-4">
         <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-          <Award className="w-4 h-4 text-amber-500" />
+          <Award className="w-4 h-4 text-amber-500 shrink-0" />
           High-Yield Topics Ranked by Expected Marks
         </h2>
 
         <div className="space-y-4">
           {payload.priority_topics.map((top, i) => (
-            <div key={i} className="p-4 bg-slate-50/80 border border-slate-200 rounded-lg space-y-2">
-              <div className="flex items-start justify-between gap-2">
+            <div key={i} className="p-3.5 sm:p-4 bg-slate-50/80 border border-slate-200 rounded-lg space-y-2">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1.5 sm:gap-2">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="w-5 h-5 flex items-center justify-center text-[10px] font-bold bg-slate-900 text-white rounded">
+                    <span className="w-5 h-5 flex items-center justify-center text-[10px] font-bold bg-slate-900 text-white rounded shrink-0">
                       #{top.importance_rank || i + 1}
                     </span>
                     <h3 className="text-xs font-bold text-slate-900">{top.title}</h3>
                   </div>
                   <span className="text-[11px] text-slate-500 mt-0.5 block">{top.module_name}</span>
                 </div>
-                <span className="text-xs font-bold text-slate-900 bg-white px-2 py-1 rounded border border-slate-200 shrink-0">
+                <span className="text-xs font-bold text-slate-900 bg-white px-2 py-1 rounded border border-slate-200 shrink-0 self-start">
                   ~{top.expected_marks} Marks
                 </span>
               </div>
 
               {/* Summary Points */}
-              <ul className="list-disc list-inside space-y-1 text-xs text-slate-700 pl-1">
+              <ul className="list-disc list-inside space-y-1 text-xs text-slate-700 pl-1 leading-relaxed">
                 {top.summary_points.map((pt, pi) => (
                   <li key={pi}>
                     <MathText content={pt} />
@@ -116,7 +116,7 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
 
               {/* Must-Draw Diagram */}
               {top.must_draw_diagram && (
-                <div className="p-2.5 bg-blue-50/70 border border-blue-200 rounded text-xs text-blue-900">
+                <div className="p-2.5 bg-blue-50/70 border border-blue-200 rounded text-xs text-blue-900 overflow-x-auto max-w-full">
                   <span className="font-bold">Must-Draw Diagram: </span>
                   <MathText content={top.must_draw_diagram} />
                 </div>
@@ -128,7 +128,7 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
 
       {/* Pass Guarantee Checklist */}
       {payload.pass_guarantee_checklist.length > 0 && (
-        <div className="bg-emerald-50/50 border border-emerald-200 rounded-xl p-6 shadow-sm space-y-3">
+        <div className="bg-emerald-50/50 border border-emerald-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-bold text-emerald-900 uppercase tracking-wider flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-emerald-600" />

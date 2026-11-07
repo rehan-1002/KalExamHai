@@ -49,7 +49,7 @@ async function CramDetailsContent({ params }: CramDetailsPageProps) {
   }
 
   return (
-    <div className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div className="py-4 sm:py-8 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {record.artifact_type === "flashcards" && (
         <FlashcardDeck payload={record.content as FlashcardsPayload} />
       )}

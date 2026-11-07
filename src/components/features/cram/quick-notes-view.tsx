@@ -88,26 +88,26 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
 
       {/* Formulas & Derivations */}
       {payload.formulas_and_derivations.length > 0 && (
-        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4">
+        <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-4">
           <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-            <Lightbulb className="w-4 h-4 text-amber-500" />
+            <Lightbulb className="w-4 h-4 text-amber-500 shrink-0" />
             Core Formulas &amp; Numerical Equations
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {payload.formulas_and_derivations.map((f, i) => (
-              <div key={i} className="p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-2">
-                <h3 className="text-xs font-bold text-slate-900">
+              <div key={i} className="p-3.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-2.5">
+                <h3 className="text-xs font-bold text-slate-900 leading-snug">
                   <MathText content={f.title} />
                 </h3>
-                <div className="py-2 px-3 bg-white border border-slate-200 rounded-md text-center text-sm font-serif">
+                <div className="py-2 px-3 bg-white border border-slate-200 rounded-md text-center text-sm font-serif overflow-x-auto max-w-full">
                   <MathText content={f.formula_latex} />
                 </div>
                 <div className="text-xs text-slate-600 leading-relaxed">
                   <MathText content={f.explanation} />
                 </div>
                 {f.variables && f.variables.length > 0 && (
-                  <div className="pt-2 border-t border-slate-200/60 text-[11px] text-slate-500 flex flex-wrap gap-2">
+                  <div className="pt-2 border-t border-slate-200/60 text-[11px] text-slate-500 flex flex-wrap gap-1.5">
                     {f.variables.map((v, vi) => (
                       <span key={vi} className="bg-white px-1.5 py-0.5 rounded border border-slate-200">
                         <MathText content={v} />
@@ -123,23 +123,25 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
 
       {/* Core Definitions */}
       {payload.core_definitions.length > 0 && (
-        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-3">
+        <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-3">
           <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
             Key Exam Definitions
           </h2>
           <div className="divide-y divide-slate-100">
             {payload.core_definitions.map((def, i) => (
               <div key={i} className="py-3 first:pt-0 last:pb-0">
-                <div className="flex items-start justify-between gap-4">
-                  <span className="font-semibold text-xs text-slate-900 shrink-0">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4">
+                  <span className="font-bold text-xs text-slate-900 sm:w-1/3 sm:shrink-0 leading-snug">
                     <MathText content={def.term} />
                   </span>
-                  <div className="text-xs text-slate-600 text-right sm:text-left flex-1 leading-relaxed">
+                  <div className="text-xs text-slate-700 text-left sm:w-2/3 leading-relaxed mt-0.5 sm:mt-0">
                     <MathText content={def.definition} />
                     {def.formula && (
-                      <span className="ml-2 font-mono text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded inline-block">
-                        <MathText content={def.formula} />
-                      </span>
+                      <div className="mt-1.5 sm:mt-1">
+                        <span className="font-mono text-[11px] text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-[5px] inline-block max-w-full overflow-x-auto">
+                          <MathText content={def.formula} />
+                        </span>
+                      </div>
                     )}
                   </div>
                 </div>

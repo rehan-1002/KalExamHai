@@ -49,17 +49,17 @@ export function WorkspaceNav({
   }
 
   const tutorTabs = [
-    { label: "Dashboard", href: "/tutor", icon: LayoutDashboard, exact: true },
-    { label: "Knowledge Library", href: "/tutor/documents", icon: Library, exact: false },
-    { label: "Generate Paper", href: "/tutor/generate", icon: Sparkles, exact: false },
-    { label: "My Papers", href: "/tutor/papers", icon: FileText, exact: false },
+    { label: "Dashboard", shortLabel: "Home", href: "/tutor", icon: LayoutDashboard, exact: true },
+    { label: "Knowledge Library", shortLabel: "Library", href: "/tutor/documents", icon: Library, exact: false },
+    { label: "Generate Paper", shortLabel: "Generate", href: "/tutor/generate", icon: Sparkles, exact: false },
+    { label: "My Papers", shortLabel: "Papers", href: "/tutor/papers", icon: FileText, exact: false },
   ];
 
   const studentTabs = [
-    { label: "Cram Hub", href: "/student", icon: Zap, exact: true },
-    { label: "My Notes", href: "/student/library", icon: BookOpen, exact: false },
-    { label: "New Cram Session", href: "/student/cram/new", icon: PlusCircle, exact: false },
-    { label: "Practice Papers", href: "/student/papers", icon: FileText, exact: false },
+    { label: "Cram Hub", shortLabel: "Cram Hub", href: "/student", icon: Zap, exact: true },
+    { label: "My Notes", shortLabel: "Notes", href: "/student/library", icon: BookOpen, exact: false },
+    { label: "New Cram Session", shortLabel: "New Cram", href: "/student/cram/new", icon: PlusCircle, exact: false },
+    { label: "Practice Papers", shortLabel: "Papers", href: "/student/papers", icon: FileText, exact: false },
   ];
 
   const tabs = mode === "tutor" ? tutorTabs : studentTabs;
@@ -67,10 +67,10 @@ export function WorkspaceNav({
   return (
     <header className="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs print:hidden">
       {/* Upper Bar: Brand, Switcher, Credits & Account */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-2 sm:gap-3">
         {/* Left: Brand Logo + Workspace Pill */}
-        <div className="flex items-center gap-3">
-          <Link href={mode === "tutor" ? "/tutor" : "/student"} className="flex items-center gap-2">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <Link href={mode === "tutor" ? "/tutor" : "/student"} className="flex items-center gap-1.5 shrink-0">
             <Image
               src="/keh-logo.svg"
               alt="KalExamHai Logo"
@@ -81,23 +81,31 @@ export function WorkspaceNav({
             />
           </Link>
           <span
-            className={`text-[11px] font-bold px-2 py-0.5 rounded-[6px] border ${
+            className={`text-[10px] sm:text-[11px] font-bold px-1.5 sm:px-2 py-0.5 rounded-[6px] border whitespace-nowrap ${
               mode === "tutor"
                 ? "bg-blue-50 text-blue-700 border-blue-200"
                 : "bg-emerald-50 text-emerald-700 border-emerald-200"
             }`}
           >
-            {mode === "tutor" ? "Faculty Workspace" : "Student Cram Suite"}
+            {mode === "tutor" ? (
+              <>
+                <span className="hidden sm:inline">Faculty </span>Workspace
+              </>
+            ) : (
+              <>
+                <span className="hidden sm:inline">Student </span>Cram Suite
+              </>
+            )}
           </span>
         </div>
 
         {/* Right: Mode Switcher (Admin only), Credits & Sign Out */}
-        <div className="flex items-center gap-2.5 sm:gap-4">
+        <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
           {/* Workspace Switcher — Strictly visible to Admins only */}
           {isAdmin && (
             <Link
               href={mode === "tutor" ? "/student" : "/tutor"}
-              className="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-[6px] text-slate-700 hover:text-blue-600 hover:bg-slate-100 border border-slate-200 transition-colors"
+              className="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-[6px] text-slate-700 hover:text-blue-600 hover:bg-slate-100 border border-slate-200 transition-colors whitespace-nowrap"
               title={mode === "tutor" ? "Switch to Student Cramming Suite" : "Switch to Faculty Paper Generator"}
             >
               <ArrowRightLeft className="w-3 h-3 text-slate-500" />
@@ -108,36 +116,39 @@ export function WorkspaceNav({
           {/* Daily Quota / Credits Counter Badge */}
           {quota?.isUnlimited || isAdmin ? (
             <div
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[6px] bg-purple-50 border border-purple-200 text-xs font-bold text-purple-700"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-[6px] bg-purple-50 border border-purple-200 text-[11px] sm:text-xs font-bold text-purple-700 shrink-0"
               title="Admin Account — Unlimited Generations"
             >
-              <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-              <span>Unlimited (Admin)</span>
+              <Sparkles className="w-3.5 h-3.5 text-purple-600 shrink-0" />
+              <span className="hidden sm:inline">Unlimited (Admin)</span>
+              <span className="sm:hidden">Admin</span>
             </div>
           ) : (
             <div
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[6px] bg-blue-50/90 border border-blue-200 text-xs font-bold text-blue-700"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-[6px] bg-blue-50/90 border border-blue-200 text-[11px] sm:text-xs font-bold text-blue-700 shrink-0"
               title={`Free Launch Quota: Resets every night at ${quota?.resetsAtFormatted || "12:00 AM IST"}`}
             >
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+              <Sparkles className="w-3.5 h-3.5 text-blue-600 shrink-0" />
               <span>
-                {quota ? `${quota.remainingToday}/${quota.totalDailyLimit}` : `${creditBalance}`} Free Left Today
+                {quota ? `${quota.remainingToday}/${quota.totalDailyLimit}` : `${creditBalance}`}
+                <span className="hidden sm:inline"> Free Left Today</span>
+                <span className="sm:hidden"> Left</span>
               </span>
             </div>
           )}
 
           {/* Theme Toggle (Night Before Exam Mode) */}
-          <SunMoonThemeToggle size={32} storageKey="keh_theme" defaultTheme="light" />
+          <SunMoonThemeToggle size={30} storageKey="keh_theme" defaultTheme="light" />
 
           {/* User Account / Sign Out */}
-          <div className="flex items-center gap-2 text-xs text-slate-600 pl-1 border-l border-slate-200">
+          <div className="flex items-center gap-1 sm:gap-2 text-xs text-slate-600 pl-1 border-l border-slate-200 shrink-0">
             <span className="hidden lg:inline-block max-w-[130px] truncate font-medium text-slate-800" title={userEmail}>
               {userEmail}
             </span>
             <form action={signOutAction}>
               <button
                 type="submit"
-                className="inline-flex items-center gap-1 px-2 py-1 rounded-[6px] hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1 p-1 sm:px-2 sm:py-1 rounded-[6px] hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
                 title="Sign out of KalExamHai"
               >
                 <LogOut className="w-3.5 h-3.5" />
@@ -149,9 +160,9 @@ export function WorkspaceNav({
       </div>
 
       {/* Lower Bar: Navigation Tabs */}
-      <div className="border-t border-slate-100 bg-slate-50/60 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <nav className="flex items-center gap-1 overflow-x-auto py-1.5 scrollbar-none" aria-label="Workspace Navigation">
+      <div className="border-t border-slate-100 bg-slate-50/60 px-3 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+          <nav className="flex items-center gap-1 overflow-x-auto py-1.5 scrollbar-none flex-1 min-w-0" aria-label="Workspace Navigation">
             {tabs.map((tab) => {
               const isActive = tab.exact
                 ? pathname === tab.href
@@ -161,14 +172,15 @@ export function WorkspaceNav({
                 <Link
                   key={tab.href}
                   href={tab.href}
-                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-[6px] transition-all whitespace-nowrap ${
+                  className={`inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-[6px] transition-all whitespace-nowrap shrink-0 ${
                     isActive
                       ? "bg-blue-600 text-white shadow-xs"
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/60"
                   }`}
                 >
-                  <tab.icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-slate-500"}`} />
-                  <span>{tab.label}</span>
+                  <tab.icon className={`w-3.5 h-3.5 shrink-0 ${isActive ? "text-white" : "text-slate-500"}`} />
+                  <span className="hidden sm:inline">{tab.label}</span>
+                  <span className="sm:hidden">{tab.shortLabel}</span>
                 </Link>
               );
             })}
@@ -176,13 +188,13 @@ export function WorkspaceNav({
 
           {/* Quick Switch for mobile screens — Admin only */}
           {isAdmin && (
-            <div className="md:hidden py-1">
+            <div className="md:hidden py-1 shrink-0">
               <Link
                 href={mode === "tutor" ? "/student" : "/tutor"}
-                className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-600 hover:underline whitespace-nowrap"
+                className="inline-flex items-center gap-1 px-2 py-1 bg-slate-200/60 rounded-[6px] text-[11px] font-semibold text-blue-700 hover:underline whitespace-nowrap shrink-0"
               >
-                <ArrowRightLeft className="w-3 h-3" />
-                <span>{mode === "tutor" ? "Student Mode" : "Faculty Mode"}</span>
+                <ArrowRightLeft className="w-3 h-3 shrink-0" />
+                <span>{mode === "tutor" ? "Student" : "Faculty"}</span>
               </Link>
             </div>
           )}
