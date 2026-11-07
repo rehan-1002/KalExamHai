@@ -2520,7 +2520,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_may_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_may_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf"
     },
@@ -2530,7 +2530,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_december_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_december_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf"
     },
@@ -2540,7 +2540,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_may_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_may_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf"
     },
@@ -2550,7 +2550,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_december_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_december_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf"
     },
@@ -2560,7 +2560,7 @@
       "year": "2026",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2026_may_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2026_may_mechanical-measurements-and-controlsrev-2019-c-scheme.pdf"
     },
@@ -2610,7 +2610,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_may_thermal-engineeringrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_may_thermal-engineeringrev-2019-c-scheme.pdf"
     },
@@ -2620,7 +2620,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_december_thermal-engineeringrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_december_thermal-engineeringrev-2019-c-scheme.pdf"
     },
@@ -2630,7 +2630,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_may_thermal-engineeringrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_may_thermal-engineeringrev-2019-c-scheme.pdf"
     },
@@ -2640,7 +2640,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_december_thermal-engineeringrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_december_thermal-engineeringrev-2019-c-scheme.pdf"
     },
@@ -2650,7 +2650,7 @@
       "year": "2026",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2026_may_thermal-engineeringrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2026_may_thermal-engineeringrev-2019-c-scheme.pdf"
     },
@@ -2690,7 +2690,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_may_dynamics-of-machineryrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_may_dynamics-of-machineryrev-2019-c-scheme.pdf"
     },
@@ -2700,7 +2700,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_december_dynamics-of-machineryrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_december_dynamics-of-machineryrev-2019-c-scheme.pdf"
     },
@@ -2710,7 +2710,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_may_dynamics-of-machineryrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_may_dynamics-of-machineryrev-2019-c-scheme.pdf"
     },
@@ -2720,7 +2720,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_december_dynamics-of-machineryrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_december_dynamics-of-machineryrev-2019-c-scheme.pdf"
     },
@@ -2730,7 +2730,7 @@
       "year": "2026",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2026_may_dynamics-of-machineryrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2026_may_dynamics-of-machineryrev-2019-c-scheme.pdf"
     },
@@ -2770,7 +2770,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_may_finite-element-analysisrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_may_finite-element-analysisrev-2019-c-scheme.pdf"
     },
@@ -2780,7 +2780,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_december_finite-element-analysisrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_december_finite-element-analysisrev-2019-c-scheme.pdf"
     },
@@ -2790,7 +2790,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_may_finite-element-analysisrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_may_finite-element-analysisrev-2019-c-scheme.pdf"
     },
@@ -2800,7 +2800,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_december_finite-element-analysisrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_december_finite-element-analysisrev-2019-c-scheme.pdf"
     },
@@ -2810,7 +2810,7 @@
       "year": "2026",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2026_may_finite-element-analysisrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2026_may_finite-element-analysisrev-2019-c-scheme.pdf"
     },
@@ -2860,7 +2860,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_may_optimization-techniquesrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_may_optimization-techniquesrev-2019-c-scheme.pdf"
     },
@@ -2870,7 +2870,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_december_optimization-techniquesrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_december_optimization-techniquesrev-2019-c-scheme.pdf"
     },
@@ -2880,7 +2880,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_may_optimization-techniquesrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_may_optimization-techniquesrev-2019-c-scheme.pdf"
     },
@@ -2890,7 +2890,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2025_december_optimization-techniquesrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2025_december_optimization-techniquesrev-2019-c-scheme.pdf"
     },
@@ -2900,7 +2900,7 @@
       "year": "2026",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2026_may_optimization-techniquesrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2026_may_optimization-techniquesrev-2019-c-scheme.pdf"
     },
@@ -2920,7 +2920,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-5_2024_may_design-of-experimentsrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-5_2024_may_design-of-experimentsrev-2019-c-scheme.pdf"
     },
@@ -3692,7 +3692,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_may_machine-designrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_may_machine-designrev-2019-c-scheme.pdf"
     },
@@ -3702,7 +3702,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_december_machine-designrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_december_machine-designrev-2019-c-scheme.pdf"
     },
@@ -3712,7 +3712,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_may_machine-designrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_may_machine-designrev-2019-c-scheme.pdf"
     },
@@ -3722,7 +3722,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_december_machine-designrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_december_machine-designrev-2019-c-scheme.pdf"
     },
@@ -3772,7 +3772,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_may_turbo-machineryrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_may_turbo-machineryrev-2019-c-scheme.pdf"
     },
@@ -3782,7 +3782,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_december_turbo-machineryrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_december_turbo-machineryrev-2019-c-scheme.pdf"
     },
@@ -3792,7 +3792,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_may_turbo-machineryrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_may_turbo-machineryrev-2019-c-scheme.pdf"
     },
@@ -3802,7 +3802,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_december_turbo-machineryrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_december_turbo-machineryrev-2019-c-scheme.pdf"
     },
@@ -3852,7 +3852,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_may_heating-ventilation-air-conditioning-and-refrigerationrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_may_heating-ventilation-air-conditioning-and-refrigerationrev-2019-c-scheme.pdf"
     },
@@ -3862,7 +3862,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_december_heating-ventilation-air-conditioning-and-refrigerationrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_december_heating-ventilation-air-conditioning-and-refrigerationrev-2019-c-scheme.pdf"
     },
@@ -3872,7 +3872,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_may_heating-ventilation-air-conditioning-and-refrigerationrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_may_heating-ventilation-air-conditioning-and-refrigerationrev-2019-c-scheme.pdf"
     },
@@ -3882,7 +3882,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_december_heating-ventilation-air-conditioning-and-refrigerationrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_december_heating-ventilation-air-conditioning-and-refrigerationrev-2019-c-scheme.pdf"
     },
@@ -3932,7 +3932,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_may_automation-and-artificial-intelligencerev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_may_automation-and-artificial-intelligencerev-2019-c-scheme.pdf"
     },
@@ -3942,7 +3942,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_december_automation-and-artificial-intelligencerev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_december_automation-and-artificial-intelligencerev-2019-c-scheme.pdf"
     },
@@ -3952,7 +3952,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_may_automation-and-artificial-intelligencerev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_may_automation-and-artificial-intelligencerev-2019-c-scheme.pdf"
     },
@@ -3962,7 +3962,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_december_automation-and-artificial-intelligencerev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_december_automation-and-artificial-intelligencerev-2019-c-scheme.pdf"
     },
@@ -4012,7 +4012,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_december_press-tool-designrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_december_press-tool-designrev-2019-c-scheme.pdf"
     },
@@ -4022,7 +4022,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_may_press-tool-designrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_may_press-tool-designrev-2019-c-scheme.pdf"
     },
@@ -4072,7 +4072,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_may_tool-engineeringrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_may_tool-engineeringrev-2019-c-scheme.pdf"
     },
@@ -4082,7 +4082,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_december_tool-engineeringrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_december_tool-engineeringrev-2019-c-scheme.pdf"
     },
@@ -4092,7 +4092,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_may_tool-engineeringrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_may_tool-engineeringrev-2019-c-scheme.pdf"
     },
@@ -4122,7 +4122,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2024_may_metal-forming-technologyrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2024_may_metal-forming-technologyrev-2019-c-scheme.pdf"
     },
@@ -4132,7 +4132,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-6_2025_december_metal-forming-technologyrev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-6_2025_december_metal-forming-technologyrev-2019-c-scheme.pdf"
     },
@@ -4904,7 +4904,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_may_design-of-mechanical-system-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_may_design-of-mechanical-system-rev-2019-c-scheme.pdf"
     },
@@ -4914,7 +4914,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_december_design-of-mechanical-system-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_december_design-of-mechanical-system-rev-2019-c-scheme.pdf"
     },
@@ -4924,7 +4924,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_may_design-of-mechanical-system-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_may_design-of-mechanical-system-rev-2019-c-scheme.pdf"
     },
@@ -4934,7 +4934,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_december_design-of-mechanical-system-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_december_design-of-mechanical-system-rev-2019-c-scheme.pdf"
     },
@@ -4944,7 +4944,7 @@
       "year": "2026",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2026_may_design-of-mechanical-system-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2026_may_design-of-mechanical-system-rev-2019-c-scheme.pdf"
     },
@@ -4984,7 +4984,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_may_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_may_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf"
     },
@@ -4994,7 +4994,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_december_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_december_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf"
     },
@@ -5004,7 +5004,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_may_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_may_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf"
     },
@@ -5014,7 +5014,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_december_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_december_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf"
     },
@@ -5024,7 +5024,7 @@
       "year": "2026",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2026_may_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2026_may_logistics-and-supply-chain-management-rev-2019-c-scheme.pdf"
     },
@@ -5074,7 +5074,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_may_dloc-iii-renewable-energy-systems-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_may_dloc-iii-renewable-energy-systems-rev-2019-c-scheme.pdf"
     },
@@ -5084,7 +5084,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_december_dloc-iii-renewable-energy-systems-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_december_dloc-iii-renewable-energy-systems-rev-2019-c-scheme.pdf"
     },
@@ -5094,7 +5094,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_december_dloc-iii-renewable-energy-systems-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_december_dloc-iii-renewable-energy-systems-rev-2019-c-scheme.pdf"
     },
@@ -5134,7 +5134,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_may_dloc-iii-vehicle-systems-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_may_dloc-iii-vehicle-systems-rev-2019-c-scheme.pdf"
     },
@@ -5144,7 +5144,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_december_dloc-iii-vehicle-systems-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_december_dloc-iii-vehicle-systems-rev-2019-c-scheme.pdf"
     },
@@ -5154,7 +5154,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_may_dloc-iii-vehicle-systems-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_may_dloc-iii-vehicle-systems-rev-2019-c-scheme.pdf"
     },
@@ -5184,7 +5184,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_december_dloc-iv-machinery-diagnostics-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_december_dloc-iv-machinery-diagnostics-rev-2019-c-scheme.pdf"
     },
@@ -5224,7 +5224,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_may_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_may_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf"
     },
@@ -5234,7 +5234,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_december_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_december_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf"
     },
@@ -5244,7 +5244,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_may_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_may_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf"
     },
@@ -5254,7 +5254,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_december_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_december_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf"
     },
@@ -5264,7 +5264,7 @@
       "year": "2026",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2026_may_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2026_may_dloc-iv-vibration-controls-rev-2019-c-scheme.pdf"
     },
@@ -5274,7 +5274,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_december_dloc-iv-advanced-vibration-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_december_dloc-iv-advanced-vibration-rev-2019-c-scheme.pdf"
     },
@@ -5304,7 +5304,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_may_iloc-i-product-lifecycle-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_may_iloc-i-product-lifecycle-management-rev-2019-c-scheme.pdf"
     },
@@ -5314,7 +5314,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_december_iloc-i-product-lifecycle-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_december_iloc-i-product-lifecycle-management-rev-2019-c-scheme.pdf"
     },
@@ -5324,7 +5324,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_may_iloc-i-product-lifecycle-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_may_iloc-i-product-lifecycle-management-rev-2019-c-scheme.pdf"
     },
@@ -5334,7 +5334,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_december_iloc-i-product-lifecycle-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_december_iloc-i-product-lifecycle-management-rev-2019-c-scheme.pdf"
     },
@@ -5354,7 +5354,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_december_iloc-i-cyber-security-and-laws-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_december_iloc-i-cyber-security-and-laws-rev-2019-c-scheme.pdf"
     },
@@ -5394,7 +5394,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_may_iloc-i-disaster-management-and-mitigation-measures-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_may_iloc-i-disaster-management-and-mitigation-measures-rev-2019-c-scheme.pdf"
     },
@@ -5404,7 +5404,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2024_december_iloc-i-disaster-management-and-mitigation-measures-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2024_december_iloc-i-disaster-management-and-mitigation-measures-rev-2019-c-scheme.pdf"
     },
@@ -5414,7 +5414,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_december_iloc-i-disaster-management-and-mitigation-measures-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_december_iloc-i-disaster-management-and-mitigation-measures-rev-2019-c-scheme.pdf"
     },
@@ -5424,7 +5424,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2025_december_ai-and-ml-in-healthcare-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2025_december_ai-and-ml-in-healthcare-rev-2019-c-scheme.pdf"
     },
@@ -5434,7 +5434,7 @@
       "year": "2026",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-7_2026_may_ai-and-ml-in-healthcare-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-7_2026_may_ai-and-ml-in-healthcare-rev-2019-c-scheme.pdf"
     },
@@ -6276,7 +6276,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_december_operations-planning-and-control-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_december_operations-planning-and-control-rev-2019-c-scheme.pdf"
     },
@@ -6296,7 +6296,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_may_operations-planning-and-control-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_may_operations-planning-and-control-rev-2019-c-scheme.pdf"
     },
@@ -6306,7 +6306,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_december_operations-planning-and-control-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_december_operations-planning-and-control-rev-2019-c-scheme.pdf"
     },
@@ -6316,7 +6316,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_may_operations-planning-and-control-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_may_operations-planning-and-control-rev-2019-c-scheme.pdf"
     },
@@ -6326,7 +6326,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_december_dloc-v-smart-materials-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_december_dloc-v-smart-materials-rev-2019-c-scheme.pdf"
     },
@@ -6356,7 +6356,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_may_text,-web-and-social-media-analytics-rev-2019-‘c’-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_may_text,-web-and-social-media-analytics-rev-2019-‘c’-scheme.pdf"
     },
@@ -6366,7 +6366,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_may_dloc-v-composite-materials-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_may_dloc-v-composite-materials-rev-2019-c-scheme.pdf"
     },
@@ -6376,7 +6376,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_december_dloc-v-composite-materials-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_december_dloc-v-composite-materials-rev-2019-c-scheme.pdf"
     },
@@ -6386,7 +6386,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_may_dloc-vi-product-design-and-development-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_may_dloc-vi-product-design-and-development-rev-2019-c-scheme.pdf"
     },
@@ -6416,7 +6416,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_december_dloc-vi-product-design-and-development-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_december_dloc-vi-product-design-and-development-rev-2019-c-scheme.pdf"
     },
@@ -6426,7 +6426,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_may_dloc-vi-product-design-and-development-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_may_dloc-vi-product-design-and-development-rev-2019-c-scheme.pdf"
     },
@@ -6436,7 +6436,7 @@
       "year": "2024",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_december_dloc-vi-product-design-and-development-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_december_dloc-vi-product-design-and-development-rev-2019-c-scheme.pdf"
     },
@@ -6456,7 +6456,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_december_dloc-vi-total-quality-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_december_dloc-vi-total-quality-management-rev-2019-c-scheme.pdf"
     },
@@ -6466,7 +6466,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_may_iloc-ii-entrepreneurship-development-and-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_may_iloc-ii-entrepreneurship-development-and-management-rev-2019-c-scheme.pdf"
     },
@@ -6506,7 +6506,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_may_iloc-ii-digital-buisness-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_may_iloc-ii-digital-buisness-management-rev-2019-c-scheme.pdf"
     },
@@ -6526,7 +6526,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_may_iloc-ii-project-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_may_iloc-ii-project-management-rev-2019-c-scheme.pdf"
     },
@@ -6576,7 +6576,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_may_iloc-ii-ipr-and-patenting-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_may_iloc-ii-ipr-and-patenting-rev-2019-c-scheme.pdf"
     },
@@ -6596,7 +6596,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_may_iloc-ii-professional-ethics-and-csr-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_may_iloc-ii-professional-ethics-and-csr-rev-2019-c-scheme.pdf"
     },
@@ -6606,7 +6606,7 @@
       "year": "2024",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2024_may_iloc-ii-environmental-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2024_may_iloc-ii-environmental-management-rev-2019-c-scheme.pdf"
     },
@@ -6626,7 +6626,7 @@
       "year": "2025",
       "session": "MAY",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_may_iloc-ii-environmental-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_may_iloc-ii-environmental-management-rev-2019-c-scheme.pdf"
     },
@@ -6636,7 +6636,7 @@
       "year": "2025",
       "session": "DECEMBER",
       "scheme": "Rev-2019 C-Scheme",
-      "isNep": true,
+      "isNep": false,
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_mechanical-engineering_semester-8_2025_december_iloc-ii-environmental-management-rev-2019-c-scheme.pdf",
       "filename": "be_mechanical-engineering_semester-8_2025_december_iloc-ii-environmental-management-rev-2019-c-scheme.pdf"
     },
