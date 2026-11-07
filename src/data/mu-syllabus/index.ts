@@ -31,13 +31,13 @@ export interface BranchInfo {
 
 export const BRANCHES: BranchInfo[] = [
   { id: "fe", name: "First Year Engineering (Common)", shortName: "FE", icon: "📐", semesters: [1, 2] },
-  { id: "comps", name: "Computer Engineering", shortName: "Comps", icon: "💻", semesters: [3, 4] },
-  { id: "it", name: "Information Technology", shortName: "IT", icon: "🌐", semesters: [3, 4] },
-  { id: "aids", name: "Artificial Intelligence & Data Science", shortName: "AIDS", icon: "📊", semesters: [3, 4] },
-  { id: "aiml", name: "AI & Machine Learning", shortName: "AIML", icon: "🤖", semesters: [3, 4] },
-  { id: "mech", name: "Mechanical Engineering", shortName: "Mech", icon: "⚙️", semesters: [3, 4] },
-  { id: "electrical", name: "Electrical Engineering", shortName: "Electrical", icon: "⚡", semesters: [3, 4] },
-  { id: "civil", name: "Civil Engineering", shortName: "Civil", icon: "🏗️", semesters: [3, 4] },
+  { id: "comps", name: "Computer Engineering", shortName: "Comps", icon: "💻", semesters: [3, 4, 5, 6, 7, 8] },
+  { id: "it", name: "Information Technology", shortName: "IT", icon: "🌐", semesters: [3, 4, 5, 6, 7, 8] },
+  { id: "aids", name: "Artificial Intelligence & Data Science", shortName: "AIDS", icon: "📊", semesters: [3, 4, 5, 6, 7, 8] },
+  { id: "aiml", name: "AI & Machine Learning", shortName: "AIML", icon: "🤖", semesters: [3, 4, 5, 6, 7, 8] },
+  { id: "mech", name: "Mechanical Engineering", shortName: "Mech", icon: "⚙️", semesters: [3, 4, 5, 6, 7, 8] },
+  { id: "electrical", name: "Electrical Engineering", shortName: "Electrical", icon: "⚡", semesters: [3, 4, 5, 6, 7, 8] },
+  { id: "civil", name: "Civil Engineering", shortName: "Civil", icon: "🏗️", semesters: [3, 4, 5, 6, 7, 8] },
 ];
 
 /**

@@ -542,5 +542,1073 @@
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-4_2023_december_microprocessor-rev-2019‘c’-scheme.pdf",
       "filename": "be_computer-engineering-aids_semester-4_2023_december_microprocessor-rev-2019‘c’-scheme.pdf"
     }
+  ],
+  "sem5": [
+    {
+      "subject": "Computer Network",
+      "slug": "computer-network-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2025_may_computer-network-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2025_may_computer-network-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Computer Network",
+      "slug": "computer-network-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_december_computer-network-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_december_computer-network-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Computer Network ‘c’ Scheme",
+      "slug": "computer-network-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_may_computer-network-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_may_computer-network-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Computer Network ‘c’ Scheme",
+      "slug": "computer-network-rev-2019-‘c’-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2022_december_computer-network-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2022_december_computer-network-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Computer Network",
+      "slug": "computer-network-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_may_computer-network-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_may_computer-network-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Computer Network ‘c’ Scheme",
+      "slug": "computer-network-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_december_computer-network-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_december_computer-network-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Web Computing",
+      "slug": "web-computing-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2025_may_web-computing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2025_may_web-computing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Web Computing",
+      "slug": "web-computing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_december_web-computing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_december_web-computing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Web Computing",
+      "slug": "web-computing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_may_web-computing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_may_web-computing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Web Computing ‘c’ Scheme",
+      "slug": "web-computing-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_december_web-computing-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_december_web-computing-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Web Computing ‘c’ Scheme",
+      "slug": "web-computing-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_may_web-computing-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_may_web-computing-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Web Computing ‘c’ Scheme",
+      "slug": "web-computing-rev-2019-‘c’-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2022_december_web-computing-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2022_december_web-computing-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Artifical Intelligence",
+      "slug": "artifical-intelligence-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_may_artifical-intelligence-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_may_artifical-intelligence-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Artifical Intelligence",
+      "slug": "artifical-intelligence-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2025_may_artifical-intelligence-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2025_may_artifical-intelligence-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Artifical Intelligence",
+      "slug": "artifical-intelligence-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_december_artifical-intelligence-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_december_artifical-intelligence-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Artifical Intelligence ‘c’ Scheme",
+      "slug": "artifical-intelligence-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_may_artifical-intelligence-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_may_artifical-intelligence-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Artifical Intelligence ‘c’ Scheme",
+      "slug": "artifical-intelligence-rev-2019-‘c’-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2022_december_artifical-intelligence-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2022_december_artifical-intelligence-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Artifical Intelligence ‘c’ Scheme",
+      "slug": "artifical-intelligence-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_december_artifical-intelligence-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_december_artifical-intelligence-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Data Warehousing And Mining ‘c’ Scheme",
+      "slug": "data-warehousing-and-miningrev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_december_data-warehousing-and-miningrev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_december_data-warehousing-and-miningrev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Data Warehousing And Mining",
+      "slug": "data-warehousing-and-miningrev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_may_data-warehousing-and-miningrev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_may_data-warehousing-and-miningrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Data Warehousing And Mining",
+      "slug": "data-warehousing-and-miningrev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2025_may_data-warehousing-and-miningrev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2025_may_data-warehousing-and-miningrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Data Warehousing And Mining ‘c’ Scheme",
+      "slug": "data-warehousing-and-miningrev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_may_data-warehousing-and-miningrev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_may_data-warehousing-and-miningrev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Data Warehousing And Mining ‘c’ Scheme",
+      "slug": "data-warehousing-and-miningrev-2019-‘c’-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2022_december_data-warehousing-and-miningrev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2022_december_data-warehousing-and-miningrev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Data Warehousing And Mining",
+      "slug": "data-warehousing-and-miningrev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_december_data-warehousing-and-miningrev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_december_data-warehousing-and-miningrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc I Statistics For Artifical Intelligence And Data Science",
+      "slug": "dloc-i-statistics-for-artifical-intelligence-and-data-science-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_may_dloc-i-statistics-for-artifical-intelligence-and-data-science-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_may_dloc-i-statistics-for-artifical-intelligence-and-data-science-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc I Statistics For Artifical Intelligence And Data Science",
+      "slug": "dloc-i-statistics-for-artifical-intelligence-and-data-science-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2025_may_dloc-i-statistics-for-artifical-intelligence-and-data-science-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2025_may_dloc-i-statistics-for-artifical-intelligence-and-data-science-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc I Statistics For Artifical Intelligence And Data Science",
+      "slug": "dloc-i-statistics-for-artifical-intelligence-and-data-science-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_december_dloc-i-statistics-for-artifical-intelligence-and-data-science-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_december_dloc-i-statistics-for-artifical-intelligence-and-data-science-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc I: Statistics For Artifical Intelligence And Data Science ‘c’ Scheme",
+      "slug": "dloc--i:-statistics-for-artifical-intelligence-and-data-science-rev-2019-‘c’-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2022_december_dloc--i:-statistics-for-artifical-intelligence-and-data-science-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2022_december_dloc--i:-statistics-for-artifical-intelligence-and-data-science-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc I: Statistics For Artifical Intelligence And Data Science ‘c’ Scheme",
+      "slug": "dloc--i:-statistics-for-artifical-intelligence-and-data-science-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_december_dloc--i:-statistics-for-artifical-intelligence-and-data-science-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_december_dloc--i:-statistics-for-artifical-intelligence-and-data-science-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Internet Of Things",
+      "slug": "internet-of-thingsrev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2025_may_internet-of-thingsrev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2025_may_internet-of-thingsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Internet Of Things ‘c’ Scheme",
+      "slug": "internet-of-thingsrev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_may_internet-of-thingsrev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_may_internet-of-thingsrev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Internet Of Things",
+      "slug": "internet-of-thingsrev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_december_internet-of-thingsrev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_december_internet-of-thingsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Internet Of Things",
+      "slug": "internet-of-thingsrev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2024_may_internet-of-thingsrev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2024_may_internet-of-thingsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Internet Of Things ‘c’ Scheme",
+      "slug": "internet-of-thingsrev-2019-‘c’-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2022_december_internet-of-thingsrev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2022_december_internet-of-thingsrev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Internet Of Things ‘c’ Scheme",
+      "slug": "internet-of-thingsrev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-5_2023_december_internet-of-thingsrev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-5_2023_december_internet-of-thingsrev-2019-‘c’-scheme.pdf"
+    }
+  ],
+  "sem6": [
+    {
+      "subject": "Data Analytics And Visualization ‘c’ Scheme",
+      "slug": "data-analytics-and-visualization-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_may_data-analytics-and-visualization-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_may_data-analytics-and-visualization-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Data Analytics And Visualization",
+      "slug": "data-analytics-and-visualization-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2025_may_data-analytics-and-visualization-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2025_may_data-analytics-and-visualization-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Data Analytics And Visualization ‘c’ Scheme",
+      "slug": "data-analytics-and-visualization-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_december_data-analytics-and-visualization-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_december_data-analytics-and-visualization-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Data Analytics And Visualization",
+      "slug": "data-analytics-and-visualization-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_december_data-analytics-and-visualization-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_december_data-analytics-and-visualization-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Data Analytics And Visualization",
+      "slug": "data-analytics-and-visualization-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_may_data-analytics-and-visualization-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_may_data-analytics-and-visualization-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Cryptography And System Security ‘c’ Scheme",
+      "slug": "cryptography-and-system-security-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_may_cryptography-and-system-security-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_may_cryptography-and-system-security-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Cryptography And System Security",
+      "slug": "cryptography-and-system-security-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2025_may_cryptography-and-system-security-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2025_may_cryptography-and-system-security-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Cryptography And System Security ‘c’ Scheme",
+      "slug": "cryptography-and-system-security-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_december_cryptography-and-system-security-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_december_cryptography-and-system-security-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Cryptography And System Security",
+      "slug": "cryptography-and-system-security-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_december_cryptography-and-system-security-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_december_cryptography-and-system-security-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Cryptography And System Security",
+      "slug": "cryptography-and-system-security-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_may_cryptography-and-system-security-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_may_cryptography-and-system-security-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Software Engineering And Project Management",
+      "slug": "software-engineering-and-project-management-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2025_may_software-engineering-and-project-management-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2025_may_software-engineering-and-project-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Software Engineering And Project Management",
+      "slug": "software-engineering-and-project-management-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_december_software-engineering-and-project-management-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_december_software-engineering-and-project-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Software Engineering And Project Management",
+      "slug": "software-engineering-and-project-management-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_may_software-engineering-and-project-management-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_may_software-engineering-and-project-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Software Engineering And Project Management ‘c’ Scheme",
+      "slug": "software-engineering-and-project-management-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_may_software-engineering-and-project-management-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_may_software-engineering-and-project-management-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Software Engineering And Project Management ‘c’ Scheme",
+      "slug": "software-engineering-and-project-management-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_december_software-engineering-and-project-management-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_december_software-engineering-and-project-management-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Machine Learning",
+      "slug": "machine-learning-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_may_machine-learning-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_may_machine-learning-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Machine Learning",
+      "slug": "machine-learning-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2025_may_machine-learning-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2025_may_machine-learning-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Machine Learning ‘c’ Scheme",
+      "slug": "machine-learning-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_may_machine-learning-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_may_machine-learning-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Machine Learning",
+      "slug": "machine-learning-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_december_machine-learning-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_december_machine-learning-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Machine Learning ‘c’ Scheme",
+      "slug": "machine-learning-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_december_machine-learning-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_december_machine-learning-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Distributed Computing ‘c’ Scheme",
+      "slug": "distributed-computing-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_december_distributed-computing-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_december_distributed-computing-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Distributed Computing",
+      "slug": "distributed-computing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_december_distributed-computing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_december_distributed-computing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Distributed Computing",
+      "slug": "distributed-computing-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2025_may_distributed-computing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2025_may_distributed-computing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Distributed Computing",
+      "slug": "distributed-computing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_may_distributed-computing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_may_distributed-computing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Distributed Computing ‘c’ Scheme",
+      "slug": "distributed-computing-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2023_may_distributed-computing-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2023_may_distributed-computing-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "High Performance Computing",
+      "slug": "high-performance-computing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_may_high-performance-computing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_may_high-performance-computing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Image Video Processing",
+      "slug": "image-video-processing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_december_image-video-processing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_december_image-video-processing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Image Video Processing",
+      "slug": "image-video-processing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2024_may_image-video-processing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2024_may_image-video-processing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Image Video Processing",
+      "slug": "image-video-processing-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-6_2025_may_image-video-processing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-6_2025_may_image-video-processing-rev-2019-c-scheme.pdf"
+    }
+  ],
+  "sem7": [
+    {
+      "subject": "Deep Learning ‘c’ Scheme",
+      "slug": "deep-learning-rev-2019‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2023_december_deep-learning-rev-2019‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2023_december_deep-learning-rev-2019‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Deep Learning",
+      "slug": "deep-learning-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2025_may_deep-learning-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2025_may_deep-learning-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Deep Learning",
+      "slug": "deep-learning-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_may_deep-learning-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_may_deep-learning-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Deep Learning",
+      "slug": "deep-learning-rev-2019c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_december_deep-learning-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_december_deep-learning-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Big Data Analytics ‘c’ Scheme",
+      "slug": "big-data-analytics-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2023_december_big-data-analytics-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2023_december_big-data-analytics-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Big Data Analytics",
+      "slug": "big-data-analytics-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2025_may_big-data-analytics-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2025_may_big-data-analytics-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Big Data Analytics",
+      "slug": "big-data-analytics-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_may_big-data-analytics-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_may_big-data-analytics-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Big Data Analytics",
+      "slug": "big-data-analytics-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_december_big-data-analytics-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_december_big-data-analytics-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii: Ai For Healthcare ‘c’ Scheme",
+      "slug": "dloc-iii:-ai-for-healthcare-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2023_december_dloc-iii:-ai-for-healthcare-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2023_december_dloc-iii:-ai-for-healthcare-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Ai For Healthcare",
+      "slug": "dloc-iii-ai-for-healthcare-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_may_dloc-iii-ai-for-healthcare-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_may_dloc-iii-ai-for-healthcare-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Natural Language Processing",
+      "slug": "dloc-iii-natural-language-processing-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2025_may_dloc-iii-natural-language-processing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2025_may_dloc-iii-natural-language-processing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Natural Language Processing",
+      "slug": "dloc-iii-natural-language-processing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_december_dloc-iii-natural-language-processing-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_december_dloc-iii-natural-language-processing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Neural Network Fuzzy System",
+      "slug": "dloc-iii-neural-network-fuzzy-system-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_december_dloc-iii-neural-network-fuzzy-system-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_december_dloc-iii-neural-network-fuzzy-system-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii: Neural Network &amp; Fuzzy System ‘c’ Scheme",
+      "slug": "dloc-iii:-neural-network-&amp;-fuzzy-system-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2023_december_dloc-iii:-neural-network-&amp;-fuzzy-system-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2023_december_dloc-iii:-neural-network-&amp;-fuzzy-system-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv User Experience Design With Vr",
+      "slug": "dloc-iv-user-experience-design-with-vr-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_may_dloc-iv-user-experience-design-with-vr-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_may_dloc-iv-user-experience-design-with-vr-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv: User Experience Design With Vr ‘c’ Scheme",
+      "slug": "dloc-iv:-user-experience-design-with-vr-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2023_december_dloc-iv:-user-experience-design-with-vr-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2023_december_dloc-iv:-user-experience-design-with-vr-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Blockchain Technologies",
+      "slug": "dloc-iv-blockchain-technologies-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_december_dloc-iv-blockchain-technologies-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_december_dloc-iv-blockchain-technologies-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv: Blockchain Technologies ‘c’ Scheme",
+      "slug": "dloc-iv:-blockchain-technologies-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2023_december_dloc-iv:-blockchain-technologies-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2023_december_dloc-iv:-blockchain-technologies-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Blockchain Technologies",
+      "slug": "dloc-iv-blockchain-technologies-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2025_may_dloc-iv-blockchain-technologies-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2025_may_dloc-iv-blockchain-technologies-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Game Theory For Data Science",
+      "slug": "dloc-iv-game-theory-for-data-science-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_may_dloc-iv-game-theory-for-data-science-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_may_dloc-iv-game-theory-for-data-science-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv: Game Theory For Data Science ‘c’ Scheme",
+      "slug": "dloc-iv:-game-theory-for-data-science-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2023_december_dloc-iv:-game-theory-for-data-science-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2023_december_dloc-iv:-game-theory-for-data-science-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I: Product Lifecycle Management ‘c’ Scheme",
+      "slug": "iloc-i:-product-lifecycle-management-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2023_december_iloc-i:-product-lifecycle-management-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2023_december_iloc-i:-product-lifecycle-management-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Cyber Security And Laws",
+      "slug": "iloc-i-cyber-security-and-laws-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2024_december_iloc-i-cyber-security-and-laws-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2024_december_iloc-i-cyber-security-and-laws-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Cyber Security And Laws",
+      "slug": "iloc-i-cyber-security-and-laws-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-7_2025_may_iloc-i-cyber-security-and-laws-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-7_2025_may_iloc-i-cyber-security-and-laws-rev-2019-c-scheme.pdf"
+    }
+  ],
+  "sem8": [
+    {
+      "subject": "Advanced Artificial Intelligence",
+      "slug": "advanced-artificial-intelligence-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_advanced-artificial-intelligence-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_advanced-artificial-intelligence-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Advanced Artificial Intelligence",
+      "slug": "advanced-artificial-intelligence-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2025_may_advanced-artificial-intelligence-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2025_may_advanced-artificial-intelligence-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Reinforcement Learning",
+      "slug": "reinforcement-learning-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_reinforcement-learning-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_reinforcement-learning-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Reinforcement Learning",
+      "slug": "reinforcement-learning-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2025_may_reinforcement-learning-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2025_may_reinforcement-learning-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Social Media Analytic",
+      "slug": "social-media-analytic-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_social-media-analytic-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_social-media-analytic-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Social Media Analytic",
+      "slug": "social-media-analytic-rev-2019c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2025_december_social-media-analytic-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2025_december_social-media-analytic-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Social Media Analytic",
+      "slug": "social-media-analytic-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2025_may_social-media-analytic-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2025_may_social-media-analytic-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Project Management",
+      "slug": "project-management-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_project-management-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_project-management-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Entrepreneurship Development And Management",
+      "slug": "entrepreneurship-development-and-management-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_entrepreneurship-development-and-management-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_entrepreneurship-development-and-management-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Professional Ethics And Csr",
+      "slug": "professional-ethics-and-csr-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_professional-ethics-and-csr-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_professional-ethics-and-csr-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Research Methodology",
+      "slug": "research-methodology-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_research-methodology-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_research-methodology-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Research Methodology",
+      "slug": "research-methodology-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2025_may_research-methodology-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2025_may_research-methodology-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Ipr And Patenting ‘c’ Scheme",
+      "slug": "ipr-and-patenting-rev-2019‘c’-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_ipr-and-patenting-rev-2019‘c’-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_ipr-and-patenting-rev-2019‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Digital Business Management",
+      "slug": "digital-business-management-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_digital-business-management-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_digital-business-management-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Digital Business Management",
+      "slug": "digital-business-management-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2025_may_digital-business-management-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2025_may_digital-business-management-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Text Web And Social Media Analytics",
+      "slug": "text-web-and-social-media-analytics-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2025_may_text-web-and-social-media-analytics-rev-2019-c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2025_may_text-web-and-social-media-analytics-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Environmental Management",
+      "slug": "environmental-management-rev-2019c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2024_may_environmental-management-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2024_may_environmental-management-rev-2019c-scheme.pdf"
+    },
+    {
+      "subject": "Environmental Management",
+      "slug": "environmental-management-rev-2019c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_computer-engineering-aids_semester-8_2025_may_environmental-management-rev-2019c-scheme.pdf",
+      "filename": "be_computer-engineering-aids_semester-8_2025_may_environmental-management-rev-2019c-scheme.pdf"
+    }
   ]
 }

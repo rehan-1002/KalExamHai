@@ -105,7 +105,7 @@ export function MuSubjectPicker({
           <BookOpen className="w-3.5 h-3.5 text-[#2563EB]" />
           Select Semester
         </label>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {activeBranch.semesters.map((sem) => {
             const isSelected = sem === selectedSemester;
             return (

@@ -567,5 +567,395 @@
         "weightageMarks": 10
       }
     ]
+  },
+  {
+    "code": "ITC501",
+    "name": "Internet Programming",
+    "shortName": "IP",
+    "semester": 5,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Modern Frontend: HTML5 & Advanced CSS3",
+        "topics": [
+          "HTML5 Semantic Elements, Forms, Canvas, SVG",
+          "CSS3 Flexbox, CSS Grid layouts, Responsive Design with Media Queries",
+          "CSS Preprocessors (Sass/SCSS) and Tailwind CSS concepts"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Modern JavaScript (ES6+)",
+        "topics": [
+          "Variables (let/const), Arrow Functions, Template Literals, Destructuring",
+          "Promises, Async/Await, Fetch API, Error Handling",
+          "DOM Manipulation, Event Bubbling and Delegation, LocalStorage & SessionStorage"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Single Page Applications (React)",
+        "topics": [
+          "Component-Based Architecture, Functional Components vs Class Components",
+          "JSX, Props, State, React Hooks: useState, useEffect, useRef, useContext",
+          "Routing with React Router, Handling Forms, Axios integration"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Backend Development with Node.js & Express",
+        "topics": [
+          "Node.js Architecture: Event Loop, Asynchronous I/O, Modules",
+          "Express.js Framework: Routing, Middleware, Request/Response cycle",
+          "RESTful API Design principles, JWT Authentication and Authorization"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Database Integration & ORMs",
+        "topics": [
+          "Connecting Express with MongoDB using Mongoose",
+          "Mongoose Schemas, Models, Validations, Relationships",
+          "Relational integration using PostgreSQL / Prisma ORM overview"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Web Security & Deployment",
+        "topics": [
+          "Web Vulnerabilities: XSS, CSRF, SQL/NoSQL Injection, CORS configuration",
+          "Security Best Practices: Helmet, Rate Limiting, Input Sanitization",
+          "Containerization & Cloud Deployment on Vercel / Render / AWS"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "ITC502",
+    "name": "Computer Network Security",
+    "shortName": "CNS",
+    "semester": 5,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Security Basics & Classical Ciphers",
+        "topics": [
+          "CIA Triad, Security Attacks, Services and Mechanisms",
+          "Classical Cryptography: Caesar, Playfair, Monoalphabetic, Polyalphabetic ciphers",
+          "Transposition Techniques and Steganography basics"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Symmetric Encryption & Block Ciphers",
+        "topics": [
+          "Feistel Cipher structure, DES Algorithm, Double and Triple DES",
+          "AES Algorithm: ByteSub, ShiftRows, MixColumns, AddRoundKey",
+          "Block Cipher Modes: ECB, CBC, CFB, OFB, CTR"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Public Key Cryptography & Number Theory",
+        "topics": [
+          "Euler's Totient function, Extended Euclidean Algorithm",
+          "RSA Public Key Cryptosystem, Attacks on RSA",
+          "Diffie-Hellman Key Agreement, Elliptic Curve Cryptography (ECC) overview"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Integrity, Authentication & Digital Signatures",
+        "topics": [
+          "Cryptographic Hash Functions: SHA-512, MD5",
+          "Message Authentication Codes (MAC), HMAC",
+          "Digital Signatures: RSA Signatures, Digital Signature Algorithm (DSA)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Network Security Protocols",
+        "topics": [
+          "IPSec Architecture: Authentication Header (AH), Encapsulating Security Payload (ESP)",
+          "Transport Layer Security: SSL/TLS Protocol stack, HTTPS",
+          "Email Security: PGP and S/MIME, Kerberos Protocol"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "System Security & Defenses",
+        "topics": [
+          "Intrusion Detection Systems: Host-based vs Network-based",
+          "Firewalls: Packet Filters, Stateful Inspection, Application Gateways",
+          "Malware Analysis: Viruses, Worms, Trojan Horses, Rootkits, Zero-day exploits"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "ITC601",
+    "name": "Data Mining & Business Intelligence",
+    "shortName": "DMBI",
+    "semester": 6,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Data Warehousing & Business Intelligence",
+        "topics": [
+          "Data Warehouse Architecture, Operational vs Informational systems",
+          "Business Intelligence Architecture, Roles and applications",
+          "Dimensional Modeling: Facts, Dimensions, Star, Snowflake schemas"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "ETL Processing & OLAP",
+        "topics": [
+          "ETL Pipeline: Data extraction, Transformation rules, Loading strategies",
+          "OLAP Operations: Slice, Dice, Drill-down, Roll-up, Pivot",
+          "MOLAP, ROLAP, and HOLAP architectures"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Data Preprocessing",
+        "topics": [
+          "Data Cleaning: Missing values, Noisy data handling",
+          "Data Integration and Transformation: Normalization, Discretization",
+          "Data Reduction: PCA, Attribute subset selection"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Association Rule Mining",
+        "topics": [
+          "Market Basket Analysis, Support, Confidence, Lift",
+          "Apriori Algorithm, FP-Growth Algorithm",
+          "Evaluation of Association Rules and interestingness measures"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Classification & Prediction",
+        "topics": [
+          "Decision Tree Induction (ID3, C4.5), Information Gain",
+          "Bayesian Classification: Naive Bayes Classifier",
+          "Classification Accuracy: Confusion Matrix, Precision, Recall, F1 Score"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Clustering & BI Visualizations",
+        "topics": [
+          "Partitioning Methods: k-Means, k-Medoids",
+          "Hierarchical Clustering: Agglomerative and Divisive",
+          "Business Dashboards, KPI design, Visual Storytelling in Power BI / Tableau"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "ITC701",
+    "name": "Internet of Everything",
+    "shortName": "IoE",
+    "semester": 7,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to IoE & IoT",
+        "topics": [
+          "Definition, IoT vs IoE (People, Process, Data, Things)",
+          "IoE Reference Architecture, M2M vs IoT",
+          "Smart Ecosystems: Smart Cities, Healthcare, Industrial IoT (IIoT)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Sensors, Actuators & Hardware Platforms",
+        "topics": [
+          "Transducers, Analog and Digital Sensors (Temperature, Accelerometer, Gas, PIR)",
+          "Actuators: Relays, Motors, Solenoids",
+          "Microcontroller Platforms: Arduino, ESP32, Raspberry Pi interfacing"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "IoT Communication Protocols",
+        "topics": [
+          "Network Layer Protocols: 6LoWPAN, RPL",
+          "Transport & Application Protocols: MQTT, CoAP, AMQP, HTTP/REST",
+          "Wireless Standards: LoRaWAN, Zigbee, BLE, NB-IoT"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Edge, Fog & Cloud Computing for IoT",
+        "topics": [
+          "Edge Computing Architecture: Low latency processing at the device",
+          "Fog Computing nodes and role in data filtering",
+          "Cloud IoT Platforms: AWS IoT Core, Google Cloud IoT, Azure IoT Hub"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Data Analytics for IoE",
+        "topics": [
+          "Stream Processing of Sensor Data, Time-Series Databases (InfluxDB)",
+          "Predictive Maintenance using Machine Learning",
+          "Anomaly Detection in Sensor Streams"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "IoE Security & Privacy",
+        "topics": [
+          "IoT Vulnerabilities, OWASP Top 10 for IoT",
+          "Device Authentication, Firmware Security, Lightweight Cryptography",
+          "Privacy concerns and regulatory compliance (GDPR, Data Protection Act)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "ITC801",
+    "name": "Blockchain and DLT",
+    "shortName": "BDLT",
+    "semester": 8,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Blockchain & Cryptography",
+        "topics": [
+          "Centralized vs Decentralized Systems, Distributed Ledger Technology (DLT)",
+          "Cryptographic Hash Functions, Merkle Trees, Digital Signatures",
+          "Blockchain Structure: Blocks, Headers, Nonce, Genesis Block"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Consensus Algorithms",
+        "topics": [
+          "The Byzantine Generals Problem",
+          "Proof of Work (PoW) in Bitcoin, Difficulty adjustments, Mining incentives",
+          "Proof of Stake (PoS), Delegated PoS, PBFT, Raft consensus"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Bitcoin & Cryptocurrency Economics",
+        "topics": [
+          "Bitcoin Network Architecture, UTXO model vs Account model",
+          "Bitcoin Transactions, Scripting language, Wallets: Hot, Cold, Hierarchical Deterministic",
+          "Double-spending attacks, 51% Attack, Hard forks vs Soft forks"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Ethereum & Smart Contracts",
+        "topics": [
+          "Ethereum Virtual Machine (EVM), Ether, Gas mechanics",
+          "Smart Contracts Lifecycle, Introduction to Solidity programming",
+          "Solidity Data Types, Functions, Modifiers, Events, Fallback functions"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Decentralized Applications & Tokens",
+        "topics": [
+          "DApp Architecture: Frontend, Web3.js / Ethers.js, IPFS integration",
+          "ERC Standards: ERC-20 (Fungible Tokens), ERC-721 (Non-Fungible Tokens / NFTs)",
+          "Decentralized Finance (DeFi) basics: DEXs, Automated Market Makers"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Enterprise Blockchains & Security",
+        "topics": [
+          "Public vs Private vs Consortium Blockchains",
+          "Hyperledger Fabric Architecture: Peers, Orderers, Channels, Chaincode",
+          "Smart Contract Security vulnerabilities: Reentrancy, Overflow/Underflow, Front-running"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
   }
 ]

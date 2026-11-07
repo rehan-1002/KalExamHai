@@ -540,5 +540,317 @@
         "weightageMarks": 10
       }
     ]
+  },
+  {
+    "code": "AMC501",
+    "name": "Artificial Intelligence",
+    "shortName": "AI",
+    "semester": 5,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Intelligent Agents & Problem Solving",
+        "topics": [
+          "Agents and Environments, PEAS descriptions, Agent Architectures",
+          "State Space Representation, Problem Formulation",
+          "Uninformed Search: BFS, DFS, UCS, DLS, IDDFS"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Heuristic & Adversarial Search",
+        "topics": [
+          "Heuristic Search: Greedy Best-First, A* Algorithm, IDA*",
+          "Admissibility and Consistency of Heuristics",
+          "Game Playing: Minimax Algorithm, Alpha-Beta Pruning"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Knowledge & Reasoning",
+        "topics": [
+          "Propositional Logic, Inference rules, Resolution",
+          "First-Order Logic (FOL), Unification, Forward and Backward Chaining",
+          "Ontological Engineering and Semantic Networks"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Probabilistic Reasoning & Uncertainty",
+        "topics": [
+          "Uncertainty handling, Conditional Probability, Bayes' Theorem",
+          "Bayesian Belief Networks, Inference in Bayesian Networks",
+          "Markov Decision Processes (MDP) basics"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Planning & Decision Making",
+        "topics": [
+          "Classical Planning, STRIPS, Action Representation",
+          "Partial-Order Planning, Planning Graphs",
+          "Decision Theory and Utility functions"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "AI Applications & Ethics",
+        "topics": [
+          "Natural Language Processing pipeline overview",
+          "Computer Vision basics, Robotics perception and action",
+          "Ethics in AI: Bias, Fairness, Accountability, Explainable AI (XAI)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "AMC601",
+    "name": "Machine Learning",
+    "shortName": "ML",
+    "semester": 6,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Machine Learning Fundamentals",
+        "topics": [
+          "Supervised, Unsupervised, Reinforcement Learning taxonomy",
+          "Feature Engineering: Scaling, Encoding, Feature Selection",
+          "Model Evaluation: Confusion Matrix, ROC-AUC, Precision, Recall, Cross-validation"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Regression & Gradient Descent",
+        "topics": [
+          "Linear Regression: OLS, Assumptions, Metrics (MSE, RMSE, R-squared)",
+          "Gradient Descent Optimization: Batch, Mini-batch, Stochastic",
+          "Regularization: Ridge, Lasso, Elastic Net"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Classification Algorithms",
+        "topics": [
+          "Logistic Regression, Multi-class Classification",
+          "k-Nearest Neighbors (k-NN), Distance metrics",
+          "Support Vector Machines (SVM): Linear, Non-linear, Kernel Trick (RBF, Poly)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Tree-Based & Ensemble Models",
+        "topics": [
+          "Decision Trees: ID3, CART, Information Gain, Gini Impurity, Pruning",
+          "Random Forest: Bagging, Feature Subsampling, Out-of-Bag Error",
+          "Boosting: AdaBoost, Gradient Boosted Trees, XGBoost"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Unsupervised Clustering & Dimensionality Reduction",
+        "topics": [
+          "k-Means Clustering, Elbow Method, Silhouette Analysis",
+          "Hierarchical Clustering: Agglomerative, Linkages",
+          "Dimensionality Reduction: PCA, Eigenvalue Decomposition, SVD"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Introduction to Deep Learning",
+        "topics": [
+          "Artificial Neural Networks: Perceptron, Multi-Layer Perceptron (MLP)",
+          "Activation Functions, Loss Functions, Backpropagation Algorithm",
+          "Introduction to CNNs and Computer Vision applications"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "AMC701",
+    "name": "Deep Learning",
+    "shortName": "DL",
+    "semester": 7,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Deep Neural Networks Fundamentals",
+        "topics": [
+          "Deep Feedforward Networks, Universal Approximation Theorem",
+          "Vanishing and Exploding Gradient Problems, Weight Initialization techniques (He, Xavier)",
+          "Optimizers: SGD with Momentum, RMSprop, Adam"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Convolutional Neural Networks (CNNs)",
+        "topics": [
+          "Convolution Operation, Strides, Padding, Pooling Layers",
+          "CNN Architectures: LeNet, AlexNet, VGG, ResNet (Residual Connections)",
+          "Transfer Learning, Data Augmentation, Fine-tuning"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Recurrent Neural Networks (RNNs) & Sequence Modeling",
+        "topics": [
+          "Sequence Modeling, Standard RNN and Backpropagation Through Time (BPTT)",
+          "Long Short-Term Memory (LSTM) Networks: Forget, Input, Output Gates",
+          "Gated Recurrent Units (GRU), Bidirectional RNNs"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Attention Mechanisms & Transformers",
+        "topics": [
+          "Seq2Seq Models, Encoder-Decoder Architecture, Bahdanau Attention",
+          "Transformer Architecture: Multi-Head Self-Attention, Positional Encoding",
+          "BERT and GPT Model fundamentals, Pre-training vs Fine-tuning"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Generative Deep Learning",
+        "topics": [
+          "Autoencoders: Undercomplete, Denoising, Variational Autoencoders (VAEs)",
+          "Generative Adversarial Networks (GANs): Generator, Discriminator, Minimax Game",
+          "DCGAN, Mode Collapse, Evaluation of GANs"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Deep Reinforcement Learning & MLOps",
+        "topics": [
+          "Q-Learning, Deep Q-Networks (DQN), Experience Replay",
+          "Policy Gradient Methods, Actor-Critic",
+          "Deep Learning Deployment: ONNX, TensorRT, Model Quantization and Pruning"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "AMC801",
+    "name": "Advanced Artificial Intelligence",
+    "shortName": "AAI",
+    "semester": 8,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Advanced Probabilistic Graphical Models",
+        "topics": [
+          "Directed and Undirected Graphical Models, Markov Random Fields",
+          "Exact Inference: Variable Elimination, Junction Tree Algorithm",
+          "Approximate Inference: MCMC, Gibbs Sampling, Variational Inference"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Reinforcement Learning & Multi-Agent Systems",
+        "topics": [
+          "Markov Decision Processes, Bellman Equations, Value Iteration, Policy Iteration",
+          "Model-Free RL: Temporal Difference (TD) Learning, SARSA, Q-Learning",
+          "Multi-Agent Systems: Game Theory, Nash Equilibrium, Cooperative vs Competitive agents"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Explainable AI (XAI) & Interpretability",
+        "topics": [
+          "Need for XAI, Black-box vs White-box models",
+          "Local vs Global Interpretability: LIME, SHAP (Shapley Additive Explanations)",
+          "Counterfactual Explanations, Feature Attribution methods"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "AI for Robotics & Autonomous Systems",
+        "topics": [
+          "Robot Perception, Localization and Mapping (SLAM)",
+          "Path Planning: Dijkstra, A*, RRT (Rapidly-exploring Random Trees)",
+          "Control Systems: PID Controllers, Behavioral Trees for Autonomous Navigation"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Cognitive Architectures & Knowledge Graphs",
+        "topics": [
+          "Cognitive Systems: SOAR, ACT-R Architectures",
+          "Knowledge Graphs: Construction, Representation, Entity Extraction, Relation Extraction",
+          "Knowledge Graph Embeddings: TransE, TransH, Graph Neural Networks (GNNs)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "AI Safety, Alignment & Ethics",
+        "topics": [
+          "AI Alignment Problem, Value Alignment, Reward Hacking",
+          "Adversarial Attacks on AI: FGSM, PGD, Robustness certification",
+          "Responsible AI Governance, Societal Impacts, AI Copyright and Privacy"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
   }
 ]

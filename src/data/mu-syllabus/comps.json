@@ -599,5 +599,868 @@
         "weightageMarks": 10
       }
     ]
+  },
+  {
+    "code": "CSC501",
+    "name": "Theoretical Computer Science",
+    "shortName": "TCS",
+    "semester": 5,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Automata & Regular Languages",
+        "topics": [
+          "Alphabets, Strings, Languages, Finite Automata (DFA, NFA, epsilon-NFA)",
+          "Equivalence of DFA and NFA, Minimization of DFA",
+          "Regular Expressions and Regular Languages, Arden's Theorem"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Grammars & Context-Free Languages",
+        "topics": [
+          "Chomsky Hierarchy of Languages",
+          "Context-Free Grammars (CFG), Parse Trees, Ambiguity",
+          "Simplification of CFG: Elimination of Useless symbols, Unit productions, Null productions",
+          "Normal Forms: Chomsky Normal Form (CNF), Greibach Normal Form (GNF)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Pushdown Automata (PDA)",
+        "topics": [
+          "Definition, Model, Graphical Notation, Instantaneous Descriptions",
+          "Acceptance by Final State and Empty Stack",
+          "Deterministic PDA vs Non-Deterministic PDA",
+          "Equivalence of PDA and CFG"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Turing Machines (TM)",
+        "topics": [
+          "Definition, Model, Instantaneous Descriptions, Design of Turing Machines",
+          "Modifications of Turing Machines: Multi-tape, Non-deterministic TM",
+          "Church-Turing Thesis, Universal Turing Machine (UTM)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Undecidability & Halting Problem",
+        "topics": [
+          "Decidability and Undecidable Problems",
+          "Halting Problem of Turing Machine",
+          "Post Correspondence Problem (PCP) and Modified PCP"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Complexity Theory",
+        "topics": [
+          "Tractable and Intractable problems",
+          "Classes P, NP, NP-Complete, and NP-Hard",
+          "Cook's Theorem overview, Reduction concepts"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC502",
+    "name": "Software Engineering",
+    "shortName": "SE",
+    "semester": 5,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Software Engineering & Process Models",
+        "topics": [
+          "Software Characteristics, Software Engineering Layers",
+          "Prescriptive Process Models: Waterfall, Incremental, RAD, Evolutionary (Prototyping, Spiral)",
+          "Agile Process: Agile Manifesto, Principles, Extreme Programming (XP), Scrum Framework"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Requirements Engineering",
+        "topics": [
+          "Inception, Elicitation, Elaboration, Negotiation, Specification",
+          "Requirement Modeling: Use Case diagrams, Activity diagrams, Class diagrams",
+          "Software Requirement Specification (SRS) IEEE standard format"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Design Engineering",
+        "topics": [
+          "Design concepts: Abstraction, Architecture, Modularity, Information Hiding",
+          "Architectural Design: Software styles, Component-level design",
+          "User Interface Design principles and guidelines"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Software Testing Strategies",
+        "topics": [
+          "Verification and Validation, Testing Levels: Unit, Integration, System, Acceptance",
+          "White-Box Testing: Basis Path testing, Cyclomatic Complexity, Control Structure testing",
+          "Black-Box Testing: Equivalence Partitioning, Boundary Value Analysis"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Software Project Estimation & Risk Management",
+        "topics": [
+          "Project Metrics, Size-Oriented, Function-Oriented Metrics",
+          "Cost Estimation Models: COCOMO II model",
+          "Risk Identification, Risk Projection, RMMM Plan"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Software Quality Assurance & DevOps",
+        "topics": [
+          "Software Quality Concepts, SQA Activities, Formal Technical Reviews",
+          "Software Configuration Management (SCM) & Git workflows",
+          "DevOps Culture: Continuous Integration & Continuous Deployment (CI/CD) pipelines"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC503",
+    "name": "Computer Network",
+    "shortName": "CN",
+    "semester": 5,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Computer Networks & Physical Layer",
+        "topics": [
+          "Network Topologies, Types (LAN, MAN, WAN), OSI & TCP/IP Reference Models",
+          "Transmission Media: Guided (Twisted Pair, Coaxial, Fiber Optic) and Unguided",
+          "Network Hardware: Hub, Switch, Router, Gateway, Bandwidth-Delay Product"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Data Link Layer & MAC Sublayer",
+        "topics": [
+          "Framing techniques, Flow Control (Stop & Wait, Go-Back-N, Selective Repeat ARQ)",
+          "Error Detection and Correction: CRC, Hamming Code, Checksum",
+          "Multiple Access Protocols: ALOHA, CSMA/CD, CSMA/CA, Ethernet (802.3), IEEE 802.11"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Network Layer: Addressing & Protocols",
+        "topics": [
+          "IPv4 Addressing, Subnetting, VLSM, CIDR, Supernetting",
+          "IPv6 Addressing structure and header format, Comparison with IPv4",
+          "Network Layer Protocols: ARP, RARP, ICMP, IGMP, NAT"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Routing Algorithms",
+        "topics": [
+          "Static vs Dynamic Routing, Distance Vector Routing (Bellman-Ford Algorithm, Count to Infinity)",
+          "Link State Routing (Dijkstra's Algorithm), Path Vector Routing",
+          "Routing Protocols: RIP, OSPF, BGP"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Transport Layer",
+        "topics": [
+          "Transport Layer Services, Port numbers, Sockets, Multiplexing and Demultiplexing",
+          "Connection-Oriented vs Connectionless: UDP vs TCP Header formats",
+          "TCP Connection Management, TCP Congestion Control (Slow Start, Additive Increase Multiplicative Decrease)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Application Layer & Network Management",
+        "topics": [
+          "Domain Name System (DNS), File Transfer Protocol (FTP), Electronic Mail (SMTP, POP3, IMAP)",
+          "Hypertext Transfer Protocol (HTTP, HTTPS), DHCP",
+          "Network Security basics: Firewalls, IDS, Packet Analysis with Wireshark"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC504",
+    "name": "Data Warehousing and Mining",
+    "shortName": "DWM",
+    "semester": 5,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Data Warehousing Fundamentals",
+        "topics": [
+          "Data Warehouse Definition, Characteristics, Multi-tier Architecture",
+          "Data Warehouse vs DBMS vs OLAP vs OLTP",
+          "Dimensional Modeling: Fact tables, Dimension tables, Star, Snowflake, Fact Constellation schemas"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "ETL & OLAP Operations",
+        "topics": [
+          "ETL Cycle: Extraction, Transformation, Loading mechanisms",
+          "OLAP Servers: ROLAP, MOLAP, HOLAP architectures",
+          "OLAP Operations: Roll-up, Drill-down, Slice, Dice, Pivot"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Data Mining & Data Preprocessing",
+        "topics": [
+          "Data Mining Primitives, Architecture of Data Mining systems",
+          "Data Cleaning, Data Integration and Transformation",
+          "Data Reduction: Feature Selection, PCA, Wavelet Transforms, Discretization"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Association Rule Mining",
+        "topics": [
+          "Frequent Itemset Mining, Support, Confidence, Lift metrics",
+          "Apriori Algorithm and Candidate Generation",
+          "FP-Tree Growth Algorithm, Mining Multi-level Association Rules"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Classification Algorithms",
+        "topics": [
+          "Issues in Classification, Decision Tree Induction (ID3, C4.5)",
+          "Bayesian Classification: Naive Bayes Theorem and calculations",
+          "Model Evaluation: Confusion Matrix, Precision, Recall, F-measure, ROC Curve"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Clustering Techniques",
+        "topics": [
+          "Clustering Requirements, Partitioning Methods: k-Means, k-Medoids (PAM)",
+          "Hierarchical Methods: Agglomerative, Divisive, BIRCH",
+          "Density-Based Methods: DBSCAN, Outlier Detection fundamentals"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC601",
+    "name": "System Programming & Compiler Construction",
+    "shortName": "SPCC",
+    "semester": 6,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "System Software & Assemblers",
+        "topics": [
+          "Overview of System Software, Machine Structure",
+          "Design of Two-Pass Assembler: Data structures (MOT, POT, ST, LT), Pass 1 and Pass 2 algorithms",
+          "Design of Single-Pass Assembler"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Macro Processors, Linkers & Loaders",
+        "topics": [
+          "Macro Processor: Macro definition, Macro call, Macro expansion",
+          "Two-Pass Macro Processor design, Nested macro calls",
+          "Loaders: Compile-and-Go, General Loader, Absolute Loader, Relocating Loader, Linkers"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Compiler Overview & Lexical Analysis",
+        "topics": [
+          "Phases of Compiler, Compiler Construction Tools",
+          "Role of Lexical Analyzer, Regular Expressions to DFA, Lex tool",
+          "Input Buffering, Sentinels, Token recognition"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Syntax Analysis & Parsing",
+        "topics": [
+          "Role of Parser, Top-Down Parsing: Recursive Descent, LL(1) Grammar, First & Follow sets",
+          "Bottom-Up Parsing: Shift-Reduce, Operator Precedence, LR Parsers (SLR, CLR, LALR)",
+          "Yacc Parser generator"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Syntax-Directed Translation & Intermediate Code",
+        "topics": [
+          "Syntax-Directed Definitions (SDD), S-attributed and L-attributed definitions",
+          "Intermediate Representations: Syntax Trees, DAGs, Three-Address Code (Quadruples, Triples, Indirect Triples)",
+          "Type Checking, Translation of Expressions, Boolean expressions, and Control Flow"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Code Generation & Optimization",
+        "topics": [
+          "Principal Sources of Optimization, Basic Blocks and Flow Graphs",
+          "Local Optimization, Loop Optimization (Code motion, Induction variables)",
+          "Issues in Code Generator Design, Target Code Generation from DAG"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC602",
+    "name": "Cryptography & System Security",
+    "shortName": "CSS",
+    "semester": 6,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Security Basics & Classical Ciphers",
+        "topics": [
+          "Security Goals: Confidentiality, Integrity, Availability, Non-repudiation",
+          "Attacks: Passive vs Active, Vulnerabilities, Services, Mechanisms",
+          "Classical Ciphers: Substitution (Caesar, Playfair, Hill, Vigenere), Transposition (Rail Fence, Columnar)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Symmetric Key Cryptography",
+        "topics": [
+          "Block Cipher Principles: Feistel structure, SPN network",
+          "Data Encryption Standard (DES), Triple DES, Differential & Linear Cryptanalysis overview",
+          "Advanced Encryption Standard (AES) rounds and transformations, Modes of Operation (ECB, CBC, CFB, OFB, CTR)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Asymmetric Key Cryptography & Number Theory",
+        "topics": [
+          "Prime Numbers, Fermat's Theorem, Euler's Totient Function, Extended Euclidean Algorithm",
+          "RSA Cryptosystem: Key generation, Encryption, Decryption, Security of RSA",
+          "Diffie-Hellman Key Exchange Algorithm, Man-in-the-Middle attack"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Cryptographic Hash Functions & Digital Signatures",
+        "topics": [
+          "Hash Function properties, Collision resistance, SHA-512 architecture",
+          "Message Authentication Codes (MAC), HMAC",
+          "Digital Signature Scheme: RSA Digital Signature, Digital Signature Standard (DSS/DSA)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Network & System Security Protocols",
+        "topics": [
+          "Kerberos Authentication protocol, Public Key Infrastructure (PKI), X.509 Certificates",
+          "Transport Layer Security: SSL/TLS Handshake and Record protocols",
+          "IP Security (IPSec): AH, ESP, Transport vs Tunnel mode, PGP for email security"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "System Vulnerabilities, Firewalls & Intrusions",
+        "topics": [
+          "Malicious Software: Viruses, Worms, Trojan Horses, Ransomware, Buffer Overflow attacks",
+          "Intrusion Detection Systems (IDS): Host-based vs Network-based, Signature vs Anomaly",
+          "Firewalls: Packet Filtering, Stateful Inspection, Application Gateways"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC603",
+    "name": "Mobile Computing",
+    "shortName": "MC",
+    "semester": 6,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Wireless Communication & Cellular Fundamentals",
+        "topics": [
+          "Electromagnetic spectrum, Multiplexing (SDM, FDM, TDM, CDM)",
+          "Cellular System Architecture: Cell cluster, Frequency reuse, Co-channel interference",
+          "Handoff Strategies, Improving capacity (Cell splitting, Sectoring, Microcell zones)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Telecommunication Systems (GSM)",
+        "topics": [
+          "GSM System Architecture: Radio subsystem, Network and switching subsystem, Operation subsystem",
+          "GSM Radio Interface: Frequency allocation, Logical channels, Bursts, TDMA frame",
+          "GSM Security: Authentication, Encryption, Subscriber Identity Confidentiality"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Wireless LANs (IEEE 802.11)",
+        "topics": [
+          "Infrared vs Radio transmission, Infrastructure vs Ad-hoc networks",
+          "IEEE 802.11 Protocol Architecture, Physical layer, MAC Management (DCF, PCF)",
+          "MACAW, Roaming, Bluetooth Architecture, Piconet, Scatternet, Protocol stack"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Mobile Network Layer",
+        "topics": [
+          "Mobile IP: Goals, Entities and terminology, IP packet delivery, Agent discovery",
+          "Agent Registration, Tunneling and Encapsulation (IP-in-IP, Minimal encapsulation)",
+          "Route Optimization, IPv6 Mobility"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Mobile Transport Layer",
+        "topics": [
+          "Traditional TCP limitations in wireless networks",
+          "Indirect TCP, Snooping TCP, Mobile TCP",
+          "Fast Retransmit/Fast Recovery, Transmission/Timeout freezing, Selective Retransmission"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Mobile Operating Systems & Security",
+        "topics": [
+          "Android Architecture: Linux kernel, Native libraries, Android runtime, Application framework",
+          "iOS Architecture, Mobile Application Security threats",
+          "Mobile Device Management (MDM), Biometrics on Mobile, Future of 5G Mobile networks"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC604",
+    "name": "Artificial Intelligence",
+    "shortName": "AI",
+    "semester": 6,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to AI & Intelligent Agents",
+        "topics": [
+          "Definition of AI, Turing Test, Foundations of AI, History",
+          "Structure of Intelligent Agents: Agent and Environment, PEAS representation",
+          "Agent Types: Simple reflex, Model-based, Goal-based, Utility-based, Learning agents"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Uninformed & Informed Search Strategies",
+        "topics": [
+          "Problem Formulation, State Space representation",
+          "Uninformed Search: BFS, DFS, Depth-Limited Search, Iterative Deepening Search, Uniform Cost Search",
+          "Informed Search: Greedy Best-First Search, A* Algorithm, Admissibility and Consistency of Heuristics",
+          "Local Search: Hill Climbing, Simulated Annealing"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Adversarial Search & Game Playing",
+        "topics": [
+          "Games as Search Problems, Minimax Algorithm with perfect decisions",
+          "Alpha-Beta Pruning: Pruning conditions, Evaluation functions",
+          "Game Playing in practice (Chess, Tic-Tac-Toe, Horizon effect)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Knowledge Representation & First-Order Logic",
+        "topics": [
+          "Knowledge-Based Agents, Wumpus World environment",
+          "Propositional Logic: Syntax, Semantics, Truth tables, Inference rules",
+          "First-Order Logic (FOL): Quantifiers, Unification, Forward and Backward Chaining, Resolution in FOL"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Uncertainty & Probabilistic Reasoning",
+        "topics": [
+          "Acting under Uncertainty, Basic Probability axioms",
+          "Bayes' Rule and its applications, Naive Bayes model",
+          "Bayesian Belief Networks: Representation, Conditional Independence, Exact inference"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Planning & Expert Systems",
+        "topics": [
+          "Classical Planning, STRIPS language, Progression and Regression planning",
+          "Plan-Space Planning, Hierarchical Task Network (HTN)",
+          "Expert System Architecture: Knowledge Base, Inference Engine, Explanation facility, Rule-based systems"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC701",
+    "name": "Machine Learning",
+    "shortName": "ML",
+    "semester": 7,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Introduction to Machine Learning",
+        "topics": [
+          "Types of Machine Learning: Supervised, Unsupervised, Reinforcement Learning",
+          "Model Selection, Overfitting and Underfitting, Bias-Variance Tradeoff",
+          "Cross-Validation (k-fold, Leave-one-out), Performance Metrics: Precision, Recall, F1, ROC-AUC"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Regression Algorithms",
+        "topics": [
+          "Linear Regression: Simple vs Multiple, Ordinary Least Squares",
+          "Gradient Descent: Batch, Stochastic (SGD), Mini-batch, Learning rate tuning",
+          "Regularized Regression: Ridge (L2), Lasso (L1), Elastic Net"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Classification Models",
+        "topics": [
+          "Logistic Regression: Sigmoid function, Log-loss, Multi-class classification (One-vs-Rest)",
+          "Decision Trees: Information Gain, Gini Impurity, Pruning",
+          "Support Vector Machines (SVM): Hyperplane, Margin, Soft margin, Kernel trick (RBF, Polynomial)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Ensemble Learning",
+        "topics": [
+          "Bagging: Random Forests, Out-of-Bag error estimation",
+          "Boosting: AdaBoost, Gradient Boosting (GBM), XGBoost fundamentals",
+          "Voting Classifiers, Stacking and Blending models"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Unsupervised Learning & Dimensionality Reduction",
+        "topics": [
+          "k-Means Clustering, Elbow method, Silhouette Score",
+          "Hierarchical Clustering: Dendrograms, Linkage criteria",
+          "Principal Component Analysis (PCA): Eigenvalues, Eigenvectors, Variance explained, t-SNE basics"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Neural Networks & Deep Learning Foundations",
+        "topics": [
+          "Biological vs Artificial Neuron, Perceptron, Activation functions (ReLU, Sigmoid, Softmax)",
+          "Multilayer Perceptron (MLP), Forward Propagation, Backpropagation with Chain Rule",
+          "Deep Learning Architectures overview: Convolutional Neural Networks (CNNs) basics"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC702",
+    "name": "Big Data Analysis",
+    "shortName": "BDA",
+    "semester": 7,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Big Data Overview & Ecosystem",
+        "topics": [
+          "Characteristics of Big Data: 5Vs (Volume, Velocity, Variety, Veracity, Value)",
+          "Distributed Systems fundamentals for Big Data, CAP Theorem, ACID vs BASE",
+          "Big Data Architecture and Technology Stack"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Hadoop Architecture & HDFS",
+        "topics": [
+          "Apache Hadoop Core components, Hadoop 2.x/3.x Architecture",
+          "Hadoop Distributed File System (HDFS): NameNode, DataNode, Secondary NameNode",
+          "HDFS Data Flow: Read and Write architecture, Block replication, Fault tolerance"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "MapReduce Programming Framework",
+        "topics": [
+          "MapReduce Programming Paradigm, Map, Shuffle, Sort, Reduce phases",
+          "Developing MapReduce Programs: Word Count, Matrix Multiplication",
+          "Combiner, Partitioner, Joins in MapReduce (Map-side join, Reduce-side join)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "YARN & Apache Spark",
+        "topics": [
+          "YARN Architecture: ResourceManager, NodeManager, ApplicationMaster",
+          "Apache Spark Architecture: Spark Core, Driver, Executors",
+          "Resilient Distributed Datasets (RDDs): Transformations and Actions, In-memory computing, Spark SQL"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "NoSQL Databases",
+        "topics": [
+          "NoSQL Database Types: Key-Value (Redis), Document (MongoDB), Column-Family (Cassandra), Graph (Neo4j)",
+          "MongoDB Architecture: Collections, Documents, BSON format, CRUD operations",
+          "Aggregation Pipeline in MongoDB, Indexing strategies"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Big Data Streaming & Graph Analytics",
+        "topics": [
+          "Real-time Stream Processing concepts, Apache Kafka Architecture (Producers, Consumers, Topics, Brokers)",
+          "Spark Streaming fundamentals, Structured Streaming",
+          "Graph Analytics: PageRank Algorithm, Mining Social Network Graphs"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
+  },
+  {
+    "code": "CSC801",
+    "name": "Distributed Computing",
+    "shortName": "DC",
+    "semester": 8,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Fundamentals of Distributed Systems",
+        "topics": [
+          "Definition, Goals: Resource Sharing, Openness, Concurrency, Scalability, Fault Tolerance",
+          "Hardware & Software Concepts, Middleware",
+          "Architectural Styles: Layered, Object-based, Event-based, Peer-to-Peer, Client-Server"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Communication in Distributed Systems",
+        "topics": [
+          "Inter-process Communication (IPC): Sockets, Remote Procedure Call (RPC) design and implementation",
+          "Remote Method Invocation (RMI), Message-Oriented Communication: MPI, Message Queues",
+          "Stream-Oriented Communication and Multicasting"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Synchronization & Clock Coordination",
+        "topics": [
+          "Physical Clock Synchronization: Cristian's Algorithm, Berkeley Algorithm, NTP",
+          "Logical Clocks: Lamport's Logical Clocks, Vector Clocks",
+          "Distributed Mutual Exclusion: Centralized, Distributed (Ricart-Agrawala), Token Ring algorithms",
+          "Election Algorithms: Bully Algorithm, Ring Algorithm"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Distributed Shared Memory & Consistency",
+        "topics": [
+          "Distributed Shared Memory (DSM) Architecture, Design issues",
+          "Consistency Models: Strict, Sequential, Causal, Eventual consistency",
+          "Replica Management and Quorum-based protocols"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Fault Tolerance & Consensus",
+        "topics": [
+          "Basic Concepts: Faults, Errors, Failures, Failure models",
+          "Process Resilience, Reliable Client-Server Communication, Reliable Multicasting",
+          "Distributed Commit Protocols: Two-Phase Commit (2PC), Three-Phase Commit (3PC)",
+          "Distributed Consensus & Paxos overview"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Distributed File Systems & Cloud Computing",
+        "topics": [
+          "Distributed File Systems (DFS): NFS, AFS, HDFS comparative study",
+          "Security in Distributed Systems: Cryptographic authentication, Kerberos",
+          "Cloud Computing Models (IaaS, PaaS, SaaS), Virtualization and Containers (Docker/Kubernetes in distributed scaling)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
   }
 ]

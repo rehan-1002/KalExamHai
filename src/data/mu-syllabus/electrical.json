@@ -551,5 +551,83 @@
         "weightageMarks": 10
       }
     ]
+  },
+  {
+    "code": "ELC501",
+    "name": "Electrical Power System II",
+    "shortName": "EPS-II",
+    "semester": 5,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Representation of Power System Components",
+        "topics": [
+          "Single Line Diagram, Impedance and Reactance Diagrams, Per-Unit System",
+          "Advantages of Per-Unit Calculations, Base change formulas",
+          "Per-Unit representation of Transformers, Generators, Transmission Lines"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Symmetrical Fault Analysis",
+        "topics": [
+          "Transient on a Transmission Line, Short Circuit Current and Reactance of Synchronous Machine",
+          "Internal Voltages of Loaded Machines under Transient conditions",
+          "Calculation of Symmetrical Fault Current using Thevenin's Theorem and Z-bus Matrix"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Symmetrical Components & Sequence Networks",
+        "topics": [
+          "Symmetrical Components of Unsymmetrical Phasors, Phase Operator 'a'",
+          "Sequence Impedances and Sequence Networks of Generators, Transformers, Transmission Lines",
+          "Zero-Sequence Network configurations for various Transformer connections"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Unsymmetrical Fault Analysis",
+        "topics": [
+          "Single Line-to-Ground (LG) Fault Analysis and Equivalent Circuit",
+          "Line-to-Line (LL) Fault Analysis and Equivalent Circuit",
+          "Double Line-to-Ground (LLG) Fault Analysis, Comparison of Fault Currents"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Power Flow / Load Flow Studies",
+        "topics": [
+          "Bus Classification: Slack Bus, Generator (PV) Bus, Load (PQ) Bus",
+          "Data formulation: Y-bus formation using Singular Transformation",
+          "Gauss-Seidel Method, Newton-Raphson Method (Polar coordinates), Fast Decoupled Load Flow"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Power System Stability",
+        "topics": [
+          "Steady-State, Dynamic, and Transient Stability definitions",
+          "Swing Equation of Synchronous Machine, Inertia Constant (M and H)",
+          "Equal Area Criterion: Sudden change in mechanical input, Fault clearance, Critical Clearing Angle and Time"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
   }
 ]

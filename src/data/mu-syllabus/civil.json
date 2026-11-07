@@ -499,5 +499,83 @@
         "weightageMarks": 14
       }
     ]
+  },
+  {
+    "code": "CEC501",
+    "name": "Theory of Reinforced Concrete Structures",
+    "shortName": "TRCS",
+    "semester": 5,
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20,
+    "totalMarks": 100,
+    "modules": [
+      {
+        "moduleNo": 1,
+        "title": "Limit State Method Fundamentals (IS 456:2000)",
+        "topics": [
+          "Philosophy of Limit State Design, Characteristic Strength, Characteristic Loads",
+          "Partial Safety Factors for Materials and Loads, Stress-Strain curves for Concrete and Steel",
+          "Limit State of Collapse vs Limit State of Serviceability"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 2,
+        "title": "Analysis & Design of Beams for Flexure",
+        "topics": [
+          "Singly Reinforced Rectangular Beams: Neutral Axis Depth, Moment of Resistance, Under-reinforced vs Over-reinforced",
+          "Doubly Reinforced Beams: Analysis and Design procedures",
+          "Flanged Beams (T-Beams and L-Beams): Effective Flange Width, Moment of Resistance"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 3,
+        "title": "Design for Shear, Torsion & Bond",
+        "topics": [
+          "Shear Stress distribution, Types of Shear Reinforcement (Vertical stirrups, Bent-up bars)",
+          "Design of Beams for Shear as per IS 456",
+          "Design of Beams subjected to Combined Bending, Shear and Torsion, Development Length and Anchorage"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 4,
+        "title": "Design of Slabs",
+        "topics": [
+          "Classification of Slabs, One-Way Simply Supported and Continuous Slabs",
+          "Two-Way Slabs: Corners restrained and unrestrained (IS code coefficients method)",
+          "Serviceability checks: Deflection and Cracking"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 5,
+        "title": "Design of Compression Members (Columns)",
+        "topics": [
+          "Short vs Long Columns, Effective Length, Minimum Eccentricity",
+          "Axially Loaded Short Columns with Lateral Ties and Helical Reinforcement",
+          "Columns subjected to Combined Axial Load and Uniaxial Bending (Interaction curves)"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      },
+      {
+        "moduleNo": 6,
+        "title": "Design of Foundations (Footings)",
+        "topics": [
+          "Types of Footings, Soil Bearing Capacity considerations",
+          "Design of Isolated Square and Rectangular Pad Footing under Axial Load",
+          "Shear checks: One-way shear and Two-way (Punching) shear in footings"
+        ],
+        "weightageMarks": 10,
+        "hours": 5
+      }
+    ]
   }
 ]

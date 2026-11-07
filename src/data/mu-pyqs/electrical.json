@@ -2282,5 +2282,4183 @@
       "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/SE-ELECTRICAL_SEM4_NMOT_MAY14.pdf",
       "filename": "SE-ELECTRICAL_SEM4_NMOT_MAY14.pdf"
     }
+  ],
+  "sem5": [
+    {
+      "subject": "Electrical Ac Machines Ii",
+      "slug": "electrical-ac-machines-ii-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Ac Machines Ii",
+      "slug": "electrical-ac-machines-ii-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_december_electrical-ac-machines-ii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_december_electrical-ac-machines-ii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Ac Machines Ii",
+      "slug": "electrical-ac-machines-ii-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Ac Machines Ii",
+      "slug": "electrical-ac-machines-ii-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_december_electrical-ac-machines-ii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_december_electrical-ac-machines-ii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Ac Machines Ii",
+      "slug": "electrical-ac-machines-ii-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Ac Machines Ii",
+      "slug": "electrical-ac-machines-ii-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_december_electrical-ac-machines-ii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_december_electrical-ac-machines-ii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Ac Machines Ii",
+      "slug": "electrical-ac-machines-ii-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Ac Machines Ii",
+      "slug": "electrical-ac-machines-ii-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_december_electrical-ac-machines-ii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_december_electrical-ac-machines-ii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Ac Machines Ii",
+      "slug": "electrical-ac-machines-ii-rev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2026_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2026_may_electrical-ac-machines-ii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Ii",
+      "slug": "electrical-power-system-iirev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_may_electrical-power-system-iirev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_may_electrical-power-system-iirev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Ii",
+      "slug": "electrical-power-system-iirev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_december_electrical-power-system-iirev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_december_electrical-power-system-iirev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Ii",
+      "slug": "electrical-power-system-iirev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_may_electrical-power-system-iirev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_may_electrical-power-system-iirev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Ii",
+      "slug": "electrical-power-system-iirev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_december_electrical-power-system-iirev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_december_electrical-power-system-iirev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Ii",
+      "slug": "electrical-power-system-iirev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_may_electrical-power-system-iirev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_may_electrical-power-system-iirev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Ii",
+      "slug": "electrical-power-system-iirev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_december_electrical-power-system-iirev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_december_electrical-power-system-iirev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Ii",
+      "slug": "electrical-power-system-iirev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_may_electrical-power-system-iirev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_may_electrical-power-system-iirev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Ii",
+      "slug": "electrical-power-system-iirev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_december_electrical-power-system-iirev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_december_electrical-power-system-iirev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Ii",
+      "slug": "electrical-power-system-iirev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2026_may_electrical-power-system-iirev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2026_may_electrical-power-system-iirev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control Systems ‘c’ Scheme",
+      "slug": "control-systems-rev-2019-‘c’-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_december_control-systems-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_december_control-systems-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Control Systems",
+      "slug": "control-systems-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_may_control-systems-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_may_control-systems-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control Systems",
+      "slug": "control-systems-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_december_control-systems-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_december_control-systems-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control Systems",
+      "slug": "control-systems-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_may_control-systems-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_may_control-systems-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control Systems",
+      "slug": "control-systems-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_december_control-systems-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_december_control-systems-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control Systems",
+      "slug": "control-systems-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_may_control-systems-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_may_control-systems-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control Systems",
+      "slug": "control-systems-rev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2026_may_control-systems-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2026_may_control-systems-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electromagnetic Field And Wave",
+      "slug": "electromagnetic-field-and-waverev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_december_electromagnetic-field-and-waverev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_december_electromagnetic-field-and-waverev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electromagnetic Field And Wave",
+      "slug": "electromagnetic-field-and-waverev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_may_electromagnetic-field-and-waverev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_may_electromagnetic-field-and-waverev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electromagnetic Field And Wave",
+      "slug": "electromagnetic-field-and-waverev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_december_electromagnetic-field-and-waverev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_december_electromagnetic-field-and-waverev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electromagnetic Field And Wave",
+      "slug": "electromagnetic-field-and-waverev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_may_electromagnetic-field-and-waverev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_may_electromagnetic-field-and-waverev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electromagnetic Field And Wave",
+      "slug": "electromagnetic-field-and-waverev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_december_electromagnetic-field-and-waverev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_december_electromagnetic-field-and-waverev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electromagnetic Field And Wave",
+      "slug": "electromagnetic-field-and-waverev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_may_electromagnetic-field-and-waverev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_may_electromagnetic-field-and-waverev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electromagnetic Field And Wave",
+      "slug": "electromagnetic-field-and-waverev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_december_electromagnetic-field-and-waverev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_december_electromagnetic-field-and-waverev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electromagnetic Field And Wave",
+      "slug": "electromagnetic-field-and-waverev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2026_may_electromagnetic-field-and-waverev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2026_may_electromagnetic-field-and-waverev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Renewable Energy Sources",
+      "slug": "renewable-energy-sourcesrev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_may_renewable-energy-sourcesrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_may_renewable-energy-sourcesrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Renewable Energy Sources",
+      "slug": "renewable-energy-sourcesrev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_december_renewable-energy-sourcesrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_december_renewable-energy-sourcesrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Renewable Energy Sources",
+      "slug": "renewable-energy-sourcesrev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_may_renewable-energy-sourcesrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_may_renewable-energy-sourcesrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Renewable Energy Sources",
+      "slug": "renewable-energy-sourcesrev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2023_december_renewable-energy-sourcesrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2023_december_renewable-energy-sourcesrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Renewable Energy Sources",
+      "slug": "renewable-energy-sourcesrev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_may_renewable-energy-sourcesrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_may_renewable-energy-sourcesrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Renewable Energy Sources",
+      "slug": "renewable-energy-sourcesrev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2024_december_renewable-energy-sourcesrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2024_december_renewable-energy-sourcesrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Renewable Energy Sources",
+      "slug": "renewable-energy-sourcesrev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_may_renewable-energy-sourcesrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_may_renewable-energy-sourcesrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Renewable Energy Sources",
+      "slug": "renewable-energy-sourcesrev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_december_renewable-energy-sourcesrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_december_renewable-energy-sourcesrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Renewable Energy Sources",
+      "slug": "renewable-energy-sourcesrev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2026_may_renewable-energy-sourcesrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2026_may_renewable-energy-sourcesrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Advanced Power Electronics",
+      "slug": "advanced-power-electronicsrev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_may_advanced-power-electronicsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_may_advanced-power-electronicsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Analog And Digital Communication",
+      "slug": "analog-and-digital-communicationrev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2022_may_analog-and-digital-communicationrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2022_may_analog-and-digital-communicationrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Mathematics For Ai And Ml ‘c’ Scheme",
+      "slug": "mathematics-for-ai-and-ml-rev-2019-‘c’-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_december_mathematics-for-ai-and-ml-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_december_mathematics-for-ai-and-ml-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Mathematics For Data Science",
+      "slug": "mathematics-for-data-science-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2025_december_mathematics-for-data-science-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-5_2025_december_mathematics-for-data-science-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CS1-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CS1-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CS1-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CS1-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CS1-CBCGS_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CS1-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM3-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM3-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM3-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM3-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM3-CBCGS_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM3-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE-CBCGS_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PS2-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PS2-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PS2-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PS2-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PS2-CBCGS_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PS2-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_REES-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_REES-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_REES-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_REES-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_REES-CBCGS_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_REES-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_UEE-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_UEE-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_UEE-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_UEE-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_UEE-CBCGS_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_UEE-CBCGS_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CE-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CE-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Elective I Communication Engineering Ce Cbcgs",
+      "slug": "elective-i-communication-engineering-ce-cbcgs",
+      "year": "2018",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-5_2018_december_elective-i-communication-engineering-ce-cbcgs.pdf",
+      "filename": "be_electrical-engineering_semester-5_2018_december_elective-i-communication-engineering-ce-cbcgs.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PSE_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PSE_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PSE_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PSE_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PSE_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PSE_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PSE_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PSE_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PSE_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PSE_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PSE_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PSE_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PSE_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PSE_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PSE_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PSE_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC14",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PSE_DEC14.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PSE_DEC14.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM2_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM2_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM2_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM2_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM2_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM2_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM2_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM2_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM2_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM2_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM2_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM2_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM2_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM2_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC14",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EM2_DEC14.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EM2_DEC14.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EFW_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EFW_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EFW_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EFW_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EFW_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EFW_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EFW_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EFW_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EFW_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EFW_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EFW_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EFW_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EFW_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EFW_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC14",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_EFW_DEC14.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_EFW_DEC14.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC14",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_PE_DEC14.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_PE_DEC14.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CE_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CE_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CE_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CE_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CE_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CE_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CE_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CE_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CE_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CE_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CE_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CE_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CE_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CE_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC14",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM5_CE_DEC14.pdf",
+      "filename": "TE-ELECTRICAL_SEM5_CE_DEC14.pdf"
+    }
+  ],
+  "sem6": [
+    {
+      "subject": "Power System Protection Switchgear",
+      "slug": "power-system-protection-switchgearrev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_may_power-system-protection-switchgearrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_may_power-system-protection-switchgearrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Power System Protection Switchgear",
+      "slug": "power-system-protection-switchgearrev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_december_power-system-protection-switchgearrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_december_power-system-protection-switchgearrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Power System Protection Switchgear",
+      "slug": "power-system-protection-switchgearrev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_may_power-system-protection-switchgearrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_may_power-system-protection-switchgearrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Power System Protection Switchgear",
+      "slug": "power-system-protection-switchgearrev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_december_power-system-protection-switchgearrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_december_power-system-protection-switchgearrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Power System Protection Switchgear",
+      "slug": "power-system-protection-switchgearrev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_may_power-system-protection-switchgearrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_may_power-system-protection-switchgearrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Power System Protection Switchgear",
+      "slug": "power-system-protection-switchgearrev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_december_power-system-protection-switchgearrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_december_power-system-protection-switchgearrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Power System Protection Switchgear",
+      "slug": "power-system-protection-switchgearrev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_may_power-system-protection-switchgearrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_may_power-system-protection-switchgearrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Power System Protection Switchgear",
+      "slug": "power-system-protection-switchgearrev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_december_power-system-protection-switchgearrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_december_power-system-protection-switchgearrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Microcontroller Applications",
+      "slug": "microcontroller-applicationsrev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_may_microcontroller-applicationsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_may_microcontroller-applicationsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Microcontroller Applications",
+      "slug": "microcontroller-applicationsrev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_december_microcontroller-applicationsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_december_microcontroller-applicationsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Microcontroller Applications",
+      "slug": "microcontroller-applicationsrev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_may_microcontroller-applicationsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_may_microcontroller-applicationsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Microcontroller Applications",
+      "slug": "microcontroller-applicationsrev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_december_microcontroller-applicationsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_december_microcontroller-applicationsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Microcontroller Applications",
+      "slug": "microcontroller-applicationsrev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_may_microcontroller-applicationsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_may_microcontroller-applicationsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Microcontroller Applications",
+      "slug": "microcontroller-applicationsrev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_december_microcontroller-applicationsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_december_microcontroller-applicationsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Microcontroller Applications",
+      "slug": "microcontroller-applicationsrev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_may_microcontroller-applicationsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_may_microcontroller-applicationsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Microcontroller Applications",
+      "slug": "microcontroller-applicationsrev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_december_microcontroller-applicationsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_december_microcontroller-applicationsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control System Design",
+      "slug": "control-system-designrev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_may_control-system-designrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_may_control-system-designrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control System Design",
+      "slug": "control-system-designrev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_december_control-system-designrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_december_control-system-designrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control System Design",
+      "slug": "control-system-designrev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_may_control-system-designrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_may_control-system-designrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control System Design",
+      "slug": "control-system-designrev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_december_control-system-designrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_december_control-system-designrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control System Design",
+      "slug": "control-system-designrev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_may_control-system-designrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_may_control-system-designrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control System Design",
+      "slug": "control-system-designrev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_december_control-system-designrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_december_control-system-designrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control System Design",
+      "slug": "control-system-designrev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_may_control-system-designrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_may_control-system-designrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Control System Design",
+      "slug": "control-system-designrev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_december_control-system-designrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_december_control-system-designrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Signals And Systems",
+      "slug": "signals-and-systemsrev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_may_signals-and-systemsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_may_signals-and-systemsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Signals And Systems",
+      "slug": "signals-and-systemsrev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_december_signals-and-systemsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_december_signals-and-systemsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Signals And Systems",
+      "slug": "signals-and-systemsrev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_may_signals-and-systemsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_may_signals-and-systemsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Signals And Systems",
+      "slug": "signals-and-systemsrev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_december_signals-and-systemsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_december_signals-and-systemsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Signals And Systems",
+      "slug": "signals-and-systemsrev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_may_signals-and-systemsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_may_signals-and-systemsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Signals And Systems",
+      "slug": "signals-and-systemsrev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_december_signals-and-systemsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_december_signals-and-systemsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Signals And Systems",
+      "slug": "signals-and-systemsrev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_may_signals-and-systemsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_may_signals-and-systemsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Signals And Systems",
+      "slug": "signals-and-systemsrev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_december_signals-and-systemsrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_december_signals-and-systemsrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Special Electrical Machine",
+      "slug": "special-electrical-machinerev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_may_special-electrical-machinerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_may_special-electrical-machinerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Special Electrical Machine",
+      "slug": "special-electrical-machinerev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_december_special-electrical-machinerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_december_special-electrical-machinerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Special Electrical Machine",
+      "slug": "special-electrical-machinerev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_may_special-electrical-machinerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_may_special-electrical-machinerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Special Electrical Machine",
+      "slug": "special-electrical-machinerev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_december_special-electrical-machinerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_december_special-electrical-machinerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Special Electrical Machine",
+      "slug": "special-electrical-machinerev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_may_special-electrical-machinerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_may_special-electrical-machinerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Special Electrical Machine",
+      "slug": "special-electrical-machinerev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_december_special-electrical-machinerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_december_special-electrical-machinerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Special Electrical Machine",
+      "slug": "special-electrical-machinerev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_may_special-electrical-machinerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_may_special-electrical-machinerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Special Electrical Machine",
+      "slug": "special-electrical-machinerev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_december_special-electrical-machinerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_december_special-electrical-machinerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electric Traction",
+      "slug": "electric-tractionrev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_may_electric-tractionrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_may_electric-tractionrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electric Traction",
+      "slug": "electric-tractionrev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_december_electric-tractionrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_december_electric-tractionrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electric Traction",
+      "slug": "electric-tractionrev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_december_electric-tractionrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_december_electric-tractionrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "High Voltage Engineering",
+      "slug": "high-voltage-engineeringrev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_may_high-voltage-engineeringrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_may_high-voltage-engineeringrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "High Voltage Engineering",
+      "slug": "high-voltage-engineeringrev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_december_high-voltage-engineeringrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_december_high-voltage-engineeringrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "High Voltage Engineering",
+      "slug": "high-voltage-engineeringrev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_december_high-voltage-engineeringrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_december_high-voltage-engineeringrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "High Voltage Engineering",
+      "slug": "high-voltage-engineeringrev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_may_high-voltage-engineeringrev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_may_high-voltage-engineeringrev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Energy Storage",
+      "slug": "energy-storagerev-2019-c-scheme",
+      "year": "2022",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_may_energy-storagerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_may_energy-storagerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Energy Storage",
+      "slug": "energy-storagerev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2022_december_energy-storagerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2022_december_energy-storagerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Energy Storage",
+      "slug": "energy-storagerev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_may_energy-storagerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_may_energy-storagerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Energy Storage",
+      "slug": "energy-storagerev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2023_december_energy-storagerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2023_december_energy-storagerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Energy Storage",
+      "slug": "energy-storagerev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_may_energy-storagerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_may_energy-storagerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Energy Storage",
+      "slug": "energy-storagerev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2024_december_energy-storagerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2024_december_energy-storagerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Energy Storage",
+      "slug": "energy-storagerev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_may_energy-storagerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_may_energy-storagerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Energy Storage",
+      "slug": "energy-storagerev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-6_2025_december_energy-storagerev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-6_2025_december_energy-storagerev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSE-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSE-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSE-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSE-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM4-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM4-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM4-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM4-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_SP-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_SP-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_SP-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_SP-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS2-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS2-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS2-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS2-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MG-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MG-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MG-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MG-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_APE-CBCGS_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_APE-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_APE-CBCGS_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_APE-CBCGS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PSA_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PSA_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_EM3_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_EM3_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_UEE_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_UEE_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_CS1_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_CS1_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_MAY19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_MA_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_MA_MAY15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PM_DEC19.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PM_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PM_DEC18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PM_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PM_MAY18.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PM_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PM_DEC17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PM_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PM_MAY17.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PM_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PM_DEC16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PM_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PM_MAY16.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PM_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PM_DEC15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PM_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/TE-ELECTRICAL_SEM6_PM_MAY15.pdf",
+      "filename": "TE-ELECTRICAL_SEM6_PM_MAY15.pdf"
+    }
+  ],
+  "sem7": [
+    {
+      "subject": "Electrical Drives &amp; Control ‘c’ Scheme",
+      "slug": "electrical-drives-&amp;-control-rev-2019-‘c’-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2022_december_electrical-drives-&amp;-control-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2022_december_electrical-drives-&amp;-control-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Drives Control",
+      "slug": "electrical-drives-control-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_may_electrical-drives-control-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_may_electrical-drives-control-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Drives Control",
+      "slug": "electrical-drives-control-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_december_electrical-drives-control-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_december_electrical-drives-control-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Drives Control",
+      "slug": "electrical-drives-control-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_may_electrical-drives-control-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_may_electrical-drives-control-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Drives Control",
+      "slug": "electrical-drives-control-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_december_electrical-drives-control-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_december_electrical-drives-control-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Drives Control",
+      "slug": "electrical-drives-control-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_may_electrical-drives-control-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_may_electrical-drives-control-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Drives Control",
+      "slug": "electrical-drives-control-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_december_electrical-drives-control-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_december_electrical-drives-control-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Drives Control",
+      "slug": "electrical-drives-control-rev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2026_may_electrical-drives-control-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2026_may_electrical-drives-control-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Iii",
+      "slug": "electrical-power-system-iii-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2022_december_electrical-power-system-iii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2022_december_electrical-power-system-iii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Iii",
+      "slug": "electrical-power-system-iii-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_may_electrical-power-system-iii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_may_electrical-power-system-iii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Iii",
+      "slug": "electrical-power-system-iii-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_december_electrical-power-system-iii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_december_electrical-power-system-iii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Iii",
+      "slug": "electrical-power-system-iii-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_may_electrical-power-system-iii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_may_electrical-power-system-iii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Iii",
+      "slug": "electrical-power-system-iii-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_december_electrical-power-system-iii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_december_electrical-power-system-iii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Iii",
+      "slug": "electrical-power-system-iii-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_may_electrical-power-system-iii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_may_electrical-power-system-iii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Iii",
+      "slug": "electrical-power-system-iii-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_december_electrical-power-system-iii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_december_electrical-power-system-iii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical Power System Iii",
+      "slug": "electrical-power-system-iii-rev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2026_may_electrical-power-system-iii-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2026_may_electrical-power-system-iii-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Hvdc Transmission System",
+      "slug": "dloc-iii-hvdc-transmission-system-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2022_december_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2022_december_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Hvdc Transmission System",
+      "slug": "dloc-iii-hvdc-transmission-system-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_may_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_may_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Hvdc Transmission System",
+      "slug": "dloc-iii-hvdc-transmission-system-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_december_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_december_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Hvdc Transmission System",
+      "slug": "dloc-iii-hvdc-transmission-system-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_may_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_may_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Hvdc Transmission System",
+      "slug": "dloc-iii-hvdc-transmission-system-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_december_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_december_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Hvdc Transmission System",
+      "slug": "dloc-iii-hvdc-transmission-system-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_may_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_may_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Hvdc Transmission System",
+      "slug": "dloc-iii-hvdc-transmission-system-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_december_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_december_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Hvdc Transmission System",
+      "slug": "dloc-iii-hvdc-transmission-system-rev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2026_may_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2026_may_dloc-iii-hvdc-transmission-system-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Internet Of Things",
+      "slug": "dloc-iii-internet-of-things-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2022_december_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2022_december_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Internet Of Things",
+      "slug": "dloc-iii-internet-of-things-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_may_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_may_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Internet Of Things",
+      "slug": "dloc-iii-internet-of-things-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_december_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_december_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Internet Of Things",
+      "slug": "dloc-iii-internet-of-things-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_may_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_may_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Internet Of Things",
+      "slug": "dloc-iii-internet-of-things-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_december_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_december_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Internet Of Things",
+      "slug": "dloc-iii-internet-of-things-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_may_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_may_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Internet Of Things",
+      "slug": "dloc-iii-internet-of-things-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_december_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_december_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iii Internet Of Things",
+      "slug": "dloc-iii-internet-of-things-rev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2026_may_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2026_may_dloc-iii-internet-of-things-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Microgrid And Smartgrid",
+      "slug": "dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2022_december_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2022_december_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Microgrid And Smartgrid",
+      "slug": "dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_may_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_may_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Microgrid And Smartgrid",
+      "slug": "dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_december_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_december_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Microgrid And Smartgrid",
+      "slug": "dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_december_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_december_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Microgrid And Smartgrid",
+      "slug": "dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_may_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_may_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Microgrid And Smartgrid",
+      "slug": "dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_december_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_december_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Microgrid And Smartgrid",
+      "slug": "dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme",
+      "year": "2026",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2026_may_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2026_may_dloc-iv-microgrid-and-smartgrid-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Artifical Intelligence And Machine Learning",
+      "slug": "dloc-iv-artifical-intelligence-and-machine-learning-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2022_december_dloc-iv-artifical-intelligence-and-machine-learning-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2022_december_dloc-iv-artifical-intelligence-and-machine-learning-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Artifical Intelligence And Machine Learning",
+      "slug": "dloc-iv-artifical-intelligence-and-machine-learning-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_december_dloc-iv-artifical-intelligence-and-machine-learning-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_december_dloc-iv-artifical-intelligence-and-machine-learning-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Artifical Intelligence And Machine Learning",
+      "slug": "dloc-iv-artifical-intelligence-and-machine-learning-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_may_dloc-iv-artifical-intelligence-and-machine-learning-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_may_dloc-iv-artifical-intelligence-and-machine-learning-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Electrical Machine Design",
+      "slug": "dloc-iv-electrical-machine-design-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2022_december_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2022_december_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Electrical Machine Design",
+      "slug": "dloc-iv-electrical-machine-design-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_may_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_may_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Electrical Machine Design",
+      "slug": "dloc-iv-electrical-machine-design-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_december_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_december_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Electrical Machine Design",
+      "slug": "dloc-iv-electrical-machine-design-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_may_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_may_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Iv Electrical Machine Design",
+      "slug": "dloc-iv-electrical-machine-design-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_december_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_december_dloc-iv-electrical-machine-design-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Disaster Management And Mitigation Measures",
+      "slug": "iloc-i-disaster-management-and-mitigation-measures-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2022_december_iloc-i-disaster-management-and-mitigation-measures-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2022_december_iloc-i-disaster-management-and-mitigation-measures-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Vi Power System Planning And Reliability",
+      "slug": "dloc-vi-power-system-planning-and-reliability-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_december_dloc-vi-power-system-planning-and-reliability-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_december_dloc-vi-power-system-planning-and-reliability-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Cyber Security And Laws",
+      "slug": "iloc-i-cyber-security-and-laws-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_december_iloc-i-cyber-security-and-laws-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_december_iloc-i-cyber-security-and-laws-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Energy Audit And Management",
+      "slug": "iloc-i-energy-audit-and-management-rev-2019-c-scheme",
+      "year": "2022",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2022_december_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2022_december_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Energy Audit And Management",
+      "slug": "iloc-i-energy-audit-and-management-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2023_may_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2023_may_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Energy Audit And Management",
+      "slug": "iloc-i-energy-audit-and-management-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_may_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_may_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Energy Audit And Management",
+      "slug": "iloc-i-energy-audit-and-management-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2024_december_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2024_december_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Energy Audit And Management",
+      "slug": "iloc-i-energy-audit-and-management-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_may_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_may_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc I Energy Audit And Management",
+      "slug": "iloc-i-energy-audit-and-management-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-7_2025_december_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-7_2025_december_iloc-i-energy-audit-and-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_DC-CBCGS_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_DC-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EAM-CBCGS_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EAM-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT-CBCGS_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EVT-CBCGS_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EVT-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE-CBCGS_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PS3-CBCGS_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PS3-CBCGS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PSOC_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PSOC_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PSOC_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PSOC_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PSOC_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PSOC_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PSOC_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PSOC_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PSOC_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PSOC_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PSOC_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PSOC_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PSOC_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PSOC_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PSOC_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PSOC_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_PSOC_DEC15.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_PSOC_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVDCT_DEC15.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVDCT_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EMD_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EMD_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EMD_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EMD_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EMD_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EMD_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EMD_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EMD_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EMD_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EMD_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EMD_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EMD_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EMD_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EMD_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EMD_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EMD_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_EMD_DEC15.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_EMD_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_CS2_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_CS2_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_CS2_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_CS2_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_CS2_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_CS2_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_CS2_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_CS2_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_CS2_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_CS2_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_CS2_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_CS2_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_CS2_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_CS2_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_CS2_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_CS2_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_CS2_DEC15.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_CS2_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_HVE_DEC15.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_HVE_DEC15.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_REESS_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_REESS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_REESS_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_REESS_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_REESS_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_REESS_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_REESS_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_REESS_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_REESS_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_REESS_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_REESS_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_REESS_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC15",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM7_REESS_DEC15.pdf",
+      "filename": "BE-ELECTRICAL_SEM7_REESS_DEC15.pdf"
+    }
+  ],
+  "sem8": [
+    {
+      "subject": "Electrical System Design, Management And Auditing ‘c’ Scheme",
+      "slug": "electrical-system-design,-management-and-auditing-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_may_electrical-system-design,-management-and-auditing-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_may_electrical-system-design,-management-and-auditing-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Electrical System Design, Management And Auditing ‘c’ Scheme",
+      "slug": "electrical-system-design,-management-and-auditing-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_electrical-system-design,-management-and-auditing-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_electrical-system-design,-management-and-auditing-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Electrical System Design Management And Auditing",
+      "slug": "electrical-system-design-management-and-auditing-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2025_may_electrical-system-design-management-and-auditing-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2025_may_electrical-system-design-management-and-auditing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical System Design Management And Auditing",
+      "slug": "electrical-system-design-management-and-auditing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_december_electrical-system-design-management-and-auditing-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_december_electrical-system-design-management-and-auditing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Electrical System Design Management And Auditing",
+      "slug": "electrical-system-design-management-and-auditing-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_may_electrical-system-design-management-and-auditing-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_may_electrical-system-design-management-and-auditing-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc V Power Quality And Facts",
+      "slug": "dloc-v-power-quality-and-facts-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2025_december_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2025_december_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc V Power Quality And Facts",
+      "slug": "dloc-v-power-quality-and-facts-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2025_may_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2025_may_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc V Power Quality And Facts",
+      "slug": "dloc-v-power-quality-and-facts-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc V Power Quality And Facts",
+      "slug": "dloc-v-power-quality-and-facts-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_december_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_december_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc V Power Quality And Facts",
+      "slug": "dloc-v-power-quality-and-facts-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_may_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_may_dloc-v-power-quality-and-facts-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc V Advanced Electric Drives",
+      "slug": "dloc-v-advanced-electric-drives-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_dloc-v-advanced-electric-drives-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_dloc-v-advanced-electric-drives-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Vi: Electric Vehicle System Design ‘c’ Scheme",
+      "slug": "dloc-vi:-electric-vehicle-system-design-rev-2019-‘c’-scheme",
+      "year": "2025",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2025_december_dloc-vi:-electric-vehicle-system-design-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2025_december_dloc-vi:-electric-vehicle-system-design-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Vi: Power System Planning And Reliabiliy ‘c’ Scheme",
+      "slug": "dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_may_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_may_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Vi: Power System Planning And Reliabiliy ‘c’ Scheme",
+      "slug": "dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Vi: Power System Planning And Reliabiliy ‘c’ Scheme",
+      "slug": "dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_may_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_may_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Vi: Power System Planning And Reliabiliy ‘c’ Scheme",
+      "slug": "dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2025_may_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2025_may_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Dloc Vi: Power System Planning And Reliabiliy ‘c’ Scheme",
+      "slug": "dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_december_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_december_dloc-vi:-power-system-planning-and-reliabiliy-rev-2019-‘c’-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Professional Ethics And Csr",
+      "slug": "iloc-ii-professional-ethics-and-csr-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_may_iloc-ii-professional-ethics-and-csr-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_may_iloc-ii-professional-ethics-and-csr-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Professional Ethics And Csr",
+      "slug": "iloc-ii-professional-ethics-and-csr-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_iloc-ii-professional-ethics-and-csr-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_iloc-ii-professional-ethics-and-csr-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Digital Buisness Management",
+      "slug": "iloc-ii-digital-buisness-management-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_may_iloc-ii-digital-buisness-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_may_iloc-ii-digital-buisness-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Project Management",
+      "slug": "iloc-ii-project-management-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_iloc-ii-project-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_iloc-ii-project-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Project Management",
+      "slug": "iloc-ii-project-management-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_may_iloc-ii-project-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_may_iloc-ii-project-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Entrepreneurship Development And Management",
+      "slug": "iloc-ii-entrepreneurship-development-and-management-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_iloc-ii-entrepreneurship-development-and-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_iloc-ii-entrepreneurship-development-and-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Entrepreneurship Development And Management",
+      "slug": "iloc-ii-entrepreneurship-development-and-management-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_may_iloc-ii-entrepreneurship-development-and-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_may_iloc-ii-entrepreneurship-development-and-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Human Resource Management",
+      "slug": "iloc-ii-human-resource-management-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_iloc-ii-human-resource-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_iloc-ii-human-resource-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Ipr And Patenting",
+      "slug": "iloc-ii-ipr-and-patenting-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_iloc-ii-ipr-and-patenting-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_iloc-ii-ipr-and-patenting-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Ipr And Patenting",
+      "slug": "iloc-ii-ipr-and-patenting-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_may_iloc-ii-ipr-and-patenting-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_may_iloc-ii-ipr-and-patenting-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Environmental Management",
+      "slug": "iloc-ii-environmental-management-rev-2019-c-scheme",
+      "year": "2024",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2024_december_iloc-ii-environmental-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2024_december_iloc-ii-environmental-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Environmental Management",
+      "slug": "iloc-ii-environmental-management-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "DECEMBER",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_december_iloc-ii-environmental-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_december_iloc-ii-environmental-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Environmental Management",
+      "slug": "iloc-ii-environmental-management-rev-2019-c-scheme",
+      "year": "2025",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": true,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2025_may_iloc-ii-environmental-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2025_may_iloc-ii-environmental-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Iloc Ii Environmental Management",
+      "slug": "iloc-ii-environmental-management-rev-2019-c-scheme",
+      "year": "2023",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/be_electrical-engineering_semester-8_2023_may_iloc-ii-environmental-management-rev-2019-c-scheme.pdf",
+      "filename": "be_electrical-engineering_semester-8_2023_may_iloc-ii-environmental-management-rev-2019-c-scheme.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DMAES_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DMAES_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DMAES_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DMAES_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DMAES_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DMAES_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DMAES_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DMAES_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DMAES_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DMAES_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DMAES_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DMAES_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DMAES_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DMAES_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DMAES_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DMAES_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DC_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DC_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DC_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DC_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DC_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DC_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DC_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DC_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DC_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DC_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DC_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DC_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DC_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DC_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_DC_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_DC_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_PSPR_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_PSPR_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_PSPR_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_PSPR_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_PSPR_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_PSPR_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_PSPR_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_PSPR_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_PSPR_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_PSPR_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_PSPR_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_PSPR_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_PSPR_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_PSPR_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_PSPR_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_PSPR_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_FACTS_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_FACTS_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_FACTS_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_FACTS_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_FACTS_DEC16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_FACTS_DEC16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_FACTS_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_FACTS_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_FACTS_DEC17.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_FACTS_DEC17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_FACTS_DEC18.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_FACTS_DEC18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_FACTS_MAY19.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_FACTS_MAY19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_FACTS_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_FACTS_DEC19.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_ED_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_ED_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY16",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_EHEVT_MAY16.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_EHEVT_MAY16.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY17",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_EHEVT_MAY17.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_EHEVT_MAY17.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "MAY18",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_EHEVT_MAY18.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_EHEVT_MAY18.pdf"
+    },
+    {
+      "subject": "Subject",
+      "slug": "subject",
+      "year": "DEC19",
+      "session": "MAY",
+      "scheme": "Rev-2019 C-Scheme",
+      "isNep": false,
+      "pdfUrl": "https://muquestionpapers.com/storage/questionpapers/BE-ELECTRICAL_SEM8_EHEVT_DEC19.pdf",
+      "filename": "BE-ELECTRICAL_SEM8_EHEVT_DEC19.pdf"
+    }
   ]
 }

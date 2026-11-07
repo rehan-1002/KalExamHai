@@ -182,6 +182,116 @@ export const MU_CATALOG_SUBJECTS: MuCatalogSubject[] = [
     "iatMarks": 40
   },
   {
+    "code": "CSC501",
+    "name": "Theoretical Computer Science",
+    "shortName": "TCS",
+    "semester": 5,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC502",
+    "name": "Software Engineering",
+    "shortName": "SE",
+    "semester": 5,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC503",
+    "name": "Computer Network",
+    "shortName": "CN",
+    "semester": 5,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC504",
+    "name": "Data Warehousing and Mining",
+    "shortName": "DWM",
+    "semester": 5,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC601",
+    "name": "System Programming & Compiler Construction",
+    "shortName": "SPCC",
+    "semester": 6,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC602",
+    "name": "Cryptography & System Security",
+    "shortName": "CSS",
+    "semester": 6,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC603",
+    "name": "Mobile Computing",
+    "shortName": "MC",
+    "semester": 6,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC604",
+    "name": "Artificial Intelligence",
+    "shortName": "AI",
+    "semester": 6,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC701",
+    "name": "Machine Learning",
+    "shortName": "ML",
+    "semester": 7,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC702",
+    "name": "Big Data Analysis",
+    "shortName": "BDA",
+    "semester": 7,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "CSC801",
+    "name": "Distributed Computing",
+    "shortName": "DC",
+    "semester": 8,
+    "branchId": "comps",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
     "code": "2343111",
     "name": "Applied Mathematics Thinking-I",
     "shortName": "AM-I",
@@ -250,6 +360,56 @@ export const MU_CATALOG_SUBJECTS: MuCatalogSubject[] = [
     "scheme": "NEP-2020",
     "endSemMarks": 60,
     "iatMarks": 40
+  },
+  {
+    "code": "ITC501",
+    "name": "Internet Programming",
+    "shortName": "IP",
+    "semester": 5,
+    "branchId": "it",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "ITC502",
+    "name": "Computer Network Security",
+    "shortName": "CNS",
+    "semester": 5,
+    "branchId": "it",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "ITC601",
+    "name": "Data Mining & Business Intelligence",
+    "shortName": "DMBI",
+    "semester": 6,
+    "branchId": "it",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "ITC701",
+    "name": "Internet of Everything",
+    "shortName": "IoE",
+    "semester": 7,
+    "branchId": "it",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "ITC801",
+    "name": "Blockchain and DLT",
+    "shortName": "BDLT",
+    "semester": 8,
+    "branchId": "it",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
   },
   {
     "code": "2013111",
@@ -322,6 +482,46 @@ export const MU_CATALOG_SUBJECTS: MuCatalogSubject[] = [
     "iatMarks": 40
   },
   {
+    "code": "ADC501",
+    "name": "Artificial Intelligence",
+    "shortName": "AI",
+    "semester": 5,
+    "branchId": "aids",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "ADC601",
+    "name": "Machine Learning",
+    "shortName": "ML",
+    "semester": 6,
+    "branchId": "aids",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "ADC701",
+    "name": "Deep Learning",
+    "shortName": "DL",
+    "semester": 7,
+    "branchId": "aids",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "ADC801",
+    "name": "Advanced Artificial Intelligence",
+    "shortName": "AAI",
+    "semester": 8,
+    "branchId": "aids",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
     "code": "2163111",
     "name": "Mathematics for Computer Engineering",
     "shortName": "MCE",
@@ -390,6 +590,46 @@ export const MU_CATALOG_SUBJECTS: MuCatalogSubject[] = [
     "scheme": "NEP-2020",
     "endSemMarks": 60,
     "iatMarks": 40
+  },
+  {
+    "code": "AMC501",
+    "name": "Artificial Intelligence",
+    "shortName": "AI",
+    "semester": 5,
+    "branchId": "aiml",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "AMC601",
+    "name": "Machine Learning",
+    "shortName": "ML",
+    "semester": 6,
+    "branchId": "aiml",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "AMC701",
+    "name": "Deep Learning",
+    "shortName": "DL",
+    "semester": 7,
+    "branchId": "aiml",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "AMC801",
+    "name": "Advanced Artificial Intelligence",
+    "shortName": "AAI",
+    "semester": 8,
+    "branchId": "aiml",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
   },
   {
     "code": "2403111",
@@ -462,6 +702,26 @@ export const MU_CATALOG_SUBJECTS: MuCatalogSubject[] = [
     "iatMarks": 40
   },
   {
+    "code": "MEC501",
+    "name": "Thermal Engineering",
+    "shortName": "TE",
+    "semester": 5,
+    "branchId": "mech",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
+    "code": "MEC601",
+    "name": "Machine Design",
+    "shortName": "MD",
+    "semester": 6,
+    "branchId": "mech",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
     "code": "2223111",
     "name": "Engineering Mathematics for Electrical Circuits",
     "shortName": "EM-EC",
@@ -532,6 +792,16 @@ export const MU_CATALOG_SUBJECTS: MuCatalogSubject[] = [
     "iatMarks": 40
   },
   {
+    "code": "ELC501",
+    "name": "Electrical Power System II",
+    "shortName": "EPS-II",
+    "semester": 5,
+    "branchId": "electrical",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
+    "iatMarks": 20
+  },
+  {
     "code": "CEC301",
     "name": "Engineering Mathematics-III",
     "shortName": "EM-III",
@@ -589,6 +859,16 @@ export const MU_CATALOG_SUBJECTS: MuCatalogSubject[] = [
     "branchId": "civil",
     "scheme": "NEP-2020",
     "endSemMarks": 80,
+    "iatMarks": 20
+  },
+  {
+    "code": "CEC501",
+    "name": "Theory of Reinforced Concrete Structures",
+    "shortName": "TRCS",
+    "semester": 5,
+    "branchId": "civil",
+    "scheme": "NEP-2020",
+    "endSemMarks": 60,
     "iatMarks": 20
   }
 ];
