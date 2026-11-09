@@ -161,7 +161,7 @@ export function KtBusterView({ payload }: KtBusterViewProps) {
           <div className="mb-1">
             <BackButton fallbackUrl="/student" label="Back to Student Portal" />
           </div>
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap print:hidden">
             <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
               {payload.subject}
             </h1>
@@ -175,7 +175,7 @@ export function KtBusterView({ payload }: KtBusterViewProps) {
           </p>
         </div>
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap print:hidden">
           <button
             type="button"
             onClick={handleCopy}

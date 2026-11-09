@@ -48,7 +48,7 @@ export function MiniRobotCompanion() {
   if (isAuthPage) return null;
 
   return (
-    <aside aria-label="Mini Robot Companion" className="fixed bottom-4 left-4 z-40 select-none">
+    <aside aria-label="Mini Robot Companion" className="fixed bottom-4 left-4 z-40 select-none print:hidden">
       {/* 1. Speech Bubble Tip (Floating above robot) */}
       <AnimatePresence>
         {!isOpen && !bubbleDismissed && (

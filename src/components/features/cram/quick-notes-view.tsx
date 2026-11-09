@@ -54,7 +54,7 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
           <div className="mb-1">
             <BackButton fallbackUrl="/student" label="Back to Student Portal" />
           </div>
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap print:hidden">
             <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
               {payload.subject}
             </h1>
@@ -65,7 +65,7 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
           <p className="text-xs text-slate-500 mt-0.5">{payload.title}</p>
         </div>
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap print:hidden">
           <button
             type="button"
             onClick={handleCopy}
@@ -114,7 +114,7 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {payload.formulas_and_derivations.map((f, i) => (
-              <div key={i} className="p-3.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-2.5">
+              <div key={i} className="p-3.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-2.5 break-inside-avoid print:break-inside-avoid">
                 <h3 className="text-xs font-bold text-slate-900 leading-snug">
                   <MathText content={f.title} />
                 </h3>
@@ -147,7 +147,7 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
           </h2>
           <div className="divide-y divide-slate-100">
             {payload.core_definitions.map((def, i) => (
-              <div key={i} className="py-3 first:pt-0 last:pb-0">
+              <div key={i} className="py-3 first:pt-0 last:pb-0 break-inside-avoid print:break-inside-avoid">
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4">
                   <span className="font-bold text-xs text-slate-900 sm:w-1/3 sm:shrink-0 leading-snug">
                     <MathText content={def.term} />
@@ -177,7 +177,7 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
           </h2>
           <div className="space-y-3">
             {payload.step_by_step_algorithms.map((algo, i) => (
-              <div key={i} className="p-4 bg-slate-50 border border-slate-200 rounded-lg">
+              <div key={i} className="p-4 bg-slate-50 border border-slate-200 rounded-lg break-inside-avoid print:break-inside-avoid">
                 <h3 className="text-xs font-bold text-slate-900 mb-2">
                   <MathText content={algo.title} />
                 </h3>

@@ -21,7 +21,7 @@ export function AdminBar({ userEmail }: AdminBarProps) {
   const isAdminView = pathname.startsWith("/admin");
 
   return (
-    <div className="w-full bg-[#1E293B] text-white px-4 py-2 border-b border-slate-700 text-xs flex flex-wrap items-center justify-between gap-3 z-50">
+    <div className="w-full bg-[#1E293B] text-white px-4 py-2 border-b border-slate-700 text-xs flex flex-wrap items-center justify-between gap-3 z-50 print:hidden">
       <div className="flex items-center gap-2">
         <div className="p-1 rounded bg-blue-500/20 text-blue-400">
           <Shield className="w-3.5 h-3.5" />
