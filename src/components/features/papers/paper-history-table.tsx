@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { deletePaperAction } from "@/app/tutor/papers/[id]/actions";
 
-interface PaperListItem {
+export interface PaperListItem {
   id: string;
   format: "IAT" | "END_SEM";
   title: string;

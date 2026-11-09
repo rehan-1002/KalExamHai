@@ -168,6 +168,75 @@ export const SurvivalKitPayloadSchema = z.object({
 });
 
 // ==========================================
+// 5. KT Buster (24-Mark Minimum Passing Strategy)
+// ==========================================
+export const GoldenModuleSchema = z.object({
+  module_no: flexibleInt(1),
+  module_title: z.string().nullish().transform((v) => (v && v.trim() ? v.trim() : "Module 1")),
+  weightage_marks: flexibleInt(12),
+  why_easy: z.string().default("High marks-to-effort ratio with predictable examination questions."),
+});
+
+export const KtRepeatingQuestionSchema = z.object({
+  id: z.string().nullish().transform((v) => v || crypto.randomUUID()),
+  question_text: z.string().min(1, "Question text required"),
+  marks: flexibleInt(5), // Strictly 5M or 6M in MU NEP-2020 format
+  module_no: flexibleInt(1),
+  repeat_count_mu: flexibleInt(3),
+  repeat_sessions: z.string().default("Dec 2023, May 2024"),
+  probability_percentage: flexibleInt(85),
+  step_marking_breakdown: z
+    .array(z.string())
+    .nullish()
+    .transform((v) => (Array.isArray(v) ? v : [])),
+  diagram_required: z.boolean().default(false),
+  key_answer_bullets: z
+    .array(z.string())
+    .nullish()
+    .transform((v) => (Array.isArray(v) ? v : [])),
+});
+
+export const MustDrawDiagramSchema = z.object({
+  title: z.string().min(1, "Diagram title required"),
+  marks_value: flexibleInt(4),
+  diagram_description: z.string().default(""),
+  module_no: flexibleInt(1),
+});
+
+export const KtPassChecklistItemSchema = z.object({
+  id: z.string().nullish().transform((v) => v || crypto.randomUUID()),
+  task: z.string().min(1, "Checklist task required"),
+  marks: flexibleInt(5),
+  is_critical: z.boolean().default(true),
+  module_no: flexibleInt(1).optional(),
+});
+
+export const KtBusterPayloadSchema = z.object({
+  type: z.literal("kt_buster"),
+  title: z.string().default("KT Buster: 24-Mark Pass Strategy"),
+  subject: z.string().default("Engineering Subject"),
+  passing_threshold: flexibleInt(24),
+  target_safe_marks: flexibleInt(32),
+  study_time_hours: flexibleInt(5),
+  golden_modules: z
+    .array(GoldenModuleSchema)
+    .nullish()
+    .transform((v) => (Array.isArray(v) ? v : [])),
+  fixed_repeating_questions: z
+    .array(KtRepeatingQuestionSchema)
+    .nullish()
+    .transform((v) => (Array.isArray(v) ? v : [])),
+  must_draw_diagrams: z
+    .array(MustDrawDiagramSchema)
+    .nullish()
+    .transform((v) => (Array.isArray(v) ? v : [])),
+  pass_checklist: z
+    .array(KtPassChecklistItemSchema)
+    .nullish()
+    .transform((v) => (Array.isArray(v) ? v : [])),
+});
+
+// ==========================================
 // Discriminated Cram Artifact
 // ==========================================
 export const CramArtifactPayloadSchema = z.discriminatedUnion("type", [
@@ -175,6 +244,7 @@ export const CramArtifactPayloadSchema = z.discriminatedUnion("type", [
   QuickNotesPayloadSchema,
   VivaPrepPayloadSchema,
   SurvivalKitPayloadSchema,
+  KtBusterPayloadSchema,
 ]);
 
 export type FlashcardItem = z.infer<typeof FlashcardItemSchema>;
@@ -184,5 +254,10 @@ export type VivaQuestion = z.infer<typeof VivaQuestionSchema>;
 export type VivaPrepPayload = z.infer<typeof VivaPrepPayloadSchema>;
 export type SurvivalTopic = z.infer<typeof SurvivalTopicSchema>;
 export type SurvivalKitPayload = z.infer<typeof SurvivalKitPayloadSchema>;
+export type GoldenModule = z.infer<typeof GoldenModuleSchema>;
+export type KtRepeatingQuestion = z.infer<typeof KtRepeatingQuestionSchema>;
+export type MustDrawDiagram = z.infer<typeof MustDrawDiagramSchema>;
+export type KtPassChecklistItem = z.infer<typeof KtPassChecklistItemSchema>;
+export type KtBusterPayload = z.infer<typeof KtBusterPayloadSchema>;
 export type CramArtifactPayload = z.infer<typeof CramArtifactPayloadSchema>;
-export type CramArtifactType = "flashcards" | "quick_notes" | "viva_prep" | "survival_kit";
+export type CramArtifactType = "flashcards" | "quick_notes" | "viva_prep" | "survival_kit" | "kt_buster";

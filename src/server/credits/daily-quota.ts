@@ -27,7 +27,8 @@ export type GeneratableType =
   | "flashcards"
   | "quick_notes"
   | "viva_prep"
-  | "survival_kit";
+  | "survival_kit"
+  | "kt_buster";
 
 /**
  * Calculates start of current day in Indian Standard Time (IST: UTC+5:30) as a UTC Date.

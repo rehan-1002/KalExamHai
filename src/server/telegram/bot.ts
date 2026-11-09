@@ -178,3 +178,49 @@ export async function downloadTelegramFile(fileId: string): Promise<{ buffer: Bu
     filePath,
   };
 }
+
+/**
+ * Sends a PDF or document directly into the Telegram chat from a publicly accessible URL.
+ */
+export async function sendTelegramDocument(
+  chatId: number | string,
+  documentUrl: string,
+  caption?: string
+): Promise<{ ok: boolean; messageId?: number; error?: string }> {
+  const token = getBotToken();
+  try {
+    const res = await fetch(`${TELEGRAM_API_BASE}${token}/sendDocument`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        document: documentUrl,
+        caption,
+        parse_mode: "Markdown",
+      }),
+    });
+
+    const json = (await res.json()) as { ok: boolean; result?: { message_id: number }; description?: string };
+    if (!json.ok) {
+      // Fallback: try without Markdown
+      const fallbackRes = await fetch(`${TELEGRAM_API_BASE}${token}/sendDocument`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          document: documentUrl,
+          caption,
+        }),
+      });
+      const fallbackJson = (await fallbackRes.json()) as {
+        ok: boolean;
+        result?: { message_id: number };
+        description?: string;
+      };
+      return { ok: fallbackJson.ok, messageId: fallbackJson.result?.message_id, error: fallbackJson.description };
+    }
+    return { ok: true, messageId: json.result?.message_id };
+  } catch (err: unknown) {
+    return { ok: false, error: err instanceof Error ? err.message : "Network error" };
+  }
+}

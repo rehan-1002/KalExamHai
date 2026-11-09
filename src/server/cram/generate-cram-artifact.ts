@@ -244,6 +244,85 @@ Format strictly as JSON matching this schema:
 RULES:
 1. Include at least 4 Easy, 4 Medium, and 4 Tricky questions.
 2. The 'examiner_trap' must give students real unfair professor gotchas.`;
+  } else if (artifactType === "kt_buster") {
+    promptInstructions = `Generate the official Mumbai University "KT Buster (24-Mark Minimum Passing Strategy)" for ${detectedSubject}.
+CONTEXT: The student needs exactly 24 marks out of 60 to pass the End-Semester Examination. Trying to cover all 6 modules causes anxiety and failure.
+Your job is to construct a surgical passing blueprint targeting 32 marks (giving an 8-mark safe cushion).
+
+MANDATORY MUMBAI UNIVERSITY NEP-2020 RULES:
+- Mumbai University NEP-2020 NEVER has single 10-mark standalone essay questions.
+- All question parts are strictly 5 Marks, 6 Marks, or 4 Marks (e.g., 6M + 4M = 10M, or 5M + 5M = 10M).
+- Select exactly 2 "Golden Modules" (modules with the highest predictable weightage and easiest scoring potential).
+- Identify 6 Fixed Repeating PYQs that recur repeatedly in MU exams across May and Dec sessions.
+- Provide clear 3-part step marking breakdowns for every question (e.g. "Step 1: Definition & Formula (1-2M)", "Step 2: Circuit / Block Diagram (2M)", "Step 3: Derivation / Steps (2M)").
+- Identify 3 "Must-Draw High-Value Diagrams" that examiners look for to award instant passing marks.
+- Build a prioritized Pass Checklist with assigned marks totaling ~32 marks.
+
+Format strictly as JSON matching this schema:
+{
+  "type": "kt_buster",
+  "title": "${defaultTitle}",
+  "subject": "${detectedSubject}",
+  "passing_threshold": 24,
+  "target_safe_marks": 32,
+  "study_time_hours": 5,
+  "golden_modules": [
+    {
+      "module_no": 1,
+      "module_title": "Module Title",
+      "weightage_marks": 12,
+      "why_easy": "Why this module is the fastest to master with predictable exam questions"
+    },
+    {
+      "module_no": 4,
+      "module_title": "Module Title",
+      "weightage_marks": 14,
+      "why_easy": "Predictable numericals / standard derivations that appear every year"
+    }
+  ],
+  "fixed_repeating_questions": [
+    {
+      "id": "q1",
+      "question_text": "Exact question text with LaTeX ($...$)",
+      "marks": 5,
+      "module_no": 1,
+      "repeat_count_mu": 5,
+      "repeat_sessions": "Dec 2024 NEP, May 2024, Dec 2023, May 2023",
+      "probability_percentage": 92,
+      "step_marking_breakdown": [
+        "1M: Core definition & governing formula with units",
+        "2M: Neatly labeled block diagram or timing diagram",
+        "2M: 3-step explanation of working principle"
+      ],
+      "diagram_required": true,
+      "key_answer_bullets": [
+        "Mandatory bullet 1 with evaluator keyword",
+        "Mandatory bullet 2 with key formula"
+      ]
+    }
+  ],
+  "must_draw_diagrams": [
+    {
+      "title": "Diagram Name",
+      "marks_value": 4,
+      "diagram_description": "Precise description of the block diagram / pinout / flowchart that MU evaluators check.",
+      "module_no": 1
+    }
+  ],
+  "pass_checklist": [
+    {
+      "id": "chk_1",
+      "task": "Master [Question / Derivation] (Golden Module 1)",
+      "marks": 5,
+      "is_critical": true,
+      "module_no": 1
+    }
+  ]
+}
+RULES:
+1. Strict LaTeX notation ($...$ and $$...$$).
+2. NEVER output 10-mark single questions; every question must be 5M, 6M, or 4M.
+3. Total checklist marks must add up to between 28 and 34 marks.`;
   } else {
     promptInstructions = `Generate a Last-Minute Survival Kit for a student with only 12 to 24 hours left before the exam.
 MANDATORY: Rank priority topics by MUMBAI UNIVERSITY REPEAT PROBABILITY:
@@ -445,6 +524,26 @@ ${contextText}`;
                 obj.priority_topics = obj.topics;
               }
             }
+
+            // If kt_buster, ensure defensive arrays and values
+            if (artifactType === "kt_buster") {
+              if (!Array.isArray(obj.golden_modules)) {
+                obj.golden_modules = [];
+              }
+              if (!Array.isArray(obj.fixed_repeating_questions)) {
+                if (Array.isArray(obj.questions)) obj.fixed_repeating_questions = obj.questions;
+                else if (Array.isArray(obj.repeating_questions)) obj.fixed_repeating_questions = obj.repeating_questions;
+                else obj.fixed_repeating_questions = [];
+              }
+              if (!Array.isArray(obj.must_draw_diagrams)) {
+                if (Array.isArray(obj.diagrams)) obj.must_draw_diagrams = obj.diagrams;
+                else obj.must_draw_diagrams = [];
+              }
+              if (!Array.isArray(obj.pass_checklist)) {
+                if (Array.isArray(obj.checklist)) obj.pass_checklist = obj.checklist;
+                else obj.pass_checklist = [];
+              }
+            }
           }
 
           // Validate payload against schema
@@ -474,13 +573,15 @@ ${contextText}`;
     if (params.subject?.trim()) payload.subject = params.subject.trim();
 
     // 4. Save to `public.cram_artifacts` for this ownerId
-    const { data: record, error: insertErr } = await adminClient
+    const sanitizedDocIds = (documentIds || []).filter((id) =>
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)
+    );
+
+    let { data: record, error: insertErr } = await adminClient
       .from("cram_artifacts")
       .insert({
         owner_id: ownerId,
-        document_ids: (documentIds || []).filter((id) =>
-          /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)
-        ),
+        document_ids: sanitizedDocIds,
         artifact_type: artifactType,
         title: payload.title,
         subject: payload.subject,
@@ -489,6 +590,31 @@ ${contextText}`;
       })
       .select("id")
       .single();
+
+    // Defensive fallback: If database enum hasn't been migrated yet, store with 'survival_kit'
+    if (
+      insertErr &&
+      typeof insertErr.message === "string" &&
+      insertErr.message.toLowerCase().includes("cram_artifact_type") &&
+      artifactType === "kt_buster"
+    ) {
+      const fallbackResult = await adminClient
+        .from("cram_artifacts")
+        .insert({
+          owner_id: ownerId,
+          document_ids: sanitizedDocIds,
+          artifact_type: "survival_kit",
+          title: payload.title,
+          subject: payload.subject,
+          content: payload,
+          model,
+        })
+        .select("id")
+        .single();
+
+      record = fallbackResult.data;
+      insertErr = fallbackResult.error;
+    }
 
     if (insertErr || !record) {
       return { ok: false, error: `Database error saving artifact: ${insertErr?.message}` };

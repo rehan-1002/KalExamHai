@@ -17,6 +17,8 @@ import {
   Clock,
   Award,
   Flag,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
@@ -40,6 +42,59 @@ interface PaperViewProps {
   paperRecord: PaperRecord;
 }
 
+function getSubQuestionMarkingKey(sq: SubQuestion): { breakdown: string[]; answerHint?: string } {
+  if (sq.marking_breakdown && sq.marking_breakdown.length > 0) {
+    return { breakdown: sq.marking_breakdown, answerHint: sq.model_answer_hint };
+  }
+  const marks = sq.marks || 5;
+  if (marks === 2) {
+    return {
+      breakdown: [
+        "1M: Core definition or governing formula",
+        "1M: Significance / standard SI units",
+      ],
+      answerHint: "State standard textbook definition. Keep explanation under 3 sentences.",
+    };
+  }
+  if (marks === 4) {
+    return {
+      breakdown: [
+        "1M: Governing equation / fundamental principle",
+        "1M: Labeled diagram / schematic block",
+        "2M: Step-by-step mathematical derivation or procedural steps",
+      ],
+      answerHint: "Include a labeled diagram and show intermediate calculation steps.",
+    };
+  }
+  if (marks === 5) {
+    return {
+      breakdown: [
+        "1M: Formal definition & key technical terms",
+        "2M: Neatly labeled circuit / block diagram / architecture",
+        "2M: Working principle / step-by-step procedure / practical use case",
+      ],
+      answerHint: "Draw a clean labeled diagram with pencil and provide 4-5 bulleted technical points with units.",
+    };
+  }
+  if (marks === 6) {
+    return {
+      breakdown: [
+        "1M: Problem statement, given parameters & formula",
+        "2M: System architecture / flowchart / timing diagram",
+        "3M: Detailed derivation / numerical substitution & final boxed answer",
+      ],
+      answerHint: "Show given values, state assumptions clearly, and box final result with units.",
+    };
+  }
+  return {
+    breakdown: [
+      `1M: Core definition & governing formula`,
+      `2M: Clean labeled diagram or schematic`,
+      `${Math.max(1, marks - 3)}M: Detailed explanation & working`,
+    ],
+  };
+}
+
 export function PaperView({ paperRecord }: PaperViewProps) {
   const pathname = usePathname();
   const isStudent = pathname?.startsWith("/student") ?? false;
@@ -54,8 +109,18 @@ export function PaperView({ paperRecord }: PaperViewProps) {
   const [rerollingSubQId, setRerollingSubQId] = useState<string | null>(null);
   const [savingSubQId, setSavingSubQId] = useState<string | null>(null);
   const [reportedSubQIds, setReportedSubQIds] = useState<Set<string>>(new Set());
+  const [expandedMarkingSubQIds, setExpandedMarkingSubQIds] = useState<Set<string>>(new Set());
   const [copied, setCopied] = useState<boolean>(false);
   const [feedbackMessage, setFeedbackMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
+  const toggleMarkingKey = (subQId: string) => {
+    setExpandedMarkingSubQIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(subQId)) next.delete(subQId);
+      else next.add(subQId);
+      return next;
+    });
+  };
 
   // Edge case V-05: Report question flagging
   const handleReportQuestion = (subQId: string) => {
@@ -364,6 +429,60 @@ export function PaperView({ paperRecord }: PaperViewProps) {
                                 </span>
                               )}
                             </div>
+
+                            {/* Examiner Step Marking Breakdown Toggle */}
+                            {(() => {
+                              const isMarkingOpen = expandedMarkingSubQIds.has(sq.id);
+                              const markingInfo = getSubQuestionMarkingKey(sq);
+                              return (
+                                <div className="mt-2.5">
+                                  <button
+                                    type="button"
+                                    onClick={() => toggleMarkingKey(sq.id)}
+                                    className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-700 hover:text-blue-800 transition-colors cursor-pointer"
+                                  >
+                                    {isMarkingOpen ? (
+                                      <>
+                                        <ChevronUp className="w-3.5 h-3.5" />
+                                        Hide Examiner Step Marking Breakdown
+                                      </>
+                                    ) : (
+                                      <>
+                                        <ChevronDown className="w-3.5 h-3.5" />
+                                        View Examiner Step Marking Breakdown &amp; Strategy
+                                      </>
+                                    )}
+                                  </button>
+
+                                  {isMarkingOpen && (
+                                    <div className="mt-2 p-3 bg-slate-50 border border-slate-200 rounded-[6px] space-y-2 text-xs">
+                                      <div>
+                                        <strong className="text-[10px] font-bold text-slate-900 uppercase tracking-wider block mb-1">
+                                          MU Examiner Step Marking Breakdown ({sq.marks} Marks):
+                                        </strong>
+                                        <ul className="space-y-1">
+                                          {markingInfo.breakdown.map((step, sIdx) => (
+                                            <li key={sIdx} className="flex items-start gap-1.5 text-slate-700">
+                                              <span className="text-emerald-600 font-bold">✓</span>
+                                              <MathText content={step} />
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      </div>
+
+                                      {markingInfo.answerHint && (
+                                        <div className="pt-1.5 border-t border-slate-200 text-slate-600">
+                                          <strong className="text-[10px] font-bold text-slate-800 uppercase tracking-wider block mb-0.5">
+                                            Evaluator Strategy:
+                                          </strong>
+                                          <p className="text-[11px] text-slate-600">{markingInfo.answerHint}</p>
+                                        </div>
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })()}
                           </div>
                         )}
                       </div>

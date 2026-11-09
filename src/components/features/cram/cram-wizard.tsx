@@ -14,6 +14,8 @@ import {
   Loader2,
   ArrowLeft,
   CheckCircle2,
+  ShieldAlert,
+  Flame,
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { generateCramItemAction } from "@/app/student/cram/actions";
@@ -140,7 +142,9 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
           artifactType: selectedType,
           subject: subject.trim() || undefined,
           title: `${subject} — ${
-            selectedType === "flashcards"
+            selectedType === "kt_buster"
+              ? "KT Buster (24M Pass Strategy)"
+              : selectedType === "flashcards"
               ? "3D Holo Flashcards"
               : selectedType === "quick_notes"
               ? "High-Yield Formula Notes"
@@ -309,6 +313,34 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
         </label>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {/* Option 0: KT Buster (Featured) */}
+          <div
+            onClick={() => !isPending && setSelectedType("kt_buster")}
+            className={`p-4 rounded-lg border text-left cursor-pointer transition-all col-span-1 sm:col-span-2 ${
+              selectedType === "kt_buster"
+                ? "bg-rose-50/70 border-rose-600 ring-1 ring-rose-600 shadow-sm"
+                : "bg-gradient-to-r from-rose-50/40 via-white to-amber-50/40 border-rose-200 hover:border-rose-400 hover:bg-rose-50/50"
+            }`}
+          >
+            <div className="flex items-center justify-between mb-1.5 flex-wrap gap-2">
+              <div className="flex items-center gap-2">
+                <ShieldAlert className="w-4 h-4 text-rose-600" />
+                <span className="text-xs font-bold text-slate-900">
+                  🛡️ KT Buster (24-Mark Minimum Passing Strategy)
+                </span>
+                <span className="text-[10px] font-bold text-rose-700 bg-rose-100/90 px-2 py-0.5 rounded-[5px]">
+                  NEW • MU NEP-2020
+                </span>
+              </div>
+              <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-[5px] border border-emerald-200">
+                Daily Free
+              </span>
+            </div>
+            <p className="text-[11px] text-slate-600 leading-relaxed">
+              Surgically targets 24/60 passing marks. 2 Golden Modules + 6 repeating PYQs (strictly 5M/6M format) + 3 diagrams + live interactive marks tracker.
+            </p>
+          </div>
+
           {/* Option 1: 3D Flashcards */}
           <div
             onClick={() => !isPending && setSelectedType("flashcards")}

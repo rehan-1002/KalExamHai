@@ -7,11 +7,13 @@ import { FlashcardDeck } from "@/components/features/cram/flashcard-deck";
 import { QuickNotesView } from "@/components/features/cram/quick-notes-view";
 import { VivaPrepView } from "@/components/features/cram/viva-prep-view";
 import { SurvivalKitView } from "@/components/features/cram/survival-kit-view";
+import { KtBusterView } from "@/components/features/cram/kt-buster-view";
 import type {
   FlashcardsPayload,
   QuickNotesPayload,
   VivaPrepPayload,
   SurvivalKitPayload,
+  KtBusterPayload,
 } from "@/lib/schemas/cram";
 
 export const dynamic = "force-dynamic";
@@ -48,19 +50,24 @@ async function CramDetailsContent({ params }: CramDetailsPageProps) {
     notFound();
   }
 
+  const effectiveType = (record.content as { type?: string })?.type || record.artifact_type;
+
   return (
     <div className="py-4 sm:py-8 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      {record.artifact_type === "flashcards" && (
+      {effectiveType === "flashcards" && (
         <FlashcardDeck payload={record.content as FlashcardsPayload} />
       )}
-      {record.artifact_type === "quick_notes" && (
+      {effectiveType === "quick_notes" && (
         <QuickNotesView payload={record.content as QuickNotesPayload} />
       )}
-      {record.artifact_type === "viva_prep" && (
+      {effectiveType === "viva_prep" && (
         <VivaPrepView payload={record.content as VivaPrepPayload} />
       )}
-      {record.artifact_type === "survival_kit" && (
+      {effectiveType === "survival_kit" && (
         <SurvivalKitView payload={record.content as SurvivalKitPayload} />
+      )}
+      {effectiveType === "kt_buster" && (
+        <KtBusterView payload={record.content as KtBusterPayload} />
       )}
     </div>
   );

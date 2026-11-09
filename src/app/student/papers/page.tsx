@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getAdminClient } from "@/server/supabase/admin";
-import { PaperHistoryTable } from "@/components/features/papers/paper-history-table";
+import { StudentPapersView } from "@/components/features/papers/student-papers-view";
 import { BackButton } from "@/components/navigation/back-button";
 
 export const dynamic = "force-dynamic";
@@ -52,7 +52,7 @@ async function StudentPapersContent() {
         </div>
       </div>
 
-      <PaperHistoryTable initialPapers={papers} />
+      <StudentPapersView initialPapers={papers} />
     </div>
   );
 }

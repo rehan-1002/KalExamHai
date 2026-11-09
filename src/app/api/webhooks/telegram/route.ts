@@ -4,6 +4,7 @@ import {
   sendChatAction,
   answerCallbackQuery,
   downloadTelegramFile,
+  sendTelegramDocument,
 } from "@/server/telegram/bot";
 import {
   saveTelegramSession,
@@ -230,16 +231,17 @@ export async function POST(req: NextRequest) {
           return NextResponse.json({ ok: true });
         }
 
+        // Step 3: pyq:s:<branchId>:<sem> -> Select official subject (Branch & Sem-wise)
         if (data.startsWith("pyq:s:")) {
           const [, , branchId, semStr] = data.split(":");
           const sem = parseInt(semStr || "1", 10);
           const branch = BRANCHES.find((b) => b.id === branchId);
-          const papers = await findMuQuestionPapers(branchId || "", sem);
+          const subjects = await getBranchSubjects(branchId || "", sem);
 
-          if (!papers || papers.length === 0) {
+          if (!subjects || subjects.length === 0) {
             await sendTelegramMessage(
               chatId,
-              `⚠️ No past question papers found for ${branch?.name || branchId} Semester ${sem}.`,
+              `⚠️ No subjects registered for ${branch?.name || branchId} Semester ${sem}.`,
               {
                 reply_markup: {
                   inline_keyboard: [[{ text: "« Back to Semesters", callback_data: `pyq:b:${branchId}` }]],
@@ -249,46 +251,169 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ ok: true });
           }
 
-          // Group papers by subject
-          const grouped: Record<string, typeof papers> = {};
-          papers.forEach((p) => {
-            if (!grouped[p.subject]) grouped[p.subject] = [];
-            grouped[p.subject]!.push(p);
-          });
-
-          // Build nice message with NEP papers highlighted first
-          let responseText = `📚 *${branch?.name} — Semester ${sem} Official PYQs*\n`;
-          responseText += `Official Mumbai University examination question papers:\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
-
-          const subjectKeys = Object.keys(grouped).slice(0, 8); // Top subjects
-          for (const subName of subjectKeys) {
-            const list = grouped[subName]!;
-            const nepList = list.filter((p) => p.isNep);
-            const otherList = list.filter((p) => !p.isNep).slice(0, 3);
-            const displayList = nepList.length > 0 ? nepList : otherList;
-
-            responseText += `📖 *${subName}*\n`;
-            for (const item of displayList) {
-              const tag = item.isNep ? "⭐ [NEP-2020]" : `[${item.scheme || "C-Scheme"}]`;
-              responseText += `• ${item.session} ${item.year} ${tag}: [📥 Download PDF](${item.pdfUrl})\n`;
+          const inline_keyboard: { text: string; callback_data: string }[][] = [];
+          for (let i = 0; i < subjects.length; i += 2) {
+            const row = [
+              {
+                text: `${branch?.icon || "📖"} ${subjects[i]!.shortName || subjects[i]!.name.slice(0, 16)}`,
+                callback_data: `pyq:sub:${branchId}:${sem}:${subjects[i]!.code}`,
+              },
+            ];
+            if (subjects[i + 1]) {
+              row.push({
+                text: `${branch?.icon || "📖"} ${subjects[i + 1]!.shortName || subjects[i + 1]!.name.slice(0, 16)}`,
+                callback_data: `pyq:sub:${branchId}:${sem}:${subjects[i + 1]!.code}`,
+              });
             }
-            responseText += `\n`;
+            inline_keyboard.push(row);
           }
-
-          responseText += `💡 *Tip:* Save these PDFs or drop one here to generate practice papers & formula sheets!`;
+          inline_keyboard.push([
+            { text: `« Back to ${branch?.shortName || "Branch"} Semesters`, callback_data: `pyq:b:${branchId}` },
+            { text: "« All Branches", callback_data: "pyq:branches" },
+          ]);
 
           await sendTelegramMessage(
             chatId,
-            responseText,
-            {
-              reply_markup: {
-                inline_keyboard: [
-                  [{ text: `« Back to ${branch?.shortName || "Branch"} Semesters`, callback_data: `pyq:b:${branchId}` }],
-                  [{ text: "« All Branches", callback_data: "pyq:branches" }],
-                ],
-              },
-            }
+            `📚 *${branch?.name} — Semester ${sem} PYQs*\n\nSelect your subject to access official past question papers:`,
+            { reply_markup: { inline_keyboard } }
           );
+          return NextResponse.json({ ok: true });
+        }
+
+        // Step 4: pyq:sub:<branchId>:<sem>:<code> -> Show exact papers for this subject
+        if (data.startsWith("pyq:sub:")) {
+          const [, , branchId, semStr, code] = data.split(":");
+          const sem = parseInt(semStr || "1", 10);
+          const branch = BRANCHES.find((b) => b.id === branchId);
+          const subjects = await getBranchSubjects(branchId || "", sem);
+          const sub = subjects.find((s) => s.code === code) || subjects[0];
+          const subName = sub ? sub.name : code;
+
+          const allSemPapers = await findMuQuestionPapers(branchId || "", sem);
+
+          // Normalized fuzzy subject match
+          const norm = (s: string) => s.toLowerCase().replace(/[-–—]/g, " ").replace(/\s+/g, " ").trim();
+          const targetNorm = norm(subName || "");
+          const targetShort = sub?.shortName ? norm(sub.shortName) : "";
+
+          let matched = allSemPapers.filter((p) => {
+            const pNorm = norm(p.subject);
+            return (
+              pNorm.includes(targetNorm) ||
+              targetNorm.includes(pNorm) ||
+              (targetShort && pNorm.includes(targetShort))
+            );
+          });
+
+          // If no fuzzy match, fallback to all papers in that semester
+          if (matched.length === 0) {
+            matched = allSemPapers;
+          }
+
+          // Sort: NEP-2020 first, then by year desc
+          matched.sort((a, b) => {
+            if (a.isNep && !b.isNep) return -1;
+            if (!a.isNep && b.isNep) return 1;
+            const yearA = parseInt(a.year || "0", 10) || 0;
+            const yearB = parseInt(b.year || "0", 10) || 0;
+            return yearB - yearA;
+          });
+
+          const topPapers = matched.slice(0, 8);
+
+          if (topPapers.length === 0) {
+            await sendTelegramMessage(
+              chatId,
+              `⚠️ No past question papers found for *${subName}*.`,
+              {
+                reply_markup: {
+                  inline_keyboard: [
+                    [{ text: "« Back to Subjects", callback_data: `pyq:s:${branchId}:${sem}` }],
+                  ],
+                },
+              }
+            );
+            return NextResponse.json({ ok: true });
+          }
+
+          // Build buttons for each paper to deliver directly
+          const inline_keyboard: { text: string; callback_data?: string; url?: string }[][] = [];
+
+          topPapers.slice(0, 5).forEach((p) => {
+            const nepTag = p.isNep ? "⭐ NEP-2020" : p.scheme || "C-Scheme";
+            inline_keyboard.push([
+              {
+                text: `📄 ${p.session} ${p.year} (${nepTag})`,
+                callback_data: `pyq:doc:${branchId}:${sem}:${encodeURIComponent(p.slug.slice(0, 30))}`,
+              },
+            ]);
+          });
+
+          inline_keyboard.push([
+            { text: "« Back to Subjects", callback_data: `pyq:s:${branchId}:${sem}` },
+            { text: "« Back to Semesters", callback_data: `pyq:b:${branchId}` },
+          ]);
+
+          let msg = `📚 *${subName}*\n`;
+          msg += `*${branch?.name} — Semester ${sem}*\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+          msg += `Tap any exam session below to receive the **official question paper PDF directly here in chat**:\n\n`;
+
+          topPapers.slice(0, 5).forEach((p, i) => {
+            const nepTag = p.isNep ? "⭐ *[NEP-2020]*" : `_[${p.scheme || "Rev-2019"}]_`;
+            msg += `${i + 1}. **${p.session} ${p.year}** ${nepTag}\n`;
+          });
+
+          await sendTelegramMessage(chatId, msg, { reply_markup: { inline_keyboard } });
+          return NextResponse.json({ ok: true });
+        }
+
+        // Step 5: pyq:doc:<branchId>:<sem>:<slugPrefix> -> Deliver the actual PDF document directly to chat!
+        if (data.startsWith("pyq:doc:")) {
+          const [, , branchId, semStr, slugPrefixRaw] = data.split(":");
+          const sem = parseInt(semStr || "1", 10);
+          const slugPrefix = decodeURIComponent(slugPrefixRaw || "");
+
+          const allSemPapers = await findMuQuestionPapers(branchId || "", sem);
+          const paper = allSemPapers.find((p) => p.slug.startsWith(slugPrefix)) || allSemPapers[0];
+
+          if (!paper) {
+            await sendTelegramMessage(chatId, "⚠️ Could not locate this question paper file.");
+            return NextResponse.json({ ok: true });
+          }
+
+          await sendChatAction(chatId, "upload_document");
+
+          const caption = `📄 *${paper.subject}*\n${paper.session} ${paper.year} • ${paper.scheme || "Mumbai University"}\nOfficial examination paper from KalExamHai archive.`;
+
+          const docRes = await sendTelegramDocument(chatId, paper.pdfUrl, caption);
+
+          if (!docRes.ok) {
+            // Fallback to sending working direct link if Telegram cannot fetch url directly
+            await sendTelegramMessage(
+              chatId,
+              `📄 *${paper.subject} (${paper.session} ${paper.year})*\n\n[📥 Download Official Question Paper PDF](${paper.pdfUrl})\n\n_(Direct working PDF from official MU archive)_`,
+              {
+                reply_markup: {
+                  inline_keyboard: [
+                    [{ text: "« Back to Papers", callback_data: `pyq:s:${branchId}:${sem}` }],
+                  ],
+                },
+              }
+            );
+          } else {
+            await sendTelegramMessage(
+              chatId,
+              `✅ *Question Paper delivered above!*\n\nReady to prepare for this exam?`,
+              {
+                reply_markup: {
+                  inline_keyboard: [
+                    [{ text: "🏛️ Browse MU Subjects (NEP-2020)", callback_data: "br:branches" }],
+                    [{ text: "🌐 Open 3D Workspace on Web", url: "https://kalexamhai-one.vercel.app" }],
+                  ],
+                },
+              }
+            );
+          }
           return NextResponse.json({ ok: true });
         }
 

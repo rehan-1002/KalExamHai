@@ -60,6 +60,8 @@ export const SubQuestionSchema = z.object({
   bloom_level: BloomLevelSchema,
   coverage_warning: nullableOptionalString,
   repeat_badge: nullableOptionalString,
+  marking_breakdown: z.array(z.string()).optional(),
+  model_answer_hint: nullableOptionalString,
 });
 
 export const QuestionSchema = z.object({

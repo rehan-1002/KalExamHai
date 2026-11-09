@@ -8,6 +8,7 @@ import {
   BookOpen,
   AlertTriangle,
   Lightbulb,
+  Share2,
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
@@ -36,6 +37,15 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
     }
   };
 
+  const handleWhatsAppShare = () => {
+    const text = encodeURIComponent(
+      `📑 *${payload.subject} — High-Yield Formula Notes*\n` +
+      `Check out these quick revision notes & formulas for Mumbai University on KalExamHai:\n` +
+      `${window.location.href}`
+    );
+    window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
+  };
+
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       {/* Header Bar */}
@@ -55,7 +65,7 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
           <p className="text-xs text-slate-500 mt-0.5">{payload.title}</p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <button
             type="button"
             onClick={handleCopy}
@@ -66,8 +76,16 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
           </button>
           <button
             type="button"
+            onClick={handleWhatsAppShare}
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-300 rounded-[6px] hover:bg-emerald-100 shadow-sm transition-colors cursor-pointer"
+          >
+            <Share2 className="w-3.5 h-3.5 text-emerald-600" />
+            <span>WhatsApp</span>
+          </button>
+          <button
+            type="button"
             onClick={() => window.print()}
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-[6px] hover:bg-blue-700 shadow-sm transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-slate-900 rounded-[6px] hover:bg-slate-800 shadow-sm transition-colors cursor-pointer"
           >
             <Printer className="w-3.5 h-3.5" />
             <span>Print Sheet</span>
