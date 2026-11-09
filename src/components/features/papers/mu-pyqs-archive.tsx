@@ -199,9 +199,7 @@ export function MuPyqsArchive() {
 
               <div className="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
                 <a
-                  href={p.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`/api/pyqs/download?url=${encodeURIComponent(p.pdfUrl)}&filename=${encodeURIComponent(`KalExamHai_${p.subject.replace(/[^a-zA-Z0-9]/g, "_")}_${p.session}_${p.year}.pdf`)}`}
                   className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-[5px] transition-colors"
                 >
                   <Download className="w-3 h-3 text-slate-600" />

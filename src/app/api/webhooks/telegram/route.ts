@@ -388,14 +388,16 @@ export async function POST(req: NextRequest) {
           const docRes = await sendTelegramDocument(chatId, paper.pdfUrl, caption);
 
           if (!docRes.ok) {
-            // Fallback to sending working direct link if Telegram cannot fetch url directly
+            // Direct KalExamHai download proxy (100% white-labeled, zero competitor redirects)
+            const cleanDownloadUrl = `https://kalexamhai-one.vercel.app/api/pyqs/download?url=${encodeURIComponent(paper.pdfUrl)}&filename=${encodeURIComponent(`KalExamHai_${paper.subject.replace(/[^a-zA-Z0-9]/g, "_")}_${paper.session}_${paper.year}.pdf`)}`;
             await sendTelegramMessage(
               chatId,
-              `📄 *${paper.subject} (${paper.session} ${paper.year})*\n\n[📥 Download Official Question Paper PDF](${paper.pdfUrl})\n\n_(Direct working PDF from official MU archive)_`,
+              `📄 *${paper.subject} (${paper.session} ${paper.year})*\n\n[📥 1-Click Download PDF Document](${cleanDownloadUrl})\n\n_(Official examination paper from KalExamHai archive)_`,
               {
                 reply_markup: {
                   inline_keyboard: [
                     [{ text: "« Back to Papers", callback_data: `pyq:s:${branchId}:${sem}` }],
+                    [{ text: "« Back to Semesters", callback_data: `pyq:b:${branchId}` }],
                   ],
                 },
               }
