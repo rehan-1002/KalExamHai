@@ -193,15 +193,36 @@ body {
     page-break-after: avoid !important;
   }
 
-  /* Diagram scaling in print: Keep diagrams compact (max 220px) so they fit with content */
-  .diagram-svg-container,
-  .diagram-svg-container svg,
-  svg[viewBox] {
-    max-height: 220px !important;
-    width: auto !important;
-    margin: 0 auto !important;
-    page-break-inside: avoid !important;
+  /* Diagram scaling in print: Ensure diagrams are visible, centered, and scaled */
+  .diagram-svg-container {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    overflow: visible !important;
     break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .diagram-svg-container svg {
+    display: inline-block !important;
+    max-width: 95% !important;
+    max-height: 260px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .diagram-svg-container svg text {
+    fill: #000000 !important;
+  }
+
+  .diagram-svg-container svg path,
+  .diagram-svg-container svg line,
+  .diagram-svg-container svg polygon,
+  .diagram-svg-container svg rect {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   /* Compact margins and padding in print mode to eliminate blank gaps */

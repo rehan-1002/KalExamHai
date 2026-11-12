@@ -165,7 +165,6 @@ export function PaperPrint({ paperRecord }: PaperPrintProps) {
                               code={sq.diagram.code}
                               type={sq.diagram.type}
                               caption={sq.diagram.caption}
-                              allowCopy={false}
                             />
                           </div>
                         )}
