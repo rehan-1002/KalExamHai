@@ -63,7 +63,7 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
     if (initialDocId && readyDocs.some((d) => d.id === initialDocId)) {
       return initialDocId;
     }
-    return readyDocs.length > 0 ? readyDocs[0]!.id : "";
+    return readyDocs.length > 0 ? readyDocs[0]!.id : "mu:BSC101";
   });
 
   const [selectedType, setSelectedType] = useState<CramArtifactType>(
@@ -80,6 +80,7 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
   const handleSelectMuSubject = (subj: MuCatalogSubject) => {
     setSelectedSubjectCode(subj.code);
     setSubject(subj.name);
+    setSelectedDocId(`mu:${subj.code}`);
   };
 
   useEffect(() => {
@@ -484,7 +485,13 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
       <div className="flex justify-end">
         <button
           type="button"
-          disabled={isPending || cooldownSeconds > 0 || !selectedDocId}
+          disabled={
+            isPending ||
+            cooldownSeconds > 0 ||
+            (sourceMode === "official"
+              ? !selectedSubjectCode || !subject.trim()
+              : !selectedDocId)
+          }
           onClick={handleGenerate}
           className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-[6px] shadow-sm transition-colors disabled:opacity-50 cursor-pointer"
         >

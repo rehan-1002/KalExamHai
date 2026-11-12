@@ -39,6 +39,7 @@ async function NewCramContent({ searchParams }: NewCramPageProps) {
   }));
 
   const validTypes: CramArtifactType[] = [
+    "kt_buster",
     "flashcards",
     "quick_notes",
     "viva_prep",

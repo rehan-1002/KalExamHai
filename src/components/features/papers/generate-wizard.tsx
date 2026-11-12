@@ -567,7 +567,13 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
 
         <button
           type="submit"
-          disabled={isPending || cooldownSeconds > 0 || !hasEnoughCredits || selectedDocIds.length === 0 || !subject.trim()}
+          disabled={
+            isPending ||
+            cooldownSeconds > 0 ||
+            !hasEnoughCredits ||
+            !subject.trim() ||
+            (sourceMode === "official" ? !selectedSubjectCode : selectedDocIds.length === 0)
+          }
           className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-[#2563EB] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#1D4ED8] cursor-pointer disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-[#2563EB]"
         >
           {isPending ? (
@@ -579,6 +585,15 @@ export function GenerateWizard({ documents, creditBalance, initialFormat, quota 
             <>
               <Clock className="w-4 h-4 text-amber-300 animate-spin" />
               <span>Cooldown Active ({cooldownSeconds}s)</span>
+            </>
+          ) : !hasEnoughCredits ? (
+            <>
+              <AlertCircle className="w-4 h-4 text-amber-300" />
+              <span>
+                {isEndSemTrialUsed
+                  ? "End-Sem Trial Used (Select IAT Paper)"
+                  : "Daily Free Quota Reached"}
+              </span>
             </>
           ) : (
             <>
