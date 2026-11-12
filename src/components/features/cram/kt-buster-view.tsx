@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
+import { DiagramRenderer } from "@/components/ui/diagram-renderer";
 import type { KtBusterPayload } from "@/lib/schemas/cram";
 
 interface KtBusterViewProps {
@@ -398,6 +399,16 @@ export function KtBusterView({ payload }: KtBusterViewProps) {
                           </ul>
                         </div>
                       )}
+
+                      {q.diagram_code && (
+                        <div className="pt-2 border-t border-slate-100">
+                          <DiagramRenderer
+                            code={q.diagram_code}
+                            type={q.diagram_type}
+                            caption={`Key Diagram: ${q.question_text.slice(0, 50)}...`}
+                          />
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -441,6 +452,15 @@ export function KtBusterView({ payload }: KtBusterViewProps) {
                   <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
                     <MathText content={d.diagram_description} />
                   </p>
+                  {d.diagram_code && (
+                    <div className="mt-2.5">
+                      <DiagramRenderer
+                        code={d.diagram_code}
+                        type={d.diagram_type}
+                        caption={d.title}
+                      />
+                    </div>
+                  )}
                 </div>
                 <span className="text-[10px] font-semibold text-blue-700 mt-2 block">
                   💡 Evaluators award marks for clean labels even if theory is short!

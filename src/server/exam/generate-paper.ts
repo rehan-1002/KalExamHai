@@ -60,7 +60,42 @@ GROUNDING & INTEGRITY RULES:
 3. Math Formulas: ALL equations and math notation must use standard LaTeX delimiters ($...$ for inline, $$...$$ for display). Never use Unicode math symbols in plain text.
 4. If the context does not have enough material for a question, set "coverage_warning" rather than hallucinating external topics.
 5. MUMBAI UNIVERSITY REPEAT FREQUENCY & PROBABILITY: For every sub-question, populate "repeat_badge" with an accurate historical repeat tag (e.g. "Repeated 5x in MU (Dec '24 NEP, May '24, Dec '23) • ~92% Probability") based on recurring Mumbai University question archetypes.
-6. JSON SCHEMA REQUIREMENT: You must return ONLY a valid JSON object matching this structure:
+6. ENGINEERING DIAGRAMS & FLOWCHARTS (CODE-DRIVEN - OVERLEAF/LATEX STYLE):
+For technical subjects (e.g. AOA, COA, DSGT, OS, CN, BEEE, Engineering Mechanics, Engineering Graphics), whenever a sub-question involves algorithms, state transitions, circuits, beams, or trees, embed a code-driven diagram in the "diagram" object of that sub-question:
+- Flowcharts (e.g. Booth's algorithm, Dijkstra, Sorting, Process scheduling):
+  "diagram": {
+    "type": "mermaid",
+    "code": "flowchart TD\\nStart([Start]) --> Init[A=0, Q_-1=0, M=Multiplicand, Q=Multiplier, Count=n]\\nInit --> Check{Q0, Q_-1}\\nCheck -- 10 --> Sub[A = A - M]\\nCheck -- 01 --> Add[A = A + M]\\nSub --> Shift[Arithmetic Shift Right: A, Q, Q_-1]\\nAdd --> Shift\\nCheck -- 00 or 11 --> Shift\\nShift --> Dec[Count = Count - 1]\\nDec --> Loop{Count == 0?}\\nLoop -- No --> Check\\nLoop -- Yes --> End([End Result in AQ])",
+    "caption": "Figure: Flowchart for Booth's Multiplication Algorithm"
+  }
+- State Machines & Automata (DFA, NFA, Process State Lifecycle):
+  "diagram": {
+    "type": "mermaid",
+    "code": "stateDiagram-v2\\n[*] --> Ready\\nReady --> Running : Dispatched\\nRunning --> Waiting : I/O Request\\nWaiting --> Ready : I/O Done\\nRunning --> Terminated : Complete",
+    "caption": "Figure: Process State Transition Diagram"
+  }
+- Tree & Graph Structures (BST, AVL, Hasse Diagram, Network Topology):
+  "diagram": {
+    "type": "mermaid",
+    "code": "graph TD\\nRoot((50)) --> Left((30))\\nRoot --> Right((70))\\nLeft --> L1((20))\\nLeft --> L2((40))",
+    "caption": "Figure: Binary Search Tree Structure"
+  }
+- Electrical Circuits (BEEE Mesh/Nodal/Thevenin):
+  "diagram": {
+    "type": "circuit",
+    "code": "{\\"v1\\":\\"10 V\\",\\"r1\\":\\"4 Ω\\",\\"r2\\":\\"6 Ω\\",\\"r3\\":\\"2 Ω\\",\\"v2\\":\\"12 V\\"}",
+    "caption": "Figure: Two-Mesh DC Circuit for Nodal/Mesh Analysis"
+  }
+- Engineering Mechanics (Beams with Point Loads & UDL):
+  "diagram": {
+    "type": "beam",
+    "code": "{\\"length\\":6,\\"supports\\":[{\\"position\\":0,\\"type\\":\\"pin\\",\\"label\\":\\"A\\"},{\\"position\\":6,\\"type\\":\\"roller\\",\\"label\\":\\"B\\"}],\\"pointLoads\\":[{\\"position\\":4,\\"magnitude\\":\\"15 kN\\"}],\\"udls\\":[{\\"start\\":0,\\"end\\":3,\\"magnitude\\":\\"4 kN/m\\"}]}",
+    "caption": "Figure: Simply Supported Beam with UDL and Concentrated Load"
+  }
+- If a sub-question does NOT require a diagram, simply omit the "diagram" key.
+- NEVER include markdown code fences or backticks inside JSON string values.
+
+7. JSON SCHEMA REQUIREMENT: You must return ONLY a valid JSON object matching this structure:
 ${blueprint.format === "IAT" ? `{
   "format": "IAT",
   "subject": "${params.subject}",

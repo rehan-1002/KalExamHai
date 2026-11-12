@@ -95,6 +95,7 @@ export const QuickNotesPayloadSchema = z.object({
       z.object({
         title: z.string(),
         steps: z.array(z.string()),
+        flowchart_code: nullableOptionalString,
       })
     )
     .nullish()
@@ -190,6 +191,8 @@ export const KtRepeatingQuestionSchema = z.object({
     .nullish()
     .transform((v) => (Array.isArray(v) ? v : [])),
   diagram_required: z.boolean().default(false),
+  diagram_code: nullableOptionalString,
+  diagram_type: z.enum(["mermaid", "circuit", "beam", "svg"]).default("mermaid").optional(),
   key_answer_bullets: z
     .array(z.string())
     .nullish()
@@ -200,6 +203,8 @@ export const MustDrawDiagramSchema = z.object({
   title: z.string().min(1, "Diagram title required"),
   marks_value: flexibleInt(4),
   diagram_description: z.string().default(""),
+  diagram_code: nullableOptionalString,
+  diagram_type: z.enum(["mermaid", "circuit", "beam", "svg"]).default("mermaid").optional(),
   module_no: flexibleInt(1),
 });
 

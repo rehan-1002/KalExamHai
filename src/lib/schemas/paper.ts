@@ -44,6 +44,14 @@ export const BloomLevelSchema = z
   ]).optional())
   .optional();
 
+export const QuestionDiagramSchema = z.object({
+  type: z.enum(["mermaid", "circuit", "beam", "svg"]).default("mermaid"),
+  code: z.string().default(""),
+  caption: z.string().default("Figure 1"),
+});
+
+export type QuestionDiagram = z.infer<typeof QuestionDiagramSchema>;
+
 export const SubQuestionSchema = z.object({
   id: z.string().nullish().transform((v) => v || crypto.randomUUID()),
   label: z.string().nullish().transform((v) => v || "a"),
@@ -62,6 +70,24 @@ export const SubQuestionSchema = z.object({
   repeat_badge: nullableOptionalString,
   marking_breakdown: z.array(z.string()).optional(),
   model_answer_hint: nullableOptionalString,
+  diagram: z.preprocess((val) => {
+    if (!val || typeof val !== "object") return undefined;
+    const v = val as Record<string, unknown>;
+    const rawCode = v.code || v.svg_code || v.mermaid_code || v.diagram_code || "";
+    if (typeof rawCode !== "string" || !rawCode.trim()) return undefined;
+
+    const typeStr = typeof v.type === "string" ? v.type.toLowerCase().trim() : "mermaid";
+    let type: "mermaid" | "circuit" | "beam" | "svg" = "mermaid";
+    if (typeStr.includes("circuit")) type = "circuit";
+    else if (typeStr.includes("beam")) type = "beam";
+    else if (typeStr.includes("svg")) type = "svg";
+
+    return {
+      type,
+      code: rawCode.trim(),
+      caption: typeof v.caption === "string" && v.caption.trim() ? v.caption.trim() : "Figure 1",
+    };
+  }, QuestionDiagramSchema.optional()).optional(),
 });
 
 export const QuestionSchema = z.object({

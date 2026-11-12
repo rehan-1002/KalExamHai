@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
+import { DiagramRenderer } from "@/components/ui/diagram-renderer";
 import { regenerateSubQuestionAction, updateSubQuestionTextAction } from "@/app/tutor/papers/[id]/actions";
 import type { PaperJson, SubQuestion } from "@/lib/schemas/paper";
 
@@ -405,6 +406,15 @@ export function PaperView({ paperRecord }: PaperViewProps) {
                             <div className="text-sm text-slate-800 leading-relaxed font-normal">
                               <MathText content={sq.text} />
                             </div>
+
+                            {/* Code-Driven Engineering Vector Diagram (Mermaid / SVG / Circuits / Beams) */}
+                            {sq.diagram && sq.diagram.code && (
+                              <DiagramRenderer
+                                code={sq.diagram.code}
+                                type={sq.diagram.type}
+                                caption={sq.diagram.caption}
+                              />
+                            )}
 
                             {/* Metadata Badges */}
                             <div className="flex items-center gap-2 mt-2 flex-wrap">

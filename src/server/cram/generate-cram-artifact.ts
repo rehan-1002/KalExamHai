@@ -215,13 +215,18 @@ Format strictly as JSON matching this schema:
     }
   ],
   "step_by_step_algorithms": [
-    { "title": "Algorithm or Process Name (e.g. Booth's Algorithm [Repeated 6x in MU])", "steps": ["Step 1...", "Step 2..."] }
+    {
+      "title": "Algorithm or Process Name (e.g. Booth's Algorithm [Repeated 6x in MU])",
+      "steps": ["Step 1...", "Step 2..."],
+      "flowchart_code": "flowchart TD\\nStart([Start]) --> Init[Init]\\nInit --> Step1[Step 1]\\nStep1 --> End([End])"
+    }
   ],
   "exam_hall_traps": ["Common student mistake 1", "Tricky sign convention error 2"]
 }
 RULES:
 1. Strict LaTeX notation ($...$ and $$...$$).
-2. Pure signal, zero filler.`;
+2. For algorithms, always provide valid Mermaid flowchart code in 'flowchart_code' without markdown backticks.
+3. Pure signal, zero filler.`;
   } else if (artifactType === "viva_prep") {
     promptInstructions = `Generate an Examiner Viva Examination Prep Sheet categorized into Easy, Medium, and Tricky/Trap questions based on frequent oral exam traps in Mumbai University.
 Format strictly as JSON matching this schema:
@@ -306,6 +311,8 @@ Format strictly as JSON matching this schema:
       "title": "Diagram Name",
       "marks_value": 4,
       "diagram_description": "Precise description of the block diagram / pinout / flowchart that MU evaluators check.",
+      "diagram_code": "flowchart TD\\nStart([Start]) --> Step1[Step]\\nStep1 --> End([Done])",
+      "diagram_type": "mermaid",
       "module_no": 1
     }
   ],
@@ -322,7 +329,8 @@ Format strictly as JSON matching this schema:
 RULES:
 1. Strict LaTeX notation ($...$ and $$...$$).
 2. NEVER output 10-mark single questions; every question must be 5M, 6M, or 4M.
-3. Total checklist marks must add up to between 28 and 34 marks.`;
+3. For each of the 3 must_draw_diagrams, provide valid Mermaid or SVG vector code in 'diagram_code' (no markdown backticks) so the student can see the exact diagram to draw in their answer book.
+4. Total checklist marks must add up to between 28 and 34 marks.`;
   } else {
     promptInstructions = `Generate a Last-Minute Survival Kit for a student with only 12 to 24 hours left before the exam.
 MANDATORY: Rank priority topics by MUMBAI UNIVERSITY REPEAT PROBABILITY:

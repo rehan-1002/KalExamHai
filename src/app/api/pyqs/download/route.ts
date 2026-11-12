@@ -50,3 +50,4 @@ export async function GET(req: NextRequest) {
     return new NextResponse("Internal server error downloading PDF", { status: 500 });
   }
 }
+

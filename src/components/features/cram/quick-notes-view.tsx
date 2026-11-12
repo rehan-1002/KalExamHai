@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
+import { DiagramRenderer } from "@/components/ui/diagram-renderer";
 import type { QuickNotesPayload } from "@/lib/schemas/cram";
 
 interface QuickNotesViewProps {
@@ -188,6 +189,15 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
                     </li>
                   ))}
                 </ol>
+                {algo.flowchart_code && (
+                  <div className="mt-3">
+                    <DiagramRenderer
+                      code={algo.flowchart_code}
+                      type="mermaid"
+                      caption={`Flowchart: ${algo.title}`}
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>

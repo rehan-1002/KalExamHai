@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Printer, ArrowLeft } from "lucide-react";
 import { MathText } from "@/components/ui/math-text";
+import { DiagramRenderer } from "@/components/ui/diagram-renderer";
 import type { PaperJson } from "@/lib/schemas/paper";
 
 interface PaperRecord {
@@ -158,6 +159,16 @@ export function PaperPrint({ paperRecord }: PaperPrintProps) {
                       <span className="font-bold text-slate-800 shrink-0">({sq.label})</span>
                       <div className="text-slate-900 flex-1">
                         <MathText content={sq.text} />
+                        {sq.diagram && sq.diagram.code && (
+                          <div className="my-2">
+                            <DiagramRenderer
+                              code={sq.diagram.code}
+                              type={sq.diagram.type}
+                              caption={sq.diagram.caption}
+                              allowCopy={false}
+                            />
+                          </div>
+                        )}
                         {sq.repeat_badge && (
                           <div className="text-[10px] text-slate-500 font-sans mt-0.5 italic">
                             🔥 {sq.repeat_badge}
