@@ -95,40 +95,40 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
       </div>
 
       {/* High-Yield Overview */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-2">
-        <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-          <BookOpen className="w-4 h-4 text-blue-600" />
+      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-2 print:p-3 print:space-y-1 print:border-slate-300">
+        <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2 print:text-xs">
+          <BookOpen className="w-4 h-4 text-blue-600 print:w-3.5 print:h-3.5" />
           High-Yield Chapter Summary
         </h2>
-        <div className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+        <div className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal print:text-[11px] print:leading-normal">
           <MathText content={payload.high_yield_summary} />
         </div>
       </div>
 
       {/* Formulas & Derivations */}
       {payload.formulas_and_derivations.length > 0 && (
-        <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-4">
-          <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-            <Lightbulb className="w-4 h-4 text-amber-500 shrink-0" />
+        <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-4 print:p-3 print:space-y-2 print:border-slate-300">
+          <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2 print:text-xs">
+            <Lightbulb className="w-4 h-4 text-amber-500 shrink-0 print:w-3.5 print:h-3.5" />
             Core Formulas &amp; Numerical Equations
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 print:gap-2">
             {payload.formulas_and_derivations.map((f, i) => (
-              <div key={i} className="p-3.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-2.5 break-inside-avoid print:break-inside-avoid">
-                <h3 className="text-xs font-bold text-slate-900 leading-snug">
+              <div key={i} className="p-3.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-2.5 break-inside-avoid print:break-inside-avoid print:p-2.5 print:bg-white print:border-slate-300 print:space-y-1.5">
+                <h3 className="text-xs font-bold text-slate-900 leading-snug print:text-[11px]">
                   <MathText content={f.title} />
                 </h3>
-                <div className="py-2 px-3 bg-white border border-slate-200 rounded-md text-center text-sm font-serif overflow-x-auto max-w-full">
+                <div className="py-2 px-3 bg-white border border-slate-200 rounded-md text-center text-sm font-serif overflow-x-auto max-w-full print:py-1.5 print:px-2 print:border-slate-300 print:overflow-visible">
                   <MathText content={f.formula_latex} />
                 </div>
-                <div className="text-xs text-slate-600 leading-relaxed">
+                <div className="text-xs text-slate-600 leading-relaxed print:text-[10.5px]">
                   <MathText content={f.explanation} />
                 </div>
                 {f.variables && f.variables.length > 0 && (
-                  <div className="pt-2 border-t border-slate-200/60 text-[11px] text-slate-500 flex flex-wrap gap-1.5">
+                  <div className="pt-2 border-t border-slate-200/60 text-[11px] text-slate-500 flex flex-wrap gap-1.5 print:pt-1 print:text-[10px] print:gap-1">
                     {f.variables.map((v, vi) => (
-                      <span key={vi} className="bg-white px-1.5 py-0.5 rounded border border-slate-200">
+                      <span key={vi} className="bg-white px-1.5 py-0.5 rounded border border-slate-200 print:border-slate-300">
                         <MathText content={v} />
                       </span>
                     ))}
@@ -142,22 +142,22 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
 
       {/* Core Definitions */}
       {payload.core_definitions.length > 0 && (
-        <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-3">
-          <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+        <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-3 print:p-3 print:space-y-1.5 print:border-slate-300">
+          <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider print:text-xs">
             Key Exam Definitions
           </h2>
-          <div className="divide-y divide-slate-100">
+          <div className="divide-y divide-slate-100 print:divide-slate-200">
             {payload.core_definitions.map((def, i) => (
-              <div key={i} className="py-3 first:pt-0 last:pb-0 break-inside-avoid print:break-inside-avoid">
+              <div key={i} className="py-3 first:pt-0 last:pb-0 break-inside-avoid print:break-inside-avoid print:py-1.5">
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4">
-                  <span className="font-bold text-xs text-slate-900 sm:w-1/3 sm:shrink-0 leading-snug">
+                  <span className="font-bold text-xs text-slate-900 sm:w-1/3 sm:shrink-0 leading-snug print:text-[11px]">
                     <MathText content={def.term} />
                   </span>
-                  <div className="text-xs text-slate-700 text-left sm:w-2/3 leading-relaxed mt-0.5 sm:mt-0">
+                  <div className="text-xs text-slate-700 text-left sm:w-2/3 leading-relaxed mt-0.5 sm:mt-0 print:text-[11px]">
                     <MathText content={def.definition} />
                     {def.formula && (
-                      <div className="mt-1.5 sm:mt-1">
-                        <span className="font-mono text-[11px] text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-[5px] inline-block max-w-full overflow-x-auto">
+                      <div className="mt-1.5 sm:mt-1 print:mt-0.5">
+                        <span className="font-mono text-[11px] text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-[5px] inline-block max-w-full overflow-x-auto print:bg-transparent print:border-none print:p-0 print:overflow-visible">
                           <MathText content={def.formula} />
                         </span>
                       </div>
@@ -172,17 +172,17 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
 
       {/* Step-by-Step Algorithms */}
       {payload.step_by_step_algorithms.length > 0 && (
-        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4">
-          <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+        <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4 print:p-3 print:space-y-2 print:border-slate-300">
+          <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider print:text-xs">
             Step-by-Step Algorithm Walkthroughs
           </h2>
-          <div className="space-y-3">
+          <div className="space-y-3 print:space-y-2">
             {payload.step_by_step_algorithms.map((algo, i) => (
-              <div key={i} className="p-4 bg-slate-50 border border-slate-200 rounded-lg break-inside-avoid print:break-inside-avoid">
-                <h3 className="text-xs font-bold text-slate-900 mb-2">
+              <div key={i} className="p-4 bg-slate-50 border border-slate-200 rounded-lg print:p-2.5 print:bg-white print:border-slate-300">
+                <h3 className="text-xs font-bold text-slate-900 mb-2 print:mb-1">
                   <MathText content={algo.title} />
                 </h3>
-                <ol className="list-decimal list-inside space-y-1.5 text-xs text-slate-700 leading-relaxed">
+                <ol className="list-decimal list-inside space-y-1.5 text-xs text-slate-700 leading-relaxed print:text-[11px] print:space-y-0.5">
                   {algo.steps.map((step, si) => (
                     <li key={si}>
                       <MathText content={step} />
@@ -190,7 +190,7 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
                   ))}
                 </ol>
                 {algo.flowchart_code && (
-                  <div className="mt-3">
+                  <div className="mt-3 print:mt-1.5 print:break-inside-avoid">
                     <DiagramRenderer
                       code={algo.flowchart_code}
                       type="mermaid"
@@ -206,12 +206,12 @@ export function QuickNotesView({ payload }: QuickNotesViewProps) {
 
       {/* Exam Hall Traps */}
       {payload.exam_hall_traps.length > 0 && (
-        <div className="bg-red-50/60 border border-red-200 rounded-xl p-6 shadow-sm space-y-3">
-          <h2 className="text-xs font-bold text-red-900 uppercase tracking-wider flex items-center gap-2">
-            <AlertTriangle className="w-4 h-4 text-red-600" />
+        <div className="bg-red-50/60 border border-red-200 rounded-xl p-6 shadow-sm space-y-3 print:p-3 print:space-y-1.5 print:border-red-300 print:break-inside-avoid">
+          <h2 className="text-xs font-bold text-red-900 uppercase tracking-wider flex items-center gap-2 print:text-[11px]">
+            <AlertTriangle className="w-4 h-4 text-red-600 print:w-3.5 print:h-3.5" />
             Exam Hall Traps &amp; Common Blunders
           </h2>
-          <ul className="list-disc list-inside space-y-1.5 text-xs text-red-800 leading-relaxed">
+          <ul className="list-disc list-inside space-y-1.5 text-xs text-red-800 leading-relaxed print:text-[11px] print:space-y-0.5">
             {payload.exam_hall_traps.map((trap, i) => (
               <li key={i}>
                 <MathText content={trap} />

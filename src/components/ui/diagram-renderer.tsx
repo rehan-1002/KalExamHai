@@ -152,7 +152,7 @@ export function DiagramRenderer({
 
   return (
     <div
-      className={`my-3.5 p-3.5 bg-white border border-slate-200 dark:border-slate-700/60 rounded-[8px] print:rounded-none print:border-slate-300 print:p-2 print:my-2 break-inside-avoid shadow-xs ${className}`}
+      className={`my-3.5 p-3.5 bg-white border border-slate-200 dark:border-slate-700/60 rounded-[8px] print:rounded-none print:border-slate-300 print:p-2 print:my-1.5 break-inside-avoid print:break-inside-avoid shadow-xs ${className}`}
     >
       {/* Top Action Bar (Hidden in Print) */}
       <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-slate-100 dark:border-slate-800 text-[11px] font-sans print:hidden">
