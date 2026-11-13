@@ -175,3 +175,4 @@ export function FeedbackWidget({ userEmail, userName }: FeedbackWidgetProps) {
     </>
   );
 }
+

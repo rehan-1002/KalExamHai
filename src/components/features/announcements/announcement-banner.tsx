@@ -63,3 +63,4 @@ export function AnnouncementBanner({ announcement }: AnnouncementBannerProps) {
     </div>
   );
 }
+

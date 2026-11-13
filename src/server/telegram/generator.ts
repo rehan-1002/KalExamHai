@@ -88,6 +88,10 @@ export async function generateTelegramArtifact(
     case "iat":
       systemPrompt = `You are a veteran Mumbai University engineering professor designing an official 20-Marks, 1-Hour Internal Assessment Test (IAT) question paper following the official MU NEP-2020 scheme.
 
+STRICT NEP-2020 EXCLUSIVITY RULE:
+You MUST generate this paper strictly using ONLY the official NEP-2020 syllabus modules and question archetypes.
+Do NOT use or mix topics, patterns, or formulas from older schemes (Rev-2019, C-Scheme, or CBCS) that were dropped or modified in NEP-2020.
+
 STRICT FORMATTING RULES:
 1. Always put question statements on their own line.
 2. Put the marks, module, and MU repeat frequency on DEDICATED INDENTED SUBLINES:
@@ -148,7 +152,11 @@ STRICT FORMATTING RULES:
 
     case "paper60":
       systemPrompt = `You are the Chief Examination Moderator for Mumbai University Engineering (NEP-2020 Pattern).
-Generate a strict 60-Marks, 2-Hour Question Paper based on the syllabus.
+Generate a strict 60-Marks, 2-Hour Question Paper based EXCLUSIVELY on the official NEP-2020 syllabus.
+
+STRICT NEP-2020 EXCLUSIVITY RULE:
+You MUST generate this paper strictly using ONLY the official NEP-2020 syllabus modules and question archetypes.
+Under NO circumstances include questions, outdated module distributions, or deprecated topics from older schemes (C-Scheme, CBCS, or Rev-2019). The generated paper MUST be 100% pure NEP-2020.
 
 STRICT FORMATTING RULES:
 1. Put each question on its own clean line.

@@ -75,20 +75,25 @@ export async function generateCramArtifact(
         try {
           const { findMuQuestionPapers } = await import("@/data/mu-pyqs");
           const pyqs = await findMuQuestionPapers(found.branch.id, found.subject.semester, found.subject.name);
-          const pyqArchive = pyqs.slice(0, 8).map((p) => `${p.year} ${p.session} (${p.scheme})`).join(", ");
+          // Prioritize NEP-2020 sources exclusively whenever available
+          const nepPyqs = pyqs.filter((p) => p.isNep || /nep/i.test(p.scheme));
+          const selectedPyqs = nepPyqs.length > 0 ? nepPyqs : pyqs;
+          const pyqArchive = selectedPyqs.slice(0, 8).map((p) => `${p.year} ${p.session} (${p.scheme})`).join(", ");
           chunks.push({
             id: "c_pyq",
             documentId: `mu_pyq_${found.subject.code}`,
-            documentTitle: `${found.subject.name} (Historical MU PYQ Archive)`,
+            documentTitle: `${found.subject.name} (Official NEP-2020 PYQ Intelligence)`,
             chunkIndex: 99,
-            unitLabel: "PYQ Repeat Intelligence",
+            unitLabel: "NEP-2020 Repeat Intelligence",
             pageStart: 1,
             pageEnd: 1,
             content: `[MUMBAI UNIVERSITY HISTORICAL EXAM INTELLIGENCE: ${found.subject.name}]\n` +
-              `Archived Past Papers: ${pyqArchive || "Dec '24 NEP, May '24, Dec '23, May '23, Dec '22, May '22"}\n\n` +
-              `CRITICAL STUDY ARTIFACT INSTRUCTION:\n` +
-              `You MUST focus strictly on concepts, definitions, derivations, and formulas required to answer the MOST FREQUENTLY REPEATED Mumbai University past exam questions.\n` +
-              `Give highest priority to topics recurring across May and December exam sessions with 85%+ repeat probability.`,
+              `Active Scheme: NEP-2020 (Strict Syllabus Mandate)\n` +
+              `Archived Verified Past Papers: ${pyqArchive || "Dec '24 NEP, May '24 NEP"}\n\n` +
+              `CRITICAL STUDY ARTIFACT INSTRUCTION (STRICT NEP-2020 PURITY):\n` +
+              `You MUST focus EXCLUSIVELY on NEP-2020 syllabus concepts, definitions, derivations, and formulas required for Mumbai University.\n` +
+              `DO NOT include questions or concepts from older schemes (Rev-2019 / C-Scheme / CBCS) if NEP-2020 materials are present.\n` +
+              `Give highest priority to topics recurring across NEP-2020 exam sessions with 85%+ repeat probability.`,
             tokenCount: 150,
           });
         } catch {

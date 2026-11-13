@@ -55,6 +55,9 @@ STRICT BLUEPRINT STRUCTURE (MANDATORY):
 ${structureRules}
 
 GROUNDING & INTEGRITY RULES:
+0. NEP-2020 PURITY MANDATE (STRICT & NON-NEGOTIABLE):
+   When generating examination papers for Mumbai University, you MUST EXCLUSIVELY use the NEP-2020 scheme and syllabus.
+   Under NO circumstances should you include topics, questions, or patterns from older schemes (Rev-2019, C-Scheme, or CBCS) that were dropped, modified, or reallocated in NEP-2020. Every question and marking breakdown MUST be 100% pure NEP-2020.
 1. USE ONLY THE TEXT INSIDE [CHUNK] BLOCKS. Do not invent formulas, facts, or questions not covered in the chunks.
 2. Every sub-question MUST cite one or more source chunk IDs in "source_chunk_ids" (e.g. ["c_1"]).
 3. Math Formulas: ALL equations and math notation must use standard LaTeX delimiters ($...$ for inline, $$...$$ for display). Never use Unicode math symbols in plain text.
@@ -310,19 +313,24 @@ export async function generatePaper(
         try {
           const { findMuQuestionPapers } = await import("@/data/mu-pyqs");
           const pyqs = await findMuQuestionPapers(found.branch.id, found.subject.semester, found.subject.name);
-          const pyqArchive = pyqs.slice(0, 8).map((p) => `${p.year} ${p.session} (${p.scheme})`).join(", ");
+          // Prioritize NEP-2020 sources exclusively whenever available
+          const nepPyqs = pyqs.filter((p) => p.isNep || /nep/i.test(p.scheme));
+          const selectedPyqs = nepPyqs.length > 0 ? nepPyqs : pyqs;
+          const pyqArchive = selectedPyqs.slice(0, 8).map((p) => `${p.year} ${p.session} (${p.scheme})`).join(", ");
           chunks.push({
             id: "c_pyq",
             documentId: `mu_pyq_${found.subject.code}`,
-            documentTitle: `${found.subject.name} (Historical MU PYQ Archive)`,
+            documentTitle: `${found.subject.name} (Official NEP-2020 PYQ Intelligence)`,
             chunkIndex: 99,
-            unitLabel: "PYQ Repeat Intelligence",
+            unitLabel: "NEP-2020 Repeat Intelligence",
             pageStart: 1,
             pageEnd: 1,
             content: `[MUMBAI UNIVERSITY HISTORICAL EXAM INTELLIGENCE: ${found.subject.name}]\n` +
-              `Archived Past Papers Available: ${pyqArchive || "Dec '24 NEP, May '24, Dec '23, May '23, Dec '22, May '22"}\n\n` +
-              `CRITICAL INSTRUCTION FOR QUESTION PAPER SELECTION:\n` +
-              `You MUST select questions that directly correspond to the MOST FREQUENTLY REPEATED Mumbai University exam questions across past 5-year papers.\n` +
+              `Active Scheme: NEP-2020 (Strict Syllabus Mandate)\n` +
+              `Archived NEP-2020 Past Papers: ${pyqArchive || "Dec '24 NEP, May '24 NEP"}\n\n` +
+              `CRITICAL NEP-2020 INSTRUCTION FOR QUESTION PAPER SELECTION:\n` +
+              `You MUST select questions that directly correspond to the MOST FREQUENTLY REPEATED Mumbai University NEP-2020 exam questions.\n` +
+              `USE EXCLUSIVELY NEP-2020 syllabus topics. DO NOT use older C-Scheme/CBCS/Rev-2019 topics if they were altered or removed under NEP-2020.\n` +
               `Prioritize core analytical proofs, standard university numericals, key algorithm traces, and recurring questions with ~85%-95% historical repeat probability.\n` +
               `Avoid obscure or trivial introductory definitions; prioritize the standard 5-mark and 10-mark recurring examination archetypes.`,
             tokenCount: 150,
