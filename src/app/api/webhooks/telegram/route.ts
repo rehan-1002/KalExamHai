@@ -28,6 +28,7 @@ import {
   formatSubjectSyllabusText,
 } from "@/data/mu-syllabus";
 import { findMuQuestionPapers } from "@/data/mu-pyqs";
+import { recordTelegramUser } from "@/server/telegram/users";
 
 export const maxDuration = 60; // Allow sufficient time for Gemini LLM generation on Vercel
 
@@ -46,6 +47,17 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const update = await req.json();
+
+    // Auto-record Telegram user profile for Admin Roster & Live Tracking
+    const tgSender = update.message?.from || update.callback_query?.from;
+    const tgChatId = update.message?.chat?.id || update.callback_query?.message?.chat?.id;
+    if (tgSender && tgChatId) {
+      recordTelegramUser(tgChatId, {
+        firstName: tgSender.first_name,
+        lastName: tgSender.last_name,
+        username: tgSender.username,
+      }).catch(() => {});
+    }
 
     // 1. Handle Inline Button Callback Clicks
     if (update.callback_query) {

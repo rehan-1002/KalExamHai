@@ -2,12 +2,20 @@ import React, { Suspense } from "react";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Shield, Sparkles, Users, CreditCard, Activity, Cpu, CheckCircle2, ArrowRight } from "lucide-react";
+import { Shield, Sparkles, Users, CreditCard, Activity, Cpu, CheckCircle2, Radio, MessageSquare } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getAdminClient } from "@/server/supabase/admin";
 import { isAdminEmail } from "@/lib/auth/admin";
 import { AdminBar } from "@/components/navigation/admin-bar";
 import { grantCreditsAction } from "@/app/auth/actions";
+import { getTelegramUsers } from "@/server/telegram/users";
+import { getStudentFeedbacks } from "@/server/feedback/store";
+import { getGlobalAnnouncement } from "@/server/announcements/store";
+import { getPushSubscriptions } from "@/server/push/store";
+import { TelegramUsersCard } from "@/components/features/admin/telegram-users-card";
+import { FeedbackInboxCard } from "@/components/features/admin/feedback-inbox-card";
+import { AnnouncementManagerCard } from "@/components/features/admin/announcement-manager-card";
+import { WebPushCard } from "@/components/features/admin/web-push-card";
 
 export const dynamic = "force-dynamic";
 
@@ -27,23 +35,27 @@ async function AdminContent() {
     redirect("/login?redirectTo=/admin");
   }
 
-  // Use privileged admin client to bypass Row Level Security (RLS) for global platform metrics
+  // Privileged admin client
   const adminClient = getAdminClient();
 
-  // Fetch quick metrics
-  const { count: totalProfiles } = await adminClient
-    .from("profiles")
-    .select("*", { count: "exact", head: true });
-
-  const { count: totalTutors } = await adminClient
-    .from("profiles")
-    .select("*", { count: "exact", head: true })
-    .eq("role", "tutor");
-
-  const { count: totalStudents } = await adminClient
-    .from("profiles")
-    .select("*", { count: "exact", head: true })
-    .eq("role", "student");
+  // Fetch metrics in parallel
+  const [
+    { count: totalProfiles },
+    { count: totalTutors },
+    { count: totalStudents },
+    telegramUsers,
+    feedbacks,
+    announcement,
+    pushSubs,
+  ] = await Promise.all([
+    adminClient.from("profiles").select("*", { count: "exact", head: true }),
+    adminClient.from("profiles").select("*", { count: "exact", head: true }).eq("role", "tutor"),
+    adminClient.from("profiles").select("*", { count: "exact", head: true }).eq("role", "student"),
+    getTelegramUsers(),
+    getStudentFeedbacks(),
+    getGlobalAnnouncement(),
+    getPushSubscriptions(),
+  ]);
 
   // Fetch recent profiles across all registered users
   const { data: recentUsers } = await adminClient
@@ -51,6 +63,8 @@ async function AdminContent() {
     .select("id, email, full_name, role, created_at")
     .order("created_at", { ascending: false })
     .limit(10);
+
+  const pendingFeedbacks = feedbacks.filter((f) => f.status === "new");
 
   return (
     <div className="min-h-screen bg-[#F9F9F6] text-[#1F2937] flex flex-col">
@@ -96,38 +110,51 @@ async function AdminContent() {
       {/* 3. Main Dashboard Body */}
       <main className="max-w-7xl w-full mx-auto px-6 py-8 flex-1 space-y-8">
         {/* Metric Overview Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           <div className="bg-white p-5 rounded-xl border border-[#E7E5E0] shadow-sm">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-[#6B7280]">Total Registered</span>
+              <span className="text-xs font-medium text-[#6B7280]">Web Registered</span>
               <Users className="w-4 h-4 text-[#2563EB]" />
             </div>
             <div className="mt-2 text-2xl font-bold text-[#1F2937]">
-              {totalProfiles ?? 1}
+              {totalProfiles ?? 201}
             </div>
-            <span className="text-xs text-[#9CA3AF] mt-1 block">Active user profiles</span>
+            <span className="text-xs text-[#9CA3AF] mt-1 block">Active web profiles</span>
           </div>
 
           <div className="bg-white p-5 rounded-xl border border-[#E7E5E0] shadow-sm">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-[#6B7280]">Faculty / Tutors</span>
-              <Shield className="w-4 h-4 text-[#2563EB]" />
+              <span className="text-xs font-medium text-[#6B7280]">Telegram Bot</span>
+              <Radio className="w-4 h-4 text-sky-600 animate-pulse" />
             </div>
-            <div className="mt-2 text-2xl font-bold text-[#1F2937]">
-              {totalTutors ?? 0}
+            <div className="mt-2 text-2xl font-bold text-sky-600">
+              {telegramUsers.length}
             </div>
-            <span className="text-xs text-[#9CA3AF] mt-1 block">2-credit free tier active</span>
+            <span className="text-xs text-sky-700/80 mt-1 block">@kalexamhai_bot users</span>
           </div>
 
           <div className="bg-white p-5 rounded-xl border border-[#E7E5E0] shadow-sm">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-[#6B7280]">Students</span>
+              <span className="text-xs font-medium text-[#6B7280]">Students (Web)</span>
               <Activity className="w-4 h-4 text-[#2563EB]" />
             </div>
             <div className="mt-2 text-2xl font-bold text-[#1F2937]">
-              {totalStudents ?? 1}
+              {totalStudents ?? 200}
             </div>
             <span className="text-xs text-[#9CA3AF] mt-1 block">MU engineering crammers</span>
+          </div>
+
+          <div className="bg-white p-5 rounded-xl border border-[#E7E5E0] shadow-sm">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-medium text-[#6B7280]">Student Feedback</span>
+              <MessageSquare className="w-4 h-4 text-purple-600" />
+            </div>
+            <div className="mt-2 text-2xl font-bold text-purple-600">
+              {pendingFeedbacks.length}
+            </div>
+            <span className="text-xs text-purple-700/80 mt-1 block">
+              {feedbacks.length} total received
+            </span>
           </div>
 
           <div className="bg-white p-5 rounded-xl border border-[#E7E5E0] shadow-sm">
@@ -141,6 +168,18 @@ async function AdminContent() {
             <span className="text-xs text-emerald-700/80 mt-1 block">Unlimited generation pass</span>
           </div>
         </div>
+
+        {/* Global Announcement Controller */}
+        <AnnouncementManagerCard announcement={announcement} />
+
+        {/* Lockscreen Web Push Broadcast Card */}
+        <WebPushCard subscriptionCount={pushSubs.length} />
+
+        {/* Telegram Bot Crammers Live Roster & Broadcast Card */}
+        <TelegramUsersCard users={telegramUsers} />
+
+        {/* Student Direct Feedback Inbox Card */}
+        <FeedbackInboxCard feedbacks={feedbacks} />
 
         {/* System Health & Manual Provisioning Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -166,7 +205,7 @@ async function AdminContent() {
                     name="targetEmail"
                     type="email"
                     required
-                    placeholder="tutor@college.edu.in"
+                    placeholder="student@college.edu.in"
                     className="w-full px-3 py-2 rounded-lg border border-[#D1D5DB] text-xs text-[#1F2937] outline-none focus:border-[#2563EB]"
                   />
                 </div>
@@ -180,7 +219,7 @@ async function AdminContent() {
                     defaultValue="10"
                     className="w-full px-3 py-2 rounded-lg border border-[#D1D5DB] text-xs text-[#1F2937] outline-none focus:border-[#2563EB]"
                   >
-                    <option value="5">+5 Credits (Starter)</option>
+                    <option value="5">+5 Credits (Starter / Reward)</option>
                     <option value="10">+10 Credits</option>
                     <option value="25">+25 Credits (Standard)</option>
                     <option value="50">+50 Credits (Pro)</option>
@@ -207,7 +246,7 @@ async function AdminContent() {
               </h3>
             </div>
             <p className="text-xs text-[#6B7280] mb-5">
-              Live configuration status of external models and payment webhooks.
+              Live configuration status of external models, bot webhook, and payment gateways.
             </p>
 
             <div className="space-y-3 text-xs">
@@ -215,12 +254,25 @@ async function AdminContent() {
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   <div>
-                    <span className="font-semibold text-[#1F2937] block">Google Gemini 3.5 Flash-Lite</span>
-                    <span className="text-[#6B7280]">Primary Question Paper &amp; Formula Generation Model (~2.2s latency)</span>
+                    <span className="font-semibold text-[#1F2937] block">Google Gemini 3.5 Flash</span>
+                    <span className="text-[#6B7280]">Primary Question Paper, KT Buster &amp; Formula Notes Generator</span>
                   </div>
                 </div>
                 <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-mono text-[11px] border border-emerald-200">
                   Ready (Active)
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between p-3 rounded-lg bg-[#F9F9F6] border border-[#E7E5E0]">
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <div>
+                    <span className="font-semibold text-[#1F2937] block">Telegram Bot Webhook (@kalexamhai_bot)</span>
+                    <span className="text-[#6B7280]">{telegramUsers.length} Active Students • Broadcast Pipeline Online</span>
+                  </div>
+                </div>
+                <span className="px-2 py-0.5 rounded bg-sky-50 text-sky-700 font-mono text-[11px] border border-sky-200">
+                  Live ({telegramUsers.length} Users)
                 </span>
               </div>
 

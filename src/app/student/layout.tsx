@@ -6,6 +6,10 @@ import { isAdminEmail } from "@/lib/auth/admin";
 import { getDailyQuotaStatus } from "@/server/credits/daily-quota";
 import { AdminBar } from "@/components/navigation/admin-bar";
 import { WorkspaceNav } from "@/components/navigation/workspace-nav";
+import { getGlobalAnnouncement } from "@/server/announcements/store";
+import { AnnouncementBanner } from "@/components/features/announcements/announcement-banner";
+import { FeedbackWidget } from "@/components/features/feedback/feedback-widget";
+import { PushPrompt } from "@/components/features/push/push-prompt";
 
 export const dynamic = "force-dynamic";
 
@@ -35,11 +39,15 @@ export default async function StudentLayout({
     .maybeSingle();
 
   const creditBalance = ledgerEntry?.balance_after ?? (isAdmin ? 9999 : 2);
-  const quota = await getDailyQuotaStatus(user.id);
+  const [quota, announcement] = await Promise.all([
+    getDailyQuotaStatus(user.id),
+    getGlobalAnnouncement(),
+  ]);
 
   return (
     <div className="min-h-screen bg-[#F9F9F6] text-[#1F2937] flex flex-col">
       <AdminBar userEmail={user.email ?? ""} />
+      <AnnouncementBanner announcement={announcement} />
       <WorkspaceNav
         userEmail={user.email ?? ""}
         creditBalance={creditBalance}
@@ -48,6 +56,11 @@ export default async function StudentLayout({
         quota={quota}
       />
       <main className="flex-1">{children}</main>
+      <FeedbackWidget
+        userEmail={user.email ?? ""}
+        userName={user.user_metadata?.full_name || user.email?.split("@")[0]}
+      />
+      <PushPrompt />
     </div>
   );
 }
