@@ -10,6 +10,9 @@ export interface RefundCreditResult {
 /**
  * Refunds previously reserved credits if generation fails validation after retries.
  * Appends a positive credit entry to `credit_ledger`.
+ *
+ * NOTE: If amount <= 0 (e.g. Free Daily Quota was used), this is a NO-OP to prevent
+ * accidental free credit injection into user balances.
  */
 export async function refundCredits(
   userId: string,
@@ -17,6 +20,15 @@ export async function refundCredits(
   reason: string,
   referenceId?: string
 ): Promise<RefundCreditResult> {
+  // CRITICAL AUDIT FIX: Never refund 0 or negative amounts!
+  // If user used free daily quota (amount === 0), do nothing!
+  if (!amount || amount <= 0) {
+    return {
+      success: true,
+      balanceAfter: undefined,
+    };
+  }
+
   const supabase = getAdminClient();
 
   const { data: latestRow } = await supabase

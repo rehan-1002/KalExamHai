@@ -38,7 +38,7 @@ export default async function StudentLayout({
     .limit(1)
     .maybeSingle();
 
-  const creditBalance = ledgerEntry?.balance_after ?? (isAdmin ? 9999 : 2);
+  const creditBalance = ledgerEntry?.balance_after ?? (isAdmin ? 9999 : 0);
   const [quota, announcement] = await Promise.all([
     getDailyQuotaStatus(user.id),
     getGlobalAnnouncement(),

@@ -245,7 +245,7 @@ export async function generatePaper(
 
   // 1. Check Daily Free Quota & End-Sem 1-Trial Limit
   const { checkCanGenerate } = await import("../credits/daily-quota");
-  const quotaCheck = await checkCanGenerate(ownerId, params.format);
+  const quotaCheck = await checkCanGenerate(ownerId, params.format, creditCost);
   if (!quotaCheck.allowed) {
     return {
       ok: false,
@@ -352,7 +352,9 @@ export async function generatePaper(
         matchCount: params.format === "IAT" ? 8 : 12,
       });
     } catch (err: unknown) {
-      await refundCredits(ownerId, creditCost, "retrieval_failure_refund", requestId);
+      if (reserveResult.deductedAmount > 0) {
+        await refundCredits(ownerId, reserveResult.deductedAmount, "retrieval_failure_refund", requestId);
+      }
       return {
         ok: false,
         code: "RETRIEVAL_FAILED",
@@ -362,7 +364,9 @@ export async function generatePaper(
   }
 
   if (!chunks || chunks.length === 0) {
-    await refundCredits(ownerId, creditCost, "insufficient_context_refund", requestId);
+    if (reserveResult.deductedAmount > 0) {
+      await refundCredits(ownerId, reserveResult.deductedAmount, "insufficient_context_refund", requestId);
+    }
     return {
       ok: false,
       code: "INSUFFICIENT_CONTEXT",
@@ -576,12 +580,17 @@ export async function generatePaper(
 
   // 4. Handle failure after all attempts
   if (!validatedPaper) {
-    await refundCredits(ownerId, creditCost, "generation_failure_refund", requestId);
+    if (reserveResult.deductedAmount > 0) {
+      await refundCredits(ownerId, reserveResult.deductedAmount, "generation_failure_refund", requestId);
+    }
     const friendlyReason = lastErrors.slice(0, 2).join("; ");
     return {
       ok: false,
       code: "GENERATION_FAILED",
-      message: `Generation could not be completed. Your ${creditCost} credit(s) have been returned. Reason: ${friendlyReason}`,
+      message:
+        reserveResult.deductedAmount > 0
+          ? `Generation could not be completed. Your ${reserveResult.deductedAmount} credit(s) have been returned. Reason: ${friendlyReason}`
+          : `Generation could not be completed. Your daily free quota slot was not consumed. Reason: ${friendlyReason}`,
     };
   }
 
@@ -612,17 +621,19 @@ export async function generatePaper(
     model: modelName,
     prompt_version: PROMPT_VERSION,
     validation_attempts: attempts,
-    credits_charged: creditCost,
+    credits_charged: reserveResult.deductedAmount,
     request_id: requestId,
   });
 
   if (insertErr) {
-    // If insertion failed, refund credits
-    await refundCredits(ownerId, creditCost, "db_save_failure_refund", requestId);
+    // If insertion failed, refund credits if any were deducted
+    if (reserveResult.deductedAmount > 0) {
+      await refundCredits(ownerId, reserveResult.deductedAmount, "db_save_failure_refund", requestId);
+    }
     return {
       ok: false,
       code: "DB_ERROR",
-      message: `Failed to save generated paper: ${insertErr.message}. Your credits were returned.`,
+      message: `Failed to save generated paper: ${insertErr.message}.`,
     };
   }
 
@@ -631,7 +642,7 @@ export async function generatePaper(
     data: {
       paperId,
       paper: validatedPaper,
-      creditsCharged: creditCost,
+      creditsCharged: reserveResult.deductedAmount,
     },
   };
 }

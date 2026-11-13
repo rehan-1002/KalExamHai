@@ -40,7 +40,7 @@ async function StudentGenerateContent({ searchParams }: StudentGenerateContentPr
     .limit(1)
     .maybeSingle();
 
-  const creditBalance = ledgerEntry?.balance_after ?? (isAdmin ? 9999 : 2);
+  const creditBalance = ledgerEntry?.balance_after ?? (isAdmin ? 9999 : 0);
   const quota = await getDailyQuotaStatus(user.id);
 
   // Fetch user's ingested documents

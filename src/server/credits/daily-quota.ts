@@ -131,19 +131,41 @@ export async function getDailyQuotaStatus(userId: string): Promise<DailyQuotaSta
 
 /**
  * Checks whether a specific generation type is permitted for the user today.
+ * If daily free quota is exhausted or premium 1-trial is already consumed,
+ * allows bypass if the user holds sufficient balance in `credit_ledger`.
  */
 export async function checkCanGenerate(
   userId: string,
-  type: GeneratableType
-): Promise<{ allowed: boolean; reason?: string; quotaStatus: DailyQuotaStatus }> {
+  type: GeneratableType,
+  creditCost?: number
+): Promise<{ allowed: boolean; reason?: string; quotaStatus: DailyQuotaStatus; isPaidCreditBypass?: boolean }> {
   const quota = await getDailyQuotaStatus(userId);
 
   if (quota.isUnlimited) {
     return { allowed: true, quotaStatus: quota };
   }
 
+  // Helper to check if user has paid credits to bypass daily free quota limit
+  async function hasPaidCreditCoverage(cost: number): Promise<boolean> {
+    const supabase = getAdminClient();
+    const { data: latestRow } = await supabase
+      .from("credit_ledger")
+      .select("balance_after")
+      .eq("user_id", userId)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    return (latestRow?.balance_after ?? 0) >= cost;
+  }
+
+  const cost = creditCost ?? (type === "END_SEM" ? 2 : 1);
+
   // 1. Check general daily limit
   if (quota.remainingToday <= 0) {
+    if (await hasPaidCreditCoverage(cost)) {
+      return { allowed: true, quotaStatus: quota, isPaidCreditBypass: true };
+    }
     return {
       allowed: false,
       reason: `Daily free quota reached (used ${DAILY_FREE_LIMIT}/${DAILY_FREE_LIMIT} today). Your free quota will reset tonight at ${quota.resetsAtFormatted}!`,
@@ -153,9 +175,12 @@ export async function checkCanGenerate(
 
   // 2. Check 1-trial/day limits on premium features
   if (type === "END_SEM" && quota.premiumTrialsUsed.endSem) {
+    if (await hasPaidCreditCoverage(cost)) {
+      return { allowed: true, quotaStatus: quota, isPaidCreditBypass: true };
+    }
     return {
       allowed: false,
-      reason: `You have already used your 1 free End-Sem (60M) trial paper for today! You can still generate IAT (20M) papers with your ${quota.remainingToday} remaining free slot(s) today.`,
+      reason: `You have already used your 1 free End-Sem (60M) trial paper for today! You can still generate IAT (20M) papers with your ${quota.remainingToday} remaining free slot(s) today, or use credits.`,
       quotaStatus: quota,
     };
   }
