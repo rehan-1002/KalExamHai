@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { BellRing, Send, CheckCircle2, Loader2, Smartphone, ShieldAlert, Sparkles } from "lucide-react";
 import { broadcastWebPushAction, testAdminPushAction } from "@/app/admin/actions";
+import { VAPID_PUBLIC_KEY } from "@/lib/push/vapid-public";
 
 interface WebPushCardProps {
   subscriptionCount: number;
@@ -20,6 +22,7 @@ function urlBase64ToUint8Array(base64String: string) {
 }
 
 export function WebPushCard({ subscriptionCount }: WebPushCardProps) {
+  const router = useRouter();
   const [title, setTitle] = useState("🚨 Tomorrow's Exam Alert!");
   const [body, setBody] = useState("Maths-1 predicted high-probability questions are now live. Revise now!");
   const [url, setUrl] = useState("/student/cram/new?type=kt_buster");
@@ -64,7 +67,17 @@ export function WebPushCard({ subscriptionCount }: WebPushCardProps) {
 
       await navigator.serviceWorker.register("/sw.js");
       const reg = await navigator.serviceWorker.ready;
-      const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+
+      // Use imported public VAPID key with dynamic endpoint fallback
+      let vapidKey = VAPID_PUBLIC_KEY;
+      if (!vapidKey) {
+        try {
+          const keyRes = await fetch("/api/push/vapid-public-key");
+          const keyJson = await keyRes.json();
+          vapidKey = keyJson.publicKey;
+        } catch {}
+      }
+
       if (!vapidKey) throw new Error("VAPID public key not configured.");
 
       const sub = await reg.pushManager.subscribe({
@@ -72,15 +85,20 @@ export function WebPushCard({ subscriptionCount }: WebPushCardProps) {
         applicationServerKey: urlBase64ToUint8Array(vapidKey),
       });
 
-      await fetch("/api/push/subscribe", {
+      const res = await fetch("/api/push/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ subscription: sub, role: "admin" }),
       });
 
+      if (!res.ok) {
+        throw new Error("Failed to save push subscription on server");
+      }
+
       setIsDeviceSubscribed(true);
       setIsRegisteringDevice(false);
       setDeviceAlertMsg("✅ Success! This device will now vibrate and pop up whenever a student submits feedback.");
+      router.refresh();
       setTimeout(() => setDeviceAlertMsg(null), 6000);
     } catch (err: unknown) {
       setDeviceAlertMsg(`❌ Registration failed: ${err instanceof Error ? err.message : "Unknown error"}`);

@@ -20,6 +20,10 @@ export async function POST(req: NextRequest) {
     const role = isAdmin ? "admin" : "student";
 
     const res = await savePushSubscription(sub, user?.id, role);
+    if (res.ok) {
+      const { revalidatePath } = await import("next/cache");
+      revalidatePath("/admin");
+    }
     return NextResponse.json(res);
   } catch (err: unknown) {
     return NextResponse.json(

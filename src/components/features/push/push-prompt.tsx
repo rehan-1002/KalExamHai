@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Bell, BellRing, X, Check, Loader2 } from "lucide-react";
+import { VAPID_PUBLIC_KEY } from "@/lib/push/vapid-public";
 
 function urlBase64ToUint8Array(base64String: string) {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
@@ -59,7 +60,14 @@ export function PushPrompt() {
       }
 
       const reg = await navigator.serviceWorker.ready;
-      const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+      let vapidPublicKey = VAPID_PUBLIC_KEY;
+      if (!vapidPublicKey) {
+        try {
+          const keyRes = await fetch("/api/push/vapid-public-key");
+          const keyJson = await keyRes.json();
+          vapidPublicKey = keyJson.publicKey;
+        } catch {}
+      }
       if (!vapidPublicKey) throw new Error("VAPID public key missing");
 
       const sub = await reg.pushManager.subscribe({

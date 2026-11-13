@@ -11,12 +11,18 @@ export interface StoredPushSubscription {
   createdAt: number;
 }
 
-const publicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || "";
-const privateKey = process.env.VAPID_PRIVATE_KEY || "";
+const publicKey =
+  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ||
+  "BIlVELI6bnGH1W8YF4fy-gnAbPwzAxDS8RkU_B_TfpknReFrJIl51QvJIuzASvgvsTMw2phZksuGpWGXu7pBXnQ";
+const privateKey =
+  process.env.VAPID_PRIVATE_KEY ||
+  "x5tOEQste9O-bQIB6g80L_9CsY7_hKDlw80FGZIA0gg";
 const subject = process.env.VAPID_SUBJECT || "mailto:admin@kalexamhai.in";
 
-if (publicKey && privateKey) {
+try {
   setVapidDetails(subject, publicKey, privateKey);
+} catch (e) {
+  console.warn("VAPID setup warning:", e);
 }
 
 /**
