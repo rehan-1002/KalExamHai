@@ -7,6 +7,7 @@ export interface StoredPushSubscription {
   id: string;
   subscription: PushSubscription;
   userId?: string;
+  role?: string;
   createdAt: number;
 }
 
@@ -23,7 +24,8 @@ if (publicKey && privateKey) {
  */
 export async function savePushSubscription(
   sub: PushSubscription,
-  userId?: string
+  userId?: string,
+  role?: string
 ): Promise<{ ok: boolean }> {
   try {
     const supabase = getAdminClient();
@@ -35,13 +37,14 @@ export async function savePushSubscription(
       id,
       subscription: sub,
       userId: userId || "guest",
+      role: role || (userId ? "student" : "guest"),
       createdAt: Date.now(),
     };
 
     await supabase.storage
       .from("documents")
-      .upload(`push_subs/${id}.json`, Buffer.from(JSON.stringify(record), "utf-8"), {
-        contentType: "application/json",
+      .upload(`push_subs/${id}.txt`, Buffer.from(JSON.stringify(record), "utf-8"), {
+        contentType: "text/plain",
         upsert: true,
       });
 
@@ -66,7 +69,7 @@ export async function getPushSubscriptions(): Promise<StoredPushSubscription[]> 
 
     const subs: StoredPushSubscription[] = [];
     const promises = files
-      .filter((f) => f.name.endsWith(".json"))
+      .filter((f) => f.name.endsWith(".txt") || f.name.endsWith(".json"))
       .map(async (f) => {
         try {
           const { data } = await supabase.storage.from("documents").download(`push_subs/${f.name}`);
@@ -122,4 +125,62 @@ export async function sendWebPushNotification(payload: {
 
   await Promise.all(promises);
   return { total: subs.length, sent, failed };
+}
+
+/**
+ * Sends an instant vibrating Lockscreen Push Notification directly to Admin devices
+ * whenever a student submits feedback or reports a bug.
+ */
+export async function sendAdminFeedbackPush(payload: {
+  userName: string;
+  category: string;
+  message: string;
+  pageUrl?: string;
+}): Promise<{ sent: number; total: number }> {
+  try {
+    const subs = await getPushSubscriptions();
+    if (subs.length === 0) return { sent: 0, total: 0 };
+
+    // Target admin devices first; if none specifically tagged, send to active devices
+    const adminSubs = subs.filter((s) => s.role === "admin");
+    const targetSubs = adminSubs.length > 0 ? adminSubs : subs;
+
+    const categoryEmoji: Record<string, string> = {
+      bug: "🐛 Bug Report",
+      suggestion: "💡 New Suggestion",
+      syllabus: "📚 Syllabus Gap",
+      general: "💬 Student Feedback",
+    };
+
+    const categoryTitle = categoryEmoji[payload.category] || "💬 New Feedback";
+
+    const payloadString = JSON.stringify({
+      title: `🚨 ${categoryTitle} — ${payload.userName || "Student"}`,
+      body: payload.message.length > 120 ? `${payload.message.slice(0, 117)}...` : payload.message,
+      url: "/admin#feedback",
+      tag: `feedback-${Date.now()}`,
+    });
+
+    let sent = 0;
+    const promises = targetSubs.map(async (item) => {
+      try {
+        await sendNotification(item.subscription, payloadString);
+        sent++;
+      } catch (err: unknown) {
+        const statusCode = (err as { statusCode?: number })?.statusCode;
+        if (statusCode === 410 || statusCode === 404) {
+          try {
+            const supabase = getAdminClient();
+            await supabase.storage.from("documents").remove([`push_subs/${item.id}.json`]);
+          } catch {}
+        }
+      }
+    });
+
+    await Promise.all(promises);
+    return { sent, total: targetSubs.length };
+  } catch (err) {
+    console.error("Failed to broadcast admin feedback push notification:", err);
+    return { sent: 0, total: 0 };
+  }
 }

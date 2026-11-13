@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { submitStudentFeedback, type FeedbackCategory } from "@/server/feedback/store";
 
@@ -31,6 +32,10 @@ export async function submitFeedbackAction(params: {
     pageUrl: params.pageUrl || "/",
     deviceInfo: params.deviceInfo || "Browser",
   });
+
+  if (res.ok) {
+    revalidatePath("/admin");
+  }
 
   return res;
 }

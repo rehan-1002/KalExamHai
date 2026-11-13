@@ -34,14 +34,36 @@ export async function submitStudentFeedback(
       status: "new",
     };
 
-    await supabase.storage
+    const filePath = `feedbacks/${id}.txt`;
+    const { error: uploadError } = await supabase.storage
       .from("documents")
-      .upload(`feedbacks/${id}.json`, Buffer.from(JSON.stringify(record), "utf-8"), {
-        contentType: "application/json",
+      .upload(filePath, Buffer.from(JSON.stringify(record), "utf-8"), {
+        contentType: "text/plain",
         upsert: true,
       });
 
+    if (uploadError) {
+      console.error("Supabase storage upload error for feedback:", uploadError);
+      return { ok: false, id: "", error: uploadError.message };
+    }
+
     cachedFeedback = null;
+
+    // 🚀 Instant Lockscreen Web Push Notification directly to Admin
+    try {
+      const { sendAdminFeedbackPush } = await import("@/server/push/store");
+      sendAdminFeedbackPush({
+        userName: data.userName || "Student",
+        category: data.category,
+        message: data.message,
+        pageUrl: data.pageUrl,
+      }).catch((pushErr) => {
+        console.error("Admin push dispatch error:", pushErr);
+      });
+    } catch (e) {
+      console.error("Failed to load push module:", e);
+    }
+
     return { ok: true, id };
   } catch (err: unknown) {
     console.error("Failed to submit feedback:", err);
@@ -69,7 +91,7 @@ export async function getStudentFeedbacks(): Promise<StudentFeedback[]> {
 
     const items: StudentFeedback[] = [];
     const promises = files
-      .filter((f) => f.name.endsWith(".json"))
+      .filter((f) => f.name.endsWith(".txt") || f.name.endsWith(".json"))
       .map(async (f) => {
         try {
           const { data } = await supabase.storage
@@ -100,8 +122,13 @@ export async function updateFeedbackStatus(
 ): Promise<{ ok: boolean }> {
   try {
     const supabase = getAdminClient();
-    const filePath = `feedbacks/${id}.json`;
-    const { data } = await supabase.storage.from("documents").download(filePath);
+    let filePath = `feedbacks/${id}.txt`;
+    let { data } = await supabase.storage.from("documents").download(filePath);
+    if (!data) {
+      filePath = `feedbacks/${id}.json`;
+      const res = await supabase.storage.from("documents").download(filePath);
+      data = res.data;
+    }
     if (!data) return { ok: false };
 
     const parsed = JSON.parse(await data.text()) as StudentFeedback;
@@ -110,7 +137,7 @@ export async function updateFeedbackStatus(
     await supabase.storage
       .from("documents")
       .upload(filePath, Buffer.from(JSON.stringify(parsed), "utf-8"), {
-        contentType: "application/json",
+        contentType: "text/plain",
         upsert: true,
       });
 

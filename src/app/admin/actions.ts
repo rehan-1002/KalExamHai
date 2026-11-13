@@ -85,3 +85,18 @@ export async function broadcastWebPushAction(formData: FormData) {
   return { ok: true, ...result };
 }
 
+export async function testAdminPushAction() {
+  const isAdmin = await verifyAdmin();
+  if (!isAdmin) return { ok: false, error: "Unauthorized" };
+
+  const { sendAdminFeedbackPush } = await import("@/server/push/store");
+  const result = await sendAdminFeedbackPush({
+    userName: "Founder Alert Test",
+    category: "suggestion",
+    message: "Bhai instant feedback alert is working! You will get this lockscreen notification whenever a student gives feedback.",
+    pageUrl: "/admin",
+  });
+
+  return { ok: true, sent: result.sent, total: result.total };
+}
+

@@ -1,11 +1,22 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
-import { BellRing, Send, CheckCircle2, Loader2, Smartphone } from "lucide-react";
-import { broadcastWebPushAction } from "@/app/admin/actions";
+import React, { useState, useEffect, useTransition } from "react";
+import { BellRing, Send, CheckCircle2, Loader2, Smartphone, ShieldAlert, Sparkles } from "lucide-react";
+import { broadcastWebPushAction, testAdminPushAction } from "@/app/admin/actions";
 
 interface WebPushCardProps {
   subscriptionCount: number;
+}
+
+function urlBase64ToUint8Array(base64String: string) {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
 }
 
 export function WebPushCard({ subscriptionCount }: WebPushCardProps) {
@@ -14,6 +25,85 @@ export function WebPushCard({ subscriptionCount }: WebPushCardProps) {
   const [url, setUrl] = useState("/student/cram/new?type=kt_buster");
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+
+  // Admin Device Specific Alert State
+  const [isDeviceSubscribed, setIsDeviceSubscribed] = useState(false);
+  const [isRegisteringDevice, setIsRegisteringDevice] = useState(false);
+  const [deviceAlertMsg, setDeviceAlertMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && "serviceWorker" in navigator && "Notification" in window) {
+      if (Notification.permission === "granted") {
+        navigator.serviceWorker.ready
+          .then((reg) => reg.pushManager.getSubscription())
+          .then((sub) => {
+            if (sub) setIsDeviceSubscribed(true);
+          })
+          .catch(() => {});
+      }
+    }
+  }, []);
+
+  const handleRegisterThisDevice = async () => {
+    try {
+      setIsRegisteringDevice(true);
+      setDeviceAlertMsg(null);
+
+      if (!("serviceWorker" in navigator) || !("Notification" in window)) {
+        setDeviceAlertMsg("❌ Push notifications are not supported on this browser.");
+        setIsRegisteringDevice(false);
+        return;
+      }
+
+      const perm = await Notification.requestPermission();
+      if (perm !== "granted") {
+        setDeviceAlertMsg("⚠️ Notification permission was dismissed or blocked in browser settings.");
+        setIsRegisteringDevice(false);
+        return;
+      }
+
+      await navigator.serviceWorker.register("/sw.js");
+      const reg = await navigator.serviceWorker.ready;
+      const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+      if (!vapidKey) throw new Error("VAPID public key not configured.");
+
+      const sub = await reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidKey),
+      });
+
+      await fetch("/api/push/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ subscription: sub, role: "admin" }),
+      });
+
+      setIsDeviceSubscribed(true);
+      setIsRegisteringDevice(false);
+      setDeviceAlertMsg("✅ Success! This device will now vibrate and pop up whenever a student submits feedback.");
+      setTimeout(() => setDeviceAlertMsg(null), 6000);
+    } catch (err: unknown) {
+      setDeviceAlertMsg(`❌ Registration failed: ${err instanceof Error ? err.message : "Unknown error"}`);
+      setIsRegisteringDevice(false);
+    }
+  };
+
+  const handleSendTestPing = () => {
+    setDeviceAlertMsg(null);
+    startTransition(async () => {
+      try {
+        const res = await testAdminPushAction();
+        if (res.ok) {
+          setDeviceAlertMsg("🔔 Test notification dispatched! Check your lockscreen / notification bar now.");
+          setTimeout(() => setDeviceAlertMsg(null), 5000);
+        } else {
+          setDeviceAlertMsg(`❌ Test failed: ${res.error}`);
+        }
+      } catch {
+        setDeviceAlertMsg("❌ Network error sending test alert.");
+      }
+    });
+  };
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,8 +131,66 @@ export function WebPushCard({ subscriptionCount }: WebPushCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-xl border border-[#E7E5E0] shadow-sm p-6 space-y-4">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E7E5E0]">
+    <div className="bg-white rounded-xl border border-[#E7E5E0] shadow-sm p-6 space-y-5">
+      {/* 1. Admin Instant Feedback Alert Banner */}
+      <div className="bg-[#FAF9F5] border border-[#E5E0D8] rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5">
+            <Smartphone className="w-4 h-4 text-emerald-600" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold text-[#1F2937]">Founder Instant Feedback Alerts</span>
+              {isDeviceSubscribed ? (
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full inline-flex items-center gap-1">
+                  <CheckCircle2 className="w-3 h-3" /> Active on this Device
+                </span>
+              ) : (
+                <span className="text-[10px] font-medium text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full inline-flex items-center gap-1">
+                  <ShieldAlert className="w-3 h-3" /> Not Enabled on this Device
+                </span>
+              )}
+            </div>
+            <p className="text-[11px] text-[#6B7280] mt-0.5">
+              Phone vibrates & displays a lockscreen popup the instant any student sends feedback or reports a bug.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 self-stretch sm:self-auto">
+          {isDeviceSubscribed ? (
+            <button
+              type="button"
+              disabled={isPending}
+              onClick={handleSendTestPing}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-lg shadow-2xs transition-all cursor-pointer"
+            >
+              {isPending ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Sparkles className="w-3.5 h-3.5 text-emerald-600" />}
+              <span>Test Ping My Screen</span>
+            </button>
+          ) : (
+            <button
+              type="button"
+              disabled={isRegisteringDevice}
+              onClick={handleRegisterThisDevice}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-xs transition-all cursor-pointer"
+            >
+              {isRegisteringDevice ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Smartphone className="w-3.5 h-3.5" />}
+              <span>Enable Alerts on this Device</span>
+            </button>
+          )}
+        </div>
+      </div>
+
+      {deviceAlertMsg && (
+        <div className="text-xs font-medium text-slate-800 bg-emerald-50 border border-emerald-200 p-2.5 rounded-lg flex items-center gap-2 animate-fadeIn">
+          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+          <span>{deviceAlertMsg}</span>
+        </div>
+      )}
+
+      {/* 2. Broadcast Web Push to All Subscribed Students */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 pb-3 border-b border-[#E7E5E0]">
         <div className="flex items-center gap-2">
           <BellRing className="w-4 h-4 text-emerald-600 animate-bounce" />
           <div>
