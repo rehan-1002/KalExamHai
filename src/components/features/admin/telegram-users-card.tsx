@@ -1,19 +1,72 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
-import { Send, Users, Radio, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import React, { useState, useEffect, useTransition } from "react";
+import { useRouter } from "next/navigation";
+import { Send, Users, Radio, CheckCircle2, AlertCircle, Loader2, RefreshCw } from "lucide-react";
 import type { TelegramUserProfile } from "@/server/telegram/users";
-import { broadcastTelegramAction } from "@/app/admin/actions";
+import { broadcastTelegramAction, fetchLatestTelegramUsersAction } from "@/app/admin/actions";
 
 interface TelegramUsersCardProps {
   users: TelegramUserProfile[];
 }
 
-export function TelegramUsersCard({ users }: TelegramUsersCardProps) {
+export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProps) {
+  const router = useRouter();
+  const [userList, setUserList] = useState<TelegramUserProfile[]>(initialUsers);
   const [isBroadcastOpen, setIsBroadcastOpen] = useState(false);
   const [broadcastMessage, setBroadcastMessage] = useState("");
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+
+  const [isLivePolling, setIsLivePolling] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
+  const [newUsersCount, setNewUsersCount] = useState<number>(0);
+
+  // Sync state if server re-renders initialUsers
+  useEffect(() => {
+    setUserList(initialUsers);
+  }, [initialUsers]);
+
+  // Periodic Live Polling every 10 seconds
+  useEffect(() => {
+    if (!isLivePolling) return;
+
+    const interval = setInterval(async () => {
+      try {
+        const res = await fetchLatestTelegramUsersAction();
+        if (res.ok && res.users) {
+          setUserList((prev) => {
+            if (res.users.length > prev.length) {
+              setNewUsersCount(res.users.length - prev.length);
+              setTimeout(() => setNewUsersCount(0), 5000);
+            }
+            return res.users;
+          });
+          setLastUpdated(new Date());
+        }
+      } catch {
+        // Silently ignore intermittent background network drop
+      }
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [isLivePolling]);
+
+  // Manual Instant Refresh
+  const handleManualRefresh = async () => {
+    try {
+      setIsRefreshing(true);
+      const res = await fetchLatestTelegramUsersAction();
+      if (res.ok && res.users) {
+        setUserList(res.users);
+        setLastUpdated(new Date());
+      }
+      router.refresh();
+    } finally {
+      setTimeout(() => setIsRefreshing(false), 600);
+    }
+  };
 
   const handleBroadcast = (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,24 +96,50 @@ export function TelegramUsersCard({ users }: TelegramUsersCardProps) {
     <div className="bg-white rounded-xl border border-[#E7E5E0] shadow-sm overflow-hidden space-y-4 p-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E7E5E0]">
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <Radio className="w-4 h-4 text-sky-500 animate-pulse" />
             <h3 className="text-sm font-semibold text-[#1F2937]">
-              Telegram Bot Crammers ({users.length} Users Tracked)
+              Telegram Bot Crammers ({userList.length} Users Tracked)
             </h3>
+
+            {/* Live Ticker Indicator */}
+            <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-bold text-emerald-700">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+              <span>LIVE</span>
+              <span className="text-[10px] text-emerald-600/70 font-normal hidden sm:inline">• 10s auto-refresh</span>
+            </div>
+
+            {newUsersCount > 0 && (
+              <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[10px] font-bold animate-bounce">
+                +{newUsersCount} New User{newUsersCount > 1 ? "s" : ""} Just Joined!
+              </span>
+            )}
           </div>
           <p className="text-xs text-[#6B7280] mt-0.5">
-            Real-time roster of students active on @kalexamhai_bot with subject sessions and generation counts.
+            Real-time roster of students active on @kalexamhai_bot. Last polled at {lastUpdated.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}.
           </p>
         </div>
 
-        <button
-          onClick={() => setIsBroadcastOpen(!isBroadcastOpen)}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-700 text-white font-medium text-xs shadow-sm transition-all cursor-pointer self-start sm:self-auto"
-        >
-          <Send className="w-3.5 h-3.5" />
-          <span>Broadcast Blast ({users.length})</span>
-        </button>
+        <div className="flex items-center gap-2 self-start sm:self-auto">
+          {/* Manual Refresh Button */}
+          <button
+            onClick={handleManualRefresh}
+            disabled={isRefreshing}
+            className="p-1.5 rounded-lg border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-all cursor-pointer"
+            title="Refresh Now"
+          >
+            <RefreshCw className={`w-3.5 h-3.5 ${isRefreshing ? "animate-spin text-sky-600" : ""}`} />
+          </button>
+
+          {/* Broadcast Trigger Button */}
+          <button
+            onClick={() => setIsBroadcastOpen(!isBroadcastOpen)}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-700 text-white font-medium text-xs shadow-sm transition-all cursor-pointer"
+          >
+            <Send className="w-3.5 h-3.5" />
+            <span>Broadcast Blast ({userList.length})</span>
+          </button>
+        </div>
       </div>
 
       {/* Broadcast Form Drawer */}
@@ -69,7 +148,7 @@ export function TelegramUsersCard({ users }: TelegramUsersCardProps) {
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-sky-900 flex items-center gap-1.5">
               <Send className="w-3.5 h-3.5 text-sky-600" />
-              Send Alert to all {users.length} Telegram Students
+              Send Alert to all {userList.length} Telegram Students
             </span>
             <span className="text-[11px] text-sky-700 font-mono">Paced at ~30 msg/sec</span>
           </div>
@@ -123,8 +202,8 @@ export function TelegramUsersCard({ users }: TelegramUsersCardProps) {
             </tr>
           </thead>
           <tbody className="divide-y divide-[#E7E5E0]">
-            {users.length > 0 ? (
-              users.map((u) => (
+            {userList.length > 0 ? (
+              userList.map((u) => (
                 <tr key={u.chatId} className="hover:bg-black/[0.01]">
                   <td className="py-2.5 px-4 font-mono text-slate-500">{u.chatId}</td>
                   <td className="py-2.5 px-4">

@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { isAdminEmail } from "@/lib/auth/admin";
-import { broadcastTelegramMessage } from "@/server/telegram/users";
+import { broadcastTelegramMessage, getTelegramUsers } from "@/server/telegram/users";
 import { saveGlobalAnnouncement } from "@/server/announcements/store";
 import { updateFeedbackStatus } from "@/server/feedback/store";
 import { sendWebPushNotification } from "@/server/push/store";
@@ -53,6 +53,14 @@ export async function resolveFeedbackAction(feedbackId: string) {
   await updateFeedbackStatus(feedbackId, "resolved");
   revalidatePath("/admin");
   return { ok: true };
+}
+
+export async function fetchLatestTelegramUsersAction() {
+  const isAdmin = await verifyAdmin();
+  if (!isAdmin) return { ok: false, error: "Unauthorized", users: [] };
+
+  const users = await getTelegramUsers(true);
+  return { ok: true, users };
 }
 
 export async function broadcastWebPushAction(formData: FormData) {

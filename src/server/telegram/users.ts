@@ -82,9 +82,9 @@ export async function recordTelegramUser(
 /**
  * Returns all Telegram users, auto-migrating historical sessions on first run.
  */
-export async function getTelegramUsers(): Promise<TelegramUserProfile[]> {
+export async function getTelegramUsers(forceRefresh = false): Promise<TelegramUserProfile[]> {
   const now = Date.now();
-  if (cachedUsers && now - lastCacheTime < CACHE_TTL_MS) {
+  if (!forceRefresh && cachedUsers && now - lastCacheTime < CACHE_TTL_MS) {
     return cachedUsers;
   }
 
