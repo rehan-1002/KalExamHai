@@ -81,8 +81,8 @@ export function TelegramPrintView({ exportData }: TelegramPrintViewProps) {
       <div className="max-w-[210mm] mx-auto mt-4 px-4 sm:px-0 print:hidden">
         <AudioRecapPlayer
           subject={exportData.subject}
-          title={`Train Mode Audio Recap: ${exportData.title}`}
-          textToSpeak={exportData.content}
+          title={`Suno Bhai! Senior Audio Briefing: ${exportData.title}`}
+          textToSpeak={`Suno bhai! Ye raha tumhara ${exportData.subject} ka quick audio recap for ${exportData.title}. Kal ke exam mein confidence ke sath likhna. Main concepts aur high-yield points ye rahe: ${exportData.content}`}
         />
       </div>
 

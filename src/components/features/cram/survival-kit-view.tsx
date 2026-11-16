@@ -14,6 +14,7 @@ import {
 import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
 import { AudioRecapPlayer } from "@/components/ui/audio-recap-player";
+import { buildSurvivalKitBroScript } from "@/lib/audio/bro-script";
 import type { SurvivalKitPayload } from "@/lib/schemas/cram";
 
 interface SurvivalKitViewProps {
@@ -115,22 +116,15 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
         </span>
       </div>
 
-      {/* Local Train Commute Audio Recap Player */}
+      {/* Senior Topper Bro Tone Audio Briefing */}
       <AudioRecapPlayer
         subject={payload.subject}
-        title="Local Train Commute Voice Recap (Train Mode)"
-        textToSpeak={[
-          `Welcome to the Exam Night Survival Audio Recap for ${payload.subject}.`,
-          payload.title,
-          `Here is your high yield roadmap to secure passing marks.`,
-          ...payload.priority_topics.map(
-            (top, i) =>
-              `Topic ${i + 1}: ${top.title} from ${top.module_name}, carrying approximately ${top.expected_marks} marks. ${top.summary_points.join(". ")}. ${
-                top.must_draw_diagram ? `Remember to draw the diagram for: ${top.must_draw_diagram}` : ""
-              }`
-          ),
-          `Key passing checklist items: ${payload.pass_guarantee_checklist.join(". ")}. Best of luck for your Mumbai University exam!`,
-        ].join(". ")}
+        title="Suno Bhai! Senior Topper Audio Briefing"
+        textToSpeak={buildSurvivalKitBroScript(
+          payload.subject,
+          payload.priority_topics,
+          payload.pass_guarantee_checklist
+        )}
       />
 
       {/* Panic Timeline Roadmap */}

@@ -28,6 +28,7 @@ import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
 import { DiagramRenderer } from "@/components/ui/diagram-renderer";
 import { AudioRecapPlayer } from "@/components/ui/audio-recap-player";
+import { buildPaperBroScript } from "@/lib/audio/bro-script";
 import { regenerateSubQuestionAction, updateSubQuestionTextAction } from "@/app/tutor/papers/[id]/actions";
 import type { PaperJson, SubQuestion } from "@/lib/schemas/paper";
 
@@ -345,23 +346,18 @@ export function PaperView({ paperRecord, isPublicShare = false }: PaperViewProps
         </div>
       )}
 
-      {/* Train Mode Audio Walkthrough */}
+      {/* Senior Bro Walkthrough */}
       {showAudioPlayer && (
         <AudioRecapPlayer
           subject={paperRecord.subject}
-          title={`Audio Walkthrough: ${paper.exam_title}`}
-          textToSpeak={[
-            `Welcome to the audio walkthrough for ${paper.subject}, ${paper.exam_title}.`,
-            `Total duration is ${paper.duration_minutes} minutes, maximum marks ${paper.total_attemptable_marks}.`,
-            `General Instructions: ${paper.general_instructions.join(". ")}.`,
-            ...paper.questions.map(
-              (q) =>
-                `Question ${q.no}, ${q.compulsory ? "Compulsory" : `Attempt any ${q.attempt_count} of ${q.out_of}`}, carrying ${
-                  q.total_marks
-                } marks. ` +
-                q.sub_questions.map((sq) => `Sub-question ${sq.label}, for ${sq.marks} marks: ${sq.text}`).join(". ")
-            ),
-          ].join(". ")}
+          title={`Suno Bhai! ${paper.exam_title} Paper Walkthrough`}
+          textToSpeak={buildPaperBroScript(
+            paper.subject,
+            paper.exam_title,
+            paper.duration_minutes,
+            paper.total_attemptable_marks,
+            paper.questions
+          )}
         />
       )}
 

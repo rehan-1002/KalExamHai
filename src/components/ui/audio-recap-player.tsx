@@ -96,7 +96,7 @@ function splitIntoSentences(text: string): string[] {
 }
 
 export function AudioRecapPlayer({
-  title = "Local Train Commute Audio Recap",
+  title = "Suno Bhai! Senior Audio Recap",
   subject,
   textToSpeak,
   autoPlay = false,
@@ -121,10 +121,18 @@ export function AudioRecapPlayer({
   useEffect(() => {
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
       setIsSupported(true);
+      window.speechSynthesis.getVoices();
+      const onVoices = () => {
+        window.speechSynthesis.getVoices();
+      };
+      window.speechSynthesis.addEventListener("voiceschanged", onVoices);
       const cleaned = cleanTextForSpeech(textToSpeak);
       const chunks = splitIntoSentences(cleaned);
       setSentences(chunks);
       sentencesRef.current = chunks;
+      return () => {
+        window.speechSynthesis.removeEventListener("voiceschanged", onVoices);
+      };
     }
   }, [textToSpeak]);
 
@@ -144,10 +152,19 @@ export function AudioRecapPlayer({
     utterance.rate = rateRef.current;
     utterance.pitch = 1.0;
 
-    // Pick Indian English or high-quality English voice if available
+    // Pick Indian English or Hindi voice for natural Hinglish bro-tone cadence
     const voices = window.speechSynthesis.getVoices();
     const preferredVoice =
-      voices.find((v) => v.lang === "en-IN" || v.name.includes("India")) ||
+      voices.find((v) => v.lang === "hi-IN" || v.lang.startsWith("hi")) ||
+      voices.find(
+        (v) =>
+          v.lang === "en-IN" ||
+          v.name.toLowerCase().includes("india") ||
+          v.name.toLowerCase().includes("neerja") ||
+          v.name.toLowerCase().includes("prabhat") ||
+          v.name.toLowerCase().includes("swara") ||
+          v.name.toLowerCase().includes("madhur")
+      ) ||
       voices.find((v) => v.lang.startsWith("en-") && v.name.includes("Natural")) ||
       voices.find((v) => v.lang.startsWith("en"));
 
@@ -247,11 +264,11 @@ export function AudioRecapPlayer({
                 {title}
               </h3>
               <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 flex items-center gap-1">
-                <Sparkles className="w-2.5 h-2.5 text-amber-300" /> Train Mode
+                <Sparkles className="w-2.5 h-2.5 text-amber-300" /> Senior Bro Briefing
               </span>
             </div>
             <p className="text-xs text-slate-300 mt-0.5">
-              {subject ? `${subject} • ` : ""}Listen with earphones while commuting to the exam hall
+              {subject ? `${subject} • ` : ""}Mumbai University exam passing strategy in 2 minutes
             </p>
           </div>
         </div>
@@ -313,7 +330,7 @@ export function AudioRecapPlayer({
               className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-lg shadow-sm transition-all cursor-pointer active:scale-95"
             >
               <Play className="w-4 h-4 fill-white" />
-              <span>{isPaused ? "Resume Audio Recap" : "Play Audio Recap"}</span>
+              <span>{isPaused ? "Resume Bro Briefing" : "Play Bro Briefing"}</span>
             </button>
           ) : (
             <button
