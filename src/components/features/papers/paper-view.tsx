@@ -350,7 +350,10 @@ export function PaperView({ paperRecord, isPublicShare = false }: PaperViewProps
       {showAudioPlayer && (
         <AudioRecapPlayer
           subject={paperRecord.subject}
-          title={`Suno Bhai! ${paper.exam_title} Paper Walkthrough`}
+          title={`Suno Bhai! ${paper.exam_title} Walkthrough`}
+          rawContent={paper.questions
+            .map((q) => `Q${q.no} (${q.total_marks}M): ${q.sub_questions.map((sq) => sq.text).join("; ")}`)
+            .join("\n")}
           textToSpeak={buildPaperBroScript(
             paper.subject,
             paper.exam_title,

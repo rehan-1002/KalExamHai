@@ -120,6 +120,14 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
       <AudioRecapPlayer
         subject={payload.subject}
         title="Suno Bhai! Senior Topper Audio Briefing"
+        rawContent={payload.priority_topics
+          .map(
+            (t) =>
+              `${t.title} (${t.module_name}): ${t.summary_points.join("; ")}. Expected marks: ${t.expected_marks}. Must draw: ${
+                t.must_draw_diagram || "Standard diagram"
+              }`
+          )
+          .join("\n")}
         textToSpeak={buildSurvivalKitBroScript(
           payload.subject,
           payload.priority_topics,

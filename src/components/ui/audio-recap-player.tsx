@@ -5,67 +5,58 @@ import {
   Play,
   Pause,
   RotateCcw,
-  Volume2,
-  VolumeX,
   Headphones,
-  FastForward,
   Sparkles,
+  Loader2,
 } from "lucide-react";
 
 interface AudioRecapPlayerProps {
   title?: string;
   subject?: string;
-  textToSpeak: string;
+  rawContent?: string;
+  textToSpeak?: string;
   autoPlay?: boolean;
   className?: string;
 }
 
 /**
- * Sanitizes markdown, LaTeX, and technical punctuation into clean, natural spoken English.
+ * Strips raw LaTeX formulas, dashes, ASCII banners, and markdown gibberish.
  */
 function cleanTextForSpeech(text: string): string {
   if (!text) return "";
 
   return text
-    // Remove markdown headers, bold, italics, code blocks
+    // Remove horizontal rules, dividers, and dashes (e.g. ------ )
+    .replace(/[-=_*~]{2,}/g, " ")
+    // Remove markdown headers
+    .replace(/#{1,6}\s+/g, "")
+    // Remove code blocks and inline code
     .replace(/```[\s\S]*?```/g, " ")
     .replace(/`([^`]+)`/g, "$1")
-    .replace(/#{1,6}\s+/g, "")
+    // Remove markdown bold/italics/links
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/\*([^*]+)\*/g, "$1")
     .replace(/__([^_]+)__/g, "$1")
     .replace(/_([^_]+)_/g, "$1")
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    // Replace LaTeX symbols with phonetic words
-    .replace(/\$([^$]+)\$/g, (_, math) => {
-      return math
-        .replace(/\\sum/g, " summation ")
-        .replace(/\\int/g, " integral ")
-        .replace(/\\alpha/g, " alpha ")
-        .replace(/\\beta/g, " beta ")
-        .replace(/\\gamma/g, " gamma ")
-        .replace(/\\theta/g, " theta ")
-        .replace(/\\infty/g, " infinity ")
-        .replace(/\\leq/g, " less than or equal to ")
-        .replace(/\\geq/g, " greater than or equal to ")
-        .replace(/\\neq/g, " not equal to ")
-        .replace(/\\approx/g, " approximately ")
-        .replace(/\\times/g, " multiplied by ")
-        .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, "$1 divided by $2")
-        .replace(/\\sqrt\{([^}]+)\}/g, "square root of $1")
-        .replace(/[\^_{}\\]/g, " ");
-    })
+    // Remove table pipes, bullets, and LaTeX blocks
+    .replace(/\|/g, " ")
+    .replace(/[•\u2022\u2023\u25E6\u2043\u2219]/g, " ")
     .replace(/\\\[[\s\S]*?\\\]/g, " ")
     .replace(/\\\([\s\S]*?\\\)/g, " ")
-    // Clean bullet points & numbered lists
-    .replace(/^\s*[-*•]\s+/gm, " ")
-    .replace(/^\s*\d+\.\s+/gm, " Point ")
+    .replace(/\$[^$]*\$/g, " ")
+    .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, "$1 divided by $2")
+    .replace(/[\^_{}\\]/g, " ")
+    // Remove common ASCII banners
+    .replace(/HIGH-YIELD FORMULA & CHEAT SHEET/gi, "Important formula sheet")
+    .replace(/UNIVERSITY OF MUMBAI/gi, "Mumbai University")
+    // Clean whitespace
     .replace(/\s+/g, " ")
     .trim();
 }
 
 /**
- * Splits text into small chunks (<180 chars) to prevent Chrome's known speechSynthesis freeze bug.
+ * Splits text into small chunks (<160 chars) to prevent Chrome's known speechSynthesis freeze bug.
  */
 function splitIntoSentences(text: string): string[] {
   const rawSentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
@@ -74,14 +65,13 @@ function splitIntoSentences(text: string): string[] {
   for (const s of rawSentences) {
     const trimmed = s.trim();
     if (!trimmed) continue;
-    if (trimmed.length < 180) {
+    if (trimmed.length < 160) {
       chunks.push(trimmed);
     } else {
-      // Sub-split by comma or semicolon
       const subParts = trimmed.split(/[,;:]+/);
       let current = "";
       for (const part of subParts) {
-        if ((current + " " + part).length < 180) {
+        if ((current + " " + part).length < 160) {
           current = current ? `${current}, ${part}` : part;
         } else {
           if (current) chunks.push(current.trim());
@@ -98,6 +88,7 @@ function splitIntoSentences(text: string): string[] {
 export function AudioRecapPlayer({
   title = "Suno Bhai! Senior Audio Recap",
   subject,
+  rawContent,
   textToSpeak,
   autoPlay = false,
   className = "",
@@ -105,9 +96,11 @@ export function AudioRecapPlayer({
   const [isSupported, setIsSupported] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
   const [rate, setRate] = useState<number>(1.25); // Default 1.25x for college revision
   const [currentSentenceIdx, setCurrentSentenceIdx] = useState(0);
   const [sentences, setSentences] = useState<string[]>([]);
+  const [scriptReady, setScriptReady] = useState(false);
 
   const sentencesRef = useRef<string[]>([]);
   const currentIndexRef = useRef(0);
@@ -126,15 +119,21 @@ export function AudioRecapPlayer({
         window.speechSynthesis.getVoices();
       };
       window.speechSynthesis.addEventListener("voiceschanged", onVoices);
-      const cleaned = cleanTextForSpeech(textToSpeak);
-      const chunks = splitIntoSentences(cleaned);
-      setSentences(chunks);
-      sentencesRef.current = chunks;
+
+      // If initial text is provided and no rawContent, prepare it
+      if (textToSpeak && !rawContent) {
+        const cleaned = cleanTextForSpeech(textToSpeak);
+        const chunks = splitIntoSentences(cleaned);
+        setSentences(chunks);
+        sentencesRef.current = chunks;
+        setScriptReady(true);
+      }
+
       return () => {
         window.speechSynthesis.removeEventListener("voiceschanged", onVoices);
       };
     }
-  }, [textToSpeak]);
+  }, [textToSpeak, rawContent]);
 
   const speakChunk = (idx: number) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
@@ -181,7 +180,6 @@ export function AudioRecapPlayer({
     };
 
     utterance.onerror = (e) => {
-      // Don't error out on intentional cancellation
       if (e.error !== "canceled" && e.error !== "interrupted") {
         console.warn("Speech error:", e);
       }
@@ -190,21 +188,70 @@ export function AudioRecapPlayer({
     window.speechSynthesis.speak(utterance);
   };
 
-  const handlePlay = () => {
-    if (!isSupported || sentencesRef.current.length === 0) return;
+  const handlePlay = async () => {
+    if (!isSupported) return;
 
     if (isPaused) {
       window.speechSynthesis.resume();
       setIsPaused(false);
       setIsPlaying(true);
       isPlayingRef.current = true;
-    } else {
-      window.speechSynthesis.cancel();
-      setIsPlaying(true);
-      setIsPaused(false);
-      isPlayingRef.current = true;
-      speakChunk(currentIndexRef.current);
+      return;
     }
+
+    // If we have rawContent and haven't fetched the dedicated AI senior script yet, fetch it!
+    if (rawContent && !scriptReady) {
+      try {
+        setIsGenerating(true);
+        const res = await fetch("/api/audio/briefing", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            subject: subject || "Mumbai University Exam",
+            title,
+            content: rawContent,
+          }),
+        });
+
+        const data = await res.json();
+        if (data.ok && data.script) {
+          const cleaned = cleanTextForSpeech(data.script);
+          const chunks = splitIntoSentences(cleaned);
+          setSentences(chunks);
+          sentencesRef.current = chunks;
+          setScriptReady(true);
+          setIsGenerating(false);
+
+          window.speechSynthesis.cancel();
+          setIsPlaying(true);
+          setIsPaused(false);
+          isPlayingRef.current = true;
+          currentIndexRef.current = 0;
+          setCurrentSentenceIdx(0);
+          speakChunk(0);
+          return;
+        }
+      } catch (err) {
+        console.warn("AI briefing fetch error, falling back to local text:", err);
+      } finally {
+        setIsGenerating(false);
+      }
+    }
+
+    // Default playback
+    const baseText = textToSpeak || rawContent || "";
+    if (sentencesRef.current.length === 0) {
+      const cleaned = cleanTextForSpeech(baseText);
+      const chunks = splitIntoSentences(cleaned);
+      setSentences(chunks);
+      sentencesRef.current = chunks;
+    }
+
+    window.speechSynthesis.cancel();
+    setIsPlaying(true);
+    setIsPaused(false);
+    isPlayingRef.current = true;
+    speakChunk(currentIndexRef.current);
   };
 
   const handlePause = () => {
@@ -235,7 +282,6 @@ export function AudioRecapPlayer({
     }
   };
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
@@ -268,7 +314,7 @@ export function AudioRecapPlayer({
               </span>
             </div>
             <p className="text-xs text-slate-300 mt-0.5">
-              {subject ? `${subject} • ` : ""}Mumbai University exam passing strategy in 2 minutes
+              {subject ? `${subject} • ` : ""}Mumbai University exam passing strategy in 1 minute
             </p>
           </div>
         </div>
@@ -298,7 +344,9 @@ export function AudioRecapPlayer({
         <div className="space-y-1">
           <div className="flex justify-between text-[11px] font-medium text-slate-300">
             <span>
-              {isPlaying
+              {isGenerating
+                ? "✨ Senior Topper preparing your exam briefing..."
+                : isPlaying
                 ? `Speaking segment ${currentSentenceIdx + 1} of ${total}`
                 : isPaused
                 ? "Paused"
@@ -308,8 +356,10 @@ export function AudioRecapPlayer({
           </div>
           <div className="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
             <div
-              className="bg-indigo-400 h-1.5 rounded-full transition-all duration-300"
-              style={{ width: `${progressPercent}%` }}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                isGenerating ? "bg-amber-400 animate-pulse w-full" : "bg-indigo-400"
+              }`}
+              style={{ width: isGenerating ? "100%" : `${progressPercent}%` }}
             />
           </div>
         </div>
@@ -327,10 +377,20 @@ export function AudioRecapPlayer({
             <button
               type="button"
               onClick={handlePlay}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-lg shadow-sm transition-all cursor-pointer active:scale-95"
+              disabled={isGenerating}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg shadow-sm transition-all cursor-pointer active:scale-95"
             >
-              <Play className="w-4 h-4 fill-white" />
-              <span>{isPaused ? "Resume Bro Briefing" : "Play Bro Briefing"}</span>
+              {isGenerating ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>Preparing Briefing...</span>
+                </>
+              ) : (
+                <>
+                  <Play className="w-4 h-4 fill-white" />
+                  <span>{isPaused ? "Resume Bro Briefing" : "Play Bro Briefing"}</span>
+                </>
+              )}
             </button>
           ) : (
             <button
