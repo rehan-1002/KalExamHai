@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Clock,
   CheckSquare,
@@ -8,9 +8,12 @@ import {
   Award,
   Layers,
   Sparkles,
+  MessageCircle,
+  Share2,
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
+import { AudioRecapPlayer } from "@/components/ui/audio-recap-player";
 import type { SurvivalKitPayload } from "@/lib/schemas/cram";
 
 interface SurvivalKitViewProps {
@@ -19,6 +22,41 @@ interface SurvivalKitViewProps {
 
 export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
   const [checkedItems, setCheckedItems] = useState<number[]>([]);
+
+  // Countdown to next 10:30 AM IST (MU standard paper time)
+  const [timeLeft, setTimeLeft] = useState<{ hours: number; minutes: number; seconds: number }>({
+    hours: 12,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const calcTimeLeft = () => {
+      const now = new Date();
+      const target = new Date();
+      if (now.getHours() > 10 || (now.getHours() === 10 && now.getMinutes() >= 30)) {
+        target.setDate(target.getDate() + 1);
+      }
+      target.setHours(10, 30, 0, 0);
+
+      const diff = Math.max(0, target.getTime() - now.getTime());
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      setTimeLeft({ hours, minutes, seconds });
+    };
+
+    calcTimeLeft();
+    const interval = setInterval(calcTimeLeft, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleWhatsAppShare = () => {
+    const text = encodeURIComponent(
+      `🚨 *${payload.subject} Last-Minute Exam Night Survival Plan (12h)*\n\nPriority topics, high-scoring modules & passing checklist strictly for Mumbai University NEP-2020!\n\nPrepared on KalExamHai: https://kalexamhai.in`
+    );
+    window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
+  };
 
   const toggleCheck = (index: number) => {
     setCheckedItems((prev) =>
@@ -44,7 +82,56 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
           </div>
           <p className="text-xs text-slate-500 mt-0.5">{payload.title}</p>
         </div>
+
+        <button
+          type="button"
+          onClick={handleWhatsAppShare}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-lg shadow-xs transition-colors cursor-pointer self-start sm:self-auto"
+        >
+          <MessageCircle className="w-3.5 h-3.5 text-emerald-600 fill-emerald-100" />
+          <span>Share with Classmates</span>
+        </button>
       </div>
+
+      {/* Live Exam Countdown Bar */}
+      <div className="bg-gradient-to-r from-red-950 via-slate-900 to-indigo-950 text-white rounded-xl p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3 border border-red-900/40">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center shrink-0">
+            <Clock className="w-5 h-5 text-rose-300 animate-pulse" />
+          </div>
+          <div>
+            <div className="text-[10px] font-bold uppercase tracking-wider text-rose-300 flex items-center gap-1.5">
+              <span>Exam Night Countdown</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping"></span>
+            </div>
+            <div className="text-lg font-black text-white font-mono tracking-wide">
+              {String(timeLeft.hours).padStart(2, "0")}h : {String(timeLeft.minutes).padStart(2, "0")}m : {String(timeLeft.seconds).padStart(2, "0")}s Left Until 10:30 AM
+            </div>
+          </div>
+        </div>
+
+        <span className="text-[11px] font-semibold text-rose-200 bg-rose-950/80 px-2.5 py-1 rounded-md border border-rose-800/60 self-start sm:self-auto">
+          Passing Threshold: 24 / 60M (NEP-2020)
+        </span>
+      </div>
+
+      {/* Local Train Commute Audio Recap Player */}
+      <AudioRecapPlayer
+        subject={payload.subject}
+        title="Local Train Commute Voice Recap (Train Mode)"
+        textToSpeak={[
+          `Welcome to the Exam Night Survival Audio Recap for ${payload.subject}.`,
+          payload.title,
+          `Here is your high yield roadmap to secure passing marks.`,
+          ...payload.priority_topics.map(
+            (top, i) =>
+              `Topic ${i + 1}: ${top.title} from ${top.module_name}, carrying approximately ${top.expected_marks} marks. ${top.summary_points.join(". ")}. ${
+                top.must_draw_diagram ? `Remember to draw the diagram for: ${top.must_draw_diagram}` : ""
+              }`
+          ),
+          `Key passing checklist items: ${payload.pass_guarantee_checklist.join(". ")}. Best of luck for your Mumbai University exam!`,
+        ].join(". ")}
+      />
 
       {/* Panic Timeline Roadmap */}
       <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 shadow-sm space-y-4">

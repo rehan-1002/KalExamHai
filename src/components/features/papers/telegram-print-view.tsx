@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { Printer, ArrowLeft, ExternalLink, Sparkles } from "lucide-react";
 import { MathText } from "@/components/ui/math-text";
+import { AudioRecapPlayer } from "@/components/ui/audio-recap-player";
 import type { TelegramExport } from "@/server/telegram/session";
 
 interface TelegramPrintViewProps {
@@ -74,6 +75,15 @@ export function TelegramPrintView({ exportData }: TelegramPrintViewProps) {
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Audio Voice Recap Bar - Hidden in Print */}
+      <div className="max-w-[210mm] mx-auto mt-4 px-4 sm:px-0 print:hidden">
+        <AudioRecapPlayer
+          subject={exportData.subject}
+          title={`Train Mode Audio Recap: ${exportData.title}`}
+          textToSpeak={exportData.content}
+        />
       </div>
 
       {/* A4 Sheet Container */}

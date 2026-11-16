@@ -224,3 +224,51 @@ export async function sendTelegramDocument(
     return { ok: false, error: err instanceof Error ? err.message : "Network error" };
   }
 }
+
+/**
+ * Sends a raw Buffer or Text file directly into Telegram chat as a downloadable document.
+ */
+export async function sendTelegramDocumentBuffer(
+  chatId: number | string,
+  buffer: Buffer | Uint8Array,
+  filename: string,
+  caption?: string
+): Promise<{ ok: boolean; messageId?: number; error?: string }> {
+  const token = getBotToken();
+  try {
+    const formData = new FormData();
+    formData.append("chat_id", String(chatId));
+    formData.append("document", new Blob([buffer as unknown as BlobPart]), filename);
+    if (caption) {
+      formData.append("caption", caption);
+      formData.append("parse_mode", "Markdown");
+    }
+
+    const res = await fetch(`${TELEGRAM_API_BASE}${token}/sendDocument`, {
+      method: "POST",
+      body: formData,
+    });
+
+    const json = (await res.json()) as { ok: boolean; result?: { message_id: number }; description?: string };
+    if (!json.ok) {
+      // Fallback: try without parse_mode if markdown parsing failed
+      const retryForm = new FormData();
+      retryForm.append("chat_id", String(chatId));
+      retryForm.append("document", new Blob([buffer as unknown as BlobPart]), filename);
+      if (caption) retryForm.append("caption", caption);
+      const retryRes = await fetch(`${TELEGRAM_API_BASE}${token}/sendDocument`, {
+        method: "POST",
+        body: retryForm,
+      });
+      const retryJson = (await retryRes.json()) as {
+        ok: boolean;
+        result?: { message_id: number };
+        description?: string;
+      };
+      return { ok: retryJson.ok, messageId: retryJson.result?.message_id, error: retryJson.description };
+    }
+    return { ok: true, messageId: json.result?.message_id };
+  } catch (err: unknown) {
+    return { ok: false, error: err instanceof Error ? err.message : "Network error" };
+  }
+}

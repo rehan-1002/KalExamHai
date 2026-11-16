@@ -5,6 +5,7 @@ import {
   answerCallbackQuery,
   downloadTelegramFile,
   sendTelegramDocument,
+  sendTelegramDocumentBuffer,
 } from "@/server/telegram/bot";
 import {
   saveTelegramSession,
@@ -519,6 +520,20 @@ export async function POST(req: NextRequest) {
       // Send the clean Unicode content to Telegram chat
       await sendTelegramMessage(chatId, telegramText);
 
+      // Directly deliver offline downloadable document file into Telegram chat
+      try {
+        const safeSubject = session.subject.replace(/[^a-zA-Z0-9_-]/g, "_");
+        const docBuffer = Buffer.from(webContent || telegramText, "utf-8");
+        await sendTelegramDocumentBuffer(
+          chatId,
+          docBuffer,
+          `${safeSubject}_${chosenType.toUpperCase()}_NEP2020.txt`,
+          `📄 *${meta.short}* (${session.subject}) — Mumbai University NEP-2020`
+        );
+      } catch (docErr) {
+        console.warn("Failed to send telegram document buffer:", docErr);
+      }
+
       // Parse remaining options (excluding the chosen one)
       const remainingKeys = remainingStr
         .split(",")
@@ -542,6 +557,10 @@ export async function POST(req: NextRequest) {
                 [
                   {
                     text: "🖨️ Open & Print Official A4 PDF",
+                    url: `https://kalexamhai-one.vercel.app/view/${exportId}`,
+                  },
+                  {
+                    text: "🎧 Audio Voice Recap",
                     url: `https://kalexamhai-one.vercel.app/view/${exportId}`,
                   },
                 ],

@@ -23,6 +23,121 @@ export type GeneratePaperResult =
   | { ok: false; code: string; message: string };
 
 /**
+ * Detects technical subjects (BEEE, AOA, DSGT, EG, EM, COA, TOC) and enforces
+ * MANDATORY question diagrams with concrete schemas and question phrasing rules.
+ */
+function getSubjectDiagramMandate(subject: string): string {
+  const s = (subject || "").toLowerCase();
+
+  const isBEEE = s.includes("beee") || s.includes("electrical") || s.includes("electronics engineering") || s.includes("circuit") || s.includes("networks");
+  const isAOA = s.includes("aoa") || s.includes("algorithm") || s.includes("analysis of algorithm") || s.includes("design and analysis") || s.includes("dsa") || s.includes("adsa");
+  const isDSGT = s.includes("dsgt") || s.includes("discrete") || s.includes("graph theory") || s.includes("discrete mathematics");
+  const isEG = s.includes("graphics") || s.includes("drawing") || s.includes("engineering graphics") || s.includes("engineering drawing") || s.includes("cad") || s.includes("edc");
+  const isEM = s.includes("mechanics") || s.includes("engineering mechanics") || s.includes("civil") || s.includes("structural");
+  const isCOA = s.includes("coa") || s.includes("computer organization") || s.includes("computer architecture") || s.includes("microprocessor");
+  const isTOC = s.includes("automata") || s.includes("theory of computer") || s.includes("tcs") || s.includes("toc");
+
+  if (isBEEE) {
+    return `
+⚡ MANDATORY DIAGRAM DIRECTIVE FOR ${subject.toUpperCase()} (BEEE / CIRCUITS):
+In Mumbai University examination papers, circuit analysis questions CANNOT be purely textual.
+You MUST provide AT LEAST TWO (2) sub-questions in this paper that include an authentic circuit diagram in the "diagram" object:
+1. For Mesh/Nodal, Thevenin, Norton, or Superposition:
+   "diagram": {
+     "type": "circuit",
+     "code": "{\\"v1\\":\\"20 V\\",\\"r1\\":\\"5 Ω\\",\\"r2\\":\\"10 Ω\\",\\"r3\\":\\"4 Ω\\",\\"v2\\":\\"15 V\\"}",
+     "caption": "Figure 1: DC Circuit for Network Analysis"
+   }
+   The sub-question text MUST explicitly reference the figure, e.g.:
+   "For the electrical network shown in Figure 1, determine the current through 10 Ω resistor using Thevenin's Theorem."
+2. Or for AC/R-L-C circuits, provide clean SVG vector code ('type': 'svg') in "code".
+DO NOT OMIT CIRCUITS FOR NUMERICALS!`;
+  }
+
+  if (isAOA) {
+    return `
+⚡ MANDATORY DIAGRAM DIRECTIVE FOR ${subject.toUpperCase()} (ANALYSIS OF ALGORITHMS):
+In Mumbai University AOA examination papers, algorithm trace and graph questions MUST include visual structures.
+You MUST provide AT LEAST TWO (2) sub-questions in this paper that include an authentic diagram in the "diagram" object:
+1. For Shortest Path / Minimum Spanning Tree (Dijkstra, Bellman-Ford, Prim's, Kruskal's):
+   "diagram": {
+     "type": "mermaid",
+     "code": "graph LR\\nA((A)) -- 4 --> B((B))\\nA -- 2 --> C((C))\\nB -- 5 --> C\\nB -- 10 --> D((D))\\nC -- 3 --> E((E))\\nE -- 4 --> D\\nD -- 11 --> F((F))\\nE -- 5 --> F",
+     "caption": "Figure 1: Directed Weighted Graph for Shortest Path"
+   }
+   The sub-question text MUST explicitly reference the figure, e.g.:
+   "Apply Dijkstra's algorithm on the weighted directed graph shown in Figure 1 to find the single-source shortest path from source vertex A to all other vertices. Show step-by-step distance table."
+2. For Trees (Huffman Coding, AVL Tree rotations, B-Trees, Red-Black Trees):
+   "diagram": {
+     "type": "mermaid",
+     "code": "graph TD\\nRoot((50)) --> N30((30))\\nRoot --> N70((70))\\nN30 --> N20((20))\\nN30 --> N40((40))\\nN70 --> N60((60))\\nN70 --> N80((80))",
+     "caption": "Figure 2: Binary Search Tree Structure"
+   }
+DO NOT OMIT GRAPHS OR TREES FOR ALGORITHM QUESTIONS!`;
+  }
+
+  if (isDSGT) {
+    return `
+⚡ MANDATORY DIAGRAM DIRECTIVE FOR ${subject.toUpperCase()} (DISCRETE STRUCTURES & GRAPH THEORY):
+In Mumbai University DSGT papers, Posets and Graph Theory questions MUST include visual figures.
+You MUST provide AT LEAST TWO (2) sub-questions in this paper that include an authentic diagram in the "diagram" object:
+1. For Poset / Divisibility / Lattice questions (Hasse Diagram):
+   "diagram": {
+     "type": "mermaid",
+     "code": "graph BT\\n1((1)) --> 2((2))\\n1 --> 3((3))\\n2 --> 6((6))\\n3 --> 6\\n2 --> 4((4))\\n4 --> 12((12))\\n6 --> 12",
+     "caption": "Figure 1: Hasse Diagram for Divisibility Relation D12"
+   }
+   The sub-question text MUST explicitly reference the figure, e.g.:
+   "For the Hasse diagram shown in Figure 1, determine: (i) Maximal elements, (ii) Minimal elements, (iii) Greatest and Least elements (if any), (iv) LUB and GLB for subset {2, 3}."
+2. For Graph Theory (Eulerian, Hamiltonian, Planar, Bipartite, Chromatic number) or Automata (DFA/NFA):
+   "diagram": {
+     "type": "mermaid",
+     "code": "graph LR\\nA((v1)) --- B((v2))\\nB --- C((v3))\\nC --- D((v4))\\nD --- A\\nA --- C\\nB --- D",
+     "caption": "Figure 2: Complete Graph K4 for Planarity Test"
+   }
+DO NOT OMIT DIAGRAMS FOR HASSE DIAGRAM OR GRAPH THEORY QUESTIONS!`;
+  }
+
+  if (isEM) {
+    return `
+⚡ MANDATORY DIAGRAM DIRECTIVE FOR ${subject.toUpperCase()} (ENGINEERING MECHANICS):
+In Mumbai University Engineering Mechanics papers, beam reaction and force analysis questions MUST include the loading figure.
+You MUST provide AT LEAST TWO (2) sub-questions in this paper with beam or coplanar force diagrams:
+1. For Beams with Point Loads and UDL (SFD / BMD):
+   "diagram": {
+     "type": "beam",
+     "code": "{\\"length\\":8,\\"supports\\":[{\\"position\\":0,\\"type\\":\\"pin\\",\\"label\\":\\"A\\"},{\\"position\\":6,\\"type\\":\\"roller\\",\\"label\\":\\"B\\"}],\\"pointLoads\\":[{\\"position\\":8,\\"magnitude\\":\\"15 kN\\"}],\\"udls\\":[{\\"start\\":0,\\"end\\":4,\\"magnitude\\":\\"6 kN/m\\"}]}",
+     "caption": "Figure 1: Simply Supported Beam with Overhang and UDL"
+   }
+   The sub-question text MUST explicitly reference the figure, e.g.:
+   "For the beam loaded as shown in Figure 1, calculate support reactions at A and B, and draw the Shear Force Diagram (SFD) and Bending Moment Diagram (BMD). Locate point of contraflexure."
+DO NOT OMIT BEAM FIGURES FOR BEAM / SFD / BMD QUESTIONS!`;
+  }
+
+  if (isEG) {
+    return `
+⚡ MANDATORY DIAGRAM DIRECTIVE FOR ${subject.toUpperCase()} (ENGINEERING GRAPHICS / DRAWING):
+In Mumbai University EG examination papers, orthographic and isometric questions MUST have a reference figure.
+You MUST provide AT LEAST TWO (2) sub-questions in this paper with clean SVG vector code ('type': 'svg') in "code":
+"diagram": {
+  "type": "svg",
+  "code": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 240' style='background:#ffffff;'><rect x='60' y='60' width='120' height='80' fill='#f8fafc' stroke='#0f172a' stroke-width='2'/><polygon points='180,60 240,30 240,110 180,140' fill='#f1f5f9' stroke='#0f172a' stroke-width='2'/><polygon points='60,60 120,30 240,30 180,60' fill='#e2e8f0' stroke='#0f172a' stroke-width='2'/><text x='150' y='180' font-family='serif' font-weight='bold' font-size='12' text-anchor='middle'>Isometric Projection Object (Dimensions in mm)</text></svg>",
+  "caption": "Figure 1: Pictorial View of Engineering Block"
+}
+The sub-question text MUST state: "Figure 1 shows the pictorial view of an object. Draw: (i) Front View, (ii) Top View, (iii) Side View."
+DO NOT OMIT FIGURES FOR PROJECTION QUESTIONS!`;
+  }
+
+  if (isCOA || isTOC) {
+    return `
+⚡ MANDATORY DIAGRAM DIRECTIVE FOR ${subject.toUpperCase()}:
+When asking questions about hardware algorithms (Booth's multiplication, Restoring division) or Automata (DFA, NFA, PDA, Turing Machine), you MUST include a clean 'mermaid' flowchart or state diagram in the "diagram" object of the sub-question.`;
+  }
+
+  return "";
+}
+
+/**
  * Builds the rigorous grounding prompt for Mumbai University NEP-2020 paper generation.
  */
 function buildGenerationPrompt(
@@ -95,8 +210,8 @@ For technical subjects (e.g. AOA, COA, DSGT, OS, CN, BEEE, Engineering Mechanics
     "code": "{\\"length\\":6,\\"supports\\":[{\\"position\\":0,\\"type\\":\\"pin\\",\\"label\\":\\"A\\"},{\\"position\\":6,\\"type\\":\\"roller\\",\\"label\\":\\"B\\"}],\\"pointLoads\\":[{\\"position\\":4,\\"magnitude\\":\\"15 kN\\"}],\\"udls\\":[{\\"start\\":0,\\"end\\":3,\\"magnitude\\":\\"4 kN/m\\"}]}",
     "caption": "Figure: Simply Supported Beam with UDL and Concentrated Load"
   }
-- If a sub-question does NOT require a diagram, simply omit the "diagram" key.
 - NEVER include markdown code fences or backticks inside JSON string values.
+${getSubjectDiagramMandate(params.subject)}
 
 7. JSON SCHEMA REQUIREMENT: You must return ONLY a valid JSON object matching this structure:
 ${blueprint.format === "IAT" ? `{

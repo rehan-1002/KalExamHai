@@ -84,8 +84,36 @@ async function StudentContent() {
             </p>
           </div>
 
+          {/* Exam Night 12-Hour Battle Plan Alert Banner */}
+          <div className="mt-6 p-4.5 rounded-xl bg-gradient-to-r from-red-950 via-slate-900 to-indigo-950 text-white border border-red-900/40 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center shrink-0">
+                <Clock className="w-5 h-5 text-rose-300 animate-pulse" />
+              </div>
+              <div>
+                <div className="text-[11px] font-bold uppercase tracking-wider text-rose-300 flex items-center gap-1.5">
+                  <span>One-Night Exam Cram Plan</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping"></span>
+                </div>
+                <h3 className="text-sm font-bold text-white">
+                  Got an Exam Tomorrow? Generate your 12-Hour Panic Battle Plan
+                </h3>
+                <p className="text-xs text-slate-300 mt-0.5">
+                  Strict Mumbai University NEP-2020 passing shield: high-weightage modules, mandatory Q1 definitions &amp; passing checklist.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/student/cram/new?type=survival_kit"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg shadow-sm transition-all whitespace-nowrap self-stretch sm:self-auto justify-center"
+            >
+              <span>Launch 12h Battle Plan</span>
+              <span className="text-slate-950">&rarr;</span>
+            </Link>
+          </div>
+
           {/* Quick Action Grid */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* 1. 3D Holo Flashcards */}
             <Link
               href="/student/cram/new?type=flashcards"

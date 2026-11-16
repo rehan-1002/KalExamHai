@@ -136,10 +136,12 @@ export function DiagramRenderer({
 
   const headerTitle =
     type === "beam"
-      ? "Beam Layout"
+      ? "Beam Layout & Loading"
       : type === "circuit"
-      ? "Circuit Diagram"
-      : "Flowchart";
+      ? "Electrical Circuit Diagram"
+      : type === "svg"
+      ? "Engineering Figure / Projection"
+      : "Graph / Structure Diagram";
 
   return (
     <div

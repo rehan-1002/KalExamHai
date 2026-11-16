@@ -23,11 +23,15 @@ export function buildRemainingKeyboard(
 ) {
   const keyboardRows: Array<Array<{ text: string; callback_data?: string; url?: string }>> = [];
 
-  // 1. If an artifact was just generated, provide 1-tap Print & A4 PDF preview button!
+  // 1. If an artifact was just generated, provide 1-tap Print & Audio Voice Recap buttons!
   if (latestExportId) {
     keyboardRows.push([
       {
-        text: "🖨️ Open & Print Official A4 PDF",
+        text: "🖨️ Open & Print A4 PDF",
+        url: `https://kalexamhai-one.vercel.app/view/${latestExportId}`,
+      },
+      {
+        text: "🎧 Audio Voice Recap",
         url: `https://kalexamhai-one.vercel.app/view/${latestExportId}`,
       },
     ]);

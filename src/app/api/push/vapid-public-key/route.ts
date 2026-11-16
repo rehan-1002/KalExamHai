@@ -8,3 +8,4 @@ export async function GET() {
     publicKey: VAPID_PUBLIC_KEY,
   });
 }
+

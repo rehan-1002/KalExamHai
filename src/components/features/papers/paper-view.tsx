@@ -19,10 +19,15 @@ import {
   Flag,
   ChevronDown,
   ChevronUp,
+  Share2,
+  MessageCircle,
+  Link2,
+  Headphones,
 } from "lucide-react";
 import { BackButton } from "@/components/navigation/back-button";
 import { MathText } from "@/components/ui/math-text";
 import { DiagramRenderer } from "@/components/ui/diagram-renderer";
+import { AudioRecapPlayer } from "@/components/ui/audio-recap-player";
 import { regenerateSubQuestionAction, updateSubQuestionTextAction } from "@/app/tutor/papers/[id]/actions";
 import type { PaperJson, SubQuestion } from "@/lib/schemas/paper";
 
@@ -41,6 +46,7 @@ interface PaperRecord {
 
 interface PaperViewProps {
   paperRecord: PaperRecord;
+  isPublicShare?: boolean;
 }
 
 function getSubQuestionMarkingKey(sq: SubQuestion): { breakdown: string[]; answerHint?: string } {
@@ -96,11 +102,13 @@ function getSubQuestionMarkingKey(sq: SubQuestion): { breakdown: string[]; answe
   };
 }
 
-export function PaperView({ paperRecord }: PaperViewProps) {
+export function PaperView({ paperRecord, isPublicShare = false }: PaperViewProps) {
   const pathname = usePathname();
   const isStudent = pathname?.startsWith("/student") ?? false;
   const papersUrl = isStudent ? "/student/papers" : "/tutor/papers";
-  const printUrl = isStudent
+  const printUrl = isPublicShare
+    ? `/p/${paperRecord.id}/print`
+    : isStudent
     ? `/student/papers/${paperRecord.id}/print`
     : `/tutor/papers/${paperRecord.id}/print`;
 
@@ -112,7 +120,35 @@ export function PaperView({ paperRecord }: PaperViewProps) {
   const [reportedSubQIds, setReportedSubQIds] = useState<Set<string>>(new Set());
   const [expandedMarkingSubQIds, setExpandedMarkingSubQIds] = useState<Set<string>>(new Set());
   const [copied, setCopied] = useState<boolean>(false);
+  const [linkCopied, setLinkCopied] = useState<boolean>(false);
+  const [showAudioPlayer, setShowAudioPlayer] = useState<boolean>(false);
   const [feedbackMessage, setFeedbackMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
+  const handleWhatsAppShare = () => {
+    const origin = typeof window !== "undefined" ? window.location.origin : "https://kalexamhai.in";
+    const shareUrl = `${origin}/p/${paperRecord.id}`;
+    const formatLabel = paper.format === "IAT" ? "IAT 20M" : "End-Sem 60M";
+    const text = encodeURIComponent(
+      `🚨 *${paper.subject} (${formatLabel}) Predicted Paper!*\n\nStrict Mumbai University NEP-2020 pattern with full marking scheme & diagrams.\n\nCheck the full paper here:\n👉 ${shareUrl}\n\nGenerated on KalExamHai 🎓`
+    );
+    window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
+  };
+
+  const handleCopyShareLink = async () => {
+    const origin = typeof window !== "undefined" ? window.location.origin : "https://kalexamhai.in";
+    const shareUrl = `${origin}/p/${paperRecord.id}`;
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2500);
+      setFeedbackMessage({
+        type: "success",
+        text: "Public shareable link copied! Anyone with the link can view this paper without logging in.",
+      });
+    } catch {
+      setFeedbackMessage({ type: "error", text: "Failed to copy link to clipboard." });
+    }
+  };
 
   const toggleMarkingKey = (subQId: string) => {
     setExpandedMarkingSubQIds((prev) => {
@@ -215,9 +251,11 @@ export function PaperView({ paperRecord }: PaperViewProps) {
       {/* Top Header & Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
-          <div className="mb-2">
-            <BackButton fallbackUrl={papersUrl} label="Back to Papers" />
-          </div>
+          {!isPublicShare && (
+            <div className="mb-2">
+              <BackButton fallbackUrl={papersUrl} label="Back to Papers" />
+            </div>
+          )}
           <div className="flex items-center gap-2 flex-wrap">
             <h1 className="text-2xl font-bold text-slate-900 tracking-tight">{paper.subject}</h1>
             <span className="text-xs px-2.5 py-0.5 font-bold uppercase tracking-wide bg-blue-50 text-blue-700 border border-blue-200 rounded-[6px]">
@@ -234,21 +272,55 @@ export function PaperView({ paperRecord }: PaperViewProps) {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-2.5 flex-wrap">
+          {/* WhatsApp 1-Click Share Button */}
+          <button
+            type="button"
+            onClick={handleWhatsAppShare}
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-[6px] shadow-xs transition-colors cursor-pointer"
+            title="Share predicted paper directly to your college WhatsApp group"
+          >
+            <MessageCircle className="w-3.5 h-3.5 text-emerald-600 fill-emerald-100" />
+            <span>Share on WhatsApp</span>
+          </button>
+
+          {/* Copy Public Link Button */}
+          <button
+            type="button"
+            onClick={handleCopyShareLink}
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-[6px] hover:bg-slate-50 shadow-xs transition-colors cursor-pointer"
+            title="Copy public link to view without login"
+          >
+            {linkCopied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Link2 className="w-3.5 h-3.5 text-slate-500" />}
+            <span>{linkCopied ? "Link Copied!" : "Copy Link"}</span>
+          </button>
+
+          {/* Train Mode Audio Walkthrough Button */}
+          <button
+            type="button"
+            onClick={() => setShowAudioPlayer(!showAudioPlayer)}
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-[6px] hover:bg-indigo-100 shadow-xs transition-colors cursor-pointer"
+            title="Listen to paper questions in Train Mode"
+          >
+            <Headphones className="w-3.5 h-3.5 text-indigo-600" />
+            <span>{showAudioPlayer ? "Hide Audio" : "🎧 Voice Recap"}</span>
+          </button>
+
           <button
             type="button"
             onClick={handleCopyPaper}
-            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-[6px] hover:bg-slate-50 shadow-sm transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-[6px] hover:bg-slate-50 shadow-xs transition-colors cursor-pointer"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-            {copied ? "Copied!" : "Copy Text"}
+            {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
+            <span>{copied ? "Copied!" : "Copy Text"}</span>
           </button>
+
           <Link
             href={printUrl}
             target="_blank"
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-[6px] hover:bg-blue-700 shadow-sm transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-[6px] hover:bg-blue-700 shadow-xs transition-colors"
           >
             <Printer className="w-3.5 h-3.5" />
-            Print / Export A4 PDF
+            <span>Print / Export PDF</span>
           </Link>
         </div>
       </div>
@@ -271,6 +343,26 @@ export function PaperView({ paperRecord }: PaperViewProps) {
             <X className="w-4 h-4" />
           </button>
         </div>
+      )}
+
+      {/* Train Mode Audio Walkthrough */}
+      {showAudioPlayer && (
+        <AudioRecapPlayer
+          subject={paperRecord.subject}
+          title={`Audio Walkthrough: ${paper.exam_title}`}
+          textToSpeak={[
+            `Welcome to the audio walkthrough for ${paper.subject}, ${paper.exam_title}.`,
+            `Total duration is ${paper.duration_minutes} minutes, maximum marks ${paper.total_attemptable_marks}.`,
+            `General Instructions: ${paper.general_instructions.join(". ")}.`,
+            ...paper.questions.map(
+              (q) =>
+                `Question ${q.no}, ${q.compulsory ? "Compulsory" : `Attempt any ${q.attempt_count} of ${q.out_of}`}, carrying ${
+                  q.total_marks
+                } marks. ` +
+                q.sub_questions.map((sq) => `Sub-question ${sq.label}, for ${sq.marks} marks: ${sq.text}`).join(". ")
+            ),
+          ].join(". ")}
+        />
       )}
 
       {/* Meta Bar */}
@@ -503,7 +595,7 @@ export function PaperView({ paperRecord }: PaperViewProps) {
                           {sq.marks} Marks
                         </span>
 
-                        {!isEditing && (
+                        {!isEditing && !isPublicShare && (
                           <div className="flex items-center gap-1">
                             <button
                               type="button"
