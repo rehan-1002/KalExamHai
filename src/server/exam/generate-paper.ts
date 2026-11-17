@@ -3,7 +3,7 @@ import { executeWithGeminiPool, getGenerationModel, formatGeminiErrorMessage } f
 import { getAdminClient } from "../supabase/admin";
 import { retrieveChunks } from "../rag/retrieve";
 import { buildContextFromChunks } from "../rag/context-builder";
-import { EXAM_FORMATS } from "./formats";
+import { EXAM_FORMATS, getExamFormatBlueprint, type ExamFormatBlueprint } from "./formats";
 import { validatePaper } from "./validate-paper";
 import { reserveCredits } from "../credits/reserve";
 import { refundCredits } from "../credits/refund";
@@ -143,7 +143,7 @@ When asking questions about hardware algorithms (Booth's multiplication, Restori
 function buildGenerationPrompt(
   params: GeneratePaperParams,
   contextText: string,
-  blueprint: typeof EXAM_FORMATS["IAT"],
+  blueprint: ExamFormatBlueprint,
   feedback?: string[]
 ): string {
   const structureRules = blueprint.questions
@@ -295,31 +295,27 @@ ${blueprint.format === "IAT" ? `{
   "format": "END_SEM",
   "subject": "${params.subject}",
   "exam_title": "${params.examTitle || "Semester End Examination"}",
-  "duration_minutes": 120,
-  "total_attemptable_marks": 60,
-  "general_instructions": [
-    "Q.1 is compulsory. Solve any 4 out of 6 sub-questions.",
-    "Attempt any THREE questions from remaining FIVE questions.",
-    "Assume suitable data if necessary and state assumptions clearly."
-  ],
+  "duration_minutes": ${blueprint.durationMinutesDefault},
+  "total_attemptable_marks": ${blueprint.totalMarks},
+  "general_instructions": ${JSON.stringify(blueprint.instructions, null, 2)},
   "questions": [
     {
       "no": 1,
       "title": "Question No. 1",
       "compulsory": true,
-      "total_marks": 20,
-      "attempt_count": 4,
-      "out_of": 6,
-      "instructions": "Attempt any FOUR out of the following six sub-questions (5 marks each).",
+      "total_marks": ${blueprint.questions[0]?.marks || 15},
+      "attempt_count": ${blueprint.questions[0]?.attempt || 5},
+      "out_of": ${blueprint.questions[0]?.outOf || 6},
+      "instructions": "${blueprint.questions[0]?.instructions || "Question No. 1 is compulsory."}",
       "sub_questions": [
         {
           "id": "q1_a",
           "label": "a",
-          "text": "State Cayley-Hamilton Theorem and find the characteristic equation for matrix $A$...",
-          "marks": 5,
+          "text": "Explain the fundamental concept of...",
+          "marks": ${blueprint.questions[0]?.subMarks[0] || 3},
           "unit_label": "Module 1",
-          "bloom_level": "L3_APPLY",
-          "repeat_badge": "Repeated 5x in MU (Dec '24 NEP, May '24, Dec '23) • ~92% Probability",
+          "bloom_level": "L2_UNDERSTAND",
+          "repeat_badge": "Repeated 5x in MU (Dec '24 NEP, May '24) • ~92% Probability",
           "source_chunk_ids": ["c_1"]
         }
       ]
@@ -350,7 +346,7 @@ export async function generatePaper(
   params: GeneratePaperParams,
   ownerId: string
 ): Promise<GeneratePaperResult> {
-  const blueprint = EXAM_FORMATS[params.format];
+  const blueprint = getExamFormatBlueprint(params.format, params.subject);
   if (!blueprint) {
     return { ok: false, code: "INVALID_FORMAT", message: `Unsupported format: ${params.format}` };
   }

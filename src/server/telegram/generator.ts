@@ -1,6 +1,7 @@
 import "server-only";
 
 import { executeWithGeminiPool, getGenerationModel } from "@/server/gemini/client";
+import { getExamFormatBlueprint } from "@/server/exam/formats";
 
 export type TelegramArtifactType = "paper60" | "iat" | "formula" | "survival" | "viva";
 
@@ -154,21 +155,34 @@ STRICT FORMATTING RULES:
       userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the structured 20-Mark IAT Paper with MU repeat frequency and probability scores now.`;
       break;
 
-    case "paper60":
+    case "paper60": {
+      const bp = getExamFormatBlueprint("END_SEM", subject);
+      const qRules = bp.questions
+        .map(
+          (q) =>
+            `- Q.${q.no}: ${q.compulsory ? "COMPULSORY" : "OPTIONAL"}. Total: ${q.marks}M. Sub-questions marks: [${q.subMarks.join(", ")}]. (${q.instructions})`
+        )
+        .join("\n");
+
       systemPrompt = `You are the Chief Examination Moderator for Mumbai University Engineering (NEP-2020 Pattern).
-Generate a strict 60-Marks, 2-Hour Question Paper based EXCLUSIVELY on the official NEP-2020 syllabus.
+Generate an authentic, strictly structured 60-Marks, 2-Hour Question Paper based EXCLUSIVELY on the official NEP-2020 syllabus for ${subject}.
 
 STRICT NEP-2020 EXCLUSIVITY RULE:
-You MUST generate this paper strictly using ONLY the official NEP-2020 syllabus modules and question archetypes.
-Under NO circumstances include questions, outdated module distributions, or deprecated topics from older schemes (C-Scheme, CBCS, or Rev-2019). The generated paper MUST be 100% pure NEP-2020.
+Generate this paper strictly using ONLY the official NEP-2020 syllabus modules and question archetypes.
+Under NO circumstances include questions or outdated formats from older schemes.
+
+OFFICIAL BLUEPRINT STRUCTURE (MANDATORY):
+Total Attemptable Marks: 60 | Total Questions: 6 (Q.1 to Q.6)
+Attempt Rules: Q.1 is compulsory (15 Marks). Attempt any THREE questions from Q.2 to Q.6 (15 Marks each = 45 Marks).
+${qRules}
 
 STRICT FORMATTING RULES:
 1. Put each question on its own clean line.
 2. Marks, Module, and MU Historical Repeat Frequency MUST be on indented sublines:
-   └─ \`[5 Marks]\` • \`[Module 2: Memory Management]\`
+   └─ \`[Marks]\` • \`[Module X: Name]\`
    └─ 🔥 *Repeated 5x in MU (Dec '24 NEP, May '24, Dec '23)* • *~92% Probability*
 3. Include realistic repeat frequency (3x-6x) and probability (~75%-95%) based on recurring MU question archetypes.
-4. Structure:
+4. Header Structure:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 🏛️ *MUMBAI UNIVERSITY (NEP-2020)*
 📄 *END-SEMESTER EXAMINATION*
@@ -177,77 +191,12 @@ STRICT FORMATTING RULES:
 *Max. Marks:* 60  |  *Duration:* 2 Hours
 ──────────────────────────
 *Instructions:*
-1. Q.1 is compulsory.
-2. Attempt any TWO questions from Section 2.
-3. Attempt any ONE question from Section 3.
-4. Attempt any ONE question from Section 4.
-━━━━━━━━━━━━━━━━━━━━━━━━━━
+${bp.instructions.map((ins, i) => `${i + 1}. ${ins}`).join("\n")}
+━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
-📌 *SECTION 1 [Compulsory - 10 Marks]*
-*(a)* [Short Question]
-└─ \`[2 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 4x in MU (Dec '24 NEP, Dec '23)* • *~88% Probability*
-
-*(b)* [Short Question]
-└─ \`[2 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 3x in MU (May '24, Dec '22)* • *~80% Probability*
-
-*(c)* [Short Question]
-└─ \`[2 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 5x in MU (Dec '24 NEP, May '23)* • *~92% Probability*
-
-*(d)* [Short Question]
-└─ \`[2 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 3x in MU (Dec '23, May '22)* • *~78% Probability*
-
-*(e)* [Short Question]
-└─ \`[2 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 4x in MU (May '24, Dec '23)* • *~85% Probability*
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-📌 *SECTION 2 [Solve any 2 out of 3 - 20 Marks]*
-*Q.2 (a)* [Question 1]
-└─ \`[5 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 5x in MU (Dec '24 NEP, May '24, Dec '23)* • *~94% Probability*
-*Q.2 (b)* [Question 2]
-└─ \`[5 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 4x in MU (Dec '23, May '22)* • *~84% Probability*
-
-*Q.3 (a)* [Question 1]
-└─ \`[5 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 5x in MU (Dec '24 NEP, Dec '22)* • *~90% Probability*
-*Q.3 (b)* [Question 2]
-└─ \`[5 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 3x in MU (May '24, May '23)* • *~76% Probability*
-
-*Q.4 (a)* [Question 1]
-└─ \`[5 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 4x in MU (Dec '24 NEP, May '23)* • *~88% Probability*
-*Q.4 (b)* [Question 2]
-└─ \`[5 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 3x in MU (Dec '23, May '22)* • *~80% Probability*
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-📌 *SECTION 3 [Solve any 1 out of 2 - 15 Marks]*
-*Q.5* [Detailed In-Depth Derivation or Comprehensive Numerical]
-└─ \`[15 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 6x in MU (Dec '25 NEP, May '24, Dec '23, May '22)* • *~95% Probability*
-
-*Q.6* [Alternative Comprehensive Question]
-└─ \`[15 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 4x in MU (Dec '24 NEP, May '23)* • *~86% Probability*
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-📌 *SECTION 4 [Solve any 1 out of 2 - 15 Marks]*
-*Q.7* [System Design / Real-World Architecture Problem]
-└─ \`[15 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 5x in MU (Dec '24 NEP, Dec '23, May '22)* • *~91% Probability*
-
-*Q.8* [Alternative System Design Problem]
-└─ \`[15 Marks]\` • \`[Module: Name]\`
-└─ 🔥 *Repeated 3x in MU (May '24, Dec '22)* • *~79% Probability*`;
-
-      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the 60-Mark NEP-2020 Question Paper with exact MU repeat frequency and probability scores now.`;
+      userPrompt = `Subject: ${subject}\n\nSyllabus Content:\n${context}\n\nGenerate the complete 60-Mark NEP-2020 Question Paper following the exact blueprint rules now.`;
+      break;
+    }
       break;
 
     case "formula":

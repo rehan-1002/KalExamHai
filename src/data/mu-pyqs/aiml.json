@@ -4364,6 +4364,177 @@
   ],
   "sem3": [
     {
+      "subject": "Mathematics for Computer Engineering",
+      "slug": "mathematics-for-computer-engineering-n2113111-2024-nov-dec",
+      "year": "2024",
+      "session": "NOVEMBER-DECEMBER",
+      "scheme": "NEP-2020",
+      "isNep": true,
+      "pdfUrl": "https://www.munotes.in/uploads/question-papers/Engineering/CMPN/Sem%203/Mathematics%20for%20Computer%20Engineering/2024-nov-dec.pdf",
+      "filename": "mu_aiml_sem3_2024_nov_dec_n2113111.pdf",
+      "source": "Mumbai University Official Examination",
+      "webUrl": "https://www.munotes.in/question-papers/Engineering/CMPN/Sem-3/Mathematics-for-Computer-Engineering/n2113111-2024-nov-dec/",
+      "branch": "aiml",
+      "semester": 3,
+      "paperCode": "N2113111",
+      "totalMarks": 60,
+      "timeHours": 2,
+      "instructions": [
+        "Question No. 1 is Compulsory.",
+        "Attempt any 3 (Three) Questions from the remaining questions.",
+        "Statistical Table is allowed."
+      ],
+      "questions": [
+        {
+          "qNo": "Q1.a",
+          "mainQ": 1,
+          "subQ": "a",
+          "marks": 3,
+          "text": "If $A = \\begin{bmatrix} 2 & 3 & 4 \\\\ 0 & 4 & 2 \\\\ 0 & 0 & 3 \\end{bmatrix}$, find Eigen values of $2A^{-1} + A^2 + I$"
+        },
+        {
+          "qNo": "Q1.b",
+          "mainQ": 1,
+          "subQ": "b",
+          "marks": 3,
+          "text": "Convert the following LPP to standard form:\n$$\\text{Maximise } Z = 2x_1 + 2x_2 + x_3$$\nSubject to:\n$$-x_1 + 3x_2 \\le -2$$\n$$4x_1 + x_2 - x_3 \\le 3$$\n$$x_1, x_2, x_3 \\ge 0$$"
+        },
+        {
+          "qNo": "Q1.c",
+          "mainQ": 1,
+          "subQ": "c",
+          "marks": 3,
+          "text": "Find the value of $a_n$ in the expansion of Fourier Series for $f(x) = |x|$ in $(-\\pi, \\pi)$."
+        },
+        {
+          "qNo": "Q1.d",
+          "mainQ": 1,
+          "subQ": "d",
+          "marks": 3,
+          "text": "A random variable $X$ has the following probability distribution:\n\n| $X$ | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| $P(X=x)$ | $1/6$ | $1/3$ | $1/3$ | $1/6$ |\n\nFind m.g.f. about origin and mean."
+        },
+        {
+          "qNo": "Q1.e",
+          "mainQ": 1,
+          "subQ": "e",
+          "marks": 3,
+          "text": "Find the remainder when 7 divides $41^{65}$."
+        },
+        {
+          "qNo": "Q1.f",
+          "mainQ": 1,
+          "subQ": "f",
+          "marks": 3,
+          "text": "Calculate the coefficient of correlation for the following data:\n\n| $X$ | 2 | 3 | 4 | 7 | 4 |\n|---|---|---|---|---|---|\n| $Y$ | 8 | 7 | 3 | 1 | 2 |"
+        },
+        {
+          "qNo": "Q2.a",
+          "mainQ": 2,
+          "subQ": "a",
+          "marks": 4,
+          "text": "A router receives an average of 5 data packets per second. What is the probability that it receives exactly 3 packets in a given second?"
+        },
+        {
+          "qNo": "Q2.b",
+          "mainQ": 2,
+          "subQ": "b",
+          "marks": 5,
+          "text": "Compute Spearman's rank correlation coefficient from the following data:\n\n| $X$ | 18 | 20 | 34 | 52 | 12 |\n|---|---|---|---|---|---|\n| $Y$ | 12 | 18 | 25 | 50 | 25 |"
+        },
+        {
+          "qNo": "Q2.c",
+          "mainQ": 2,
+          "subQ": "c",
+          "marks": 6,
+          "text": "Find the Fourier series for $f(x) = 9 - x^2$ in the interval $(-3, 3)$."
+        },
+        {
+          "qNo": "Q3.a",
+          "mainQ": 3,
+          "subQ": "a",
+          "marks": 4,
+          "text": "Fit a straight line for the following data:\n\n| $X$ | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|\n| $Y$ | 1 | 2 | 3 | 4.5 | 6 | 7.5 |"
+        },
+        {
+          "qNo": "Q3.b",
+          "mainQ": 3,
+          "subQ": "b",
+          "marks": 5,
+          "text": "Solve the system of congruence using Chinese Remainder Theorem:\n$$x \\equiv 1 \\pmod 3$$\n$$x \\equiv 2 \\pmod 5$$"
+        },
+        {
+          "qNo": "Q3.c",
+          "mainQ": 3,
+          "subQ": "c",
+          "marks": 6,
+          "text": "Find the eigenvalues and eigenvectors for matrix:\n$$A = \\begin{bmatrix} -2 & 2 & -3 \\\\ 2 & 1 & -6 \\\\ -1 & -2 & 0 \\end{bmatrix}$$"
+        },
+        {
+          "qNo": "Q4.a",
+          "mainQ": 4,
+          "subQ": "a",
+          "marks": 4,
+          "text": "If $f(x) = x^2 e^{-x}, x \\ge 0$, then find first two raw moments."
+        },
+        {
+          "qNo": "Q4.b",
+          "mainQ": 4,
+          "subQ": "b",
+          "marks": 5,
+          "text": "Show that the matrix $A = \\begin{bmatrix} 8 & -8 & -2 \\\\ 4 & -3 & -2 \\\\ 3 & -4 & 1 \\end{bmatrix}$ is diagonalisable."
+        },
+        {
+          "qNo": "Q4.c",
+          "mainQ": 4,
+          "subQ": "c",
+          "marks": 6,
+          "text": "In RSA system the public key $(E, N) = (5, 221)$. Find $\\phi(N)$, private key $D$. What is the cipher text for $M=6$ using the public key?"
+        },
+        {
+          "qNo": "Q5.a",
+          "mainQ": 5,
+          "subQ": "a",
+          "marks": 4,
+          "text": "Verify Cayley-Hamilton theorem for:\n$$A = \\begin{bmatrix} 4 & 6 & 6 \\\\ 1 & 3 & 2 \\\\ -1 & -5 & -2 \\end{bmatrix}$$"
+        },
+        {
+          "qNo": "Q5.b",
+          "mainQ": 5,
+          "subQ": "b",
+          "marks": 5,
+          "text": "If $X$ is a normal variate with mean 10 and standard deviation 4, find:\n1) $P(|X - 14| < 1)$\n2) $P(5 \\le X \\le 18)$\n3) $P(X \\le 12)$"
+        },
+        {
+          "qNo": "Q5.c",
+          "mainQ": 5,
+          "subQ": "c",
+          "marks": 6,
+          "text": "Apply the Simplex method to solve the following LPP:\n$$\\text{Maximise } z = x_1 + 4x_2$$\nSubject to:\n$$2x_1 + x_2 \\le 3$$\n$$3x_1 + 5x_2 \\le 9$$\n$$x_1 + 3x_2 \\le 5$$\n$$x_1, x_2 \\ge 0$$"
+        },
+        {
+          "qNo": "Q6.a",
+          "mainQ": 6,
+          "subQ": "a",
+          "marks": 4,
+          "text": "Find the line of regression $X$ on $Y$ for the following data:\n\n| $X$ | 10 | 12 | 13 | 16 | 17 | 20 | 25 |\n|---|---|---|---|---|---|---|---|\n| $Y$ | 19 | 22 | 24 | 27 | 29 | 33 | 37 |"
+        },
+        {
+          "qNo": "Q6.b",
+          "mainQ": 6,
+          "subQ": "b",
+          "marks": 5,
+          "text": "Obtain Fourier series for $f(x) = (\\pi - x)^2$ in $(0, 2\\pi)$."
+        },
+        {
+          "qNo": "Q6.c",
+          "mainQ": 6,
+          "subQ": "c",
+          "marks": 6,
+          "text": "Using the method of Lagrange's multipliers, solve the following NLPP:\n$$\\text{Optimize } z = 6x_1^2 + 5x_2^2$$\nSubject to $x_1 + 5x_2 = 7$, $x_1, x_2 \\ge 0$"
+        }
+      ]
+    },
+    {
       "subject": "Engineering Mathematics III",
       "slug": "engineering-mathematics-iii-6840-2018-dec",
       "year": "2018",

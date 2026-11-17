@@ -1,6 +1,6 @@
 import "server-only";
 import type { PaperJson } from "@/lib/schemas/paper";
-import { EXAM_FORMATS } from "./formats";
+import { EXAM_FORMATS, getExamFormatBlueprint } from "./formats";
 import { sanitizeLatex } from "./sanitize-latex";
 
 export interface ValidationReport {
@@ -21,7 +21,7 @@ export function validatePaper(
 ): ValidationReport {
   const errors: string[] = [];
   const warnings: string[] = [];
-  const blueprint = EXAM_FORMATS[paper.format];
+  const blueprint = getExamFormatBlueprint(paper.format, paper.subject);
 
   if (!blueprint) {
     return {

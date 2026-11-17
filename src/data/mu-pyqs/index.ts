@@ -1,3 +1,11 @@
+export interface MuPyqQuestion {
+  qNo: string;
+  mainQ: number;
+  subQ: string;
+  marks: number;
+  text: string;
+}
+
 export interface MuPyqItem {
   subject: string;
   slug: string;
@@ -7,6 +15,15 @@ export interface MuPyqItem {
   isNep: boolean;
   pdfUrl: string;
   filename: string;
+  source?: string;
+  webUrl?: string;
+  branch?: string;
+  semester?: number;
+  paperCode?: string;
+  timeHours?: number;
+  totalMarks?: number;
+  instructions?: string[];
+  questions?: MuPyqQuestion[];
 }
 
 export type MuPyqBranchData = Record<string, MuPyqItem[]>;
