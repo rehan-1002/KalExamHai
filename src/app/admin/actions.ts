@@ -39,8 +39,13 @@ export async function updateAnnouncementAction(formData: FormData) {
   const badge = (formData.get("badge") as string) || "📢 ANNOUNCEMENT";
   const link = (formData.get("link") as string) || "";
 
-  await saveGlobalAnnouncement({ active, text: text.trim(), badge: badge.trim(), link: link.trim() });
+  const result = await saveGlobalAnnouncement({ active, text: text.trim(), badge: badge.trim(), link: link.trim() });
+  if (!result.ok) {
+    return { ok: false, error: "Failed to persist announcement to cloud storage" };
+  }
+
   revalidatePath("/admin");
+  revalidatePath("/student", "layout");
   revalidatePath("/student");
   revalidatePath("/");
   return { ok: true };
