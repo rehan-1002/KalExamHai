@@ -6,11 +6,17 @@ export const metadata = {
   description: "Sign in to access your Mumbai University question papers and exam prep tools.",
 };
 
-function LoginContent() {
-  return <AuthSwitch initialMode="signin" />;
+interface LoginPageProps {
+  searchParams?: Promise<{ redirectTo?: string; next?: string }>;
 }
 
-export default function LoginPage() {
+async function LoginContent({ searchParams }: LoginPageProps) {
+  const sp = searchParams ? await searchParams : {};
+  const redirectTarget = sp.redirectTo || sp.next || "/student";
+  return <AuthSwitch initialMode="signin" redirectTo={redirectTarget} />;
+}
+
+export default function LoginPage({ searchParams }: LoginPageProps) {
   return (
     <Suspense
       fallback={
@@ -19,7 +25,7 @@ export default function LoginPage() {
         </div>
       }
     >
-      <LoginContent />
+      <LoginContent searchParams={searchParams} />
     </Suspense>
   );
 }

@@ -24,7 +24,7 @@ export default async function StudentLayout({
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect("/login?next=/student");
+    redirect("/login");
   }
 
   const isAdmin = isAdminEmail(user.email);

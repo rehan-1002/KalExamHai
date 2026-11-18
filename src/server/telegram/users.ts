@@ -166,8 +166,53 @@ export async function getTelegramUsers(forceRefresh = false): Promise<TelegramUs
   }
 }
 
+export const BROADCAST_INLINE_KEYBOARD = {
+  inline_keyboard: [
+    [
+      {
+        text: "⚡ 24-Hr KT Buster Kit (Pass Guarantee)",
+        url: "https://kalexamhai.com/student/cram/new?type=kt_buster",
+      },
+    ],
+    [
+      {
+        text: "🎯 Start Cram Session",
+        url: "https://kalexamhai.com/student/cram/new",
+      },
+      {
+        text: "📝 MU Past Papers Archive",
+        url: "https://kalexamhai.com/student/papers",
+      },
+    ],
+    [
+      {
+        text: "🌐 Open KalExamHai Web App",
+        url: "https://kalexamhai.com",
+      },
+    ],
+  ],
+};
+
 /**
- * Broadcasts a custom message to all registered Telegram users.
+ * Sends a direct personalized message to a specific Telegram user with action buttons.
+ */
+export async function sendDirectTelegramMessage(
+  chatId: number,
+  messageText: string
+): Promise<{ ok: boolean; chatId: number; error?: string }> {
+  try {
+    await sendTelegramMessage(chatId, messageText, {
+      reply_markup: BROADCAST_INLINE_KEYBOARD,
+    });
+    return { ok: true, chatId };
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : "Failed to deliver message";
+    return { ok: false, chatId, error: msg };
+  }
+}
+
+/**
+ * Broadcasts a custom message to all registered Telegram users with high-converting web links.
  */
 export async function broadcastTelegramMessage(messageText: string): Promise<{
   total: number;
@@ -180,7 +225,9 @@ export async function broadcastTelegramMessage(messageText: string): Promise<{
 
   for (const user of users) {
     try {
-      await sendTelegramMessage(user.chatId, messageText);
+      await sendTelegramMessage(user.chatId, messageText, {
+        reply_markup: BROADCAST_INLINE_KEYBOARD,
+      });
       sent++;
       // Sleep 35ms between sends to stay well within Telegram's 30 msg/sec broadcast rate limit
       await new Promise((res) => setTimeout(res, 35));

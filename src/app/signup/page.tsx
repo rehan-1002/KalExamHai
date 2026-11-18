@@ -6,11 +6,17 @@ export const metadata = {
   description: "Create an account to generate Mumbai University question papers or study with verified exam notes.",
 };
 
-function SignUpContent() {
-  return <AuthSwitch initialMode="signup" />;
+interface SignUpPageProps {
+  searchParams?: Promise<{ redirectTo?: string; next?: string }>;
 }
 
-export default function SignUpPage() {
+async function SignUpContent({ searchParams }: SignUpPageProps) {
+  const sp = searchParams ? await searchParams : {};
+  const redirectTarget = sp.redirectTo || sp.next || "/student";
+  return <AuthSwitch initialMode="signup" redirectTo={redirectTarget} />;
+}
+
+export default function SignUpPage({ searchParams }: SignUpPageProps) {
   return (
     <Suspense
       fallback={
@@ -19,7 +25,7 @@ export default function SignUpPage() {
         </div>
       }
     >
-      <SignUpContent />
+      <SignUpContent searchParams={searchParams} />
     </Suspense>
   );
 }

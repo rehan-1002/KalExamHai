@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { isAdminEmail } from "@/lib/auth/admin";
-import { broadcastTelegramMessage, getTelegramUsers } from "@/server/telegram/users";
+import { broadcastTelegramMessage, sendDirectTelegramMessage, getTelegramUsers } from "@/server/telegram/users";
 import { saveGlobalAnnouncement } from "@/server/announcements/store";
 import { updateFeedbackStatus } from "@/server/feedback/store";
 import { sendWebPushNotification } from "@/server/push/store";
@@ -23,6 +23,21 @@ export async function broadcastTelegramAction(formData: FormData) {
   const message = (formData.get("message") as string) || "";
   if (!message.trim()) {
     return { ok: false, error: "Message cannot be empty" };
+  }
+
+  const targetChatIdRaw = formData.get("targetChatId") as string;
+  const targetChatId =
+    targetChatIdRaw && targetChatIdRaw !== "all"
+      ? parseInt(targetChatIdRaw, 10)
+      : null;
+
+  if (targetChatId && !isNaN(targetChatId)) {
+    const result = await sendDirectTelegramMessage(targetChatId, message.trim());
+    revalidatePath("/admin");
+    if (!result.ok) {
+      return { ok: false, error: result.error || "Failed to deliver message to student." };
+    }
+    return { ok: true, sent: 1, total: 1 };
   }
 
   const result = await broadcastTelegramMessage(message.trim());

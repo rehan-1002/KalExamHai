@@ -14,6 +14,7 @@ export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProp
   const router = useRouter();
   const [userList, setUserList] = useState<TelegramUserProfile[]>(initialUsers);
   const [isBroadcastOpen, setIsBroadcastOpen] = useState(false);
+  const [selectedChatId, setSelectedChatId] = useState<number | "all">("all");
   const [broadcastMessage, setBroadcastMessage] = useState("");
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -27,6 +28,17 @@ export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProp
   useEffect(() => {
     setUserList(initialUsers);
   }, [initialUsers]);
+
+  const targetUser =
+    selectedChatId !== "all"
+      ? userList.find((u) => u.chatId === selectedChatId)
+      : null;
+
+  const handleDirectMessageClick = (chatId: number) => {
+    setSelectedChatId(chatId);
+    setIsBroadcastOpen(true);
+    setStatusMessage(null);
+  };
 
   // Periodic Live Polling every 10 seconds
   useEffect(() => {
@@ -75,19 +87,25 @@ export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProp
     setStatusMessage(null);
     const fd = new FormData();
     fd.append("message", broadcastMessage.trim());
+    fd.append("targetChatId", selectedChatId.toString());
 
     startTransition(async () => {
       try {
         const res = await broadcastTelegramAction(fd);
         if (res.ok && "sent" in res) {
-          setStatusMessage(`✅ Blast sent successfully to ${res.sent}/${res.total} Telegram students!`);
+          if (selectedChatId === "all") {
+            setStatusMessage(`✅ Blast sent successfully to ${res.sent}/${res.total} Telegram students!`);
+          } else {
+            const recipientName = targetUser?.firstName || `Student (${selectedChatId})`;
+            setStatusMessage(`✅ Direct message sent successfully to ${recipientName}!`);
+          }
           setBroadcastMessage("");
           setTimeout(() => setIsBroadcastOpen(false), 2500);
         } else {
           setStatusMessage(`❌ Error: ${res.error}`);
         }
       } catch {
-        setStatusMessage("❌ Network error during broadcast.");
+        setStatusMessage("❌ Network error during message dispatch.");
       }
     });
   };
@@ -133,7 +151,10 @@ export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProp
 
           {/* Broadcast Trigger Button */}
           <button
-            onClick={() => setIsBroadcastOpen(!isBroadcastOpen)}
+            onClick={() => {
+              setSelectedChatId("all");
+              setIsBroadcastOpen(!isBroadcastOpen);
+            }}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-700 text-white font-medium text-xs shadow-sm transition-all cursor-pointer"
           >
             <Send className="w-3.5 h-3.5" />
@@ -144,13 +165,57 @@ export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProp
 
       {/* Broadcast Form Drawer */}
       {isBroadcastOpen && (
-        <form onSubmit={handleBroadcast} className="p-4 bg-sky-50/70 border border-sky-200 rounded-xl space-y-3">
-          <div className="flex items-center justify-between">
+        <form onSubmit={handleBroadcast} className="p-4 bg-sky-50/70 border border-sky-200 rounded-xl space-y-3 animate-in fade-in duration-150">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-sky-200">
             <span className="text-xs font-bold text-sky-900 flex items-center gap-1.5">
               <Send className="w-3.5 h-3.5 text-sky-600" />
-              Send Alert to all {userList.length} Telegram Students
+              {selectedChatId === "all"
+                ? `Send Alert to All ${userList.length} Telegram Students`
+                : `Send Direct Message to ${targetUser?.firstName || "Selected Student"}`}
             </span>
-            <span className="text-[11px] text-sky-700 font-mono">Paced at ~30 msg/sec</span>
+
+            {/* Recipient Selector Toggle */}
+            <div className="flex items-center gap-3 flex-wrap">
+              <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-800 cursor-pointer">
+                <input
+                  type="radio"
+                  name="recipient"
+                  checked={selectedChatId === "all"}
+                  onChange={() => setSelectedChatId("all")}
+                  className="text-sky-600 focus:ring-sky-500"
+                />
+                <span>All Students ({userList.length})</span>
+              </label>
+
+              <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-800 cursor-pointer">
+                <input
+                  type="radio"
+                  name="recipient"
+                  checked={selectedChatId !== "all"}
+                  onChange={() => {
+                    if (selectedChatId === "all" && userList.length > 0) {
+                      setSelectedChatId(userList[0]!.chatId);
+                    }
+                  }}
+                  className="text-sky-600 focus:ring-sky-500"
+                />
+                <span>Selected Person Only</span>
+              </label>
+
+              {selectedChatId !== "all" && (
+                <select
+                  value={selectedChatId}
+                  onChange={(e) => setSelectedChatId(parseInt(e.target.value, 10))}
+                  className="text-xs py-1 px-2.5 bg-white border border-sky-300 rounded-md font-medium text-slate-800 focus:outline-none focus:ring-1 focus:ring-sky-500 max-w-xs"
+                >
+                  {userList.map((u) => (
+                    <option key={u.chatId} value={u.chatId}>
+                      {u.firstName || "MU Student"} {u.lastName || ""} {u.username ? `(@${u.username})` : ""} — {u.chatId}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </div>
           </div>
 
           <textarea
@@ -159,9 +224,17 @@ export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProp
             value={broadcastMessage}
             disabled={isPending}
             onChange={(e) => setBroadcastMessage(e.target.value)}
-            placeholder="📢 Kal Maths-1 ka paper hai! High-Yield Formula Notes aur KT Buster checklist check karo: https://kalexamhai-one.vercel.app"
+            placeholder={
+              selectedChatId === "all"
+                ? "📢 Kal Maths-1 ka paper hai! High-Yield Formula Notes aur KT Buster checklist check karo..."
+                : `Write your direct message to ${targetUser?.firstName || "this student"}...`
+            }
             className="w-full text-xs p-2.5 bg-white border border-sky-300 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-sky-500"
           />
+
+          <p className="text-[11px] text-sky-700/80">
+            ℹ️ Action buttons (⚡ KT Buster, 🎯 Cram Session, 📝 Papers Archive, 🌐 Web App) will be automatically attached underneath.
+          </p>
 
           {statusMessage && (
             <div className="text-xs font-medium text-slate-800 bg-white p-2 rounded-[6px] border border-sky-200">
@@ -182,8 +255,18 @@ export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProp
               disabled={isPending || !broadcastMessage.trim()}
               className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-white bg-sky-600 hover:bg-sky-700 rounded-[8px] shadow-sm disabled:opacity-50 transition-all cursor-pointer"
             >
-              {isPending ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
-              <span>{isPending ? "Blasting..." : "Send to All"}</span>
+              {isPending ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : (
+                <Send className="w-3.5 h-3.5" />
+              )}
+              <span>
+                {isPending
+                  ? "Sending..."
+                  : selectedChatId === "all"
+                  ? `Send to All (${userList.length})`
+                  : `Send to ${targetUser?.firstName || "Selected Student"}`}
+              </span>
             </button>
           </div>
         </form>
@@ -199,6 +282,7 @@ export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProp
               <th className="py-2 px-4 font-medium">Last Active Subject</th>
               <th className="py-2 px-4 font-medium">Sessions</th>
               <th className="py-2 px-4 font-medium">Last Active</th>
+              <th className="py-2 px-4 font-medium text-right">Action</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-[#E7E5E0]">
@@ -226,11 +310,22 @@ export function TelegramUsersCard({ users: initialUsers }: TelegramUsersCardProp
                     {new Date(u.lastActive).toLocaleDateString()} at{" "}
                     {new Date(u.lastActive).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                   </td>
+                  <td className="py-2.5 px-4 text-right">
+                    <button
+                      type="button"
+                      onClick={() => handleDirectMessageClick(u.chatId)}
+                      className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold text-sky-700 bg-sky-50 hover:bg-sky-100 border border-sky-200 rounded-[5px] transition-colors cursor-pointer"
+                      title={`Send direct Telegram message to ${u.firstName || "this student"}`}
+                    >
+                      <Send className="w-3 h-3 text-sky-600" />
+                      <span>Message</span>
+                    </button>
+                  </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan={5} className="py-4 px-4 text-center text-[#9CA3AF]">
+                <td colSpan={6} className="py-4 px-4 text-center text-[#9CA3AF]">
                   No Telegram bot sessions recorded yet.
                 </td>
               </tr>

@@ -557,14 +557,14 @@ export async function POST(req: NextRequest) {
                 [
                   {
                     text: "🖨️ Open & Print Official A4 PDF",
-                    url: `https://kalexamhai-one.vercel.app/view/${exportId}`,
+                    url: `https://kalexamhai.com/view/${exportId}`,
                   },
                   {
                     text: "🎧 Audio Voice Recap",
-                    url: `https://kalexamhai-one.vercel.app/view/${exportId}`,
+                    url: `https://kalexamhai.com/view/${exportId}`,
                   },
                 ],
-                [{ text: "🌐 Open Full 3D Workspace on Web (Free)", url: "https://kalexamhai-one.vercel.app" }],
+                [{ text: "🌐 Open Full 3D Workspace on Web (Free)", url: "https://kalexamhai.com" }],
                 [
                   {
                     text: "📤 Share Bot with Classmates",
@@ -592,14 +592,87 @@ export async function POST(req: NextRequest) {
     }
 
     const text = (msg.text || "").trim();
+    const lowerText = text.toLowerCase();
 
-    // Case A0: User sent /pyqs or /pyq
+    // Case KT Buster: Student looking for KT Buster Kit
+    if (
+      lowerText.includes("kt buster") ||
+      lowerText.includes("ktbuster") ||
+      lowerText.includes("kt-buster") ||
+      lowerText.startsWith("/kt") ||
+      lowerText.includes("pass kaise") ||
+      lowerText.includes("passing guarantee")
+    ) {
+      await sendTelegramMessage(
+        chatId,
+        `🎯 *24-Hour KT Buster Kit (Mumbai University Passing Guarantee)*\n\nStressed about your upcoming semester exam? Hamara official *24-Hour KT Buster Kit* web app par live hai!\n\n✨ *Key Features in the Kit:*\n• 🟢 *24-Mark Passing Guarantee Checklist* — high-probability topics jisse minimum 24 marks confirm ho sakein\n• 📝 *Yesterday's Maths Exam Proof* — 40+ Marks ke direct prediction matches!\n• 🎧 *Senior Bro Voice Briefing* — 5-minute audio recap of key traps & tips\n• 📐 *Must-Draw Diagrams & KaTeX Formulas*\n\nTap below to open your personalized KT Buster on the Web:`,
+        {
+          reply_markup: {
+            inline_keyboard: [
+              [
+                {
+                  text: "🚀 Open 24-Hr KT Buster Kit (Web)",
+                  url: "https://kalexamhai.com/student/cram/new?type=kt_buster",
+                },
+              ],
+              [
+                {
+                  text: "🏛️ Browse MU Subjects Here on Telegram",
+                  callback_data: "br:branches",
+                },
+              ],
+            ],
+          },
+        }
+      );
+      return NextResponse.json({ ok: true });
+    }
+
+    // Case Answers: Student asking for answers/solutions
+    if (
+      lowerText.includes("answer") ||
+      lowerText.includes("solution") ||
+      lowerText.includes("uttar") ||
+      lowerText.startsWith("/answer") ||
+      lowerText.startsWith("/solution")
+    ) {
+      await sendTelegramMessage(
+        chatId,
+        `💡 *Step-by-Step Solved Answers & Marking Schemes*\n\nBhai, har paper aur sample questions ke detailed step-by-step solutions aur marking schemes web app par live hain!\n\n📌 *Options:*\n1️⃣ *On Web:* Open the KalExamHai web portal to generate complete solutions, derivations, and KaTeX math.\n2️⃣ *On Telegram:* You can generate a *12-Hour Panic Survival Kit* or *Formula Sheet* directly here for high-yield answers!\n\n👇 Choose an option:`,
+        {
+          reply_markup: {
+            inline_keyboard: [
+              [
+                {
+                  text: "💡 View Solved Kits on Web",
+                  url: "https://kalexamhai.com/student/cram/new",
+                },
+              ],
+              [
+                {
+                  text: "📚 Pick Subject for Telegram Kit",
+                  callback_data: "br:branches",
+                },
+              ],
+            ],
+          },
+        }
+      );
+      return NextResponse.json({ ok: true });
+    }
+
+    // Case A0: User sent /pyqs or asked for papers
     if (
       text.startsWith("/pyq") ||
       text.startsWith("/papers") ||
-      text.toLowerCase() === "pyq" ||
-      text.toLowerCase() === "pyqs" ||
-      text.toLowerCase() === "papers"
+      lowerText.includes("end sem paper") ||
+      lowerText.includes("sample paper") ||
+      lowerText.includes("sample papers") ||
+      lowerText.includes("mechanical paper") ||
+      lowerText.includes("question paper") ||
+      lowerText === "pyq" ||
+      lowerText === "pyqs" ||
+      lowerText === "papers"
     ) {
       const inline_keyboard = [
         [
@@ -618,10 +691,16 @@ export async function POST(req: NextRequest) {
           { text: "🏗️ Civil", callback_data: "pyq:b:civil" },
           { text: "📐 FE (All Branches)", callback_data: "pyq:b:fe" },
         ],
+        [
+          {
+            text: "🔍 Open Web Papers Archive (With In-App Viewer)",
+            url: "https://kalexamhai.com/student/papers",
+          },
+        ],
       ];
       await sendTelegramMessage(
         chatId,
-        "📚 *Mumbai University Past Exam Question Papers (PYQs)*\n\nOfficial MU semester question papers (NEP-2020 & C-Scheme):\nSelect your branch:",
+        "📚 *Mumbai University Past Exam Question Papers (PYQs)*\n\nOfficial MU semester question papers (NEP-2020 & C-Scheme):\n\n*(Note: Yesterday's official Maths for Computer Engineering paper N2113111 is live with full questions!)*\n\nSelect your branch:",
         { reply_markup: { inline_keyboard } }
       );
       return NextResponse.json({ ok: true });
@@ -662,33 +741,41 @@ export async function POST(req: NextRequest) {
     // Case A: User sent /start or Greeting
     if (
       text.startsWith("/start") ||
-      text.toLowerCase() === "hi" ||
-      text.toLowerCase() === "hello" ||
-      text.toLowerCase() === "hey"
+      text.startsWith("/help") ||
+      lowerText === "hi" ||
+      lowerText === "hello" ||
+      lowerText === "hey"
     ) {
       const welcomeText = `🎓 *Welcome to KalExamHai — Mumbai University Exam SOS!*
 
 Stressed about tomorrow's paper? Don't worry, we've got you covered.
 
-Choose one of two ways to generate your exam prep:
-1️⃣ *Tap "Browse Official MU Subjects"* below to choose from verified NEP-2020 syllabi (Zero-Upload!)
-2️⃣ *Or drop your own Syllabus PDF, notes, or question photo* right here in the chat.
+Choose one of the quick options below:
+1️⃣ 🚀 *24-Hr KT Buster Kit* — 24-Mark Passing Guarantee Checklist
+2️⃣ 🏛️ *Browse Official MU Subjects* — 6-Module NEP-2020 Syllabi (Zero-Upload!)
+3️⃣ 📚 *Download Official MU PYQs* — Complete Past Exam Papers
+4️⃣ 📄 *Or drop your Syllabus PDF or notes photo* right here in chat!
 
-I can generate:
-• 📝 *60-Mark NEP-2020 Question Paper* (with step-by-step marking schemes)
-• ⚡ *20-Mark IAT Internal Paper*
-• 📑 *High-Yield Formula Cheat Sheet*
-• 🎯 *12-Hour Panic Survival Kit* (expected marks & must-draw diagrams)
-• 🎤 *Examiner Viva Questions & Traps*
-
-👇 *Choose an option or drop your notes below:*`;
+👇 *Choose an option below:*`;
 
       await sendTelegramMessage(chatId, welcomeText, {
         reply_markup: {
           inline_keyboard: [
+            [
+              {
+                text: "🚀 24-Hour KT Buster Kit (Pass Guarantee)",
+                url: "https://kalexamhai.com/student/cram/new?type=kt_buster",
+              },
+            ],
             [{ text: "🏛️ Browse MU Subjects (NEP-2020)", callback_data: "br:branches" }],
             [{ text: "📥 Download Official MU PYQs", callback_data: "pyq:branches" }],
-            [{ text: "🌐 Open KalExamHai Web Portal", url: "https://kalexamhai-one.vercel.app" }],
+            [
+              {
+                text: "💡 Solved Answers & Marking Schemes",
+                url: "https://kalexamhai.com/student/papers",
+              },
+            ],
+            [{ text: "🌐 Open KalExamHai Web Portal", url: "https://kalexamhai.com" }],
           ],
         },
       });
