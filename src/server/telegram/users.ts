@@ -171,23 +171,23 @@ export const BROADCAST_INLINE_KEYBOARD = {
     [
       {
         text: "⚡ 24-Hr KT Buster Kit (Pass Guarantee)",
-        url: "https://kalexamhai.com/student/cram/new?type=kt_buster",
+        url: "https://kalexamhai-one.vercel.app/student/cram/new?type=kt_buster",
       },
     ],
     [
       {
         text: "🎯 Start Cram Session",
-        url: "https://kalexamhai.com/student/cram/new",
+        url: "https://kalexamhai-one.vercel.app/student/cram/new",
       },
       {
         text: "📝 MU Past Papers Archive",
-        url: "https://kalexamhai.com/student/papers",
+        url: "https://kalexamhai-one.vercel.app/student/papers",
       },
     ],
     [
       {
         text: "🌐 Open KalExamHai Web App",
-        url: "https://kalexamhai.com",
+        url: "https://kalexamhai-one.vercel.app",
       },
     ],
   ],

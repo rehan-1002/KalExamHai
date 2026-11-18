@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PublicPaperPageProps): Promis
       title,
       description,
       type: "article",
-      url: `https://kalexamhai.in/p/${id}`,
+      url: `https://kalexamhai-one.vercel.app/p/${id}`,
       siteName: "KalExamHai — MU Exam Prep Engine",
     },
     twitter: {

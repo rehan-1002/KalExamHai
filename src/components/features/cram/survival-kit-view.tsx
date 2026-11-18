@@ -54,7 +54,7 @@ export function SurvivalKitView({ payload }: SurvivalKitViewProps) {
 
   const handleWhatsAppShare = () => {
     const text = encodeURIComponent(
-      `🚨 *${payload.subject} Last-Minute Exam Night Survival Plan (12h)*\n\nPriority topics, high-scoring modules & passing checklist strictly for Mumbai University NEP-2020!\n\nPrepared on KalExamHai: https://kalexamhai.in`
+      `🚨 *${payload.subject} Last-Minute Exam Night Survival Plan (12h)*\n\nPriority topics, high-scoring modules & passing checklist strictly for Mumbai University NEP-2020!\n\nPrepared on KalExamHai: https://kalexamhai-one.vercel.app`
     );
     window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
   };

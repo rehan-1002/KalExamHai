@@ -126,7 +126,7 @@ export function PaperView({ paperRecord, isPublicShare = false }: PaperViewProps
   const [feedbackMessage, setFeedbackMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   const handleWhatsAppShare = () => {
-    const origin = typeof window !== "undefined" ? window.location.origin : "https://kalexamhai.in";
+    const origin = typeof window !== "undefined" ? window.location.origin : "https://kalexamhai-one.vercel.app";
     const shareUrl = `${origin}/p/${paperRecord.id}`;
     const formatLabel = paper.format === "IAT" ? "IAT 20M" : "End-Sem 60M";
     const text = encodeURIComponent(
@@ -136,7 +136,7 @@ export function PaperView({ paperRecord, isPublicShare = false }: PaperViewProps
   };
 
   const handleCopyShareLink = async () => {
-    const origin = typeof window !== "undefined" ? window.location.origin : "https://kalexamhai.in";
+    const origin = typeof window !== "undefined" ? window.location.origin : "https://kalexamhai-one.vercel.app";
     const shareUrl = `${origin}/p/${paperRecord.id}`;
     try {
       await navigator.clipboard.writeText(shareUrl);

@@ -557,14 +557,14 @@ export async function POST(req: NextRequest) {
                 [
                   {
                     text: "🖨️ Open & Print Official A4 PDF",
-                    url: `https://kalexamhai.com/view/${exportId}`,
+                    url: `https://kalexamhai-one.vercel.app/view/${exportId}`,
                   },
                   {
                     text: "🎧 Audio Voice Recap",
-                    url: `https://kalexamhai.com/view/${exportId}`,
+                    url: `https://kalexamhai-one.vercel.app/view/${exportId}`,
                   },
                 ],
-                [{ text: "🌐 Open Full 3D Workspace on Web (Free)", url: "https://kalexamhai.com" }],
+                [{ text: "🌐 Open Full 3D Workspace on Web (Free)", url: "https://kalexamhai-one.vercel.app" }],
                 [
                   {
                     text: "📤 Share Bot with Classmates",
@@ -612,7 +612,7 @@ export async function POST(req: NextRequest) {
               [
                 {
                   text: "🚀 Open 24-Hr KT Buster Kit (Web)",
-                  url: "https://kalexamhai.com/student/cram/new?type=kt_buster",
+                  url: "https://kalexamhai-one.vercel.app/student/cram/new?type=kt_buster",
                 },
               ],
               [
@@ -645,7 +645,7 @@ export async function POST(req: NextRequest) {
               [
                 {
                   text: "💡 View Solved Kits on Web",
-                  url: "https://kalexamhai.com/student/cram/new",
+                  url: "https://kalexamhai-one.vercel.app/student/cram/new",
                 },
               ],
               [
@@ -694,7 +694,7 @@ export async function POST(req: NextRequest) {
         [
           {
             text: "🔍 Open Web Papers Archive (With In-App Viewer)",
-            url: "https://kalexamhai.com/student/papers",
+            url: "https://kalexamhai-one.vercel.app/student/papers",
           },
         ],
       ];
@@ -764,7 +764,7 @@ Choose one of the quick options below:
             [
               {
                 text: "🚀 24-Hour KT Buster Kit (Pass Guarantee)",
-                url: "https://kalexamhai.com/student/cram/new?type=kt_buster",
+                url: "https://kalexamhai-one.vercel.app/student/cram/new?type=kt_buster",
               },
             ],
             [{ text: "🏛️ Browse MU Subjects (NEP-2020)", callback_data: "br:branches" }],
@@ -772,10 +772,10 @@ Choose one of the quick options below:
             [
               {
                 text: "💡 Solved Answers & Marking Schemes",
-                url: "https://kalexamhai.com/student/papers",
+                url: "https://kalexamhai-one.vercel.app/student/papers",
               },
             ],
-            [{ text: "🌐 Open KalExamHai Web Portal", url: "https://kalexamhai.com" }],
+            [{ text: "🌐 Open KalExamHai Web Portal", url: "https://kalexamhai-one.vercel.app" }],
           ],
         },
       });
