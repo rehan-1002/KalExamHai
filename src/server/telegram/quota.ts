@@ -31,12 +31,18 @@ export async function checkTelegramQuota(chatId: number | string): Promise<{
     // Fallback to Supabase storage for durability across serverless instances
     try {
       const supabase = getAdminClient();
-      const { data, error } = await supabase.storage
+      let res = await supabase.storage
         .from("documents")
-        .download(`tg_quotas/${cacheKey}.json`);
+        .download(`tg_quotas/${cacheKey}.txt`);
 
-      if (!error && data) {
-        const text = await data.text();
+      if (res.error || !res.data) {
+        res = await supabase.storage
+          .from("documents")
+          .download(`tg_quotas/${cacheKey}.json`);
+      }
+
+      if (!res.error && res.data) {
+        const text = await res.data.text();
         const json = JSON.parse(text) as { used: number };
         used = json.used || 0;
       } else {
@@ -74,15 +80,15 @@ export async function incrementTelegramQuota(chatId: number | string): Promise<n
     if (oldest) quotaMemoryCache.delete(oldest);
   }
 
-  // Persist to Supabase storage in background
+  // Persist to Supabase storage in background using text/plain
   try {
     const supabase = getAdminClient();
     await supabase.storage
       .from("documents")
       .upload(
-        `tg_quotas/${cacheKey}.json`,
+        `tg_quotas/${cacheKey}.txt`,
         Buffer.from(JSON.stringify({ used: current, date: dateKey }), "utf-8"),
-        { contentType: "application/json", upsert: true }
+        { contentType: "text/plain", upsert: true }
       );
   } catch {
     // Storage failure shouldn't block the user

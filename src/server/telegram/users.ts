@@ -32,7 +32,8 @@ export async function recordTelegramUser(
   }
 ): Promise<void> {
   const supabase = getAdminClient();
-  const filePath = `tg_users/${chatId}.json`;
+  const filePath = `tg_users/${chatId}.txt`;
+  const legacyFilePath = `tg_users/${chatId}.json`;
   const now = Date.now();
 
   let existing: TelegramUserProfile = {
@@ -47,9 +48,12 @@ export async function recordTelegramUser(
   };
 
   try {
-    const { data } = await supabase.storage.from("documents").download(filePath);
-    if (data) {
-      const prev = JSON.parse(await data.text()) as TelegramUserProfile;
+    let dl = await supabase.storage.from("documents").download(filePath);
+    if (dl.error || !dl.data) {
+      dl = await supabase.storage.from("documents").download(legacyFilePath);
+    }
+    if (dl.data) {
+      const prev = JSON.parse(await dl.data.text()) as TelegramUserProfile;
       existing = {
         ...prev,
         firstName: info.firstName || prev.firstName || "",
@@ -65,10 +69,11 @@ export async function recordTelegramUser(
   }
 
   try {
+    // Must use text/plain because documents bucket rejects application/json
     await supabase.storage
       .from("documents")
       .upload(filePath, Buffer.from(JSON.stringify(existing), "utf-8"), {
-        contentType: "application/json",
+        contentType: "text/plain",
         upsert: true,
       });
 
@@ -91,7 +96,7 @@ export async function getTelegramUsers(forceRefresh = false): Promise<TelegramUs
   const supabase = getAdminClient();
 
   try {
-    // 1. Fetch explicitly tracked tg_users
+    // 1. Fetch explicitly tracked tg_users (.txt and legacy .json)
     const { data: userFiles } = await supabase.storage.from("documents").list("tg_users", {
       limit: 1000,
     });
@@ -100,7 +105,7 @@ export async function getTelegramUsers(forceRefresh = false): Promise<TelegramUs
 
     if (userFiles && userFiles.length > 0) {
       const fetchPromises = userFiles
-        .filter((f) => f.name.endsWith(".json"))
+        .filter((f) => f.name.endsWith(".txt") || f.name.endsWith(".json"))
         .map(async (f) => {
           try {
             const { data } = await supabase.storage
@@ -125,7 +130,7 @@ export async function getTelegramUsers(forceRefresh = false): Promise<TelegramUs
 
     if (sessionFiles && sessionFiles.length > 0) {
       for (const sf of sessionFiles) {
-        const parts = sf.name.replace(".txt", "").split("_");
+        const parts = sf.name.replace(/\.(txt|json)$/, "").split("_");
         const chatId = parseInt(parts[0] || "0", 10);
         const timestamp = parseInt(parts[1] || "0", 10) || now;
 
