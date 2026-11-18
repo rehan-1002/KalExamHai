@@ -212,9 +212,9 @@ export async function executeWithGeminiPool<T>(
         }
 
         // For 503 (High Demand / Overloaded) or all keys cooling down:
-        // Exponential backoff with random jitter (prevents thundering herd)
-        const jitter = Math.floor(Math.random() * 400);
-        const backoffMs = Math.min(1000 * Math.pow(1.5, attempt) + jitter, 6000);
+        // Fast key cycling with jitter across the multi-key pool (capped at 2.5s max to avoid long request delays)
+        const jitter = Math.floor(Math.random() * 250);
+        const backoffMs = Math.min(500 * Math.pow(1.25, attempt) + jitter, 2500);
         console.warn(
           `[${label}] ${is503 ? "Model high demand (503)" : "Transient error"}. Rotating key and waiting ${Math.round(backoffMs)}ms (attempt ${attempt + 1}/${maxAttempts})...`
         );

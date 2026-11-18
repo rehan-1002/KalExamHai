@@ -1,20 +1,18 @@
 import "server-only";
-import { getGeminiClient, getGenerationModel } from "@/server/gemini/client";
+import { executeWithGeminiPool, getGenerationModel } from "@/server/gemini/client";
 
 /**
  * Generates an authentic, human, 60-90 second "Senior Topper Bro Tone" audio monologue
  * specifically tailored for Mumbai University engineering students.
  *
- * This turns raw formula lists, syllabus points, and papers into a crystal-clear,
- * highly actionable conversational briefing that sounds like a smart college friend
- * explaining how to clear the paper on the local train commute.
+ * Guaranteed sub-12s response: uses the resilient Gemini multi-key pool with a fast
+ * safety timeout that falls back to a clean smart template if Google AI is overloaded.
  */
 export async function generateBroAudioBriefing(params: {
   subject: string;
   title?: string;
   content: string;
 }): Promise<string> {
-  const ai = getGeminiClient();
   const model = getGenerationModel();
 
   const prompt = `You are a street-smart, friendly Mumbai University engineering topper talking directly to a stressed junior through earphones while travelling in a Mumbai local train on exam morning.
@@ -23,7 +21,7 @@ Subject: "${params.subject}"
 Study Material Title: "${params.title || "Exam Prep Material"}"
 Content / Topics:
 """
-${params.content.slice(0, 4000)}
+${params.content.slice(0, 3000)}
 """
 
 Task: Write a natural, highly engaging, 60 to 75-second spoken audio briefing in authentic Mumbai college Hinglish (Bro tone: "Suno bhai...", "chill maaro...", "examiner seedhe marks dega...").
@@ -37,16 +35,28 @@ STRICT RULES FOR HIGH AUDIO QUALITY:
 6. Output ONLY the spoken words. Do NOT include stage directions, speaker labels, asterisks, or quotes.`;
 
   try {
-    const response = await ai.models.generateContent({
-      model,
-      contents: prompt,
-      config: {
-        temperature: 0.7,
-        maxOutputTokens: 500,
+    // 10-second fast timeout race: Never allow Gemini to stall or trigger Vercel 504 timeouts
+    const generatePromise = executeWithGeminiPool(
+      async (client) => {
+        const response = await client.models.generateContent({
+          model,
+          contents: prompt,
+          config: {
+            temperature: 0.7,
+            maxOutputTokens: 450,
+          },
+        });
+        return response.text?.trim() || "";
       },
-    });
+      { maxAttempts: 3, label: "Bro Audio Briefing" }
+    );
 
-    const script = response.text?.trim();
+    const timeoutPromise = new Promise<string>((_, reject) =>
+      setTimeout(() => reject(new Error("Audio briefing generation timeout (>10s)")), 10000)
+    );
+
+    const script = await Promise.race([generatePromise, timeoutPromise]);
+
     if (!script || script.length < 50) {
       throw new Error("Briefing generation returned empty output");
     }
@@ -60,7 +70,7 @@ STRICT RULES FOR HIGH AUDIO QUALITY:
       .trim();
   } catch (err) {
     console.warn("Failed to generate AI bro audio briefing, falling back to smart template:", err);
-    // Dynamic clean fallback that never outputs formulas
+    // Instant, reliable fallback that never outputs formulas
     return `Suno bhai! Agar kal tumhara ${params.subject} ka paper hai toh bilkul chill maaro. Mumbai University ke NEP pattern mein sabse pehle 24 marks safe karna priority hai. Is sheet mein jo main high-yield topics hain, unke standard steps aur diagrams pehle revise karo. Question 1 ke compulsory short notes bilkul mat chhodna. Full confidence se likhna bhai, all the best!`;
   }
 }

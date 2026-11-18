@@ -9,6 +9,7 @@ import { GenerateWizard } from "@/components/features/papers/generate-wizard";
 import type { PaperFormat } from "@/lib/schemas/paper";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 interface StudentGenerateContentProps {
   searchParams: Promise<{ format?: string }>;

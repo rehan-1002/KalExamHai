@@ -7,6 +7,7 @@ import { CramWizard } from "@/components/features/cram/cram-wizard";
 import type { CramArtifactType } from "@/lib/schemas/cram";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 interface NewCramPageProps {
   searchParams: Promise<{ type?: string; docId?: string }>;
