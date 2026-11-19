@@ -24,6 +24,10 @@ export default async function TutorLayout({
   }
 
   const isAdmin = isAdminEmail(user.email);
+  if (!isAdmin) {
+    redirect("/student");
+  }
+
   const adminClient = getAdminClient();
 
   const { data: ledgerEntry } = await adminClient

@@ -19,6 +19,10 @@ export async function generatePaperAction(rawParams: GeneratePaperParams) {
   }
 
   const isAdmin = isAdminEmail(user.email);
+  if (!isAdmin) {
+    return { ok: false as const, code: "FORBIDDEN", message: "Faculty paper generation is restricted to administrators." };
+  }
+
   const now = Date.now();
   const lastGen = lastPaperGenMap.get(user.id) || 0;
   const elapsed = now - lastGen;

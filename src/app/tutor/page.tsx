@@ -26,6 +26,9 @@ async function TutorContent() {
   }
 
   const isAdmin = isAdminEmail(user.email);
+  if (!isAdmin) {
+    redirect("/student");
+  }
 
   const adminClient = getAdminClient();
 
