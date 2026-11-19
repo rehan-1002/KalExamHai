@@ -87,6 +87,7 @@ export function DiagramRenderer({
 
           mermaid.initialize({
             startOnLoad: false,
+            suppressErrorRendering: true,
             theme: "neutral",
             securityLevel: "loose",
             fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
@@ -164,12 +165,19 @@ export function DiagramRenderer({
         )}
 
         {!loading && error && (
-          <div className="w-full text-left p-3 bg-amber-50 border border-amber-200 rounded-[6px] text-xs text-amber-900 print:hidden">
-            <div className="flex items-center gap-1.5 font-bold mb-1 text-amber-800">
-              <AlertCircle className="w-3.5 h-3.5" />
-              <span>Diagram Specification</span>
+          <div className="w-full text-left p-3.5 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-[8px] text-xs print:border-slate-300">
+            <div className="flex items-center gap-1.5 font-bold mb-1.5 text-blue-900 dark:text-blue-300 text-xs">
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+              <span>Must-Draw Exam Sketch Reference</span>
             </div>
-            <p className="text-[11px] text-amber-700">{error}</p>
+            <p className="text-[11px] text-slate-600 dark:text-slate-300 mb-2 leading-relaxed font-sans">
+              Draw a clear, labeled schematic in your answer booklet showing key blocks, direction arrows, and state transitions.
+            </p>
+            {caption && (
+              <div className="inline-block px-2 py-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded text-[11px] font-semibold text-slate-800 dark:text-slate-200">
+                Figure: {caption}
+              </div>
+            )}
           </div>
         )}
 

@@ -556,6 +556,30 @@ ${contextText}`;
                 if (Array.isArray(obj.checklist)) obj.pass_checklist = obj.checklist;
                 else obj.pass_checklist = [];
               }
+
+              // Sanitize diagram_code to unescape literal newlines in JSON output
+              if (Array.isArray(obj.must_draw_diagrams)) {
+                obj.must_draw_diagrams.forEach((d: Record<string, unknown>) => {
+                  if (typeof d.diagram_code === "string") {
+                    d.diagram_code = d.diagram_code
+                      .replace(/\\r\\n/g, "\n")
+                      .replace(/\\n/g, "\n")
+                      .replace(/\\t/g, "  ")
+                      .trim();
+                  }
+                });
+              }
+              if (Array.isArray(obj.fixed_repeating_questions)) {
+                obj.fixed_repeating_questions.forEach((q: Record<string, unknown>) => {
+                  if (typeof q.diagram_code === "string") {
+                    q.diagram_code = q.diagram_code
+                      .replace(/\\r\\n/g, "\n")
+                      .replace(/\\n/g, "\n")
+                      .replace(/\\t/g, "  ")
+                      .trim();
+                  }
+                });
+              }
             }
           }
 

@@ -410,7 +410,7 @@ export function interpretDiagramInput(
     };
   }
 
-  // Clean mermaid code
+  // Clean & sanitize mermaid code
   let cleanMermaid = trimmed;
   // Remove markdown fences like ```mermaid ... ```
   cleanMermaid = cleanMermaid
@@ -418,10 +418,36 @@ export function interpretDiagramInput(
     .replace(/\s*```$/, "")
     .trim();
 
+  // Unescape literal escaped backslashes and newlines (very common when generated in JSON strings)
+  cleanMermaid = cleanMermaid
+    .replace(/\\r\\n/g, "\n")
+    .replace(/\\n/g, "\n")
+    .replace(/\\t/g, "  ");
+
+  // Ensure header line (flowchart/graph/classDiagram/etc.) has a newline after the direction
+  cleanMermaid = cleanMermaid.replace(
+    /^(flowchart\s+[A-Za-z]+|graph\s+[A-Za-z]+)\s*([^\n\r])/i,
+    "$1\n$2"
+  );
+
+  // If subgraph has spaces and isn't quoted, quote the title: subgraph Asymptotic Notations -> subgraph "Asymptotic Notations"
+  cleanMermaid = cleanMermaid.replace(
+    /^\s*subgraph\s+([A-Za-z0-9_-]+(?:\s+[A-Za-z0-9_-]+)+)\s*$/gim,
+    'subgraph "$1"'
+  );
+
+  // If no mermaid diagram type header is present, default to flowchart TD
+  const hasHeader = /^(flowchart|graph|sequenceDiagram|classDiagram|stateDiagram|erDiagram|journey|gantt|pie|gitGraph|mindmap|timeline)/im.test(
+    cleanMermaid
+  );
+  if (!hasHeader) {
+    cleanMermaid = `flowchart TD\n${cleanMermaid}`;
+  }
+
   // Default to Mermaid
   return {
     mode: "mermaid",
-    mermaidCode: cleanMermaid,
+    mermaidCode: cleanMermaid.trim(),
   };
 }
 
