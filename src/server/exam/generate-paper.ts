@@ -613,12 +613,25 @@ export async function generatePaper(
                     (typeof q?.title === "string" && q.title.trim()) ||
                     `Explain the fundamental concept, algorithm, and analysis of ${params.subject.trim()}.`;
 
+                  let diag = sq?.diagram;
+                  if (diag && typeof diag.code === "string") {
+                    diag = {
+                      ...diag,
+                      code: diag.code
+                        .replace(/\\r\\n/g, "\n")
+                        .replace(/\\n/g, "\n")
+                        .replace(/\\t/g, "  ")
+                        .trim(),
+                    };
+                  }
+
                   return {
                     ...sq,
                     id: sq?.id ? String(sq.id) : `q${qNo}_${label}`,
                     label,
                     marks: subMarks,
                     text: textCandidate,
+                    diagram: diag,
                   };
                 });
 
