@@ -761,6 +761,7 @@ Choose one of the quick options below:
       await sendTelegramMessage(chatId, welcomeText, {
         reply_markup: {
           inline_keyboard: [
+            
             [
               {
                 text: "🚀 24-Hour KT Buster Kit (Pass Guarantee)",
