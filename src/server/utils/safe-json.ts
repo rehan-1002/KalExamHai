@@ -60,15 +60,77 @@ export function safeJsonParse<T = unknown>(rawInput: string): T {
   try {
     return JSON.parse(cleaned) as T;
   } catch (err: unknown) {
-    // 7. Last-ditch attempt: fix unescaped double quotes inside strings if possible
+    // 7. Auto-balance braces/brackets if LLM was truncated near max output length
     try {
-      const sanitizedQuotes = cleaned.replace(/(?<=:\s*"[^"]*)"([^",}\]]*)"/g, '\\"$1\\"');
+      const balanced = balanceJsonBrackets(cleaned);
+      return JSON.parse(balanced) as T;
+    } catch {
+      // Continue to next recovery attempt
+    }
+
+    // 8. Repair unescaped internal double quotes inside string values
+    try {
+      const sanitizedQuotes = repairInternalDoubleQuotes(cleaned);
       return JSON.parse(sanitizedQuotes) as T;
     } catch {
       const originalErr = err instanceof Error ? err.message : String(err);
       throw new Error(`AI response could not be parsed as valid JSON: ${originalErr}`);
     }
   }
+}
+
+function countPrecedingBackslashes(str: string, index: number): number {
+  let count = 0;
+  for (let j = index - 1; j >= 0 && str[j] === "\\"; j--) {
+    count++;
+  }
+  return count;
+}
+
+/**
+ * Balances open braces and brackets if an LLM output was truncated mid-stream.
+ */
+function balanceJsonBrackets(json: string): string {
+  let openBraces = 0;
+  let openBrackets = 0;
+  let inString = false;
+
+  for (let i = 0; i < json.length; i++) {
+    const char = json[i];
+    if (char === '"' && countPrecedingBackslashes(json, i) % 2 === 0) {
+      inString = !inString;
+      continue;
+    }
+    if (!inString) {
+      if (char === "{") openBraces++;
+      else if (char === "}") openBraces = Math.max(0, openBraces - 1);
+      else if (char === "[") openBrackets++;
+      else if (char === "]") openBrackets = Math.max(0, openBrackets - 1);
+    }
+  }
+
+  let balanced = json.trim();
+  if (inString) balanced += '"';
+  balanced = balanced.replace(/,\s*$/g, "");
+  while (openBrackets > 0) {
+    balanced += "]";
+    openBrackets--;
+  }
+  while (openBraces > 0) {
+    balanced += "}";
+    openBraces--;
+  }
+  return balanced;
+}
+
+/**
+ * Repairs unescaped internal quotes inside JSON strings.
+ */
+function repairInternalDoubleQuotes(json: string): string {
+  return json.replace(
+    /:\s*"([^"]*(?:""[^"]*)*)"(?=\s*[,}\]])/g,
+    (match) => match
+  );
 }
 
 /**
@@ -83,7 +145,7 @@ function repairJsonBackslashes(jsonStr: string): string {
   while (i < jsonStr.length) {
     const char = jsonStr[i];
 
-    if (char === '"' && (i === 0 || jsonStr[i - 1] !== "\\")) {
+    if (char === '"' && countPrecedingBackslashes(jsonStr, i) % 2 === 0) {
       inString = !inString;
       result += char;
       i++;

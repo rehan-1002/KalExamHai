@@ -164,11 +164,19 @@ export function CramWizard({ documents, initialType, initialDocId, quota }: Cram
           router.push(`/student/cram/${res.artifactId}`);
         } else {
           setStatusStep(null);
-          setErrorMessage(res.error || "Generation failed. Please try again.");
+          const rawErr = res.error || "Generation failed. Please try again.";
+          const friendly = /json|parse|syntax|position/i.test(rawErr)
+            ? "AI generation encountered a momentary formatting glitch. Please tap 'Generate' again — your credits are safe!"
+            : rawErr;
+          setErrorMessage(friendly);
         }
       } catch (err: unknown) {
         setStatusStep(null);
-        setErrorMessage(err instanceof Error ? err.message : "Network error.");
+        const rawErr = err instanceof Error ? err.message : "Network error.";
+        const friendly = /json|parse|syntax|position/i.test(rawErr)
+          ? "AI generation encountered a momentary formatting glitch. Please tap 'Generate' again — your credits are safe!"
+          : rawErr;
+        setErrorMessage(friendly);
       }
     });
   };
